@@ -1,0 +1,15 @@
+{
+  "base_archive": "Master-Copy-PlusAgency-Cleanto-Pass55-DATABASE-PORT-CUMULATIVE.zip",
+  "pass": 56,
+  "changed": [
+    "core/vendor/rachidlaasri/laravel-installer/src/Controllers/EnvironmentController.php"
+  ],
+  "added": [
+    "core/app/Support/Install/DatabaseConnectionIdentity.php",
+    "tests/pass56-install-database-identity.php",
+    "docs/PASS56_REPORT.md",
+    "docs/PASS56_CHANGE_MANIFEST.json"
+  ],
+  "deleted": [],
+  "live_mariadb_verified": false
+}
