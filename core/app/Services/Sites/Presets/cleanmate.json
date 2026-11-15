@@ -16,15 +16,15 @@
     },
     {
       "name": "Garden upkeep",
-      "description": "Outdoor tidying and seasonal garden maintenance."
+      "description": "Outdoor tidying, basic garden maintenance and seasonal upkeep tailored to the property's condition and access."
     },
     {
       "name": "Move-in & move-out",
-      "description": "Detailed cleaning for a change of home."
+      "description": "Detailed cleaning before or after a house move, with the scope agreed from the rooms and surfaces involved."
     },
     {
       "name": "Window and glass",
-      "description": "Bright, streak-free windows and glass surfaces."
+      "description": "Interior and accessible exterior glass cleaning planned around the window type, condition and safe access."
     }
   ],
   "faqs": [
