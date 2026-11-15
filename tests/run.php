@@ -21,6 +21,9 @@ use App\Central\Events\InMemoryProcessedEventStore;
 use App\Central\Events\SignedEventVerifier;
 use App\Central\Flags\FlagReader;
 use App\Central\Http\HttpTransport;
+use App\Central\Link\NoExistingLinkResolver;
+use App\Central\Oidc\CentralSignIn;
+use App\Central\Oidc\IdTokenVerifier;
 use App\Central\Oidc\AuthorizationRequest;
 use App\Central\Oidc\IdTokenClaims;
 use App\Central\Oidc\OidcDiscovery;
@@ -265,6 +268,106 @@ check($consumer->handle($body, $nowOk) === 'duplicate' && $calls === 1, 'consume
 check(reasonOf(fn () => $consumer->handle(signedBody(array_merge($base, ['schemaVersion' => 2]), $secret), $nowOk)) === 'unsupported_event', 'consumer: unsupported version refused');
 check(reasonOf(fn () => $consumer->handle(str_replace('"n":1', '"n":9', $body), $nowOk)) === 'bad_signature' && $calls === 1, 'consumer: tampered event never reaches the handler');
 
+
+// --- Central sign-in (flag-gated, EdDSA ID token, back channel) -------------
+function signJws(array $header, array $payload, string $secretKey): string
+{
+    $h = b64url(json_encode($header));
+    $p = b64url(json_encode($payload));
+
+    return $h.'.'.$p.'.'.b64url(sodium_crypto_sign_detached($h.'.'.$p, $secretKey));
+}
+function jwksFor(string $publicKey, string $kid = 'k1'): array
+{
+    return ['keys' => [['kty' => 'OKP', 'crv' => 'Ed25519', 'x' => b64url($publicKey), 'kid' => $kid]]];
+}
+function signInFor(array $responses, int $now): array
+{
+    $http = new FakeHttp($responses);
+    $discovery = new OidcDiscovery($http, 'https://central.example/oidc/.well-known/openid-configuration', 'https://central.example');
+    $svc = new CentralSignIn($http, $discovery, 'scheduled-client', 'client-secret-value', 'https://scheduled.example/auth/titan/callback', 'scheduled-client', fn () => $now);
+
+    return [$svc, $http];
+}
+$sNow = 1_800_000_000;
+$kp = sodium_crypto_sign_keypair();
+$sk = sodium_crypto_sign_secretkey($kp);
+$pk = sodium_crypto_sign_publickey($kp);
+$otherPk = sodium_crypto_sign_publickey(sodium_crypto_sign_keypair());
+$claimsBase = ['iss' => 'https://central.example/oidc', 'aud' => 'scheduled-client', 'exp' => $sNow + 300, 'iat' => $sNow - 5, 'nonce' => 'n1', 'sub' => 'user-1'];
+$header = ['alg' => 'EdDSA', 'kid' => 'k1', 'typ' => 'JWT'];
+$goodIdToken = signJws($header, $claimsBase, $sk);
+$pending = ['state' => 'st1', 'nonce' => 'n1', 'code_verifier' => str_repeat('v', 43)];
+$discResp = ['status' => 200, 'json' => discoveryDoc()];
+$tokenOk = fn (string $idToken) => ['status' => 200, 'json' => ['id_token' => $idToken, 'token_type' => 'Bearer']];
+$jwksOk = ['status' => 200, 'json' => jwksFor($pk)];
+
+// Flag: off unless exactly on.
+check(envFrom([])->signInEnabled() === false, 'signin flag: unset is off');
+check(envFrom(['CENTRAL_SIGNIN_ENABLED' => '1'])->signInEnabled() === true, 'signin flag: 1 is on');
+check(envFrom(['CENTRAL_SIGNIN_ENABLED' => 'TRUE'])->signInEnabled() === true, 'signin flag: TRUE is on');
+check(envFrom(['CENTRAL_SIGNIN_ENABLED' => 'yes'])->signInEnabled() === false && envFrom(['CENTRAL_SIGNIN_ENABLED' => ''])->signInEnabled() === false, 'signin flag: other values stay off');
+
+// ID token signature (EdDSA, Central JWKS).
+check(IdTokenVerifier::verify($goodIdToken, jwksFor($pk))['sub'] === 'user-1', 'id sig: valid EdDSA token verifies');
+$tampered = explode('.', $goodIdToken);
+$tampered[1] = b64url(json_encode(array_merge($claimsBase, ['sub' => 'user-2'])));
+check(reasonOf(fn () => IdTokenVerifier::verify(implode('.', $tampered), jwksFor($pk))) === 'bad_signature', 'id sig: tampered payload refused');
+check(reasonOf(fn () => IdTokenVerifier::verify(signJws($header, $claimsBase, $sk), jwksFor($otherPk))) === 'bad_signature', 'id sig: wrong key refused');
+check(reasonOf(fn () => IdTokenVerifier::verify(signJws(['alg' => 'HS256', 'kid' => 'k1'], $claimsBase, $sk), jwksFor($pk))) === 'bad_algorithm', 'id sig: HS256 refused');
+check(reasonOf(fn () => IdTokenVerifier::verify(b64url('{"alg":"none"}').'.'.b64url(json_encode($claimsBase)).'.', jwksFor($pk))) === 'token_malformed', 'id sig: alg none with empty signature refused');
+check(reasonOf(fn () => IdTokenVerifier::verify(signJws(['alg' => 'none'], $claimsBase, $sk), jwksFor($pk))) === 'bad_algorithm', 'id sig: alg none refused');
+check(reasonOf(fn () => IdTokenVerifier::verify($goodIdToken, jwksFor($pk, 'other-kid'))) === 'unknown_key', 'id sig: unknown kid refused');
+check(reasonOf(fn () => IdTokenVerifier::verify($goodIdToken, ['keys' => [['kty' => 'RSA', 'n' => 'x', 'e' => 'AQAB']]])) === 'unknown_key', 'id sig: non-OKP key ignored');
+check(reasonOf(fn () => IdTokenVerifier::verify('a.b', jwksFor($pk))) === 'token_malformed', 'id sig: two-part token refused');
+check(reasonOf(fn () => IdTokenVerifier::verify(str_repeat('a', 9000), jwksFor($pk))) === 'token_malformed', 'id sig: oversized token refused');
+
+// Full back-channel sign-in.
+[$svc, $http] = signInFor([$discResp, $tokenOk($goodIdToken), $jwksOk], $sNow);
+$verified = $svc->complete($pending, 'st1', 'auth-code-value');
+check($verified === ['iss' => 'https://central.example/oidc', 'sub' => 'user-1'], 'signin: verified issuer and subject returned');
+check($http->calls[1][0] === 'POST' && $http->calls[1][1] === 'https://central.example/oidc/token', 'signin: code exchanged at token endpoint over POST');
+check(str_starts_with($http->calls[1][2][0] ?? '', 'Authorization: Basic '), 'signin: client authenticated with basic auth');
+
+[$svc, $http] = signInFor([], $sNow);
+check(reasonOf(fn () => $svc->complete($pending, 'other-state', 'code')) === 'state_mismatch' && count($http->calls) === 0, 'signin: state mismatch refused before any request');
+[$svc] = signInFor([], $sNow);
+check(reasonOf(fn () => $svc->complete($pending, null, 'code')) === 'state_mismatch', 'signin: missing returned state refused');
+check(reasonOf(fn () => $svc->complete([], 'st1', 'code')) === 'no_pending_signin', 'signin: no pending sign-in refused');
+check(reasonOf(fn () => $svc->complete($pending, 'st1', null)) === 'code_missing', 'signin: missing code refused');
+check(reasonOf(fn () => $svc->complete($pending, 'st1', ['array'])) === 'code_missing', 'signin: array code refused');
+
+[$svc] = signInFor([$discResp, ['status' => 400, 'json' => ['error' => 'invalid_grant', 'code' => 'secret-code']]], $sNow);
+check(reasonOf(fn () => $svc->complete($pending, 'st1', 'bad-code')) === 'token_exchange_failed', 'signin: failed token exchange refused');
+
+[$svc] = signInFor([$discResp, $tokenOk(signJws($header, array_merge($claimsBase, ['nonce' => 'other']), $sk)), $jwksOk], $sNow);
+check(reasonOf(fn () => $svc->complete($pending, 'st1', 'code')) === 'nonce_mismatch', 'signin: nonce mismatch refused');
+
+[$svc] = signInFor([$discResp, $tokenOk(signJws($header, array_merge($claimsBase, ['exp' => $sNow - 100]), $sk)), $jwksOk], $sNow);
+check(reasonOf(fn () => $svc->complete($pending, 'st1', 'code')) === 'expired', 'signin: expired ID token refused');
+
+[$svc] = signInFor([$discResp, $tokenOk(signJws($header, array_merge($claimsBase, ['iss' => 'https://evil.example/oidc']), $sk)), $jwksOk], $sNow);
+check(reasonOf(fn () => $svc->complete($pending, 'st1', 'code')) === 'wrong_issuer', 'signin: wrong issuer refused');
+
+[$svc] = signInFor([$discResp, $tokenOk(signJws($header, array_merge($claimsBase, ['aud' => ['other', 'scheduled-client']]), $sk)), $jwksOk], $sNow);
+check(reasonOf(fn () => $svc->complete($pending, 'st1', 'code')) === 'wrong_audience', 'signin: multi-audience token without azp refused');
+
+[$svc] = signInFor([$discResp, $tokenOk(signJws($header, array_merge($claimsBase, ['aud' => 'sorted-client']), $sk)), $jwksOk], $sNow);
+check(reasonOf(fn () => $svc->complete($pending, 'st1', 'code')) === 'wrong_audience', 'signin: token for another client refused');
+
+[$svc] = signInFor([$discResp, $tokenOk($goodIdToken), ['status' => 503, 'json' => null]], $sNow);
+check(reasonOf(fn () => $svc->complete($pending, 'st1', 'code')) === 'jwks_failed', 'signin: unreadable JWKS refused');
+
+// Link resolution: no existing link means no local user.
+check((new NoExistingLinkResolver())->localUserId('https://central.example/oidc', 'user-1') === null, 'link: no existing link maps to no local user');
+
+// Wiring: routes, controller and gating (source contract, no Laravel boot needed).
+$webRoutes = (string) file_get_contents(dirname(__DIR__).'/core/routes/web.php');
+$controller = (string) file_get_contents(dirname(__DIR__).'/core/app/Http/Controllers/Central/CentralSignInController.php');
+check(str_contains($webRoutes, "'prefix' => 'auth/titan'") && str_contains($webRoutes, "CentralSignInController@callback"), 'wiring: central routes mounted');
+check(str_contains($webRoutes, "Route::get('/login/google', 'User\\LoginController@redirectToGoogle'") && str_contains($webRoutes, "Route::get('/login/facebook/callback', 'User\\LoginController@handleFacebookCallback'"), 'wiring: local, Google and Facebook login routes unchanged');
+check(str_contains($controller, 'signInEnabled()') && str_contains($controller, 'abort(404)'), 'wiring: every Central action gated by flag');
+check(!str_contains($controller, 'User::create') && !str_contains($controller, 'create(') && !str_contains($controller, "guard('admin')") && !str_contains($controller, 'Admin\\'), 'wiring: no user creation and no admin guard');
 // --- Inbound event route: tenant, replay, freshness, flag, store -------------
 use App\Central\Events\DatabaseProcessedEventStore;
 use App\Central\Events\EventIngress;
