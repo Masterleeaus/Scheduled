@@ -12,19 +12,19 @@
   "services": [
     {
       "name": "Residential",
-      "description": "Cleaning plans for your living spaces."
+      "description": "Flexible home cleaning for everyday rooms and shared spaces, with the scope agreed around each household."
     },
     {
       "name": "Commercial",
-      "description": "Consistent care for busy teams and shared rooms."
+      "description": "Routine cleaning for workplaces, shared areas and frequently used surfaces to an agreed service checklist."
     },
     {
       "name": "Move-out",
-      "description": "A detailed clean for new beginnings."
+      "description": "Detailed property cleaning for moving dates, with attention to agreed rooms, fittings and presentation."
     },
     {
       "name": "Deep refresh",
-      "description": "More detailed attention when it matters."
+      "description": "Additional attention for detailed surfaces and overlooked areas beyond an ordinary recurring clean."
     }
   ],
   "faqs": [
