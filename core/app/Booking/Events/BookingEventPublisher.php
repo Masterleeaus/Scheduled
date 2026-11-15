@@ -83,32 +83,64 @@ final class BookingEventPublisher
 
         $existing = $this->store->find($key);
         if ($existing !== null) {
-            if (($existing['organisation_id'] ?? null) === $payload['companyId']
-                && ($existing['event_type'] ?? null) === $eventType
-                && ($existing['payload_digest'] ?? null) === $digest) {
-                return 'replayed';
-            }
-
-            throw new CentralException('idempotency_conflict', 'Idempotency key was used for different data.');
+            return $this->replayOrConflict($existing, $payload['companyId'], $eventType, $digest);
         }
 
         $now = ($this->clock)()->setTimezone(new DateTimeZone('UTC'));
-        $this->store->insert([
+        $row = [
             'event_id' => ($this->eventIds)(),
             'organisation_id' => $payload['companyId'],
             'event_type' => $eventType,
             'schema_version' => BookingEventType::SCHEMA_VERSION,
             'correlation_id' => $correlation,
             'idempotency_key' => $key,
-            'occurred_at' => $now->setTimezone(new DateTimeZone('UTC'))->format('Y-m-d\TH:i:s.v\Z'),
+            // Stored in the column's own DATETIME(3) text form. The envelope converts it to the wire form.
+            'occurred_at' => $now->format('Y-m-d H:i:s.v'),
             'payload_json' => $canonical,
             'payload_digest' => $digest,
             'status' => 'pending',
             'attempts' => 0,
             'next_attempt_at' => $now->format('Y-m-d H:i:s.v'),
-        ]);
+        ];
+
+        try {
+            $this->store->insert($row);
+        } catch (\Throwable $e) {
+            if (!self::isDuplicateKey($e)) {
+                throw $e;
+            }
+            // A concurrent publish with the same key committed between our find() and insert(). Only this key is
+            // handled here: if no row exists for it, the duplicate was on something else and the error is rethrown.
+            $winner = $this->store->find($key);
+            if ($winner === null) {
+                throw $e;
+            }
+
+            return $this->replayOrConflict($winner, $payload['companyId'], $eventType, $digest);
+        }
 
         return 'inserted';
+    }
+
+    /**
+     * @param array<string,mixed> $existing
+     * @return 'replayed'
+     */
+    private function replayOrConflict(array $existing, string $companyId, string $eventType, string $digest): string
+    {
+        if (($existing['organisation_id'] ?? null) === $companyId
+            && ($existing['event_type'] ?? null) === $eventType
+            && ($existing['payload_digest'] ?? null) === $digest) {
+            return 'replayed';
+        }
+
+        throw new CentralException('idempotency_conflict', 'Idempotency key was used for different data.');
+    }
+
+    /** 23000 is MySQL and SQLite; 23505 is PostgreSQL. Both mean a unique key already exists. */
+    private static function isDuplicateKey(\Throwable $e): bool
+    {
+        return $e instanceof \PDOException && in_array((string) $e->getCode(), ['23000', '23505'], true);
     }
 
     private static function uuidV4(): string
