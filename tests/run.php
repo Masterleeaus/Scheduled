@@ -265,6 +265,83 @@ check($consumer->handle($body, $nowOk) === 'duplicate' && $calls === 1, 'consume
 check(reasonOf(fn () => $consumer->handle(signedBody(array_merge($base, ['schemaVersion' => 2]), $secret), $nowOk)) === 'unsupported_event', 'consumer: unsupported version refused');
 check(reasonOf(fn () => $consumer->handle(str_replace('"n":1', '"n":9', $body), $nowOk)) === 'bad_signature' && $calls === 1, 'consumer: tampered event never reaches the handler');
 
+// --- Inbound event route: tenant, replay, freshness, flag, store -------------
+use App\Central\Events\DatabaseProcessedEventStore;
+use App\Central\Events\EventIngress;
+
+$orgId = '6f1d2c3b-4a59-4e6f-8a7b-9c0d1e2f3a4b';
+$otherOrg = '1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d';
+check(envFrom(['CENTRAL_EVENTS_ORGANISATION_ID' => strtoupper($orgId)])->eventsOrganisationId() === $orgId, 'config: organisation id normalised to lowercase');
+check(reasonOf(fn () => envFrom(['CENTRAL_EVENTS_ORGANISATION_ID' => 'not-a-uuid'])->eventsOrganisationId()) === 'config_invalid', 'config: organisation id must be a UUID');
+check(reasonOf(fn () => envFrom([])->eventsOrganisationId()) === 'config_missing', 'config: organisation id required');
+check(envFrom([])->eventsEnabled() === false && envFrom(['CENTRAL_EVENTS_ENABLED' => 'yes'])->eventsEnabled() === false, 'config: events flag off by default and for non-truthy values');
+check(envFrom(['CENTRAL_EVENTS_ENABLED' => '1'])->eventsEnabled() && envFrom(['CENTRAL_EVENTS_ENABLED' => 'TRUE'])->eventsEnabled(), 'config: events flag on for 1 and true');
+
+$handled = [];
+$handler = function (array $env) use (&$handled): void {
+    $handled[] = $env['eventId'];
+};
+$makeConsumer = fn (?string $org, array $handlers) => new EventConsumer(
+    new SignedEventVerifier($secret), new InMemoryProcessedEventStore(), 'scheduled', $handlers, $org
+);
+$validBody = signedBody($base, $secret);
+
+// Tenant: a correctly signed event for another organisation is refused and never claimed or handled.
+$tenant = $makeConsumer($orgId, ['example.v1' => $handler]);
+$foreign = signedBody(array_merge($base, ['organisationId' => $otherOrg]), $secret);
+check(reasonOf(fn () => $tenant->handle($foreign, $nowOk)) === 'tenant_mismatch' && $handled === [], 'tenant: signed event for another organisation refused');
+// Order: a foreign org with a bad signature must fail on the signature, not on the tenant.
+$forgedForeign = str_replace('"n":1', '"n":2', $foreign);
+check(reasonOf(fn () => $tenant->handle($forgedForeign, $nowOk)) === 'bad_signature', 'tenant: signature is checked before the tenant');
+check($tenant->handle($validBody, $nowOk) === 'processed' && count($handled) === 1, 'tenant: event for the configured organisation processed');
+
+// Replay: the same delivery twice runs the handler once.
+$replay = $makeConsumer($orgId, ['example.v1' => $handler]);
+check($replay->handle($validBody, $nowOk) === 'processed' && $replay->handle($validBody, $nowOk) === 'duplicate' && count($handled) === 2, 'replay: second delivery is a duplicate and runs nothing');
+
+// Ingress: HTTP status mapping and the flag.
+$ingressOn = new EventIngress($makeConsumer($orgId, ['example.v1' => $handler]), true);
+$ingressOff = new EventIngress($makeConsumer($orgId, ['example.v1' => $handler]), false);
+check($ingressOff->handle($validBody, $nowOk) === [404, ['error' => 'not_found']] && count($handled) === 2, 'ingress: disabled flag answers 404 and handles nothing');
+[$status, $body] = $ingressOn->handle(str_replace('"n":1', '"n":9', $validBody), $nowOk);
+check($status === 401 && $body === ['error' => 'bad_signature'], 'ingress: bad signature answers 401');
+$before = count($handled);
+[$status, $body] = $ingressOn->handle($validBody, $nowOk);
+check($status === 200 && $body === ['status' => 'processed'] && count($handled) === $before + 1, 'ingress: valid event answers 200 processed');
+[$status, $body] = $ingressOn->handle($validBody, $nowOk);
+check($status === 200 && $body === ['status' => 'duplicate'] && count($handled) === $before + 1, 'ingress: replayed valid event answers 200 duplicate');
+$fresh = signedBody(array_merge($base, ['eventId' => '9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d', 'idempotencyKey' => 'k-future']), $secret);
+$before = count($handled);
+[$status, $body] = $ingressOn->handle($fresh, $nowOk);
+check($status === 200 && $body === ['status' => 'processed'] && count($handled) === $before + 1, 'ingress: new event with a fresh key answers 200 processed');
+$future = signedBody(array_merge($base, ['eventId' => '9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6e', 'idempotencyKey' => 'k-far-future']), $secret);
+$before = count($handled);
+[$status, $body] = $ingressOn->handle($future, strtotime('2026-11-14T23:00:00Z'));
+check($status === 400 && $body === ['error' => 'from_future'] && count($handled) === $before, 'ingress: future-dated event answers 400 and is not handled');
+[$status] = $ingressOn->handle(signedBody(array_merge($base, ['schemaVersion' => 2, 'idempotencyKey' => 'k-v2']), $secret), $nowOk);
+check($status === 422, 'ingress: unsupported event version answers 422');
+$failing = new EventIngress($makeConsumer($orgId, ['example.v1' => function (): void {
+    throw new RuntimeException('effect failed');
+}]), true);
+[$status, $body] = $failing->handle(signedBody(array_merge($base, ['idempotencyKey' => 'k-fail']), $secret), $nowOk);
+check($status === 500 && $body === ['error' => 'handler_failed'], 'ingress: handler failure answers 500 so Central retries');
+
+// Database store: claim, duplicate, release. SQLite stands in for the migration's table here.
+$pdo = new PDO('sqlite::memory:', null, null, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+$pdo->exec('CREATE TABLE central_processed_events (id INTEGER PRIMARY KEY AUTOINCREMENT, consumer VARCHAR(64) NOT NULL, idempotency_key VARCHAR(200) NOT NULL, event_id VARCHAR(36) NOT NULL, created_at TIMESTAMP NOT NULL, UNIQUE (consumer, idempotency_key))');
+$store = new DatabaseProcessedEventStore($pdo);
+$eid = '8f14e45f-ceea-4672-9c2a-1d2b3c4d5e6f';
+check($store->claim('scheduled', 'key-a', $eid) === true, 'db store: first claim succeeds');
+check($store->claim('scheduled', 'key-a', $eid) === false, 'db store: duplicate claim refused by unique key');
+check($store->claim('other', 'key-a', $eid) === true, 'db store: same key under another consumer is independent');
+$store->release('scheduled', 'key-a');
+check($store->claim('scheduled', 'key-a', $eid) === true, 'db store: released claim can be taken again');
+$durable = new DatabaseProcessedEventStore($pdo);
+check($durable->claim('scheduled', 'key-a', $eid) === false, 'db store: claim survives a new store instance');
+$dbConsumer = new EventConsumer(new SignedEventVerifier($secret), $store, 'scheduled', ['example.v1' => $handler], $orgId);
+$dbBody = signedBody(array_merge($base, ['idempotencyKey' => 'k-db']), $secret);
+check($dbConsumer->handle($dbBody, $nowOk) === 'processed' && $dbConsumer->handle($dbBody, $nowOk) === 'duplicate', 'db store: consumer replay protection through the database');
+
 // --- Report -----------------------------------------------------------------
 $total = $passed + count($failures);
 foreach ($failures as $label) {
