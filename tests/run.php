@@ -457,6 +457,7 @@ foreach ($readNames as $name) {
 }
 
 require_once __DIR__.'/booking_event_outbox_test.php';
+require_once __DIR__.'/booking_owner_cancel_guard_test.php';
 
 // --- Report -----------------------------------------------------------------
 $total = $passed + count($failures);
