@@ -145,7 +145,7 @@ check(reasonOf(fn () => (new OidcDiscovery(new FakeHttp([['status' => 200, 'json
 
 // --- ID token claims --------------------------------------------------------
 $now = 1_800_000_000;
-$good = ['iss' => 'https://central.example/oidc', 'aud' => 'scheduled-client', 'exp' => $now + 300, 'iat' => $now - 5, 'nonce' => 'n1', 'sub' => 'user-1', 'titan_organisation_id' => '0f8fad5b-d9cb-469f-a165-70867728950e', 'titan_organisation_id' => '0f8fad5b-d9cb-469f-a165-70867728950e'];
+$good = ['iss' => 'https://central.example/oidc', 'aud' => 'scheduled-client', 'exp' => $now + 300, 'iat' => $now - 5, 'nonce' => 'n1', 'sub' => 'user-1', 'titan_organisation_id' => '0f8fad5b-d9cb-469f-a165-70867728950e'];
 $idCheck = fn (array $c, string $nonce = 'n1') => IdTokenClaims::assertValid($c, 'https://central.example/oidc', 'scheduled-client', $nonce, $now);
 $idCheck($good);
 check(true, 'id token: valid claims accepted');
@@ -338,7 +338,7 @@ $kp = sodium_crypto_sign_keypair();
 $sk = sodium_crypto_sign_secretkey($kp);
 $pk = sodium_crypto_sign_publickey($kp);
 $otherPk = sodium_crypto_sign_publickey(sodium_crypto_sign_keypair());
-$claimsBase = ['iss' => 'https://central.example/oidc', 'aud' => 'scheduled-client', 'exp' => $sNow + 300, 'iat' => $sNow - 5, 'nonce' => 'n1', 'sub' => 'user-1'];
+$claimsBase = ['iss' => 'https://central.example/oidc', 'aud' => 'scheduled-client', 'exp' => $sNow + 300, 'iat' => $sNow - 5, 'nonce' => 'n1', 'sub' => 'user-1', 'titan_organisation_id' => '0f8fad5b-d9cb-469f-a165-70867728950e'];
 $header = ['alg' => 'EdDSA', 'kid' => 'k1', 'typ' => 'JWT'];
 $goodIdToken = signJws($header, $claimsBase, $sk);
 $pending = ['state' => 'st1', 'nonce' => 'n1', 'code_verifier' => str_repeat('v', 43)];
