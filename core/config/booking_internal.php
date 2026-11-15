@@ -4,6 +4,8 @@ return [
  'secret'=>env('BOOKING_INTERNAL_SECRET',''),
  // Booking writes are tenant-sidecar settings; this Laravel layer cannot enable them.
  'owner_booking_management'=>env('BOOKING_OWNER_MANAGEMENT',true),
+ // Off by default: admits the contract names booking_create/booking_cancel/booking_reschedule to the internal client.
+ 'contract_operations_enabled'=>env('BOOKING_CONTRACT_OPERATIONS_ENABLED',false),
     // False until independent real-DB, concurrency and payment checks are passed.
     'public_commit_enabled' => env('TITAN_BOOKING_PUBLIC_COMMIT_ENABLED', false),
     'intent_secret' => env('TITAN_BOOKING_INTENT_SECRET', ''),

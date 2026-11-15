@@ -265,6 +265,39 @@ check($consumer->handle($body, $nowOk) === 'duplicate' && $calls === 1, 'consume
 check(reasonOf(fn () => $consumer->handle(signedBody(array_merge($base, ['schemaVersion' => 2]), $secret), $nowOk)) === 'unsupported_event', 'consumer: unsupported version refused');
 check(reasonOf(fn () => $consumer->handle(str_replace('"n":1', '"n":9', $body), $nowOk)) === 'bad_signature' && $calls === 1, 'consumer: tampered event never reaches the handler');
 
+// --- Internal booking client allowlist --------------------------------------
+$bookingConfig = [];
+if (!function_exists('config')) {
+    function config(string $key, mixed $default = null): mixed
+    {
+        global $bookingConfig;
+
+        return $bookingConfig[$key] ?? $default;
+    }
+}
+function bookingRefusal(string $operation): ?string
+{
+    try {
+        (new App\Booking\InternalBookingClient())->call(['instance_key' => 'tenant-a'], $operation, []);
+    } catch (RuntimeException $e) {
+        return $e->getMessage();
+    }
+
+    return null;
+}
+$bookingConfig['booking_internal.contract_operations_enabled'] = false;
+foreach (['booking_create', 'booking_cancel', 'booking_reschedule'] as $contract) {
+    check(bookingRefusal($contract) === 'Unsupported booking operation', "booking client: {$contract} refused while flag off");
+}
+$bookingConfig['booking_internal.contract_operations_enabled'] = true;
+foreach (['booking_create', 'booking_cancel', 'booking_reschedule'] as $contract) {
+    // Flag on: passes the allowlist and stops at the (unconfigured) endpoint check, before any HTTP call.
+    check(bookingRefusal($contract) === 'Private booking endpoint not configured', "booking client: {$contract} admitted when flag on");
+}
+check(bookingRefusal('booking_delete_all') === 'Unsupported booking operation', 'booking client: unknown operation still refused with flag on');
+check(bookingRefusal('owner_booking_cancel_all') === 'Unsupported booking operation', 'booking client: near-miss operation still refused');
+check(str_contains((string) file_get_contents(dirname(__DIR__).'/core/config/booking_internal.php'), "'contract_operations_enabled'=>env('BOOKING_CONTRACT_OPERATIONS_ENABLED',false)"), 'booking config: contract flag defaults to false');
+
 // --- Report -----------------------------------------------------------------
 $total = $passed + count($failures);
 foreach ($failures as $label) {
