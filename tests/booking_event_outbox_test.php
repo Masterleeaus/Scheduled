@@ -123,6 +123,56 @@ final class RecordingBookingTransport implements BookingEventTransport
     }
 }
 
+/** Same shape a unique-index violation has on MySQL/SQLite (23000) and PostgreSQL (23505). */
+final class BookingOutboxDuplicateKeyException extends \PDOException
+{
+    protected $code = '23000';
+}
+
+/**
+ * Simulates a concurrent publish: find() runs before the other writer commits, insert() hits the unique key.
+ * With a winner row, that row commits first and the duplicate is on our key. With null, the duplicate is on another key.
+ */
+final class RacingBookingOutbox implements BookingEventOutboxStore
+{
+    public int $findCalls = 0;
+
+    /** @param array<string,mixed>|null $winner */
+    public function __construct(public InMemoryBookingOutbox $inner, private ?array $winner)
+    {
+    }
+
+    public function find(string $idempotencyKey): ?array
+    {
+        $this->findCalls++;
+
+        return $this->inner->find($idempotencyKey);
+    }
+
+    public function insert(array $row): void
+    {
+        if ($this->winner !== null) {
+            $this->inner->insert($this->winner);
+        }
+        throw new BookingOutboxDuplicateKeyException('Duplicate entry for key idempotency_key');
+    }
+
+    public function dueHeads(DateTimeImmutable $now, int $limit): array
+    {
+        return $this->inner->dueHeads($now, $limit);
+    }
+
+    public function markPublished(string $eventId, DateTimeImmutable $at): void
+    {
+        $this->inner->markPublished($eventId, $at);
+    }
+
+    public function markFailed(string $eventId, int $attempts, DateTimeImmutable $nextAttemptAt, string $error, bool $dead): void
+    {
+        $this->inner->markFailed($eventId, $attempts, $nextAttemptAt, $error, $dead);
+    }
+}
+
 function runBookingOutboxChecks(): void
 {
     $secret = str_repeat('s3cr3t-Booking-Events-', 2);
@@ -183,6 +233,41 @@ function runBookingOutboxChecks(): void
     check(reasonOf(fn () => $publisher->created(['status' => 'pending'] + $booking, 1)) === 'idempotency_conflict', 'publisher: same key with different data is refused');
     check(reasonOf(fn () => $publisher->created($booking, 0)) === 'invalid_field', 'publisher: revision 0 refused');
     check(reasonOf(fn () => $publisher->record('booking.created', $booking, 2)) === 'unknown_event_type', 'publisher: dotted name is not a wire type');
+
+    // Concurrent publish with the same key: the other writer commits between our find() and insert().
+    $seedStore = new InMemoryBookingOutbox();
+    (new BookingEventPublisher($seedStore, $clock->closure(), static fn (): string => '99999999-2222-4333-8444-555555555555'))->created($booking, 1);
+    $winnerRow = $seedStore->ordered()[0];
+
+    $raceStore = new RacingBookingOutbox(new InMemoryBookingOutbox(), $winnerRow);
+    $racePublisher = new BookingEventPublisher($raceStore, $clock->closure(), static fn (): string => '11111111-2222-4333-8444-555555555555');
+    $raceResult = null;
+    $raceThrew = null;
+    try {
+        $raceResult = $racePublisher->created($booking, 1);
+    } catch (\Throwable $e) {
+        $raceThrew = $e;
+    }
+    check($raceThrew === null && $raceResult === 'replayed', 'race: duplicate on the same key replays instead of throwing');
+    check(count($raceStore->inner->rows) === 1 && $raceStore->findCalls === 2, 'race: one row kept, existing row loaded after the duplicate');
+    check(($raceStore->inner->ordered()[0]['event_id'] ?? '') === '99999999-2222-4333-8444-555555555555', 'race: the committed row is the one returned, not a new one');
+
+    $conflictStore = new RacingBookingOutbox(new InMemoryBookingOutbox(), (static function () use ($booking, $clock): array {
+        $other = new InMemoryBookingOutbox();
+        (new BookingEventPublisher($other, $clock->closure()))->created(['status' => 'pending'] + $booking, 1);
+
+        return $other->ordered()[0];
+    })());
+    check(reasonOf(fn () => (new BookingEventPublisher($conflictStore, $clock->closure()))->created($booking, 1)) === 'idempotency_conflict', 'race: duplicate key with different data is an idempotency_conflict');
+
+    $otherKeyStore = new RacingBookingOutbox(new InMemoryBookingOutbox(), null);
+    $otherKeyThrew = false;
+    try {
+        (new BookingEventPublisher($otherKeyStore, $clock->closure()))->created($booking, 1);
+    } catch (BookingOutboxDuplicateKeyException) {
+        $otherKeyThrew = true;
+    }
+    check($otherKeyThrew && count($otherKeyStore->inner->rows) === 0, 'race: duplicate on another key is rethrown, not replayed');
 
     // --- Envelope and signature (checked with Central's own verifier) ---------
     $envelope = new BookingEventEnvelope($secret);
