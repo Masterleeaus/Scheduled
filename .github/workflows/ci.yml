@@ -24,6 +24,25 @@ jobs:
       - name: Central integration PHP unit tests
         run: php tests/run.php
 
+      # Every other PHP test script under tests/ (including tests/pass*/). run.php already includes
+      # booking_event_outbox_test.php and booking_owner_cancel_guard_test.php, so they are not run twice.
+      # Fixture files are not tests. Any non-zero exit fails the job; nothing is skipped.
+      - name: Other PHP test scripts
+        # Installer tests need PAYUMONEY_SALT (LegacySqlImporter preflight, #54). This CI-only throwaway value is not the real salt.
+        env:
+          PAYUMONEY_SALT: ci-only-throwaway-salt
+        run: |
+          fail=0
+          while IFS= read -r f; do
+            if ! php "$f" > "$RUNNER_TEMP/test-output.txt" 2>&1; then
+              echo "::error file=$f::test script exited non-zero"
+              cat "$RUNNER_TEMP/test-output.txt"
+              fail=1
+            fi
+          done < <(find tests -name '*.php' ! -path '*fixture*' ! -name run.php \
+            ! -name booking_event_outbox_test.php ! -name booking_owner_cancel_guard_test.php | sort)
+          exit "$fail"
+
       # Dependencies come only from the committed lockfile (scheduled/package-lock.json).
       - name: Install locked Central link package dependencies
         working-directory: scheduled

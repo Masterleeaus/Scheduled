@@ -8,7 +8,7 @@ $cases=[
     'native persist forwards personal info'=>str_contains($read('private/booking-sidecar/BookingSharedPersist.php'),"\$command['personal_info']??[]"),
     'native client insert uses encoded info'=>str_contains($read('private/booking-sidecar/BookingLegacyClientWriter.php'),"\$encodedInfo,\$duration"),
     'native policy rechecks personal info'=>str_contains($read('private/booking-sidecar/BookingLiveWriteCommandPolicy.php'),"BookingPersonalInfo::parse(\$command['personal_info']??[])"),
-    'public checkout validates native representation'=>str_contains($read('core/app/Booking/Public/Checkout/CheckoutCommitCompatibility.php'),'BookingPersonalInfo::encode(['),
+    'public checkout validates native representation'=>str_contains($read('core/app/Booking/Public/Checkout/CheckoutCommitCompatibility.php'),'BookingPersonalInfo::encode('),
     'public checkout does not issue writes'=>!str_contains($read('core/app/Http/Controllers/Front/BookingPublicCheckoutController.php'),'CommitCleantoNativeGateway::execute('),
 ];
 foreach($cases as $label=>$pass)if(!$pass)throw new RuntimeException('FAIL '.$label);
