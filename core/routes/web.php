@@ -29,7 +29,7 @@ Route::get('/backup', 'Front\FrontendController@backup');
 /*=======================================================
 ************** Central sign-in (flag-gated) ************
 =======================================================*/
-// Each action returns 404 unless CENTRAL_SIGNIN_ENABLED is on (default off).
+// login and callback return 404 unless CENTRAL_SIGNIN_ENABLED is on (default off). logout always clears the local session.
 Route::group(['prefix' => 'auth/titan', 'middleware' => ['web']], function () {
   Route::get('/login', 'Central\CentralSignInController@login')->name('central.signin.login');
   Route::get('/callback', 'Central\CentralSignInController@callback')->name('central.signin.callback');
