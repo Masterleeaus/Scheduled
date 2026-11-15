@@ -1,5 +1,0 @@
-# Pass 119 — Read-only checkout uncertainty recovery
-
-Base: Pass 118 cumulative recovery candidate. Adds a read-only status route using the signed intent and full customer data to derive an exact idempotency claim, requiring a matching tenant, fingerprint, committed state, persisted Cleanto appointment, and associated Cleanto order. Missing claims return UNKNOWN, never “not booked.” Server-configured tenant PDO only; no write path or client release controls. Intent expires after 15 minutes, so status recovery beyond that requires authenticated customer management or support. No automatic retry is performed.
-
-Scope: 3 new PHP classes, 1 new controller, 1 PHP regression test, 1 modified route; report and manifest. Tests: focused PHP assertions and syntax passed. MariaDB execution and browser E2E NOT RUN: pdo_mysql and MariaDB unavailable. Pass 58 not recovered. Checkout release remains disabled by default. Status recovery only works on an enabled, accepted deployment. No proof of production readiness.

@@ -1,5 +1,0 @@
-# Pass 120 — Customer-controlled, read-only reservation recovery
-
-Baseline: Pass 119 cumulative recovery candidate. Integrates the existing POST `/titan-booking/checkout/status` endpoint into the public booking widget after an uncertain booking submission. The in-memory signed intent/customer payload is reused solely for a **read-only** status check; it is never saved to browser storage and no second booking write is attempted. A strictly validated persisted confirmation displays its reference, while unknown or unavailable evidence continues to warn against repeat submission. The recovery button is guarded against duplicate concurrent requests and removed after confirmed recovery.
-
-Scope: one modified production JavaScript file plus an executable regression test, report and exact manifest. Booking/tenant/payment release flags are unchanged. The status endpoint remains limited by the 15-minute intent expiry and tenant-configured database capability; longer-lived authenticated lookup is still needed. No real MariaDB transaction or browser E2E was performed, and Pass 58 remains missing. This archive is **not** production certified.
