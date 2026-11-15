@@ -14,6 +14,12 @@ return new class extends Migration {
     {
         Schema::table('central_user_links', function (Blueprint $table): void {
             $table->char('central_organisation_id', 36)->nullable();
+            $table->dropUnique('central_user_links_verified_subject_unique');
+            // One Central identity may belong to multiple companies; never conflate their links.
+            $table->unique(
+                ['issuer_sha256', 'subject_sha256', 'central_organisation_id'],
+                'central_user_links_identity_org_unique'
+            );
             $table->index(['central_organisation_id', 'revoked_at'], 'central_user_links_org_revoke_idx');
         });
     }
