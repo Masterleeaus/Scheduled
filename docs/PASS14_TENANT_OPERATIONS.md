@@ -1,9 +1,0 @@
-# Pass 14 — Tenant foundations and verified domain bindings
-
-Create a business tenant using the authenticated admin route `POST /admin/business-tenants` (prefix dependent on existing admin group). Membership is initially created for the currently authenticated admin. Select tenant ID in site creation payload; new sites carry tenant ownership, and duplicate preserves that tenant. Landing campaign creation accepts an optional tenant ID; copies preserve the ownership field. Existing legacy site/campaign records stay unassigned rather than silently transferring ownership. They remain available to legacy administration and **are not tenant-isolated**.
-
-Custom domains are recorded separately. Create a domain claim within your owned tenant; publish DNS TXT `_titan-verify.<hostname>` = `titan-site=<token>` from the protected listing endpoint. Verify TXT, then activate (rechecks proof). Active bindings restrict public site/campaign routes to their verified hostname. Reverse proxy trust settings, TLS certificate issuance, hostname routing and DNS A/CNAME setup remain external deployment requirements; this code does not issue certificates or provision DNS.
-
-Do **not** enable self-service legacy-record adoption without independently validating historical ownership. Domain verification does not itself prove tenant ownership of existing business data. Current admin roles, user roles and staff/booking tenant mapping require a wider identity migration, tenant-specific permissions and MariaDB/browser acceptance before claiming complete isolation.
-
-Migration order: back up production; run Laravel migrations; create tenants and memberships; create new tenant-owned sites or campaigns; verify domains; activate only after proxy and TLS readiness. Existing records are intentionally nullable for compatibility. Roll back only after removing new domain data.

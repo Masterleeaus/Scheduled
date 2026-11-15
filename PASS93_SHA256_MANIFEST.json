@@ -1,9 +1,0 @@
-{
-  "core/app/Booking/Public/Checkout/CheckoutSubmissionGate.php": "2c4ecfe66aa727ab862c0990d63aa22914c0cf12375d1549a4adeca479f0ece5",
-  "core/app/Booking/Public/Checkout/CheckoutSubmissionExecutor.php": "2eaf920073e363a8a177918b8b91d604ff3d3da01bbd8d5d8f036739cae491ec",
-  "core/app/Http/Controllers/Front/BookingPublicSubmissionController.php": "855aa1fa62deead5ee760646b350959b65093e8b9cee7d858dbc832edb74b260",
-  "core/routes/web.php": "99bc7af958998bad5fd742d72b1f1a00bebbbefad9b04588454974b640421323",
-  "core/config/booking_internal.php": "57c20c1053376cfe123fc3cef57a6797fe7885e40c49a2c144d320922e436651",
-  "core/tests/Booking/pass93_submission_gate_test.php": "6a8aee9bd2da1f4e08c4dc13284348b6dee0435e22c5a2a60b86aa7fa569be2e",
-  "PASS93_REPORT.md": "ed1a207a50227eadfabe498637030632028613fbf6b8b6192a81db49cd839b1d"
-}
