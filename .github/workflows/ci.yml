@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4 # major-version pin only
+      - uses: actions/setup-node@v4 # major-version pin only
+        with:
+          node-version: 22
+
+      # PHP CLI (8.3) is preinstalled on ubuntu-24.04 runners; the suite needs no extensions beyond core.
+      - name: PHP version
+        run: php -v
+
+      - name: Central integration PHP unit tests
+        run: php tests/run.php
+
+      # Dependencies come only from the committed lockfile (scheduled/package-lock.json).
+      - name: Install locked Central link package dependencies
+        working-directory: scheduled
+        run: npm ci
+
+      - name: Node module syntax check
+        working-directory: scheduled
+        run: npm run check
+
+      - name: Central link Node tests
+        working-directory: scheduled
+        run: npm test
+
+      # Preflight is a readiness report. The example/unconfigured tree is NOT ready, so exit 1 is
+      # the expected result here. Exit 0 (ready) is also accepted; exit 2+ or invalid JSON fails.
+      - name: Preflight check mode (JSON readiness report)
+        run: |
+          set +e
+          php scripts/preflight.php --json > "$RUNNER_TEMP/preflight.json"
+          rc=$?
+          set -e
+          if [ "$rc" -ne 0 ] && [ "$rc" -ne 1 ]; then
+            echo "preflight exited $rc; expected 0 or 1"
+            cat "$RUNNER_TEMP/preflight.json"
+            exit 1
+          fi
+          php -r '$j=json_decode(file_get_contents($argv[1]),true); if(!is_array($j)||$j["total"]<1){fwrite(STDERR,"preflight JSON invalid\n");exit(1);} $ready=($j["passed"]===$j["total"]); if(($ready?0:1)!==(int)$argv[2]){fwrite(STDERR,"preflight exit code does not match readiness\n");exit(1);}' "$RUNNER_TEMP/preflight.json" "$rc"

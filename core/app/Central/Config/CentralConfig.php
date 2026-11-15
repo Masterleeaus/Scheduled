@@ -98,6 +98,23 @@ final class CentralConfig
         return $value !== null && in_array(strtolower(trim($value)), ['1', 'true'], true);
     }
 
+    /** The one organisation whose signed events this Scheduled installation accepts. */
+    public function eventsOrganisationId(): string
+    {
+        $id = strtolower($this->required('CENTRAL_EVENTS_ORGANISATION_ID'));
+        if (!preg_match('/\A[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\z/', $id)) {
+            throw new CentralException('config_invalid', 'CENTRAL_EVENTS_ORGANISATION_ID must be a UUID.');
+        }
+
+        return $id;
+    }
+
+    /** The inbound event route is off unless CENTRAL_EVENTS_ENABLED is exactly 1 or true. */
+    public function eventsEnabled(): bool
+    {
+        return in_array(strtolower((string) $this->lookup('CENTRAL_EVENTS_ENABLED')), ['1', 'true'], true);
+    }
+
     public function allowInsecureLocalhost(): bool
     {
         return $this->lookup('TITAN_ALLOW_INSECURE_LOCALHOST') === '1';

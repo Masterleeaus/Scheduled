@@ -1,5 +1,7 @@
 <?php
 
+use App\Central\Config\CentralConfig;
+use App\Http\Controllers\Central\CentralEventController;
 use Illuminate\Http\Request;
 
 /*
@@ -16,3 +18,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Central outbox delivery. Off unless CENTRAL_EVENTS_ENABLED is 1 or true, so the route is not registered by default.
+if ((new CentralConfig())->eventsEnabled()) {
+    Route::post('/central/events', [CentralEventController::class, 'receive'])
+        ->name('central.events.receive');
+}

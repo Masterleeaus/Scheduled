@@ -30,8 +30,8 @@ $mail_code = '<html><body><div style="margin: 0;padding: 0;font-family: Helvetic
 	$mail->isSMTP();                                      
 	$mail->Host = 'smtp.gmail.com';  
 	$mail->SMTPAuth = true;                               
-	$mail->Username = 'broadviewinnovations8181@gmail.com';                 
-	$mail->Password = 'zkhruskdhcladkad';                           
+	$mail->Username = getenv('DEMO_SMTP_USERNAME') ?: '';
+	$mail->Password = getenv('DEMO_SMTP_PASSWORD') ?: '';
 	$mail->SMTPSecure = 'tls';                            
 	$mail->Port = 587;
 	$mail->Subject  = $subject_client;
