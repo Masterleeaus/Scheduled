@@ -8,3 +8,17 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+# Runtime state: sessions, logs, caches, compiled views and user uploads.
+# Keep each directory's .gitignore placeholder tracked.
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+/storage/framework/cache/*
+!/storage/framework/cache/.gitignore
+/storage/framework/laravel-excel/
+/storage/logs/*
+!/storage/logs/.gitignore
+/storage/digital_products/
+/storage/app/purifier/
