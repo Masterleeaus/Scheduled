@@ -6,4 +6,4 @@ foreach(['published_document','published', 'language_id','abort_unless'] as $x)$
 foreach(['self::isList','FILTER_VALIDATE_EMAIL','cta_url','services','faqs'] as $x)$assert(str_contains($d,$x),"document validation $x");
 foreach(['admin.sites.index','admin.sites.publish','admin.sites.restore','front.sites.show','checkpermission:Pages'] as $x)$assert(str_contains($r,$x),"route $x");
 require_once $root.'/core/app/Services/Sites/SiteTemplates.php';
-$assert(count(\App\Services\Sites\SiteTemplates::catalog())===10,'10 templates');
+$assert(count(\App\Services\Sites\SiteTemplates::catalog())===19,'19 templates');
