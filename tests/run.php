@@ -400,6 +400,24 @@ check(str_contains($webRoutes, "'prefix' => 'auth/titan'") && str_contains($webR
 check(str_contains($webRoutes, "Route::get('/login/google', 'User\\LoginController@redirectToGoogle'") && str_contains($webRoutes, "Route::get('/login/facebook/callback', 'User\\LoginController@handleFacebookCallback'"), 'wiring: local, Google and Facebook login routes unchanged');
 check(str_contains($controller, 'signInEnabled()') && str_contains($controller, 'abort(404)'), 'wiring: every Central action gated by flag');
 check(!str_contains($controller, 'User::create') && !str_contains($controller, 'create(') && !str_contains($controller, "guard('admin')") && !str_contains($controller, 'Admin\\'), 'wiring: no user creation and no admin guard');
+// R3 minors: begin() failure is caught, and logout ends the local session whatever the flag says.
+$methodBody = static function (string $source, string $name): string {
+    $start = strpos($source, "public function {$name}(");
+    if ($start === false) {
+        return '';
+    }
+    $next = preg_match('/\n    (?:public|private|protected) function /', $source, $m, PREG_OFFSET_CAPTURE, $start + 1)
+        ? $m[0][1]
+        : false;
+
+    return substr($source, $start, $next === false ? null : $next - $start);
+};
+$loginBody = $methodBody($controller, 'login');
+$logoutBody = $methodBody($controller, 'logout');
+check(preg_match('/try\s*\{\s*\$authorization = \$signIn->begin\(\);\s*\}\s*catch \(CentralException \$e\)\s*\{\s*(?:\/\/[^\n]*\s*)*return \\$this->failed\(\$request\);\s*\}/', $loginBody) === 1, 'wiring: begin() failure caught and sent to the safe redirect');
+check(str_contains($loginBody, "redirect()->away(\$authorization->url)") && substr_count($loginBody, '->begin()') === 1, 'wiring: login still redirects to Central only after begin() succeeds');
+check($logoutBody !== '' && !str_contains($logoutBody, 'signIn(') && !str_contains($logoutBody, 'abort(') && !str_contains($logoutBody, 'CentralConfig'), 'wiring: logout does not read the Central flag');
+check(str_contains($logoutBody, "Auth::guard('web')->logout()") && str_contains($logoutBody, 'invalidate()') && str_contains($logoutBody, "redirect()->route('user.login')"), 'wiring: logout clears the local web session and redirects to login');
 // --- Inbound event route: tenant, replay, freshness, flag, store -------------
 use App\Central\Events\DatabaseProcessedEventStore;
 use App\Central\Events\EventIngress;
@@ -537,8 +555,23 @@ check(count($readNames) >= 9, 'env template: CentralConfig read set was found by
 foreach ($readNames as $name) {
     check(in_array($name, $declared, true), "env template: {$name} is read by CentralConfig but missing from core/.env.example");
 }
+// Each comment sits directly above the variable it describes.
+$envLines = explode("\n", $template);
+$lineBefore = static function (array $lines, string $var): string {
+    foreach ($lines as $i => $line) {
+        if (str_starts_with($line, $var.'=')) {
+            return $i > 0 ? $lines[$i - 1] : '';
+        }
+    }
+
+    return '';
+};
+check(str_contains($lineBefore($envLines, 'CENTRAL_SIGNIN_ENABLED'), 'sign-in routes stay off'), 'env template: sign-in comment sits above CENTRAL_SIGNIN_ENABLED');
+check(str_contains($lineBefore($envLines, 'CENTRAL_SERVICE_CLIENT_ID'), 'Service client (client credentials)'), 'env template: service client comment sits above CENTRAL_SERVICE_CLIENT_ID');
+check(!str_contains($lineBefore($envLines, 'CENTRAL_SIGNIN_ENABLED'), 'Service client'), 'env template: service client comment is not above the sign-in flag');
 
 require_once __DIR__.'/booking_event_outbox_test.php';
+require_once __DIR__.'/booking_owner_cancel_guard_test.php';
 
 // --- Report -----------------------------------------------------------------
 $total = $passed + count($failures);

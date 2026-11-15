@@ -27,7 +27,7 @@ No `node_modules` or `vendor` directories exist in any of the five clones. Every
 - **Runner:** `composer test`, which runs `php tests/run.php`. It has no third-party dependencies and no `vendor/` directory.
 - **Needs:** PHP 8.2 or later, no database, no network.
 - **Run here:** Yes. Ran `php tests/run.php` on the B2 worktree: **58/58 Central integration checks passed, exit 0.**
-- **Not covered by `run.php`:** `tests/` also holds about 50 standalone files (`pass*.php`, `*_test.php`, `pass44_auth_contract.py`, and subdirectories `pass72/`, `pass90/`, `pass115/`, `pass124/`). `run.php` does not require them. Several reference `PDO`, `mysqli` or `DB_` configuration (for example `pass34-installer-security.php`, `pass55-database-port.php`, `pass56-install-database-identity.php`). These were not run in this check. Their runner and database needs are not documented in the repo, so each would need to be read before it can be run.
+- **Not covered by `run.php`:** `tests/` also holds 38 standalone files (37 `.php` files matching `pass*.php` or `*_test.php`, plus `pass44_auth_contract.py`) and 8 subdirectories (`pass53-marker-fixture/`, `pass71/`, `pass72/`, `pass90/`, `pass115/`, `pass116/`, `pass117/`, `pass124/`). `run.php` does not require them. Several reference `PDO`, `mysqli` or `DB_` configuration (for example `pass34-installer-security.php`, `pass55-database-port.php`, `pass56-install-database-identity.php`). These were not run in this check. Their runner and database needs are not documented in the repo, so each would need to be read before it can be run.
 - **Lint:** `php -l` on `core/app/Central/Events/SignedEventVerifier.php` passed.
 
 ### Central (`/home/claude/scan/central`)
@@ -66,7 +66,7 @@ No `node_modules` or `vendor` directories exist in any of the five clones. Every
 | Repo | Command | Prerequisites | Runs here |
 |---|---|---|---|
 | Scheduled | `composer test` (or `php tests/run.php`) | PHP 8.2+ | Yes, 58/58 |
-| Central | `npm ci && npm test` | Node 22+ | Yes after install. Exclude the shared-DB integration file |
+| Central | `npm ci && npm test` | Node 22+ | Yes after install. `npm test` runs only `.mjs` tests, so the shared-DB `central/tests/integration/staging_approval_concurrency.py` is not run by it. That file needs `TITAN_SHARED_CI_DATABASE_URL` and must not be run here |
 | Central | `npm run test:preflight` | Python 3 | Yes, not run in this check |
 | Skilled backend | `pnpm install && cd apps/backend && npm test` | Node 22+, pnpm 10 | Yes after install, DB-bound files excluded |
 | Skilled frontend | `pnpm install && cd apps/frontend && npm test` | Node 22+, pnpm 10 | Yes after install |
