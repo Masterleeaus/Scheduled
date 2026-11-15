@@ -265,6 +265,8 @@ check($consumer->handle($body, $nowOk) === 'duplicate' && $calls === 1, 'consume
 check(reasonOf(fn () => $consumer->handle(signedBody(array_merge($base, ['schemaVersion' => 2]), $secret), $nowOk)) === 'unsupported_event', 'consumer: unsupported version refused');
 check(reasonOf(fn () => $consumer->handle(str_replace('"n":1', '"n":9', $body), $nowOk)) === 'bad_signature' && $calls === 1, 'consumer: tampered event never reaches the handler');
 
+require_once __DIR__.'/booking_event_outbox_test.php';
+
 // --- Report -----------------------------------------------------------------
 $total = $passed + count($failures);
 foreach ($failures as $label) {
