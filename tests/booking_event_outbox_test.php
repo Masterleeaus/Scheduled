@@ -123,6 +123,56 @@ final class RecordingBookingTransport implements BookingEventTransport
     }
 }
 
+/** Same shape a unique-index violation has on MySQL/SQLite (23000) and PostgreSQL (23505). */
+final class BookingOutboxDuplicateKeyException extends \PDOException
+{
+    protected $code = '23000';
+}
+
+/**
+ * Simulates a concurrent publish: find() runs before the other writer commits, insert() hits the unique key.
+ * With a winner row, that row commits first and the duplicate is on our key. With null, the duplicate is on another key.
+ */
+final class RacingBookingOutbox implements BookingEventOutboxStore
+{
+    public int $findCalls = 0;
+
+    /** @param array<string,mixed>|null $winner */
+    public function __construct(public InMemoryBookingOutbox $inner, private ?array $winner)
+    {
+    }
+
+    public function find(string $idempotencyKey): ?array
+    {
+        $this->findCalls++;
+
+        return $this->inner->find($idempotencyKey);
+    }
+
+    public function insert(array $row): void
+    {
+        if ($this->winner !== null) {
+            $this->inner->insert($this->winner);
+        }
+        throw new BookingOutboxDuplicateKeyException('Duplicate entry for key idempotency_key');
+    }
+
+    public function dueHeads(DateTimeImmutable $now, int $limit): array
+    {
+        return $this->inner->dueHeads($now, $limit);
+    }
+
+    public function markPublished(string $eventId, DateTimeImmutable $at): void
+    {
+        $this->inner->markPublished($eventId, $at);
+    }
+
+    public function markFailed(string $eventId, int $attempts, DateTimeImmutable $nextAttemptAt, string $error, bool $dead): void
+    {
+        $this->inner->markFailed($eventId, $attempts, $nextAttemptAt, $error, $dead);
+    }
+}
+
 function runBookingOutboxChecks(): void
 {
     $secret = str_repeat('s3cr3t-Booking-Events-', 2);
@@ -178,11 +228,46 @@ function runBookingOutboxChecks(): void
     check(($row['event_type'] ?? '') === 'booking_created', 'publisher: wire type is booking_created');
     check(($row['idempotency_key'] ?? '') === 'booking:bk1001:booking_created:r1', 'publisher: idempotency key is booking, type and revision');
     check(($row['correlation_id'] ?? '') === 'booking:bk1001', 'publisher: correlation defaults to the booking');
-    check(($row['occurred_at'] ?? '') === '2026-11-15T09:00:05.000Z' && ($row['status'] ?? '') === 'pending', 'publisher: row time is UTC, status pending');
+    check(($row['occurred_at'] ?? '') === '2026-11-15 09:00:05.000' && ($row['status'] ?? '') === 'pending', 'publisher: row time is the DATETIME(3) text form, UTC, status pending');
     check($publisher->created($booking, 1) === 'replayed' && count($store->rows) === 1, 'publisher: same key and data is a replay');
     check(reasonOf(fn () => $publisher->created(['status' => 'pending'] + $booking, 1)) === 'idempotency_conflict', 'publisher: same key with different data is refused');
     check(reasonOf(fn () => $publisher->created($booking, 0)) === 'invalid_field', 'publisher: revision 0 refused');
     check(reasonOf(fn () => $publisher->record('booking.created', $booking, 2)) === 'unknown_event_type', 'publisher: dotted name is not a wire type');
+
+    // Concurrent publish with the same key: the other writer commits between our find() and insert().
+    $seedStore = new InMemoryBookingOutbox();
+    (new BookingEventPublisher($seedStore, $clock->closure(), static fn (): string => '99999999-2222-4333-8444-555555555555'))->created($booking, 1);
+    $winnerRow = $seedStore->ordered()[0];
+
+    $raceStore = new RacingBookingOutbox(new InMemoryBookingOutbox(), $winnerRow);
+    $racePublisher = new BookingEventPublisher($raceStore, $clock->closure(), static fn (): string => '11111111-2222-4333-8444-555555555555');
+    $raceResult = null;
+    $raceThrew = null;
+    try {
+        $raceResult = $racePublisher->created($booking, 1);
+    } catch (\Throwable $e) {
+        $raceThrew = $e;
+    }
+    check($raceThrew === null && $raceResult === 'replayed', 'race: duplicate on the same key replays instead of throwing');
+    check(count($raceStore->inner->rows) === 1 && $raceStore->findCalls === 2, 'race: one row kept, existing row loaded after the duplicate');
+    check(($raceStore->inner->ordered()[0]['event_id'] ?? '') === '99999999-2222-4333-8444-555555555555', 'race: the committed row is the one returned, not a new one');
+
+    $conflictStore = new RacingBookingOutbox(new InMemoryBookingOutbox(), (static function () use ($booking, $clock): array {
+        $other = new InMemoryBookingOutbox();
+        (new BookingEventPublisher($other, $clock->closure()))->created(['status' => 'pending'] + $booking, 1);
+
+        return $other->ordered()[0];
+    })());
+    check(reasonOf(fn () => (new BookingEventPublisher($conflictStore, $clock->closure()))->created($booking, 1)) === 'idempotency_conflict', 'race: duplicate key with different data is an idempotency_conflict');
+
+    $otherKeyStore = new RacingBookingOutbox(new InMemoryBookingOutbox(), null);
+    $otherKeyThrew = false;
+    try {
+        (new BookingEventPublisher($otherKeyStore, $clock->closure()))->created($booking, 1);
+    } catch (BookingOutboxDuplicateKeyException) {
+        $otherKeyThrew = true;
+    }
+    check($otherKeyThrew && count($otherKeyStore->inner->rows) === 0, 'race: duplicate on another key is rethrown, not replayed');
 
     // --- Envelope and signature (checked with Central's own verifier) ---------
     $envelope = new BookingEventEnvelope($secret);
@@ -201,6 +286,24 @@ function runBookingOutboxChecks(): void
         'signing: canonical form matches Central verifier',
     );
     check(reasonOf(fn () => new BookingEventEnvelope('too-short')) === 'config_invalid', 'signing: short secret refused');
+
+    // occurredAt round trip: the row's DATETIME(3) text is rewritten to the wire form before signing, so the string
+    // that is signed is the string that is sent. The body is serialised, decoded and verified, as a consumer would.
+    $wireAt = '2026-11-15T09:00:05.000Z';
+    $sentBody = $envelope->body($row);
+    $sentDecoded = json_decode($sentBody, true, 32, JSON_THROW_ON_ERROR);
+    check(($sentDecoded['occurredAt'] ?? null) === $wireAt, 'roundtrip: sent occurredAt is the ISO millisecond form');
+    check(strpos($sentBody, '"occurredAt":"'.$wireAt.'"') !== false, 'roundtrip: serialised body carries the exact wire string');
+    check((new SignedEventVerifier($secret))->verify($sentBody, $nowSec)['occurredAt'] === $wireAt, 'roundtrip: signature covers the sent occurredAt');
+    $fromDb = json_decode(json_encode($row, JSON_THROW_ON_ERROR), true, 32, JSON_THROW_ON_ERROR);
+    check($envelope->body($fromDb) === $sentBody, 'roundtrip: a row re-read from its serialised form gives the same body');
+    check(BookingEventEnvelope::wireTime('2026-11-15T09:00:05.000Z') === $wireAt, 'roundtrip: ISO input normalises to the same wire string');
+    check(BookingEventEnvelope::wireTime('2026-11-15 09:00:05.120') === '2026-11-15T09:00:05.120Z', 'roundtrip: milliseconds are kept');
+    check(reasonOf(fn () => BookingEventEnvelope::wireTime('2026-11-15 09:00:05')) === 'invalid_payload', 'roundtrip: text without milliseconds refused');
+    check(reasonOf(fn () => BookingEventEnvelope::wireTime('2026-11-15T09:00:05.000+11:00')) === 'invalid_payload', 'roundtrip: non-UTC offset refused');
+    $offForm = $row;
+    $offForm['occurred_at'] = '2026-11-15T09:00:05.000+11:00';
+    check(reasonOf(fn () => $envelope->body($offForm)) === 'invalid_payload', 'roundtrip: a stored offset form is refused, not signed');
     $badDigest = $row;
     $badDigest['payload_json'] = str_replace('"bk1001"', '"bk9999"', $row['payload_json']);
     check(reasonOf(fn () => $envelope->body($badDigest)) === 'invalid_payload', 'signing: payload that does not match its digest is refused');
@@ -228,6 +331,11 @@ function runBookingOutboxChecks(): void
         }
     }
     check($typesA === ['booking_created', 'booking_rescheduled', 'booking_cancelled'], 'ordering: one tenant goes out in stream order');
+    $firstSent = json_decode($transport->sent[0]['body'], true, 32, JSON_THROW_ON_ERROR);
+    check(
+        $firstSent['occurredAt'] === '2026-11-15T09:00:05.000Z' && (new SignedEventVerifier($secret))->verify($transport->sent[0]['body'], $nowSec)['occurredAt'] === $firstSent['occurredAt'],
+        'roundtrip: transport body occurredAt is the signed wire string',
+    );
     check(array_reduce($store2->ordered(), static fn (bool $ok, array $r): bool => $ok && $r['status'] === 'published', true), 'delivery: every row marked published');
 
     // A failed head blocks its tenant's later events; the other tenant is not held back.

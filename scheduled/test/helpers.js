@@ -1,5 +1,8 @@
 import { generateKeyPairSync, createPublicKey } from 'node:crypto';
 
+// Test kids (see src/kid-guard.js) are accepted only when NODE_ENV is 'test'.
+process.env.NODE_ENV ??= 'test';
+
 export const ISSUER = 'scheduled';
 export const AUDIENCE = 'titan-central';
 export const KEY_ID = 'test-kid-1';

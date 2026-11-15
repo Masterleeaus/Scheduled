@@ -6,6 +6,8 @@ namespace App\Booking\Events;
 use App\Central\CentralException;
 use App\Central\Config\CentralConfig;
 use App\Central\Events\CanonicalJson;
+use DateTimeImmutable;
+use DateTimeZone;
 
 /**
  * Builds the signed envelope for one outbox row, as EVENTS.md describes. The signature is hex HMAC-SHA256 over the
@@ -20,6 +22,20 @@ final class BookingEventEnvelope
         if (strlen($secret) < CentralConfig::MIN_SECRET_LENGTH) {
             throw new CentralException('config_invalid', 'Booking event signing secret is too short.');
         }
+    }
+
+    /**
+     * The one wire form for occurredAt: UTC, millisecond ISO-8601 with a Z suffix. Accepts the stored DATETIME(3)
+     * text (`Y-m-d H:i:s.v`) and the ISO form, so the signed value and the sent value are the same string.
+     */
+    public static function wireTime(string $stored): string
+    {
+        if (preg_match('/^(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2}:\d{2}\.\d{3})Z?$/', $stored, $m) !== 1) {
+            throw new CentralException('invalid_payload', 'Outbox row occurred_at is not in a known form.');
+        }
+        $at = new DateTimeImmutable($m[1].'T'.$m[2], new DateTimeZone('UTC'));
+
+        return $at->format('Y-m-d\TH:i:s.v\Z');
     }
 
     /** @param array<string,mixed> $row an outbox row as the store returns it */
@@ -42,7 +58,7 @@ final class BookingEventEnvelope
             'schemaVersion' => (int) $row['schema_version'],
             'correlationId' => (string) $row['correlation_id'],
             'idempotencyKey' => (string) $row['idempotency_key'],
-            'occurredAt' => (string) $row['occurred_at'],
+            'occurredAt' => self::wireTime((string) $row['occurred_at']),
             'payload' => $payload,
         ];
         $signature = hash_hmac('sha256', CanonicalJson::encode($unsigned), $this->secret);

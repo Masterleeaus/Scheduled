@@ -185,6 +185,12 @@ return [
     willvincent\Feeds\FeedsServiceProvider::class,
     Anand\LaravelPaytmWallet\PaytmWalletServiceProvider::class,
 
+    // Titan Central wiring. Registered only when CENTRAL_INTEGRATION_ENABLED is true (default off).
+    // Same parsing as config/central.php; read here because config values are not loaded yet at this point.
+    ...(filter_var(env('CENTRAL_INTEGRATION_ENABLED', false), FILTER_VALIDATE_BOOLEAN)
+        ? [App\Central\Providers\CentralServiceProvider::class]
+        : []),
+
   ],
 
   /*
