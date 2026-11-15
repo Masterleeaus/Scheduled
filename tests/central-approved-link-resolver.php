@@ -27,6 +27,11 @@ $check($lookups[0] === [hash('sha256', 'https://central.example.test'), hash('sh
 $check($resolver->localUserId('', 'subject-1', '0f8fad5b-d9cb-469f-a165-70867728950e') === null, 'empty issuer denied');
 $check($resolver->localUserId('https://central.example.test', '', '0f8fad5b-d9cb-469f-a165-70867728950e') === null, 'empty subject denied');
 $check(count($lookups) === 1, 'invalid claims never reach storage');
+$check($lookups[0][2] === '0f8fad5b-d9cb-469f-a165-70867728950e', 'verified company is part of the lookup');
+$check($resolver->localUserId('issuer', 'subject', '') === null, 'missing verified company denied');
+$check($resolver->localUserId('issuer', 'subject', 'other-company') === null, 'untrusted company identifier denied');
+$check(count($lookups) === 1, 'invalid company never reaches storage');
+
 $denied = new DatabaseCentralUserLinkResolver(static fn () => null);
 $check($denied->localUserId('issuer', 'subject', '0f8fad5b-d9cb-469f-a165-70867728950e') === null, 'missing or revoked link denied');
 foreach ([0, -1, '1.2', 'x@y.test', [], false] as $invalid) {
