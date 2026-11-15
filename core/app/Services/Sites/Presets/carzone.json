@@ -4,11 +4,11 @@
   "accent": "#b82d3d",
   "about": "We provide thoughtful, personalised vehicle care services. Ask about availability, service scope and pricing.",
   "cta_label": "Request detailing",
-  "cta_url": "#booking",
+  "cta_url": "#contact",
   "contact_email": "",
   "phone": "",
   "seo_title": "Carzone · Vehicle Care",
-  "seo_description": "Thoughtful vehicle care, inside and out",
+  "seo_description": "Vehicle detailing and interior/exterior care for a range of vehicles, with service scope confirmed before booking.",
   "services": [
     {
       "name": "Car detailing",
