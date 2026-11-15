@@ -82,7 +82,7 @@ final class CentralSignIn
         // Missing or malformed claims fail closed until Logto is configured to emit this contract.
         $organisationId = $claims['titan_organisation_id'] ?? null;
         if (!is_string($organisationId)
-            || preg_match('/\A[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\z/D', $organisationId) !== 1) {
+            || preg_match('/\A[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\z/D', $organisationId) !== 1) {
             throw new CentralException('missing_organisation', 'Verified Central organisation is required.');
         }
 
