@@ -4,11 +4,11 @@
   "accent": "#df7046",
   "about": "We provide thoughtful, personalised personal training services. Ask about availability, service scope and pricing.",
   "cta_label": "Book a training session",
-  "cta_url": "#booking",
+  "cta_url": "#contact",
   "contact_email": "",
   "phone": "",
   "seo_title": "Steven Watkins · Personal Training",
-  "seo_description": "Personal training built around your goals",
+  "seo_description": "Personal strength, mobility and coaching sessions tailored to your experience, goals and practical training needs.",
   "services": [
     {
       "name": "Personal coaching",
