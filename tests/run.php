@@ -476,6 +476,56 @@ check($durable->claim('scheduled', 'key-a', $eid) === false, 'db store: claim su
 $dbConsumer = new EventConsumer(new SignedEventVerifier($secret), $store, 'scheduled', ['example.v1' => $handler], $orgId);
 $dbBody = signedBody(array_merge($base, ['idempotencyKey' => 'k-db']), $secret);
 check($dbConsumer->handle($dbBody, $nowOk) === 'processed' && $dbConsumer->handle($dbBody, $nowOk) === 'duplicate', 'db store: consumer replay protection through the database');
+
+// Claim and effect share one transaction: a failed effect leaves no claim and no write, so the retry is processed.
+$atomicPdo = new PDO('sqlite::memory:', null, null, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+$atomicPdo->exec('CREATE TABLE central_processed_events (id INTEGER PRIMARY KEY AUTOINCREMENT, consumer VARCHAR(64) NOT NULL, idempotency_key VARCHAR(200) NOT NULL, event_id VARCHAR(36) NOT NULL, created_at TIMESTAMP NOT NULL, UNIQUE (consumer, idempotency_key))');
+$atomicPdo->exec('CREATE TABLE side_effects (id INTEGER PRIMARY KEY AUTOINCREMENT, label VARCHAR(64) NOT NULL)');
+$effectFails = true;
+$atomicConsumer = new EventConsumer(new SignedEventVerifier($secret), new DatabaseProcessedEventStore($atomicPdo), 'scheduled', [
+    'example.v1' => function (array $env) use ($atomicPdo, &$effectFails): void {
+        $atomicPdo->prepare('INSERT INTO side_effects (label) VALUES (?)')->execute([$env['eventId']]);
+        if ($effectFails) {
+            $effectFails = false;
+            throw new RuntimeException('effect failed after its write');
+        }
+    },
+], $orgId);
+$atomicBody = signedBody(array_merge($base, ['idempotencyKey' => 'k-atomic']), $secret);
+$atomicThrew = false;
+try {
+    $atomicConsumer->handle($atomicBody, $nowOk);
+} catch (RuntimeException) {
+    $atomicThrew = true;
+}
+$rowCount = static fn (string $table): int => (int) $atomicPdo->query("SELECT COUNT(*) FROM {$table}")->fetchColumn();
+check($atomicThrew && $rowCount('central_processed_events') === 0 && $rowCount('side_effects') === 0 && !$atomicPdo->inTransaction(), 'db store: failed effect rolls back its claim and its write');
+check($atomicConsumer->handle($atomicBody, $nowOk) === 'processed' && $rowCount('side_effects') === 1, 'db store: retry after a failed effect is processed, not reported as duplicate');
+check($atomicConsumer->handle($atomicBody, $nowOk) === 'duplicate' && $rowCount('side_effects') === 1, 'db store: effect applied once, replay is duplicate');
+
+// Narrowed duplicate check: a non-duplicate integrity failure (SQLSTATE 23000) must surface as an error.
+$strictPdo = new PDO('sqlite::memory:', null, null, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+$strictPdo->exec('CREATE TABLE central_processed_events (id INTEGER PRIMARY KEY AUTOINCREMENT, consumer VARCHAR(64) NOT NULL, idempotency_key VARCHAR(200) NOT NULL, event_id VARCHAR(36) NOT NULL, created_at TIMESTAMP NOT NULL, UNIQUE (consumer, idempotency_key))');
+$strictPdo->exec("CREATE TRIGGER block_consumer BEFORE INSERT ON central_processed_events WHEN NEW.consumer = 'blocked' BEGIN SELECT RAISE(ABORT, 'consumer blocked'); END");
+$strictStore = new DatabaseProcessedEventStore($strictPdo);
+$integrityError = null;
+try {
+    $strictStore->claim('blocked', 'k-x', $eid);
+} catch (PDOException $e) {
+    $integrityError = $e;
+}
+check($integrityError !== null && $integrityError->getCode() === '23000', 'db store: non-duplicate integrity failure is thrown, not reported as duplicate');
+$blockedRun = false;
+$blockedThrew = false;
+try {
+    $strictStore->claimAndRun('blocked', 'k-x', $eid, function () use (&$blockedRun): void {
+        $blockedRun = true;
+    });
+} catch (PDOException) {
+    $blockedThrew = true;
+}
+check($blockedThrew && !$blockedRun, 'db store: effect never runs when the claim fails for a non-duplicate reason');
+check($strictStore->claim('scheduled', 'k-x', $eid) === true && $strictStore->claim('scheduled', 'k-x', $eid) === false, 'db store: a real duplicate key still returns false');
 // --- Env template: every variable CentralConfig reads must be declared in core/.env.example ---
 $configSource = (string) file_get_contents(dirname(__DIR__).'/core/app/Central/Config/CentralConfig.php');
 $template = (string) file_get_contents(dirname(__DIR__).'/core/.env.example');
