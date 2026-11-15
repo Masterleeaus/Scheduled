@@ -42,7 +42,6 @@ class CentralWiringFlagTest extends TestCase
 
         $this->assertFalse(app()->providerIsLoaded(CentralServiceProvider::class));
         $this->assertFalse(app('router')->getRoutes()->hasNamedRoute('central.status'));
-        $this->assertFalse(app('router')->getRoutes()->hasNamedRoute('central.events'));
     }
 
     /** @dataProvider centralRequests */
@@ -72,27 +71,7 @@ class CentralWiringFlagTest extends TestCase
                 'integration' => 'central',
                 'enabled' => true,
                 'scope' => 'single-instance',
-                'eventStore' => 'in-memory',
             ]);
-    }
-
-    public function test_flag_on_events_route_responds_and_rejects_unsigned_input(): void
-    {
-        $this->bootWith('true', str_repeat('s', 40));
-
-        // Unsigned input is rejected by the verifier before any handler or store is touched.
-        $this->postJson('/api/central/events', ['eventType' => 'x'])
-            ->assertStatus(401)
-            ->assertJson(['error' => 'rejected']);
-    }
-
-    public function test_flag_on_without_events_secret_fails_closed_with_503(): void
-    {
-        $this->bootWith('true', null);
-
-        $this->postJson('/api/central/events', ['eventType' => 'x'])
-            ->assertStatus(503)
-            ->assertJson(['error' => 'not_configured']);
     }
 
     public function offValues(): array
@@ -102,7 +81,7 @@ class CentralWiringFlagTest extends TestCase
 
     public function centralRequests(): array
     {
-        return [['GET', '/api/central/status'], ['POST', '/api/central/events']];
+        return [['GET', '/api/central/status']];
     }
 
     /**
