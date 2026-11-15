@@ -16,7 +16,8 @@ jobs:
         with:
           node-version: 22
 
-      # PHP CLI (8.3) is preinstalled on ubuntu-24.04 runners; the suite needs no extensions beyond core.
+      # PHP CLI (8.3) is preinstalled on ubuntu-24.04 runners. The suite calls sodium_* functions, and
+      # composer.json also requires ext-curl; this step relies on the runner's PHP build providing both.
       - name: PHP version
         run: php -v
 
@@ -36,16 +37,17 @@ jobs:
         working-directory: scheduled
         run: npm test
 
-      # Preflight is a readiness report. The example/unconfigured tree is NOT ready, so exit 1 is
-      # the expected result here. Exit 0 (ready) is also accepted; exit 2+ or invalid JSON fails.
+      # Preflight is a readiness report. The example/unconfigured tree is NOT ready, and three
+      # manual-verification checks are always reported as not passed, so exit 1 is the only
+      # expected result here. Any other exit code or invalid JSON fails.
       - name: Preflight check mode (JSON readiness report)
         run: |
           set +e
           php scripts/preflight.php --json > "$RUNNER_TEMP/preflight.json"
           rc=$?
           set -e
-          if [ "$rc" -ne 0 ] && [ "$rc" -ne 1 ]; then
-            echo "preflight exited $rc; expected 0 or 1"
+          if [ "$rc" -ne 1 ]; then
+            echo "preflight exited $rc; expected 1"
             cat "$RUNNER_TEMP/preflight.json"
             exit 1
           fi
