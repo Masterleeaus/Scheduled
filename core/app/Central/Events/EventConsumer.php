@@ -7,8 +7,9 @@ use App\Central\CentralException;
 
 /**
  * Accepts one signed Central event. Order: verify the signature, check the organisation, find the handler for
- * the event version, claim the idempotency key, run the handler. A duplicate returns 'duplicate' and runs nothing. A failed handler
- * releases its claim and the failure propagates, so Central retries.
+ * the event version, then claim the idempotency key and run the handler as one unit (ProcessedEventStore::claimAndRun).
+ * A duplicate returns 'duplicate' and runs nothing. A failed handler undoes its claim and the failure propagates,
+ * so Central retries and the retry is processed.
  */
 final class EventConsumer
 {
@@ -37,17 +38,14 @@ final class EventConsumer
         if (!isset($this->handlers[$name])) {
             throw new CentralException('unsupported_event', 'No handler for this event version.');
         }
-        $key = $envelope['idempotencyKey'];
-        if (!$this->store->claim($this->consumerName, $key, $envelope['eventId'])) {
-            return 'duplicate';
-        }
-        try {
-            ($this->handlers[$name])($envelope);
-        } catch (\Throwable $e) {
-            $this->store->release($this->consumerName, $key);
-            throw $e;
-        }
+        $handler = $this->handlers[$name];
+        $claimed = $this->store->claimAndRun(
+            $this->consumerName,
+            $envelope['idempotencyKey'],
+            $envelope['eventId'],
+            static fn () => $handler($envelope),
+        );
 
-        return 'processed';
+        return $claimed ? 'processed' : 'duplicate';
     }
 }

@@ -9,6 +9,22 @@ final class InMemoryProcessedEventStore implements ProcessedEventStore
     /** @var array<string,string> */
     private array $claims = [];
 
+    public function claimAndRun(string $consumer, string $idempotencyKey, string $eventId, callable $effect): bool
+    {
+        if (!$this->claim($consumer, $idempotencyKey, $eventId)) {
+            return false;
+        }
+        try {
+            $effect();
+        } catch (\Throwable $e) {
+            $this->release($consumer, $idempotencyKey);
+
+            throw $e;
+        }
+
+        return true;
+    }
+
     public function claim(string $consumer, string $idempotencyKey, string $eventId): bool
     {
         $key = $consumer."\0".$idempotencyKey;
