@@ -36,8 +36,11 @@ jobs:
                   assert not p.is_absolute() and '..' not in p.parts and '.git' not in p.parts
                   assert not info.filename.startswith('.github/'), 'Archive contains workflows'
               z.extractall('.')
-              for start in range(0,len(files),250):
-                  subprocess.run(['git','add','-f','--']+[i.filename for i in files[start:start+250]],check=True)
+              names=[i.filename for i in files]
+              assert all('\n' not in n and '\t' not in n for n in names)
+              hashes=subprocess.check_output(['git','hash-object','-w','--no-filters','--stdin-paths'],input=('\n'.join(names)+'\n').encode()).decode().splitlines()
+              entries=''.join('100644 '+sha+'\t'+name+'\n' for name,sha in zip(names,hashes))
+              subprocess.run(['git','update-index','--index-info'],input=entries.encode(),check=True)
           subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)
           subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
           if subprocess.run(['git','diff','--cached','--quiet']).returncode:
