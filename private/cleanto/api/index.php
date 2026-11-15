@@ -3145,6 +3145,7 @@ if(isset($_POST["action"]) && $_POST["action"] == "check_postal_code") {
 						var_dump($res);
 						$Balance = $MessageBird->balance->read();
 					}
+				}
 				if ($objsettings->get_option("ct_sms_textlocal_status") == "Y") {
 					if ($objsettings->get_option("ct_sms_textlocal_send_sms_to_staff_status") == "Y") {
 						$template = $objdashboard->gettemplate_sms("A", "S");
