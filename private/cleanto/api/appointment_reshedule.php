@@ -375,7 +375,7 @@ if(isset($_POST["action"]) && $_POST["action"] == "reschedule_appointment") {
 				if ($objsettings->get_option("ct_sms_plivo_send_sms_to_client_status") == "Y") {
 					$auth_id = $objsettings->get_option("ct_sms_plivo_account_SID");
 					$auth_token = $objsettings->get_option("ct_sms_plivo_auth_token");
-					$p_client = new Plivo\ RestAPI($auth_id, $auth_token, "", "");
+					$p_client = new \Plivo\RestAPI($auth_id, $auth_token, "", "");
 					$template = $objdashboard->gettemplate_sms("RS", "C");
 					$phone = $client_phone;
 					if ($template[4] == "E") {
@@ -392,7 +392,7 @@ if(isset($_POST["action"]) && $_POST["action"] == "reschedule_appointment") {
 				if ($objsettings->get_option("ct_sms_plivo_send_sms_to_admin_status") == "Y") {
 					$auth_id = $objsettings->get_option("ct_sms_plivo_account_SID");
 					$auth_token = $objsettings->get_option("ct_sms_plivo_auth_token");
-					$p_admin = new Plivo\ RestAPI($auth_id, $auth_token, "", "");
+					$p_admin = new \Plivo\RestAPI($auth_id, $auth_token, "", "");
 					$template = $objdashboard->gettemplate_sms("RS", "A");
 					$phone = $admin_phone_plivo;
 					if ($template[4] == "E") {

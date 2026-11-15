@@ -25,8 +25,8 @@ $asserts = [
     !str_contains($finish, '$finalEnvFile'),
     !str_contains($finish, 'Password: </strong>admin'),
     str_contains($conf, "'pdo_mysql'"),
-    str_contains($manager, "'APP_ENV='.'production'"),
-    str_contains($manager, "'APP_DEBUG='.'false'"),
+    str_contains($manager, "'APP_ENV' => 'production'"),
+    str_contains($manager, "'APP_DEBUG' => 'false'"),
     !str_contains($manager, "'INDIPAY_SALT='.'eCwWELxi'"),
 ];
 foreach ($asserts as $pass) { if (!$pass) { throw new RuntimeException('Installer safety contract failed'); } $ok++; }

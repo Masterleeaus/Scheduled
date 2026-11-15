@@ -5,7 +5,7 @@ $admin=file_get_contents($root.'app/Http/Controllers/Admin/LandingCampaignContro
 $front=file_get_contents($root.'app/Http/Controllers/Front/LandingCampaignController.php');
 $tests=[
  'public routes before catch-all'=>strpos($routes,"Route::get('/campaign/{slug}'")<strpos($routes,'// Dynamic Page Routes'),
- 'admin routes behind pages permission'=>strpos($routes,"checkpermission:Pages'], function () {\n    Route::get('/landing-campaigns'")!==false,
+ 'admin routes behind pages permission'=>(function() use ($routes) { $p=strpos($routes,"Route::get('/landing-campaigns'"); if($p===false) return false; $g=strrpos(substr($routes,0,$p),"checkpermission:Pages'], function () {"); return $g!==false && strpos(substr($routes,$g,$p-$g),'});')===false; })(),
  'admin route includes publishing'=>strpos($routes,"name('admin.landing.publish')")!==false,
  'public rate limited'=>strpos($routes,"middleware('throttle:5,1')")!==false,
  'publish concurrency lock'=>strpos($admin,'lockForUpdate()')!==false,
