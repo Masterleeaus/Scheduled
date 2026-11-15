@@ -489,6 +489,7 @@ check(str_contains($lineBefore($envLines, 'CENTRAL_SERVICE_CLIENT_ID'), 'Service
 check(!str_contains($lineBefore($envLines, 'CENTRAL_SIGNIN_ENABLED'), 'Service client'), 'env template: service client comment is not above the sign-in flag');
 
 require_once __DIR__.'/booking_event_outbox_test.php';
+require_once __DIR__.'/booking_owner_cancel_guard_test.php';
 
 // --- Report -----------------------------------------------------------------
 $total = $passed + count($failures);
