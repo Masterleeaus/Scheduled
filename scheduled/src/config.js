@@ -1,4 +1,5 @@
 import { createPrivateKey } from 'node:crypto';
+import { assertKeyIdAllowed } from './kid-guard.js';
 
 export class ConfigError extends Error {
   constructor(message) {
@@ -31,6 +32,8 @@ export function loadConfig(env = process.env) {
   if (missing.length > 0) {
     throw new ConfigError(`Missing required environment variables: ${missing.join(', ')}`);
   }
+
+  assertKeyIdAllowed(env.SCHEDULED_LINK_KEY_ID.trim(), env);
 
   const productId = env.SCHEDULED_PRODUCT_ID.trim();
   if (!PRODUCT_ID_PATTERN.test(productId)) {

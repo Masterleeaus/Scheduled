@@ -54,6 +54,17 @@ test('rejects a non-Ed25519 or malformed key without echoing it', () => {
   });
 });
 
+test('refuses a test-vector kid outside the test environment', () => {
+  const previous = process.env.NODE_ENV;
+  process.env.NODE_ENV = 'production';
+  try {
+    assert.throws(() => loadConfig({ ...valid, SCHEDULED_LINK_KEY_ID: 'vector-kid-1' }), /reserved for test vectors/);
+  } finally {
+    if (previous === undefined) delete process.env.NODE_ENV;
+    else process.env.NODE_ENV = previous;
+  }
+});
+
 test('accepts escaped newlines in the PEM variable', () => {
   const escaped = pem.replace(/\n/g, '\\n');
   assert.doesNotThrow(() => loadConfig({ ...valid, SCHEDULED_LINK_PRIVATE_KEY_PEM: escaped }));
