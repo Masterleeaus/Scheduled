@@ -3068,7 +3068,7 @@ INSERT INTO `payment_gateways` (`id`, `subtitle`, `title`, `details`, `name`, `t
 (14, NULL, NULL, NULL, 'Stripe', 'automatic', '{\"key\":\"pk_test_UnU1Coi1p5qFGwtpjZMRMgJM\",\"secret\":\"sk_test_QQcg3vGsKRPlW6T3dXcNJsor\",\"text\":\"Pay via your Credit Card.\"}', 'stripe', 1),
 (15, NULL, NULL, NULL, 'Paypal', 'automatic', '{\"client_id\":\"Aal5j466_JNRtBI3Yc-ADcseTX4Cnt25cTeIvvr0aWVvbSBAoFfBe2FnxetYxgId7WGKXyRRM2QHyAKM\",\"client_secret\":\"EO96wJdrs8HfT_cKeXtLmvJNGcau3GkuWr_Pv7RfDYQtjlH0F9Zei5T4_Ehbhl7i14TQPRV8ZzN6U7Wb\",\"sandbox_check\":\"1\",\"text\":\"Pay via your PayPal account.\"}', 'paypal', 1),
 (17, NULL, NULL, NULL, 'Mollie Payment', 'automatic', '{\"key\":\"test_5HcWVs9qc5pzy36H9Tu9mwAyats33J\",\"text\":\"Pay via your Mollie Payment account.\"}', 'mollie', 1),
-(18, NULL, NULL, NULL, 'PayUmoney', 'automatic', '{\"key\":\"gtKFFx\",\"salt\":\"eCwWELxi\",\"text\":\"Pay via your PayUmoney account.\",\"sandbox_check\":\"1\"}', 'payumoney', 0),
+(18, NULL, NULL, NULL, 'PayUmoney', 'automatic', '{\"key\":\"gtKFFx\",\"salt\":\"__PAYUMONEY_SALT__\",\"text\":\"Pay via your PayUmoney account.\",\"sandbox_check\":\"1\"}', 'payumoney', 0),
 (19, NULL, NULL, NULL, 'Mercado Pago', 'automatic', '{\"token\":\"TEST-705032440135962-041006-ad2e021853f22338fe1a4db9f64d1491-421886156\",\"sandbox_check\":\"1\",\"text\":\"Pay via your Mercado Pago account.\"}', 'mercadopago', 1);
 
 -- --------------------------------------------------------

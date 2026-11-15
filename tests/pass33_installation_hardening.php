@@ -27,9 +27,24 @@ $asserts = [
     str_contains($conf, "'pdo_mysql'"),
     str_contains($manager, "'APP_ENV' => 'production'"),
     str_contains($manager, "'APP_DEBUG' => 'false'"),
-    !str_contains($manager, "'INDIPAY_SALT='.'eCwWELxi'"),
+    !str_contains($manager, 'INDIPAY_SALT'),
 ];
 foreach ($asserts as $pass) { if (!$pass) { throw new RuntimeException('Installer safety contract failed'); } $ok++; }
+// PayUmoney salt: the dump must carry the placeholder, and the env var must supply it.
+$dumpSql = file_get_contents($root.'/installer/database.sql');
+if (!str_contains($dumpSql, LegacySqlImporter::PAYUMONEY_SALT_PLACEHOLDER)) { throw new RuntimeException('Dump lacks salt placeholder'); }
+$ok++;
+putenv(LegacySqlImporter::PAYUMONEY_SALT_ENV);
+try { LegacySqlImporter::resolveSeedSecrets($dumpSql); throw new RuntimeException('Missing salt was accepted'); }
+catch (RuntimeException $e) { if (str_contains($e->getMessage(), 'Missing salt')) { throw $e; } $ok++; }
+putenv(LegacySqlImporter::PAYUMONEY_SALT_ENV.'=bad salt;');
+try { LegacySqlImporter::resolveSeedSecrets($dumpSql); throw new RuntimeException('Malformed salt was accepted'); }
+catch (RuntimeException $e) { if (str_contains($e->getMessage(), 'accepted')) { throw $e; } $ok++; }
+putenv(LegacySqlImporter::PAYUMONEY_SALT_ENV.'=test-salt-0001');
+$resolved = LegacySqlImporter::resolveSeedSecrets($dumpSql);
+if (str_contains($resolved, LegacySqlImporter::PAYUMONEY_SALT_PLACEHOLDER) || !str_contains($resolved, '\"salt\":\"test-salt-0001\"')) { throw new RuntimeException('Salt substitution failed'); }
+$ok++;
+putenv(LegacySqlImporter::PAYUMONEY_SALT_ENV);
 $statements = 0;
 foreach (LegacySqlImporter::statements(file_get_contents($root.'/installer/database.sql')) as $stmt) {
     $statements++;
