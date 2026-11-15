@@ -1,5 +1,6 @@
 import { createPublicKey, sign, verify } from 'node:crypto';
 import { PRODUCT_ID_PATTERN } from './config.js';
+import { assertKeyIdAllowed } from './kid-guard.js';
 
 export const ALG = 'EdDSA';
 export const TYP = 'titan-link+jwt';
@@ -103,6 +104,7 @@ export function signLinkAssertion({
   if (!KID_PATTERN.test(nonEmptyString(keyId, 'keyId'))) {
     throw new AssertionError('keyId must be 1 to 64 letters, digits, dots, underscores or hyphens');
   }
+  assertKeyIdAllowed(keyId);
   nonEmptyString(audience, 'audience');
   identifier(sub, 'sub');
   identifier(org, 'org');
@@ -150,6 +152,7 @@ export function centralKeyEntry({ privateKey, keyId, notBefore, notAfter }) {
   if (!KID_PATTERN.test(nonEmptyString(keyId, 'keyId'))) {
     throw new AssertionError('keyId must be 1 to 64 letters, digits, dots, underscores or hyphens');
   }
+  assertKeyIdAllowed(keyId);
   if (typeof notBefore !== 'string' || !RFC3339_PATTERN.test(notBefore) || !Number.isFinite(Date.parse(notBefore))) {
     throw new AssertionError('notBefore must be an RFC 3339 time with an offset');
   }
@@ -169,6 +172,7 @@ export function centralKeyEntry({ privateKey, keyId, notBefore, notAfter }) {
  * @returns {Record<string, unknown>} the verified payload
  */
 export function verifyLinkAssertion({ token, publicKey, keyId, issuer, audience, nonceStore, nowSeconds = Math.floor(Date.now() / 1000) }) {
+  assertKeyIdAllowed(keyId);
   if (typeof token !== 'string') {
     throw new AssertionError('token must be a string');
   }
