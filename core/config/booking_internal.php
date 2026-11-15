@@ -4,6 +4,9 @@ return [
  'secret'=>env('BOOKING_INTERNAL_SECRET',''),
  // Booking writes are tenant-sidecar settings; this Laravel layer cannot enable them.
  'owner_booking_management'=>env('BOOKING_OWNER_MANAGEMENT',true),
+ // Owner-initiated booking_create is off unless explicitly enabled in deployment config.
+ // The sidecar additionally requires per-tenant verified write flags (BookingWriteFeatureGate).
+ 'owner_booking_create_enabled'=>env('BOOKING_OWNER_CREATE_ENABLED',false),
     // False until independent real-DB, concurrency and payment checks are passed.
     'public_commit_enabled' => env('TITAN_BOOKING_PUBLIC_COMMIT_ENABLED', false),
     'intent_secret' => env('TITAN_BOOKING_INTENT_SECRET', ''),

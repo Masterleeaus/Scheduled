@@ -43,7 +43,11 @@ final class BookingOwnerController extends Controller {
  }
 
  public function show(Request $r,BookingOwnerGateway $g,int $id){return $this->invoke($g,'owner_booking_get',['booking_id'=>$id]);}
- public function create(Request $r,BookingOwnerGateway $g){try{$p=BookingOwnerRequest::create($r->all());}catch(\Throwable $e){return response()->json(['error'=>'Invalid booking input'],422);}return $this->invoke($g,'owner_booking_create',$p);}
+ public function create(Request $r,BookingOwnerGateway $g){
+  if(config('booking_internal.owner_booking_create_enabled',false)!==true)return response()->json(['error'=>'Booking creation is not enabled'],503);
+  try{$p=BookingOwnerRequest::create($r->all());}catch(\Throwable $e){return response()->json(['error'=>'Invalid booking input'],422);}
+  return $this->invoke($g,'owner_booking_create',$p);
+ }
  public function cancel(Request $r,BookingOwnerGateway $g,int $id){try{$p=BookingOwnerMutationRequest::cancel(array_merge($r->all(),['booking_id'=>$id]));}catch(\Throwable $e){return response()->json(['error'=>'Invalid cancellation input'],422);}return $this->invoke($g,'owner_booking_cancel',$p);}
  public function reschedule(Request $r,BookingOwnerGateway $g,int $id){try{$p=BookingOwnerMutationRequest::reschedule(array_merge($r->all(),['booking_id'=>$id]));}catch(\Throwable $e){return response()->json(['error'=>'Invalid rescheduling input'],422);}return $this->invoke($g,'owner_booking_reschedule',$p);}
 }
