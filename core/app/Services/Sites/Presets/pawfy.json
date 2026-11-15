@@ -4,7 +4,7 @@
   "accent": "#87a83c",
   "about": "We provide thoughtful, personalised pet care services. Ask about availability, service scope and pricing.",
   "cta_label": "Request pet care",
-  "cta_url": "#booking",
+  "cta_url": "#contact",
   "contact_email": "",
   "phone": "",
   "seo_title": "Pawfy · Pet Care",
@@ -35,6 +35,10 @@
     {
       "question": "Can I choose a service package?",
       "answer": "Contact us to discuss suitable options for your needs."
+    },
+    {
+      "question": "What information should I share about my pet?",
+      "answer": "Tell us the pet's age, temperament, care routine and any specific needs so the service and suitability can be discussed before a visit."
     }
   ],
   "testimonials": [],

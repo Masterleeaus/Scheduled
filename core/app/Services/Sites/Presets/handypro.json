@@ -12,19 +12,19 @@
   "services": [
     {
       "name": "Home cleaning",
-      "description": "A dependable clean for rooms used every day."
+      "description": "Dependable cleaning for everyday living spaces, with the tasks and visit frequency tailored to your home."
     },
     {
       "name": "Office cleaning",
-      "description": "Tidy, welcoming work environments."
+      "description": "Consistent cleaning of work areas, common spaces and high-use surfaces according to an agreed routine."
     },
     {
       "name": "Deep cleaning",
-      "description": "Focused attention where ordinary routines stop."
+      "description": "Focused attention to detailed areas and surfaces that fall outside an ordinary maintenance clean."
     },
     {
       "name": "Specialist requests",
-      "description": "Tell us what your property needs."
+      "description": "Describe your property and the particular task so the team can confirm the scope and suitable equipment."
     }
   ],
   "faqs": [

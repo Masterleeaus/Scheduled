@@ -4,7 +4,7 @@
   "accent": "#8b6c91",
   "about": "We provide thoughtful, personalised mindful movement services. Ask about availability, service scope and pricing.",
   "cta_label": "Request a class",
-  "cta_url": "#booking",
+  "cta_url": "#contact",
   "contact_email": "",
   "phone": "",
   "seo_title": "Yoga & Pilates · Mindful Movement",
@@ -35,6 +35,10 @@
     {
       "question": "Can I choose a service package?",
       "answer": "Contact us to discuss suitable options for your needs."
+    },
+    {
+      "question": "Do I need previous class experience?",
+      "answer": "Mention your experience and movement preferences when enquiring so the session style and suitability can be discussed."
     }
   ],
   "testimonials": [],
