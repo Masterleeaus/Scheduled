@@ -64,4 +64,9 @@ final class OidcDiscovery
     {
         return (string) $this->document()['token_endpoint'];
     }
+
+    public function jwksUri(): string
+    {
+        return (string) $this->document()['jwks_uri'];
+    }
 }
