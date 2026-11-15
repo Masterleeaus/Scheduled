@@ -145,7 +145,7 @@ check(reasonOf(fn () => (new OidcDiscovery(new FakeHttp([['status' => 200, 'json
 
 // --- ID token claims --------------------------------------------------------
 $now = 1_800_000_000;
-$good = ['iss' => 'https://central.example/oidc', 'aud' => 'scheduled-client', 'exp' => $now + 300, 'iat' => $now - 5, 'nonce' => 'n1', 'sub' => 'user-1', 'titan_organisation_id' => '0f8fad5b-d9cb-469f-a165-70867728950e'];
+$good = ['iss' => 'https://central.example/oidc', 'aud' => 'scheduled-client', 'exp' => $now + 300, 'iat' => $now - 5, 'nonce' => 'n1', 'sub' => 'user-1', 'titan_organisation_id' => '0f8fad5b-d9cb-469f-a165-70867728950e', 'titan_organisation_id' => '0f8fad5b-d9cb-469f-a165-70867728950e'];
 $idCheck = fn (array $c, string $nonce = 'n1') => IdTokenClaims::assertValid($c, 'https://central.example/oidc', 'scheduled-client', $nonce, $now);
 $idCheck($good);
 check(true, 'id token: valid claims accepted');
