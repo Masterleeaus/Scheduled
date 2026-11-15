@@ -6,6 +6,9 @@ return [
  'owner_booking_management'=>env('BOOKING_OWNER_MANAGEMENT',true),
  // Off by default: admits the contract names booking_create/booking_cancel/booking_reschedule to the internal client.
  'contract_operations_enabled'=>env('BOOKING_CONTRACT_OPERATIONS_ENABLED',false),
+ // Owner-initiated booking_create is off unless explicitly enabled in deployment config.
+ // The sidecar additionally requires per-tenant verified write flags (BookingWriteFeatureGate).
+ 'owner_booking_create_enabled'=>env('BOOKING_OWNER_CREATE_ENABLED',false),
     // False until independent real-DB, concurrency and payment checks are passed.
     'public_commit_enabled' => env('TITAN_BOOKING_PUBLIC_COMMIT_ENABLED', false),
     'intent_secret' => env('TITAN_BOOKING_INTENT_SECRET', ''),
