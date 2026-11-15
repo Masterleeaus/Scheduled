@@ -26,6 +26,16 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth:a
 
 Route::get('/backup', 'Front\FrontendController@backup');
 
+/*=======================================================
+************** Central sign-in (flag-gated) ************
+=======================================================*/
+// Each action returns 404 unless CENTRAL_SIGNIN_ENABLED is on (default off).
+Route::group(['prefix' => 'auth/titan', 'middleware' => ['web']], function () {
+  Route::get('/login', 'Central\CentralSignInController@login')->name('central.signin.login');
+  Route::get('/callback', 'Central\CentralSignInController@callback')->name('central.signin.callback');
+  Route::post('/logout', 'Central\CentralSignInController@logout')->name('central.signin.logout');
+});
+
 
 /*=======================================================
 ******************** Front Routes **********************
