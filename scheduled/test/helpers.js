@@ -17,7 +17,7 @@ export const baseClaims = (overrides = {}) => ({
   org: 'logto-org-a',
   lu: 'local-user-1',
   la: 'local-account-a',
-  nonce: 'nonce-1',
+  nonce: 'test-nonce-0000000000000001',
   nowSeconds: 1_800_000_000,
   ...overrides,
 });
