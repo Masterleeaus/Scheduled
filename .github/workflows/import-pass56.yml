@@ -1,0 +1,73 @@
+name: Import supplied Pass 56 archive
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/import-pass56.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: import-pass56
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Download and verify original archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download plusagency-cleanto-pass56 --repo "$GITHUB_REPOSITORY" --pattern 'Master-Copy-PlusAgency-Cleanto-Pass56-DATABASE-IDENTITY-CUMULATIVE.zip' --dir "$RUNNER_TEMP/pass56"
+          echo "0ecca7420479da7dcb494f9674f03b387d04d61f12996a86b3937a7798dd0bb8  $RUNNER_TEMP/pass56/Master-Copy-PlusAgency-Cleanto-Pass56-DATABASE-IDENTITY-CUMULATIVE.zip" | sha256sum -c -
+      - name: Extract archive and commit all source files
+        run: |
+          python - <<'PY'
+          import os, pathlib, zipfile, subprocess
+          archive=pathlib.Path(os.environ['RUNNER_TEMP'])/'pass56/Master-Copy-PlusAgency-Cleanto-Pass56-DATABASE-IDENTITY-CUMULATIVE.zip'
+          with zipfile.ZipFile(archive) as z:
+              assert z.testzip() is None, 'Corrupt ZIP'
+              files=[i for i in z.infolist() if not i.is_dir()]
+              assert len(files)==22919
+              for info in files:
+                  p=pathlib.PurePosixPath(info.filename)
+                  assert not p.is_absolute() and '..' not in p.parts and '.git' not in p.parts
+                  assert not info.filename.startswith('.github/'), 'Archive contains workflows'
+              z.extractall('.')
+              for info in files:
+                  subprocess.run(['git','add','-f','--',info.filename],check=True)
+          subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)
+          subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
+          if subprocess.run(['git','diff','--cached','--quiet']).returncode:
+              subprocess.run(['git','commit','-m','Import complete PlusAgency Cleanto Pass 56 cumulative source (22,919 files)'],check=True)
+          PY
+          git push origin HEAD:main
+      - name: Verify every archived file against committed main branch
+        run: |
+          git fetch origin main
+          python - <<'PY'
+          import os, pathlib, zipfile, subprocess
+          archive=pathlib.Path(os.environ['RUNNER_TEMP'])/'pass56/Master-Copy-PlusAgency-Cleanto-Pass56-DATABASE-IDENTITY-CUMULATIVE.zip'
+          tree=subprocess.check_output(['git','ls-tree','-r','-z','origin/main'])
+          blobs={}
+          for entry in tree.split(b'\0'):
+              if entry:
+                  meta,path=entry.split(b'\t',1)
+                  blobs[path.decode()]=meta.split()[2].decode()
+          with zipfile.ZipFile(archive) as z:
+              files=[i for i in z.infolist() if not i.is_dir()]
+              for info in files:
+                  expected=subprocess.check_output(['git','hash-object','--stdin'],input=z.read(info)).decode().strip()
+                  assert blobs.get(info.filename)==expected, info.filename
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
+              out.write('Verified all 22,919 archive files byte-for-byte against committed main branch. Original ZIP SHA-256 verified.\n')
+          print('VERIFIED: all 22,919 files match origin/main')
+          PY
+      - name: Delete consumed release ZIP after successful verification
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete-asset plusagency-cleanto-pass56 Master-Copy-PlusAgency-Cleanto-Pass56-DATABASE-IDENTITY-CUMULATIVE.zip --repo "$GITHUB_REPOSITORY" --yes
+          echo "Deleted consumed release ZIP after main branch verification." >> "$GITHUB_STEP_SUMMARY"
