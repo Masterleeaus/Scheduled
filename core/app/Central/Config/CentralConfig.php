@@ -87,6 +87,17 @@ final class CentralConfig
         return $secret;
     }
 
+    /**
+     * Central sign-in is off unless CENTRAL_SIGNIN_ENABLED is exactly 1 or true (case-insensitive).
+     * Any other value, including empty or unset, keeps the Central routes inert.
+     */
+    public function signInEnabled(): bool
+    {
+        $value = $this->lookup('CENTRAL_SIGNIN_ENABLED');
+
+        return $value !== null && in_array(strtolower(trim($value)), ['1', 'true'], true);
+    }
+
     /** The one organisation whose signed events this Scheduled installation accepts. */
     public function eventsOrganisationId(): string
     {
