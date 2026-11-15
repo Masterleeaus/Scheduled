@@ -25,7 +25,7 @@ jobs:
       - name: Extract archive and commit all source files
         run: |
           python - <<'PY'
-          import os, pathlib, zipfile, subprocess
+          import os, pathlib, zipfile, subprocess, hashlib
           archive=pathlib.Path(os.environ['RUNNER_TEMP'])/'pass56/Master-Copy-PlusAgency-Cleanto-Pass56-DATABASE-IDENTITY-CUMULATIVE.zip'
           with zipfile.ZipFile(archive) as z:
               assert z.testzip() is None, 'Corrupt ZIP'
@@ -36,8 +36,8 @@ jobs:
                   assert not p.is_absolute() and '..' not in p.parts and '.git' not in p.parts
                   assert not info.filename.startswith('.github/'), 'Archive contains workflows'
               z.extractall('.')
-              for info in files:
-                  subprocess.run(['git','add','-f','--',info.filename],check=True)
+              for start in range(0,len(files),250):
+                  subprocess.run(['git','add','-f','--']+[i.filename for i in files[start:start+250]],check=True)
           subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)
           subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
           if subprocess.run(['git','diff','--cached','--quiet']).returncode:
@@ -59,7 +59,8 @@ jobs:
           with zipfile.ZipFile(archive) as z:
               files=[i for i in z.infolist() if not i.is_dir()]
               for info in files:
-                  expected=subprocess.check_output(['git','hash-object','--stdin'],input=z.read(info)).decode().strip()
+                  data=z.read(info)
+                  expected=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
                   assert blobs.get(info.filename)==expected, info.filename
           with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
               out.write('Verified all 22,919 archive files byte-for-byte against committed main branch. Original ZIP SHA-256 verified.\n')
