@@ -19,6 +19,11 @@ final class NativeCheckoutSubmissionExecutor implements CheckoutSubmissionExecut
 
     public function commit(int $owner, array $selection, array $identity, array $personalInfo, string $intentNonce): array
     {
+        // The existing Cleanto writer is MySQL-only. Never route a unified-mode booking
+        // to that writer until a PostgreSQL-native implementation is accepted.
+        if (config('booking_internal.unified_mode', false) === true) {
+            throw new \RuntimeException('PostgreSQL-native booking writer is not yet available');
+        }
         $profile = CheckoutDeploymentProfile::tenant($owner, $this->profiles);
         if (!preg_match('/^[a-f0-9]{32,128}$/D', $intentNonce)) {
             throw new \InvalidArgumentException('Invalid signed intent identifier');
