@@ -30,7 +30,7 @@ namespace {
     \Illuminate\Support\Facades\DB::$installed=array_keys($files);
     \App\Support\Install\InitialFeatureMigrations::apply($dir);
     [$name,$options]=\Illuminate\Support\Facades\Artisan::$invocation;
-    if($name!=='migrate'||count($options['--path'])!==21||empty($options['--force'])||empty($options['--realpath'])) exit(1);
+    if($name!=='migrate'||count($options['--path'])!==22||empty($options['--force'])||empty($options['--realpath'])) exit(1);
     foreach ($options['--path'] as $path){if(!str_contains($path, '/2026_'))exit(2);}
     \Illuminate\Support\Facades\DB::$installed=array_slice(array_keys($files),0,-1);
     try{\App\Support\Install\InitialFeatureMigrations::verify($dir);exit(3);}catch(\RuntimeException $e){}
