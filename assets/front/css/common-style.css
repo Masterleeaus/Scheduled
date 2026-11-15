@@ -5768,7 +5768,6 @@ a#cartIcon .cart-total {
 }
 
 .main-btn {
-<<<<<<< HEAD
   display: inline-block;
   padding: 8px 54px 7px;
   font-size: 14px;
@@ -5781,20 +5780,6 @@ a#cartIcon .cart-total {
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
-=======
-    display: inline-block;
-    padding: 8px 54px 7px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #fff;
-    /* background: #25d06f; */
-    border-radius: 4px;
-    -webkit-transition: all 0.3s ease-out 0s;
-    -moz-transition: all 0.3s ease-out 0s;
-    -ms-transition: all 0.3s ease-out 0s;
-    -o-transition: all 0.3s ease-out 0s;
-    transition: all 0.3s ease-out 0s;
->>>>>>> cbe7452752a1c9c5894ed85281902e6d6bb68094
 }
 
 .main-btn:focus,
