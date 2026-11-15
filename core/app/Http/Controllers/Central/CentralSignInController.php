@@ -15,7 +15,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 /**
- * Central sign-in for the web user guard. Every action returns 404 unless CENTRAL_SIGNIN_ENABLED is on.
+ * Central sign-in for the web user guard. login and callback return 404 unless CENTRAL_SIGNIN_ENABLED is on.
+ * logout always ends the local session, whatever the flag says, so a Central session can never be stuck.
  * Only an existing local user reached through an existing link can sign in. This controller never creates
  * users and never touches the admin guard. Local, Google and Facebook login are separate and unchanged.
  */
@@ -26,7 +27,12 @@ class CentralSignInController extends Controller
     public function login(Request $request)
     {
         [, $signIn] = $this->signIn();
-        $authorization = $signIn->begin();
+        try {
+            $authorization = $signIn->begin();
+        } catch (CentralException $e) {
+            // Discovery or transport failure: send the user back to login with a generic message, never a 500.
+            return $this->failed($request);
+        }
         $request->session()->put(CentralSignIn::SESSION_KEY, [
             'state' => $authorization->state,
             'nonce' => $authorization->nonce,
@@ -69,7 +75,7 @@ class CentralSignInController extends Controller
 
     public function logout(Request $request)
     {
-        $this->signIn();
+        // Local logout only. It does not read the Central flag, so it works whether sign-in is on or off.
         Auth::guard('web')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
