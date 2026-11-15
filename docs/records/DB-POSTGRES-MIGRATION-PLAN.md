@@ -178,3 +178,38 @@ Recommend `timestamptz` for new columns. For legacy `timestamp` columns, convert
 - D4: `text` versus `bytea` for legacy binary content columns.
 - Whether the legacy SQL dump importer is kept, moved to a pgsql path, or removed.
 - Whether MySQL remains supported in parallel during transition, or PostgreSQL is the only target.
+
+## 9. Adjacent inventory (completes step 6.2)
+
+Scope: `private/cleanto/`, `private/booking-sidecar/`, `integration/` and `installer/`, as named in #15.
+Method: case-insensitive grep per token, excluding `vendor/`, `node_modules/` and `storage/`. Counts are files that contain the token, not distinct statements. They are a scoping aid, not a defect count. Section 3 used a different token set, so its totals differ slightly.
+
+| Token or construct | `private/cleanto/` (1797 files) | `private/booking-sidecar/` (260 files) | `integration/` (1542 files) | `installer/` (38 files) |
+|---|---|---|---|---|
+| `mysql` (any case) | 132 | 26 | 210 | 0 |
+| `mariadb` | 0 | 3 | 44 | 0 |
+| `information_schema` | 0 | 6 | 4 | 0 |
+| `GET_LOCK` / `RELEASE_LOCK` | 0 | 1 | 10 | 0 |
+| `FIND_IN_SET` | 2 | 4 | 1 | 0 |
+| `ENGINE=` | 4 | 4 | 13 | 1 |
+| `utf8mb4` | 0 | 3 | 8 | 1 |
+| `AUTO_INCREMENT` | 3 | 1 | 7 | 1 |
+| `INSERT IGNORE` | 0 | 0 | 1 | 0 |
+| `ATTR_DRIVER_NAME` | 0 | 4 | 2 | 0 |
+| `DATABASE()` / `VERSION()` | 16 | 9 | 11 | 0 |
+
+Findings:
+
+- F1. The same constructs as `core/` appear in the booking sidecar (`GET_LOCK`, `information_schema`, `ATTR_DRIVER_NAME`, `FIND_IN_SET`). That sidecar is the booking write path, so it is the highest-risk tree after `core/`.
+- F2. `private/cleanto/` has the largest count of `mysql` mentions (132 files). Most are likely configuration, connection code or comments. It has no `GET_LOCK`, `INSERT IGNORE` or `information_schema` hits, so the risk there is mainly connection config and DDL (`ENGINE=`, `AUTO_INCREMENT`).
+- F3. `integration/` is the largest tree. It holds staging, review and seed SQL (`integration/staging/`, `integration/mysql/`, `integration/mysql-tests/`). Most of its hits are likely test data or historical evidence. Do not port these by search and replace. Decide per directory whether each is kept, moved to a pgsql path or archived.
+- F4. `installer/database.sql` holds the MariaDB dump (`ENGINE=`, `utf8mb4`, `AUTO_INCREMENT`). It is the install schema, so it needs a PostgreSQL equivalent before fresh installs work on pgsql.
+- F5. Correction to section 3: the repository has 10 SQL files outside `vendor/`, not 9. They are 1 in `installer/`, 8 in `integration/` (2 `*.mysql.sql` under `integration/schema/`, 6 under `integration/staging/`) and 1 in `private/booking-sidecar/migrations/`.
+
+Next steps for this inventory (not done in this pass):
+
+1. Open each `integration/` hit by directory, and mark it as keep, port or archive. Owner review is needed for the archive decisions.
+2. Port `installer/database.sql` and the booking sidecar migration to PostgreSQL DDL, under the type mapping in section 5.
+3. Replace the four booking driver guards and the sidecar's `GET_LOCK` and `information_schema` use, as in section 6.
+
+This section does not change any runtime code. It is planning evidence only.
