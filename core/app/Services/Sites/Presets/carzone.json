@@ -35,6 +35,10 @@
     {
       "question": "Can I choose a service package?",
       "answer": "Contact us to discuss suitable options for your needs."
+    },
+    {
+      "question": "What should I provide for a vehicle care quote?",
+      "answer": "Share the vehicle type, condition, preferred service and location so the team can confirm the scope and provide an estimate."
     }
   ],
   "testimonials": [],
