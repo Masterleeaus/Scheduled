@@ -28,6 +28,9 @@ jobs:
       # booking_event_outbox_test.php and booking_owner_cancel_guard_test.php, so they are not run twice.
       # Fixture files are not tests. Any non-zero exit fails the job; nothing is skipped.
       - name: Other PHP test scripts
+        # Installer tests need PAYUMONEY_SALT (LegacySqlImporter preflight, #54). This CI-only throwaway value is not the real salt.
+        env:
+          PAYUMONEY_SALT: ci-only-throwaway-salt
         run: |
           fail=0
           while IFS= read -r f; do
