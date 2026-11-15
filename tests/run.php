@@ -265,6 +265,18 @@ check($consumer->handle($body, $nowOk) === 'duplicate' && $calls === 1, 'consume
 check(reasonOf(fn () => $consumer->handle(signedBody(array_merge($base, ['schemaVersion' => 2]), $secret), $nowOk)) === 'unsupported_event', 'consumer: unsupported version refused');
 check(reasonOf(fn () => $consumer->handle(str_replace('"n":1', '"n":9', $body), $nowOk)) === 'bad_signature' && $calls === 1, 'consumer: tampered event never reaches the handler');
 
+// --- Env template: every variable CentralConfig reads must be declared in core/.env.example ---
+$configSource = (string) file_get_contents(dirname(__DIR__).'/core/app/Central/Config/CentralConfig.php');
+$template = (string) file_get_contents(dirname(__DIR__).'/core/.env.example');
+preg_match_all("/(?:required|lookup)\\(\\s*'([A-Z][A-Z0-9_]*)'\\s*\\)/", $configSource, $readMatches);
+$readNames = array_values(array_unique($readMatches[1]));
+preg_match_all('/^([A-Z][A-Z0-9_]*)=/m', $template, $templateMatches);
+$declared = $templateMatches[1];
+check(count($readNames) >= 9, 'env template: CentralConfig read set was found by the scan');
+foreach ($readNames as $name) {
+    check(in_array($name, $declared, true), "env template: {$name} is read by CentralConfig but missing from core/.env.example");
+}
+
 // --- Report -----------------------------------------------------------------
 $total = $passed + count($failures);
 foreach ($failures as $label) {
