@@ -27,23 +27,23 @@ const ORG_B = 'logto-org-b';
 
 function setup() {
   const links = new LinkRegistry();
-  links.link({ sub: SUB, org: ORG_A, lu: 'lu-1', la: 'la-a' });
-  links.link({ sub: SUB, org: ORG_B, lu: 'lu-1', la: 'la-b' });
+  links.link({ sub: SUB, org: ORG_A, lu: 'local-user-1', la: 'local-account-a' });
+  links.link({ sub: SUB, org: ORG_B, lu: 'local-user-1', la: 'local-account-b' });
   const store = new TenantStore();
   return { links, store };
 }
 
 test('the tenant key comes from the verified org claim', () => {
   const { links } = setup();
-  const access = links.resolveAccess(verifiedFor({ sub: SUB, org: ORG_A, lu: 'lu-1', la: 'la-a' }));
+  const access = links.resolveAccess(verifiedFor({ sub: SUB, org: ORG_A, lu: 'local-user-1', la: 'local-account-a' }));
   assert.equal(access.tenantKey, ORG_A);
-  assert.equal(access.localAccountId, 'la-a');
+  assert.equal(access.localAccountId, 'local-account-a');
 });
 
 test('two companies are isolated in tenant-scoped storage', () => {
   const { links, store } = setup();
-  const accessA = links.resolveAccess(verifiedFor({ sub: SUB, org: ORG_A, lu: 'lu-1', la: 'la-a' }));
-  const accessB = links.resolveAccess(verifiedFor({ sub: SUB, org: ORG_B, lu: 'lu-1', la: 'la-b' }));
+  const accessA = links.resolveAccess(verifiedFor({ sub: SUB, org: ORG_A, lu: 'local-user-1', la: 'local-account-a' }));
+  const accessB = links.resolveAccess(verifiedFor({ sub: SUB, org: ORG_B, lu: 'local-user-1', la: 'local-account-b' }));
   store.insert(accessA, { id: 'visit-1' });
   store.insert(accessB, { id: 'visit-2' });
 
@@ -62,21 +62,21 @@ test('storage refuses to run without a resolved tenant', () => {
 test('a revoked membership loses access while the other membership keeps it', () => {
   const { links } = setup();
   links.revoke(SUB, ORG_B);
-  assert.throws(() => links.resolveAccess(verifiedFor({ sub: SUB, org: ORG_B, lu: 'lu-1', la: 'la-b' })), AccessDeniedError);
-  assert.equal(links.resolveAccess(verifiedFor({ sub: SUB, org: ORG_A, lu: 'lu-1', la: 'la-a' })).tenantKey, ORG_A);
+  assert.throws(() => links.resolveAccess(verifiedFor({ sub: SUB, org: ORG_B, lu: 'local-user-1', la: 'local-account-b' })), AccessDeniedError);
+  assert.equal(links.resolveAccess(verifiedFor({ sub: SUB, org: ORG_A, lu: 'local-user-1', la: 'local-account-a' })).tenantKey, ORG_A);
 });
 
 test('an organisation with no local link is denied', () => {
   const { links } = setup();
-  assert.throws(() => links.resolveAccess(verifiedFor({ sub: SUB, org: 'logto-org-c', lu: 'lu-1', la: 'la-c' })), AccessDeniedError);
+  assert.throws(() => links.resolveAccess(verifiedFor({ sub: SUB, org: 'logto-org-c', lu: 'local-user-1', la: 'local-account-c' })), AccessDeniedError);
 });
 
 test('a link whose local account does not match the assertion is denied', () => {
   const { links } = setup();
-  assert.throws(() => links.resolveAccess(verifiedFor({ sub: SUB, org: ORG_A, lu: 'lu-1', la: 'la-b' })), AccessDeniedError);
+  assert.throws(() => links.resolveAccess(verifiedFor({ sub: SUB, org: ORG_A, lu: 'local-user-1', la: 'local-account-b' })), AccessDeniedError);
 });
 
 test('an unverified payload cannot resolve tenant access', () => {
   const { links } = setup();
-  assert.throws(() => links.resolveAccess({ sub: SUB, org: ORG_A, lu: 'lu-1', la: 'la-a' }), /must be verified/);
+  assert.throws(() => links.resolveAccess({ sub: SUB, org: ORG_A, lu: 'local-user-1', la: 'local-account-a' }), /must be verified/);
 });
