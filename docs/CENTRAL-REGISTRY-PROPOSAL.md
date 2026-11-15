@@ -4,6 +4,19 @@ Status: **proposal, not applied**. This file is for the owner to apply to
 `Masterleeaus/Central`. Nothing in Central has been changed by this repository.
 Refs issue #1 in this repository.
 
+## Status of the registry entry (issue #7)
+
+- **Blocked on Central.** The registry entry is tracked in `Masterleeaus/Central#100`.
+  This repository cannot apply it. Nothing below is applied until the Central owner acts.
+
+## Product contract decisions (issue #7, owner decided)
+
+- Repository identity: this repository is the PlusAgency + Cleanto Laravel application.
+  The Central integration is a module within it.
+- Booking owner: Scheduled owns booking records, reminders and calendar sync (issue #11).
+- Database: PostgreSQL. The current code still targets MySQL/MariaDB. The migration is
+  tracked in issue #15 and is not done.
+
 Scheduled is its own product, not a module of another product (owner decision).
 The product id `scheduled` is a **placeholder** that the owner can change. If it
 changes, update `SCHEDULED_PRODUCT_ID` in `scheduled/.env.example`, the audience
