@@ -32,6 +32,8 @@ final class InitialFeatureMigrations
         '2026_11_11_190000_create_titan_site_booking_settings',
         '2026_11_11_190001_add_published_snapshots_to_titan_landing_campaigns',
         '2026_11_11_270001_create_titan_site_booking_service_maps',
+        '2026_11_15_000001_create_central_processed_events',
+        '2026_11_15_000002_create_booking_event_outbox_tables',
     ];
 
     /** Tables created by the required migrations; verify every one after import. */

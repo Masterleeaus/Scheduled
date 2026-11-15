@@ -11,6 +11,32 @@ use RuntimeException;
  */
 final class LegacySqlImporter
 {
+    /** Marker in installer/database.sql where the PayUmoney salt belongs. */
+    public const PAYUMONEY_SALT_PLACEHOLDER = '__PAYUMONEY_SALT__';
+
+    /** Environment variable that supplies the PayUmoney salt at install time. */
+    public const PAYUMONEY_SALT_ENV = 'PAYUMONEY_SALT';
+
+    /**
+     * Replace the PayUmoney salt placeholder with the value from the environment.
+     * Fails closed when the variable is missing or malformed. The value is limited
+     * to a safe charset so it cannot break the JSON or SQL string it is placed in.
+     */
+    public static function resolveSeedSecrets(string $sql): string
+    {
+        if (! str_contains($sql, self::PAYUMONEY_SALT_PLACEHOLDER)) {
+            return $sql;
+        }
+        $salt = getenv(self::PAYUMONEY_SALT_ENV);
+        if (! is_string($salt) || $salt === '') {
+            throw new RuntimeException('Set the '.self::PAYUMONEY_SALT_ENV.' environment variable to the PayUmoney salt before installing. The bundled schema does not contain it.');
+        }
+        if (! preg_match('/^[A-Za-z0-9._-]{8,128}$/', $salt)) {
+            throw new RuntimeException(self::PAYUMONEY_SALT_ENV.' has an invalid format. Use 8 to 128 letters, digits, dots, underscores or hyphens.');
+        }
+        return str_replace(self::PAYUMONEY_SALT_PLACEHOLDER, $salt, $sql);
+    }
+
     public static function ensureEmptyDatabase(\mysqli $db): void
     {
         $result = $db->query('SELECT COUNT(*) AS n FROM information_schema.tables WHERE table_schema = DATABASE() AND table_type = \'BASE TABLE\'');
@@ -39,6 +65,8 @@ final class LegacySqlImporter
         if (! is_string($sql) || trim($sql) === '') {
             throw new RuntimeException('Bundled installation schema is empty.');
         }
+        // Fail before any DDL if the install-time secret is not supplied.
+        self::resolveSeedSecrets($sql);
         $seen = [];
         $count = 0;
         $skipped = 0;
@@ -91,6 +119,7 @@ final class LegacySqlImporter
         if ($sql === false || $sql === '') {
             throw new RuntimeException('Bundled installation schema is empty.');
         }
+        $sql = self::resolveSeedSecrets($sql);
         $count = 0;
         foreach (self::statements($sql) as $statement) {
             // The purchased demo dump contains known user/admin passwords and hashes.
