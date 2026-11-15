@@ -6,8 +6,10 @@ const DEFAULT_TTL_SECONDS = 300;
  * Single-use nonce storage for link assertions. Each nonce can be consumed once;
  * a second consume, an unknown nonce or an expired nonce all return false.
  *
- * This store is in-memory. A multi-instance deployment needs a shared durable
- * store with the same semantics (tracked in the PR notes).
+ * SINGLE-INSTANCE ONLY. This store is process-local and in-memory. Nonces issued by one
+ * process cannot be consumed by another, and a restart drops them all. Do not run more than
+ * one instance with this store. A multi-instance deployment needs a shared durable store with
+ * the same semantics (tracked in the PR notes; see also core/config/central.php).
  */
 export class NonceStore {
   #pending = new Map();

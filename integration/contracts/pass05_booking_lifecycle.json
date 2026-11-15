@@ -5,7 +5,13 @@
     "booking_cancel",
     "booking_reschedule"
   ],
-  "status": "design_only_not_enabled",
+  "status": "implemented_default_off",
+  "status_notes": {
+    "booking_create": "Implemented in private/booking-sidecar and core/app Booking gateway. Off by default: Laravel config booking_internal.owner_booking_create_enabled (env BOOKING_OWNER_CREATE_ENABLED) and per-tenant booking_writes_enabled, booking_schema_verified, booking_rate_mapping_verified, booking_concurrency_verified.",
+    "not_verified": ["real MySQL/MariaDB concurrency and GET_LOCK behaviour", "tenant migration 0001_titan_booking_requests.sql not applied anywhere", "payment settlement path (bookings are created unpaid)"],
+    "booking_cancel": "not in this change (S5)",
+    "booking_reschedule": "not in this change (S5)"
+  },
   "booking_create_required": [
     "idempotency_key",
     "staff_ids",
