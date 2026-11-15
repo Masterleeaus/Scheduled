@@ -100,7 +100,8 @@ final class BookingEventPublisher
             'schema_version' => BookingEventType::SCHEMA_VERSION,
             'correlation_id' => $correlation,
             'idempotency_key' => $key,
-            'occurred_at' => $now->setTimezone(new DateTimeZone('UTC'))->format('Y-m-d\TH:i:s.v\Z'),
+            // Stored in the column's own DATETIME(3) text form. The envelope converts it to the wire form.
+            'occurred_at' => $now->format('Y-m-d H:i:s.v'),
             'payload_json' => $canonical,
             'payload_digest' => $digest,
             'status' => 'pending',

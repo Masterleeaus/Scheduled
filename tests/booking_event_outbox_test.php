@@ -178,7 +178,7 @@ function runBookingOutboxChecks(): void
     check(($row['event_type'] ?? '') === 'booking_created', 'publisher: wire type is booking_created');
     check(($row['idempotency_key'] ?? '') === 'booking:bk1001:booking_created:r1', 'publisher: idempotency key is booking, type and revision');
     check(($row['correlation_id'] ?? '') === 'booking:bk1001', 'publisher: correlation defaults to the booking');
-    check(($row['occurred_at'] ?? '') === '2026-11-15T09:00:05.000Z' && ($row['status'] ?? '') === 'pending', 'publisher: row time is UTC, status pending');
+    check(($row['occurred_at'] ?? '') === '2026-11-15 09:00:05.000' && ($row['status'] ?? '') === 'pending', 'publisher: row time is the DATETIME(3) text form, UTC, status pending');
     check($publisher->created($booking, 1) === 'replayed' && count($store->rows) === 1, 'publisher: same key and data is a replay');
     check(reasonOf(fn () => $publisher->created(['status' => 'pending'] + $booking, 1)) === 'idempotency_conflict', 'publisher: same key with different data is refused');
     check(reasonOf(fn () => $publisher->created($booking, 0)) === 'invalid_field', 'publisher: revision 0 refused');
@@ -201,6 +201,24 @@ function runBookingOutboxChecks(): void
         'signing: canonical form matches Central verifier',
     );
     check(reasonOf(fn () => new BookingEventEnvelope('too-short')) === 'config_invalid', 'signing: short secret refused');
+
+    // occurredAt round trip: the row's DATETIME(3) text is rewritten to the wire form before signing, so the string
+    // that is signed is the string that is sent. The body is serialised, decoded and verified, as a consumer would.
+    $wireAt = '2026-11-15T09:00:05.000Z';
+    $sentBody = $envelope->body($row);
+    $sentDecoded = json_decode($sentBody, true, 32, JSON_THROW_ON_ERROR);
+    check(($sentDecoded['occurredAt'] ?? null) === $wireAt, 'roundtrip: sent occurredAt is the ISO millisecond form');
+    check(strpos($sentBody, '"occurredAt":"'.$wireAt.'"') !== false, 'roundtrip: serialised body carries the exact wire string');
+    check((new SignedEventVerifier($secret))->verify($sentBody, $nowSec)['occurredAt'] === $wireAt, 'roundtrip: signature covers the sent occurredAt');
+    $fromDb = json_decode(json_encode($row, JSON_THROW_ON_ERROR), true, 32, JSON_THROW_ON_ERROR);
+    check($envelope->body($fromDb) === $sentBody, 'roundtrip: a row re-read from its serialised form gives the same body');
+    check(BookingEventEnvelope::wireTime('2026-11-15T09:00:05.000Z') === $wireAt, 'roundtrip: ISO input normalises to the same wire string');
+    check(BookingEventEnvelope::wireTime('2026-11-15 09:00:05.120') === '2026-11-15T09:00:05.120Z', 'roundtrip: milliseconds are kept');
+    check(reasonOf(fn () => BookingEventEnvelope::wireTime('2026-11-15 09:00:05')) === 'invalid_payload', 'roundtrip: text without milliseconds refused');
+    check(reasonOf(fn () => BookingEventEnvelope::wireTime('2026-11-15T09:00:05.000+11:00')) === 'invalid_payload', 'roundtrip: non-UTC offset refused');
+    $offForm = $row;
+    $offForm['occurred_at'] = '2026-11-15T09:00:05.000+11:00';
+    check(reasonOf(fn () => $envelope->body($offForm)) === 'invalid_payload', 'roundtrip: a stored offset form is refused, not signed');
     $badDigest = $row;
     $badDigest['payload_json'] = str_replace('"bk1001"', '"bk9999"', $row['payload_json']);
     check(reasonOf(fn () => $envelope->body($badDigest)) === 'invalid_payload', 'signing: payload that does not match its digest is refused');
@@ -228,6 +246,11 @@ function runBookingOutboxChecks(): void
         }
     }
     check($typesA === ['booking_created', 'booking_rescheduled', 'booking_cancelled'], 'ordering: one tenant goes out in stream order');
+    $firstSent = json_decode($transport->sent[0]['body'], true, 32, JSON_THROW_ON_ERROR);
+    check(
+        $firstSent['occurredAt'] === '2026-11-15T09:00:05.000Z' && (new SignedEventVerifier($secret))->verify($transport->sent[0]['body'], $nowSec)['occurredAt'] === $firstSent['occurredAt'],
+        'roundtrip: transport body occurredAt is the signed wire string',
+    );
     check(array_reduce($store2->ordered(), static fn (bool $ok, array $r): bool => $ok && $r['status'] === 'published', true), 'delivery: every row marked published');
 
     // A failed head blocks its tenant's later events; the other tenant is not held back.
