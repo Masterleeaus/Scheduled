@@ -35,7 +35,7 @@ final class CentralSignIn
 
     /**
      * @param array<string,mixed> $pending state, nonce and code_verifier stored at begin()
-     * @return array{iss:string, sub:string} verified issuer and subject
+     * @return array{iss:string, sub:string, organisationId:string} verified issuer, subject and tenant
      */
     public function complete(array $pending, mixed $returnedState, mixed $code): array
     {
@@ -78,6 +78,18 @@ final class CentralSignIn
         $now = $this->clock !== null ? ($this->clock)() : time();
         IdTokenClaims::assertValid($claims, $this->discovery->issuer(), $this->audience, $nonce, $now);
 
-        return ['iss' => $this->discovery->issuer(), 'sub' => (string) $claims['sub']];
+        // The company must come from the signature-verified ID token, never URL/query/session state.
+        // Missing or malformed claims fail closed until Logto is configured to emit this contract.
+        $organisationId = $claims['titan_organisation_id'] ?? null;
+        if (!is_string($organisationId)
+            || preg_match('/\\A[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\\z/D', $organisationId) !== 1) {
+            throw new CentralException('missing_organisation', 'Verified Central organisation is required.');
+        }
+
+        return [
+            'iss' => $this->discovery->issuer(),
+            'sub' => (string) $claims['sub'],
+            'organisationId' => strtolower($organisationId),
+        ];
     }
 }
