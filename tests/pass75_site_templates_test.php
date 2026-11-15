@@ -1,9 +1,10 @@
 <?php
 require_once __DIR__.'/../core/app/Services/Sites/SiteTemplates.php';
+require_once __DIR__.'/../core/app/Services/Sites/SiteMarketing.php';
 use App\Services\Sites\SiteTemplates;
 $cases=['residential','commercial','end-of-lease','carpet','windows'];$ok=0;
 function verify75($cond,$label){global $ok;if(!$cond){fwrite(STDERR,"FAIL: $label\n");exit(1);} $ok++;echo "PASS: $label\n";}
-$catalog=SiteTemplates::catalog();verify75(count($catalog)===10,'ten source template definitions preserved');
+$catalog=SiteTemplates::catalog();verify75(count($catalog)===19,'nineteen source template definitions preserved');
 $headlines=[];
 foreach($cases as $key){
  $d=SiteTemplates::make($key);
@@ -12,7 +13,7 @@ foreach($cases as $key){
  verify75(count($d['faqs'])>=3,'three real FAQs '.$key);
  verify75($d['cta_url']==='#contact','contact CTA not unverified booking checkout '.$key);
  verify75(preg_match('/^#[0-9a-fA-F]{6}$/',$d['accent'])===1,'valid accent '.$key);
- verify75(count(array_diff(array_keys($d), ['headline','tagline','accent','cta_label','cta_url','about','services','faqs','contact_email','phone','seo_title','seo_description']))===0,'document schema supported '.$key);
+ verify75(count(array_diff(array_keys($d), ['headline','tagline','accent','cta_label','cta_url','about','services','faqs','contact_email','phone','seo_title','seo_description','testimonials','gallery','team','service_areas','promotions','blog_posts','seo_image','analytics_consent']))===0,'document schema supported '.$key);
  foreach($d['services'] as $s)verify75(isset($s['name'],$s['description'])&&strlen($s['description'])>30,'nontrivial service '.$key);
  $headlines[]=$d['headline'];
  $blade=__DIR__.'/../core/resources/views/front/sites/themes/'.str_replace('-','_',$key).'.blade.php';

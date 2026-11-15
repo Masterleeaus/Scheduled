@@ -1,9 +1,10 @@
 <?php
 require_once __DIR__.'/../core/app/Services/Sites/SiteTemplates.php';
+require_once __DIR__.'/../core/app/Services/Sites/SiteMarketing.php';
 use App\Services\Sites\SiteTemplates;
 $ok=0;
 function check76($condition,$message){global $ok;if(!$condition){fwrite(STDERR,"FAIL: $message\n");exit(1);} $ok++;}
-$catalog=SiteTemplates::catalog();check76(count($catalog)===10,'ten themes registered');
+$catalog=SiteTemplates::catalog();check76(count($catalog)===19,'nineteen themes registered');
 $headlines=[];$colors=[];
 foreach($catalog as $key=>$info){
  $doc=SiteTemplates::make($key);check76(is_array($doc),'valid document '.$key);
@@ -25,7 +26,7 @@ foreach($catalog as $key=>$info){
  check76(strpos(file_get_contents($css),'@media')!==false,'responsive stylesheet '.$key);
  $headlines[]=$doc['headline'];$colors[]=$doc['accent'];
 }
-check76(count(array_unique($headlines))===10,'distinct titles');check76(count(array_unique($colors))===10,'distinct palettes');
+check76(count(array_unique($headlines))===19,'distinct titles');check76(count(array_unique($colors))===19,'distinct palettes');
 $public=file_get_contents(__DIR__.'/../core/resources/views/front/sites/show.blade.php');
 check76(strpos($public,'SiteTemplates::catalog()')!==false,'dispatch all registered themes');
 check76(strpos($public,"@include('front.sites.themes.'")!==false,'blade includes safe catalog');
