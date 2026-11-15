@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { sign as edSign } from 'node:crypto';
+import { randomBytes, sign as edSign } from 'node:crypto';
 import {
   signLinkAssertion,
   verifyLinkAssertion,
@@ -32,7 +32,7 @@ function forge(keys, { header = {}, payload = {} } = {}) {
   const b64 = (o) => Buffer.from(JSON.stringify(o)).toString('base64url');
   const h = { alg: 'EdDSA', typ: 'titan-link+jwt', kid: KEY_ID, ...header };
   const p = {
-    iss: ISSUER, aud: AUDIENCE, sub: 's', org: 'o', lu: 'lu', la: 'la', nonce: 'n',
+    iss: ISSUER, aud: AUDIENCE, sub: 'central-identity-2', org: 'logto-org-b', lu: 'local-user-2', la: 'local-account-b', nonce: 'test-nonce-0000000000000002',
     iat: now, exp: now + 300, ...payload,
   };
   const input = `${b64(h)}.${b64(p)}`;
@@ -61,13 +61,13 @@ test('header carries EdDSA, titan-link+jwt and the kid', () => {
   assert.deepEqual(header, { alg: 'EdDSA', typ: 'titan-link+jwt', kid: KEY_ID });
 });
 
-test('public JWK exposes only the public key', () => {
+test('public JWK holds only kty, crv and x, the members Central accepts', () => {
   const keys = makeKeys();
-  const jwk = publicJwk(keys.privateKey, KEY_ID);
-  assert.deepEqual(Object.keys(jwk).sort(), ['alg', 'crv', 'kid', 'kty', 'use', 'x']);
+  const jwk = publicJwk(keys.privateKey);
+  assert.deepEqual(Object.keys(jwk).sort(), ['crv', 'kty', 'x']);
   assert.equal(jwk.kty, 'OKP');
   assert.equal(jwk.crv, 'Ed25519');
-  assert.equal(jwk.kid, KEY_ID);
+  assert.doesNotMatch(JSON.stringify(jwk), /"d"/);
 });
 
 test('a token signed by another key is rejected', () => {
@@ -81,7 +81,7 @@ test('a tampered payload fails the signature check', () => {
   const store = newStore();
   const [h, , s] = sign(keys, { nonce: store.issue() }).split('.');
   const evil = Buffer.from(JSON.stringify({
-    iss: ISSUER, aud: AUDIENCE, sub: 'x', org: 'other', lu: 'a', la: 'b', nonce: 'n', iat: now, exp: now + 1,
+    iss: ISSUER, aud: AUDIENCE, sub: 'central-identity-x', org: 'logto-org-other', lu: 'local-user-x', la: 'local-account-x', nonce: 'test-nonce-0000000000000003', iat: now, exp: now + 1,
   })).toString('base64url');
   assert.throws(() => verify(keys, `${h}.${evil}.${s}`, store), /signature verification failed/);
 });
@@ -158,7 +158,8 @@ test('nonces are single use', () => {
 
 test('an unissued nonce is rejected', () => {
   const keys = makeKeys();
-  assert.throws(() => verify(keys, sign(keys, { nonce: 'never-issued' }), newStore()), /nonce is unknown/);
+  const unissued = randomBytes(16).toString('base64url');
+  assert.throws(() => verify(keys, sign(keys, { nonce: unissued }), newStore()), /nonce is unknown/);
 });
 
 test('an unverified payload is not treated as verified', () => {
