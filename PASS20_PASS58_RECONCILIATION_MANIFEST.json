@@ -1,0 +1,45 @@
+{
+  "release": "Pass20-Pass58-Functional-Reconciliation",
+  "baseline": "Master-Copy-PlusAgency-Cleanto-Pass19-CUMULATIVE.zip",
+  "historical_pass58_original_archive_found": false,
+  "historical_pass58_sha256_verified": false,
+  "historical_pass58_functional_description": "Concurrent winner readback verifies original Cleanto booking/order/customer linkage, service, duration and exact-one SQL reads",
+  "source_status": "Functional reconstruction based on historical summary and adjacent Pass57/59 source, not original Pass58 restoration",
+  "files": [
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyFullReadbackEvidence.php",
+      "action": "added",
+      "old_sha256": null,
+      "new_sha256": "2a678874f51cafdcf7ce63d9b2644f354d6a2e4dbb03490be3afd28637a6178d",
+      "bytes_new": 1966
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyDatabaseEvidence.php",
+      "action": "modified",
+      "old_sha256": "210439316f3dfc3847e3b8c69615cbd8d0470a7b3bd82380e20978a9f5f373aa",
+      "new_sha256": "74b99fbf13e8b8ca32ed2e3d7713e261e1707f5bce215b4a3e710fde4daebf22",
+      "bytes_new": 721
+    },
+    {
+      "path": "integration/mysql/lifecycle/LifecycleServiceEvidence.php",
+      "action": "modified",
+      "old_sha256": "f1e5ae3245117da02fde8080eaee1a329f195df658045e28409113604e5e11dd",
+      "new_sha256": "79d3467c0b2cb2678deb06aaca01e2e0d234caf8a129caf196c9b9170ef60a44",
+      "bytes_new": 1555
+    },
+    {
+      "path": "integration/tests/pass58_recovery/run.php",
+      "action": "added",
+      "old_sha256": null,
+      "new_sha256": "0369c69b936d34828931e1873dab9bf5b0b6a2f300645272df936093bed2e89a",
+      "bytes_new": 2466
+    }
+  ],
+  "tests": {
+    "targeted_scenarios": 21,
+    "pass59_pass60_script_tests": 53,
+    "live_mariadb": "NOT RUN: no pdo_mysql or database service"
+  },
+  "baseline_entry_count": 22756,
+  "retained_preexisting_file_paths": 22756
+}

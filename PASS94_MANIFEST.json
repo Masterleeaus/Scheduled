@@ -1,0 +1,78 @@
+{
+  "pass": 94,
+  "base": "PlusAgency_Cleanto_Recovery_Candidate_Pass93_BLOCKED_PASS58_MARIADB.zip",
+  "type": "delta_from_pass93",
+  "modified": [
+    "core/app/Booking/Public/Checkout/CheckoutCustomer.php",
+    "core/app/Booking/Public/Checkout/CheckoutNativeCustomer.php",
+    "core/app/Booking/Public/Redemption/CommitCleantoNativeGateway.php",
+    "core/app/Providers/AppServiceProvider.php",
+    "core/config/booking_internal.php",
+    "core/tests/Booking/pass89_checkout_commit_compatibility_test.php"
+  ],
+  "added": [
+    "core/app/Booking/Public/Checkout/CheckoutDeploymentProfile.php",
+    "core/app/Booking/Public/Checkout/NativeCheckoutSubmissionExecutor.php",
+    "core/tests/Booking/pass94_native_executor_test.php"
+  ],
+  "deleted": [],
+  "sha256": {
+    "core/app/Booking/Public/Checkout/CheckoutCustomer.php": "c55c2db0e947d5ad18da089e62bf6475546463d4514bb4f8f5f1671d5e45a183",
+    "core/app/Booking/Public/Checkout/CheckoutDeploymentProfile.php": "fc2ed06a961f21226cd927c359c0eb022bfef0293d27e7a5ca9fb3489e9a28be",
+    "core/app/Booking/Public/Checkout/CheckoutNativeCustomer.php": "13780e11273290b7c6b79e2080b06722289cef5cecc12e9bef4cbe33f9420372",
+    "core/app/Booking/Public/Checkout/NativeCheckoutSubmissionExecutor.php": "077f2bd4885b3a4f27a6d02a490a2dc464d08b3a3899aac89f94f3851bba5616",
+    "core/app/Booking/Public/Redemption/CommitCleantoNativeGateway.php": "c591c2d3427eb25764a35e007e7096fe3d892db4f061d00f3a7535a2380f2352",
+    "core/app/Providers/AppServiceProvider.php": "cc4ffd605d4c36beb754f6a402dca0d286c945b5c36e1092f749b2951565c754",
+    "core/config/booking_internal.php": "852a0892a0eec02759e0503edcc43b1c49e3e905d45f7e838d30c8984cc3cb94",
+    "core/tests/Booking/pass89_checkout_commit_compatibility_test.php": "1fc131817937f367d642dc29544c4d26f4a4066958a7f91178942aadf30de3dc",
+    "core/tests/Booking/pass94_native_executor_test.php": "8da1ab5553cdf0125b448c3cff98a0087e9148f79fe089980782231dcfe08388"
+  },
+  "php_lint": [
+    {
+      "file": "core/app/Booking/Public/Checkout/CheckoutCustomer.php",
+      "passed": true,
+      "message": "No syntax errors detected in /mnt/data/pa94_work/core/app/Booking/Public/Checkout/CheckoutCustomer.php"
+    },
+    {
+      "file": "core/app/Booking/Public/Checkout/CheckoutDeploymentProfile.php",
+      "passed": true,
+      "message": "No syntax errors detected in /mnt/data/pa94_work/core/app/Booking/Public/Checkout/CheckoutDeploymentProfile.php"
+    },
+    {
+      "file": "core/app/Booking/Public/Checkout/CheckoutNativeCustomer.php",
+      "passed": true,
+      "message": "No syntax errors detected in /mnt/data/pa94_work/core/app/Booking/Public/Checkout/CheckoutNativeCustomer.php"
+    },
+    {
+      "file": "core/app/Booking/Public/Checkout/NativeCheckoutSubmissionExecutor.php",
+      "passed": true,
+      "message": "No syntax errors detected in /mnt/data/pa94_work/core/app/Booking/Public/Checkout/NativeCheckoutSubmissionExecutor.php"
+    },
+    {
+      "file": "core/app/Booking/Public/Redemption/CommitCleantoNativeGateway.php",
+      "passed": true,
+      "message": "No syntax errors detected in /mnt/data/pa94_work/core/app/Booking/Public/Redemption/CommitCleantoNativeGateway.php"
+    },
+    {
+      "file": "core/app/Providers/AppServiceProvider.php",
+      "passed": true,
+      "message": "No syntax errors detected in /mnt/data/pa94_work/core/app/Providers/AppServiceProvider.php"
+    },
+    {
+      "file": "core/config/booking_internal.php",
+      "passed": true,
+      "message": "No syntax errors detected in /mnt/data/pa94_work/core/config/booking_internal.php"
+    },
+    {
+      "file": "core/tests/Booking/pass89_checkout_commit_compatibility_test.php",
+      "passed": true,
+      "message": "No syntax errors detected in /mnt/data/pa94_work/core/tests/Booking/pass89_checkout_commit_compatibility_test.php"
+    },
+    {
+      "file": "core/tests/Booking/pass94_native_executor_test.php",
+      "passed": true,
+      "message": "No syntax errors detected in /mnt/data/pa94_work/core/tests/Booking/pass94_native_executor_test.php"
+    }
+  ],
+  "release_status": "blocked_database_and_missing_pass58"
+}

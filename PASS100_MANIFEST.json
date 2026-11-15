@@ -1,0 +1,53 @@
+{
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass99_BLOCKED_PASS58_MARIADB.zip",
+  "pass": 100,
+  "changes": [
+    {
+      "path": "core/app/Http/Controllers/Front/BookingPublicSubmissionController.php",
+      "status": "modified",
+      "old_sha256": "1e6257ac74341237ba5fdab9bb5b19847014f5d3ebf93fe6c8d0a7e6887fa7ed",
+      "new_sha256": "fbe645dadb2cb604cf98b8220d0a50103c44b64b581a1a954a6b937fd8ef37cc",
+      "bytes": 3700
+    },
+    {
+      "path": "core/app/Http/Controllers/Front/BookingPublicCheckoutController.php",
+      "status": "modified",
+      "old_sha256": "49caaf46578bd464e94bd2674fa267cecbe84f963efa7f5d3b6a9d7c729c0fe3",
+      "new_sha256": "1c2c037c9a6956b93dd88e5dafa706fdd4c3236c24ea4d1e02777e0190d10ef5",
+      "bytes": 3145
+    },
+    {
+      "path": "core/tests/Booking/pass100_response_contract_test.php",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "903ed7ec65e501be2109f66e8cc1a1ac444e7a9e3e0352ccf17cf88149b8b1c3",
+      "bytes": 1387
+    },
+    {
+      "path": "PASS100_REPORT.md",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "ada5fe623ae09f5f0cafd81e922b194dc459821a6c38b0ec125e549d51ebaf28",
+      "bytes": 1796
+    }
+  ],
+  "checks": {
+    "core/app/Http/Controllers/Front/BookingPublicSubmissionController.php": {
+      "php_lint": true
+    },
+    "core/app/Http/Controllers/Front/BookingPublicCheckoutController.php": {
+      "php_lint": true
+    },
+    "core/tests/Booking/pass100_response_contract_test.php": {
+      "php_lint": true
+    },
+    "pass100_response_contract_test.php": {
+      "exit_code": 0,
+      "output": "PASS submission rejects malformed input\nPASS submission validation text\nPASS submission infrastructure failure\nPASS submission native executor path\nPASS submission replay status\nPASS submission fail closed\nPASS validation invalid inputs\nPASS validation infrastructure status\nPASS native storage contracts\nPASS private response headers\n"
+    },
+    "core/tests/Booking/pass98_submission_replay_test.php": {
+      "exit_code": 0,
+      "output": "Pass 98: 12 replay propagation assertions passed; database not exercised\n"
+    }
+  }
+}

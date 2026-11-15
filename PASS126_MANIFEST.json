@@ -1,0 +1,32 @@
+{
+  "pass": 126,
+  "base_archive": "PlusAgency_Cleanto_Recovery_Candidate_Pass125_BLOCKED_PASS58_MARIADB.zip",
+  "status": "recovery_candidate_not_production_ready",
+  "mariadb_acceptance_executed": false,
+  "changed_files": [
+    {
+      "path": "PASS126_REPORT.md",
+      "operation": "added",
+      "bytes": 1476,
+      "sha256": "3bbc29363f207fd6828c592ef2c6cc01edd09ae859271526f9aa39d4ae1dcd62"
+    },
+    {
+      "path": "integration/tests/pass126/replay_order_evidence.php",
+      "operation": "added",
+      "bytes": 3490,
+      "sha256": "ed2e1f005ca57ebcaaa12ce8bbac676f60367d33e819b056acaccb995ac3b050"
+    },
+    {
+      "path": "private/booking-sidecar/BookingCreationReplayProof.php",
+      "operation": "modified",
+      "bytes": 904,
+      "sha256": "a10987d9c25381ade438214c2a9e0ba23ba52eb15ef1d5c477b8270f074c7339"
+    },
+    {
+      "path": "private/booking-sidecar/BookingWriteCoordinator.php",
+      "operation": "modified",
+      "bytes": 2879,
+      "sha256": "320dd7ee17a872e99d25b195818e6dd1247ebc28728c1a530be1dd1ade3518dc"
+    }
+  ]
+}

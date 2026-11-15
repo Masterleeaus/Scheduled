@@ -1,0 +1,53 @@
+{
+  "headline": "Build strength on your terms",
+  "tagline": "Personal training built around your goals",
+  "accent": "#df7046",
+  "about": "We provide thoughtful, personalised personal training services. Ask about availability, service scope and pricing.",
+  "cta_label": "Book a training session",
+  "cta_url": "#booking",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Steven Watkins · Personal Training",
+  "seo_description": "Personal training built around your goals",
+  "services": [
+    {
+      "name": "Personal coaching",
+      "description": "Ask us about tailored personal coaching options and availability."
+    },
+    {
+      "name": "Strength training",
+      "description": "Ask us about tailored strength training options and availability."
+    },
+    {
+      "name": "Mobility work",
+      "description": "Ask us about tailored mobility work options and availability."
+    },
+    {
+      "name": "Training plans",
+      "description": "Ask us about tailored training plans options and availability."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I enquire?",
+      "answer": "Send us your preferred service, location and timing using the contact form."
+    },
+    {
+      "question": "Can I choose a service package?",
+      "answer": "Contact us to discuss suitable options for your needs."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local service areas",
+      "description": "Contact us to confirm coverage for your property."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [],
+  "seo_image": "",
+  "analytics_consent": false
+}

@@ -1,0 +1,53 @@
+name: cleanto-booking-acceptance
+services:
+  db:
+    image: mariadb:11.4
+    environment:
+      MARIADB_ROOT_PASSWORD: ${BOOKING_TEST_ROOT_PASSWORD:?Set disposable database password}
+      MARIADB_DATABASE: titan_booking_test_acceptance
+      MARIADB_USER: booking_tester
+      MARIADB_PASSWORD: ${BOOKING_TEST_PASSWORD:?Set disposable user password}
+    command: ["--transaction-isolation=READ-COMMITTED"]
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    volumes:
+      - booking_test_database:/var/lib/mysql
+    networks:
+      isolated:
+        aliases: [mysql-test]
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /workspace
+    volumes:
+      - ../../../../:/workspace:ro
+    depends_on:
+      db: {condition: service_healthy}
+    environment:
+      DB_HOST: db
+      DB_PORT: '3306'
+      DB_DATABASE: titan_booking_test_acceptance
+      DB_USERNAME: booking_tester
+      DB_PASSWORD: ${BOOKING_TEST_PASSWORD:?Set disposable user password}
+      BOOKING_TEST_DB_HOST: mysql-test
+      BOOKING_TEST_HOST: mysql-test
+      BOOKING_TEST_DATABASE: titan_booking_test_acceptance
+      BOOKING_TEST_USER: booking_tester
+      BOOKING_TEST_PASSWORD: ${BOOKING_TEST_PASSWORD:?Set disposable user password}
+      BOOKING_TEST_DB_PORT: '3306'
+      BOOKING_TEST_DB_NAME: titan_booking_test_acceptance
+      BOOKING_TEST_DB_USER: booking_tester
+      BOOKING_TEST_DB_PASSWORD: ${BOOKING_TEST_PASSWORD:?Set disposable user password}
+      BOOKING_LIFECYCLE_ACK: ${BOOKING_LIFECYCLE_ACK:-}
+      BOOKING_ACCEPT_TEST_ONLY: ${BOOKING_ACCEPT_TEST_ONLY:-}
+      BOOKING_LIFECYCLE_FIXTURE: ${BOOKING_LIFECYCLE_FIXTURE:-}
+    networks: [isolated]
+networks:
+  isolated:
+    internal: true
+volumes:
+  booking_test_database:

@@ -1,0 +1,3 @@
+<?php
+declare(strict_types=1);namespace App\Booking\Public\Intent;
+final class IntentCodec{public static function encode(array $value):string{$json=json_encode($value,JSON_THROW_ON_ERROR|JSON_UNESCAPED_SLASHES);return rtrim(strtr(base64_encode($json),'+/','-_'),'=');}public static function decode(string $text):array{if(strlen($text)>4096||!preg_match('/^[a-zA-Z0-9_-]+$/D',$text))throw new \InvalidArgumentException('Invalid token encoding');$v=json_decode(base64_decode(strtr($text,'-_','+/'),true),true,16,JSON_THROW_ON_ERROR);if(!is_array($v))throw new \InvalidArgumentException('Invalid token');return $v;}}

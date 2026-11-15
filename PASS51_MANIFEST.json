@@ -1,0 +1,49 @@
+{
+  "pass": 51,
+  "base": "Master-Copy-PlusAgency-Cleanto-Pass50-INSTALL-BOOTSTRAP-REPAIR-CUMULATIVE.zip",
+  "changes": {
+    "modified": [
+      "core/app/Http/Controllers/Payment/MercadopagoController.php",
+      "core/app/Http/Controllers/Payment/PaypalController.php",
+      "core/app/Http/Controllers/Payment/PayumoneyController.php",
+      "core/app/Http/Controllers/Payment/StripeController.php",
+      "core/app/Http/Controllers/Payment/RazorpayController.php",
+      "core/app/Http/Controllers/Payment/FlutterWaveController.php",
+      "core/app/Http/Controllers/Front/ProductController.php",
+      "core/app/Http/Controllers/Front/FrontendController.php",
+      "core/app/Http/Controllers/User/LoginController.php",
+      "core/app/Http/Controllers/User/RegisterController.php",
+      "core/app/Http/Controllers/Payment/Course/PaystackGatewayController.php",
+      "core/app/Http/Controllers/Payment/Course/InstamojoGatewayController.php",
+      "core/app/Http/Controllers/Payment/Course/FlutterwaveGatewayController.php",
+      "core/app/Http/Controllers/Payment/Course/RazorpayGatewayController.php",
+      "core/app/Http/Controllers/Payment/Course/PayuMoneyController.php",
+      "core/app/Http/Controllers/Payment/Course/StripeGatewayController.php",
+      "core/app/Http/Controllers/Payment/Course/PayPalGatewayController.php",
+      "core/app/Http/Controllers/Payment/Course/MercadoPagoGatewayController.php",
+      "core/app/Http/Controllers/Payment/product/MercadopagoController.php",
+      "core/app/Http/Controllers/Payment/product/PaypalController.php",
+      "core/app/Http/Controllers/Payment/product/PayumoneyController.php",
+      "core/app/Http/Controllers/Payment/product/StripeController.php",
+      "core/app/Http/Controllers/Payment/product/RazorpayController.php",
+      "core/app/Http/Controllers/Payment/product/FlutterWaveController.php",
+      "core/app/Http/Controllers/Payment/causes/MercadopagoController.php",
+      "core/app/Http/Controllers/Payment/causes/PaypalController.php",
+      "core/app/Http/Controllers/Payment/causes/PayumoneyController.php",
+      "core/app/Http/Controllers/Payment/causes/StripeController.php",
+      "core/app/Http/Controllers/Payment/causes/RazorpayController.php",
+      "core/app/Http/Controllers/Payment/causes/FlutterWaveController.php"
+    ],
+    "added": [
+      "tools/test-pass51-route-bootstrap.py",
+      "docs/PASS51_ROUTE_BOOTSTRAP.md"
+    ],
+    "removed": []
+  },
+  "validation": {
+    "artisan_routes": 810,
+    "changed_php_lint": "30/30",
+    "route_bootstrap_test": "passed",
+    "live_mariadb": "not available"
+  }
+}

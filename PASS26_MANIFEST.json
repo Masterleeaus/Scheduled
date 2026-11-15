@@ -1,0 +1,65 @@
+{
+  "pass": 26,
+  "baseline": "Master-Copy-PlusAgency-Cleanto-Pass25-BOOKING-AVAILABILITY-CUMULATIVE.zip",
+  "files": [
+    {
+      "path": "core/app/Services/Sites/BookingVerticalPresentation.php",
+      "change": "added",
+      "bytes_before": 0,
+      "bytes_after": 6004,
+      "sha256": "7316f1d707d7a48390a7827f578c05324f2ac2bc2b65c2db54caae8647c52bef"
+    },
+    {
+      "path": "core/app/Services/Sites/SiteBookingIntegration.php",
+      "change": "modified",
+      "bytes_before": 4152,
+      "bytes_after": 4713,
+      "sha256": "d7e57fe276741fe3e1e86f54e298d94700cc8f9c97666a6d8fc37bf4cdabe335"
+    },
+    {
+      "path": "core/resources/views/front/sites/show.blade.php",
+      "change": "modified",
+      "bytes_before": 4032,
+      "bytes_after": 4067,
+      "sha256": "c92185fcd986db39f13a459225a1314eaf72b5fcd4862af010f77de961ebb061"
+    },
+    {
+      "path": "core/resources/views/front/partials/titan-booking-widget.blade.php",
+      "change": "modified",
+      "bytes_before": 5128,
+      "bytes_after": 5636,
+      "sha256": "4ed2b92f33b40695e76237d530abb5121ce1dc18ec1f56f105bb51e57f00091d"
+    },
+    {
+      "path": "core/resources/views/admin/sites/edit.blade.php",
+      "change": "modified",
+      "bytes_before": 7382,
+      "bytes_after": 8280,
+      "sha256": "730839e9a5677fa7d191bb90db1a355389f67066d64efb2a084096c004c0b79f"
+    },
+    {
+      "path": "assets/front/js/titan-booking-widget.js",
+      "change": "modified",
+      "bytes_before": 15965,
+      "bytes_after": 16051,
+      "sha256": "32a64af45e503e7ed18a076085341c535f4ea91302409ddaa3ded32d4e727641"
+    },
+    {
+      "path": "core/resources/data/vertical-booking-capabilities.json",
+      "change": "added",
+      "bytes_before": 0,
+      "bytes_after": 15720,
+      "sha256": "4144aebd85f0ae6b7c0ff7d4b909560c471d5d4c7b956c593cdb04d380d3dcdf"
+    },
+    {
+      "path": "core/tests/Standalone/VerticalBookingPresentationSmoke.php",
+      "change": "added",
+      "bytes_before": 0,
+      "bytes_after": 2873,
+      "sha256": "02de9aae19451422d90454c7ec93959a61bb8b256ffbb7ef29a83ab2224ff4bc"
+    }
+  ],
+  "added": 3,
+  "modified": 5,
+  "deleted": 0
+}

@@ -1,0 +1,17 @@
+{
+  "pass": 49,
+  "source": "Master-Copy-PlusAgency-Cleanto-Pass48-STAGING-EVIDENCE-CUMULATIVE.zip",
+  "changed": [
+    ".htaccess",
+    "docs/deployment/nginx-security.conf",
+    "integration/install/pass47/README.md",
+    "integration/install/pass47/http-security-check.sh",
+    "tools/install-preflight.php"
+  ],
+  "added": [
+    "docs/PASS49_PRIVATE_HTTP_PROTECTION.md",
+    "tests/pass49-private-http-protection.php"
+  ],
+  "removed": [],
+  "description": "Deny private Cleanto source and ancillary engineering files over HTTP for Apache and Nginx, strengthen probes"
+}

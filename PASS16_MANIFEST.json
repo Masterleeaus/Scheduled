@@ -1,0 +1,61 @@
+{
+  "pass": 16,
+  "base": "Master-Copy-PlusAgency-Cleanto-Pass15-CUMULATIVE.zip",
+  "changed_files": [
+    {
+      "path": "core/app/Http/Controllers/Admin/LandingCampaignController.php",
+      "status": "modified",
+      "sha256": "4202441121c6a71466ce9222e9f9c6c74f1f0a4b20d3f5a2863d739617259c3c",
+      "bytes": 7185
+    },
+    {
+      "path": "core/app/Services/Landing/CampaignDesign.php",
+      "status": "modified",
+      "sha256": "f748d8316c86bf1f9e3cfa8c181abb08e7135a4bdab4121a45dc66aa74378445",
+      "bytes": 4504
+    },
+    {
+      "path": "core/app/Services/Landing/CampaignInput.php",
+      "status": "modified",
+      "sha256": "3bd69e3b3128dabe25f9c7d3a87bae2932385a27a290cf6db5659cdd13a50a75",
+      "bytes": 2165
+    },
+    {
+      "path": "core/public/assets/landing/admin.js",
+      "status": "modified",
+      "sha256": "09024a4622e02a7728c2f1c014606e6cae102833dff64535b8350a331f7ce36c",
+      "bytes": 4096
+    },
+    {
+      "path": "core/public/assets/landing/campaign.css",
+      "status": "modified",
+      "sha256": "8bc9ed0c23bb0ee956a4da601ae4086a23a5bfc38d193a0cfd9a005dee74abd1",
+      "bytes": 3596
+    },
+    {
+      "path": "core/resources/views/admin/landing/edit.blade.php",
+      "status": "modified",
+      "sha256": "9661ddf75220685ebcfcb051cf3c8f20d48e95be343c58e4f23f445471e2d14a",
+      "bytes": 9389
+    },
+    {
+      "path": "core/resources/views/front/landing/show.blade.php",
+      "status": "modified",
+      "sha256": "920c90eab74b07fcc6a358e3dc36d0c58a20ee8f45a194b26d711d01ce861360",
+      "bytes": 3992
+    },
+    {
+      "path": "core/routes/web.php",
+      "status": "modified",
+      "sha256": "5ee06967d7a85e94effc6dfc1d796e817893eb491644c2c1ec78812d9092e6ab",
+      "bytes": 103835
+    },
+    {
+      "path": "scripts/check_landing_pass16.php",
+      "status": "added",
+      "sha256": "bedfb8494f55d294565563c851d5bf32831b6a6eae62fc5d415bd8eb1125af4f",
+      "bytes": 560
+    }
+  ],
+  "notes": "Landing campaign image block and upload integration; no database-provider acceptance."
+}

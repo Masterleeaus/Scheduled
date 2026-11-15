@@ -1,0 +1,15 @@
+{
+  "type": "pass63-blocked-checkpoint",
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass62_MISSING_PASS58.zip",
+  "baseline_sha256": "cd6032e9720c10f1c7376a6f37d3427e2062f96a269fef4fb6394191b3e6ebae",
+  "pass58_missing": true,
+  "php_tests_passed": 1197,
+  "php_tests_total": 1197,
+  "php_lint_passed": 545,
+  "php_lint_total": 545,
+  "mysql_acceptance": "skipped_pdo_mysql_missing",
+  "changed_files": [
+    "integration/mysql/pass63_preflight.sh"
+  ],
+  "release_ready": false
+}

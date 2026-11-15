@@ -1,0 +1,64 @@
+{
+  "headline": "Leave the keys. Keep your momentum.",
+  "tagline": "An organised move-out clean for a smoother handover.",
+  "accent": "#8B5D37",
+  "about": "Moving is demanding. A clear task list, sensible scheduling and detailed cleaning scope can simplify the final days of a tenancy. Specific agency requirements can be considered when quoting.",
+  "cta_label": "Request a tailored quote",
+  "cta_url": "#contact",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "End-of-lease cleaning",
+  "seo_description": "An organised move-out clean for a smoother handover.",
+  "services": [
+    {
+      "name": "Kitchen detail",
+      "description": "Cabinet exteriors, splashbacks, benches and accessible surfaces according to scope."
+    },
+    {
+      "name": "Bathrooms and wet areas",
+      "description": "Attention to mirrors, fixtures, tiles and high-use surfaces."
+    },
+    {
+      "name": "Living areas and bedrooms",
+      "description": "Dusting, surfaces, skirting and floors within the agreed checklist."
+    },
+    {
+      "name": "Optional additions",
+      "description": "Ask about appliances, windows, carpets and other extras when requesting a quote."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does the clean guarantee my bond refund?",
+      "answer": "Bond decisions depend on the tenancy and inspection; no bond outcome is guaranteed."
+    },
+    {
+      "question": "Should I empty the property first?",
+      "answer": "An empty property generally makes thorough access easier. Confirm requirements before the visit."
+    },
+    {
+      "question": "Can I provide an inspection checklist?",
+      "answer": "Yes. Include the checklist with your enquiry so it can inform the scope."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local End Of Lease service areas",
+      "description": "Contact us to confirm availability for your suburb or neighbourhood."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [
+    {
+      "title": "End Of Lease cleaning preparation",
+      "summary": "A practical checklist before your appointment.",
+      "body": "Clear access to the work area, identify priority surfaces and discuss any delicate materials before cleaning begins.",
+      "slug": "end-of-lease-preparation"
+    }
+  ],
+  "seo_image": "",
+  "analytics_consent": false
+}

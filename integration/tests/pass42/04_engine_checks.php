@@ -1,0 +1,11 @@
+<?php
+declare(strict_types=1);
+$root=dirname(__DIR__,3);
+spl_autoload_register(static function(string $class)use($root):void {
+ $prefix='Titan\\BookingSidecar\\';if(str_starts_with($class,$prefix)){$name=substr($class,strlen($prefix));$file=$root.'/private/booking-sidecar/'.$name.'.php';if(is_file($file))require_once $file;}
+});
+function verify(bool $ok,string $message):void{if(!$ok)throw new RuntimeException($message);}
+function rejected(callable $fn):void{try{$fn();}catch(InvalidArgumentException|DomainException|LogicException $e){return;}throw new RuntimeException('Expected rejection');}
+
+$tables=array_keys(Titan\BookingSidecar\BookingLiveWriteColumns::required());$engines=array_fill_keys($tables,'InnoDB');verify(Titan\BookingSidecar\BookingLiveWriteEnginePolicy::errors($engines)===[],'innodb');$engines['ct_bookings']='MyISAM';verify(count(Titan\BookingSidecar\BookingLiveWriteEnginePolicy::errors($engines))===1,'myisam');
+echo "PASS 04_engine_checks.php\n";

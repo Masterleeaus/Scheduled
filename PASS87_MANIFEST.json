@@ -1,0 +1,42 @@
+{
+  "pass": 87,
+  "base": "PlusAgency_Cleanto_Recovery_Candidate_Pass86_BLOCKED_PASS58_MARIADB.zip",
+  "changed_files": [
+    {
+      "path": "PASS87_REPORT.md",
+      "status": "added",
+      "old_sha256": null,
+      "sha256": "59bb1edb2ee7bd071b19d8ebd2971312d41436466873ca2e922cf986b01d2a86",
+      "size": 1267
+    },
+    {
+      "path": "assets/front/css/titan-booking-widget.css",
+      "status": "modified",
+      "old_sha256": "f564bb03f62da0c9c8021b42f45d1bfa54adb79bd33266fd4dfdd21dc6c9d471",
+      "sha256": "1cc98c39f9a05b9d998a0c1734cca4de80528ca795cbaeacf26a433491f5365e",
+      "size": 2661
+    },
+    {
+      "path": "assets/front/js/titan-booking-widget.js",
+      "status": "modified",
+      "old_sha256": "99cf807c195420583eae0c0a2864dda2c3cdd405705758b06b04abca526a0206",
+      "sha256": "08404289c916de4123ad0aaeb52ef687620ea3719b5238d27e4adc634b087460",
+      "size": 8074
+    },
+    {
+      "path": "core/resources/views/front/partials/titan-booking-widget.blade.php",
+      "status": "modified",
+      "old_sha256": "d1f4f3c41edaf946f9a19a82c6eb05504a93c83d155f5f3fb005d7cbdf909a04",
+      "sha256": "aca1dacd1cd0666788415c0e67b874e2c156960d355530d4e1c92759ddef665a",
+      "size": 2928
+    },
+    {
+      "path": "core/tests/Booking/pass87_public_slot_intent_contract_test.js",
+      "status": "added",
+      "old_sha256": null,
+      "sha256": "ac8e2ea8ef9edcfdd18ed166b0f712f2f775331bd61615a616f0e413568acee0",
+      "size": 1715
+    }
+  ],
+  "note": "Pass 58 missing; no live MariaDB or browser E2E"
+}

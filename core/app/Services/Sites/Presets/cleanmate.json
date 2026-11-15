@@ -1,0 +1,57 @@
+{
+  "headline": "A brighter home starts here.",
+  "tagline": "Practical cleaning, maid services and garden upkeep for busy households.",
+  "accent": "#6c982d",
+  "about": "Thoughtful household cleaning with adaptable services and a straightforward booking conversation.",
+  "cta_label": "Request a quote",
+  "cta_url": "#contact",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "CleanMate · Home & Garden",
+  "seo_description": "Practical cleaning, maid services and garden upkeep for busy households.",
+  "services": [
+    {
+      "name": "House cleaning",
+      "description": "Routine or one-time cleaning built around your household."
+    },
+    {
+      "name": "Garden upkeep",
+      "description": "Outdoor tidying and seasonal garden maintenance."
+    },
+    {
+      "name": "Move-in & move-out",
+      "description": "Detailed cleaning for a change of home."
+    },
+    {
+      "name": "Window and glass",
+      "description": "Bright, streak-free windows and glass surfaces."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I get a quote?",
+      "answer": "Send us the details of your property and the work required using the enquiry form."
+    },
+    {
+      "question": "Can I tailor the service?",
+      "answer": "Yes. We can discuss the areas, frequency and timing that best suit your needs."
+    },
+    {
+      "question": "What areas do you cover?",
+      "answer": "Get in touch and we will confirm service availability for your location."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local service areas",
+      "description": "Contact us to confirm coverage for your property."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [],
+  "seo_image": "",
+  "analytics_consent": false
+}

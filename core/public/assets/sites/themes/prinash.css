@@ -1,0 +1,44 @@
+
+/* Source-adapted prinash website theme. Styling is scoped to its installed site. */
+.import-prinash-head,.import-prinash~.import-footer{font-family:system-ui,-apple-system,sans-serif}
+.import-prinash-head{background:#fff;color:#103b50;border-bottom:1px solid #e0e5e6}
+.import-prinash-head .imported-nav{display:flex;align-items:center;justify-content:space-between;min-height:80px;gap:20px}
+.import-prinash-head .import-brand{font-weight:850;font-size:1.35rem;color:#103b50;text-decoration:none}
+.import-prinash-head nav{display:flex;gap:22px;flex-wrap:wrap}
+.import-prinash-head nav a{color:#103b50;text-decoration:none;font-weight:600}
+.import-prinash-head .import-nav-cta{background:var(--site-accent);color:#fff;padding:12px 18px;border-radius:0;text-decoration:none;font-weight:750}
+.import-prinash{color:#103b50;background:#fff;font-family:system-ui,-apple-system,sans-serif}
+.import-prinash .import-hero{background:linear-gradient(90deg,rgba(5,38,60,.95),rgba(5,38,60,.18)),url('/assets/sites/imported/prinash/hero.jpg') center/cover no-repeat;color:#fff;min-height:530px;display:flex;align-items:center;padding:90px 0}
+.import-prinash .import-hero-grid{width:100%}
+.import-prinash .import-hero-copy{max-width:670px}
+.import-prinash .import-kicker{font-weight:800;letter-spacing:.17em;font-size:.79rem;text-transform:uppercase;color:var(--site-accent);margin-bottom:20px}
+.import-prinash .import-hero .import-kicker{color:#fff}
+.import-prinash h1{font-size:clamp(2.7rem,5.5vw,5.5rem);letter-spacing:-.04em;line-height:1.05;margin:0 0 23px;font-weight:850;color:#fff}
+.import-prinash h2{font-size:clamp(2rem,3.2vw,3.2rem);line-height:1.15;letter-spacing:-.03em;margin:0 0 24px;color:#103b50}
+.import-prinash h3{margin:0 0 12px;font-size:1.25rem;color:#103b50}
+.import-prinash p{line-height:1.75}
+.import-prinash .import-subtitle{font-size:1.2rem;max-width:560px;margin-bottom:32px}
+.import-prinash .import-primary{display:inline-flex;gap:18px;align-items:center;background:var(--site-accent);color:#fff;padding:16px 24px;text-decoration:none;font-weight:800;border-radius:0}
+.import-prinash .import-about{display:grid;grid-template-columns:1fr 1fr;gap:7%;align-items:center;padding-top:92px;padding-bottom:92px}
+.import-prinash .import-about-art img{width:100%;max-height:450px;object-fit:cover;border-radius:0;display:block}
+.import-prinash .import-about-copy p{max-width:560px}
+.import-prinash .import-text-link{font-weight:750;color:var(--site-accent)}
+.import-prinash .import-services{background:#eaf2f5;padding:90px 0}
+.import-prinash .import-services h2{max-width:740px}
+.import-prinash .import-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.import-prinash .import-service{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:0;padding:30px;box-shadow:0 7px 24px rgba(0,0,0,.035);transform:none}
+.import-prinash .import-number{display:block;color:var(--site-accent);font-weight:900;font-size:1.3rem;margin-bottom:20px}
+.import-prinash .import-service a{color:var(--site-accent);font-weight:750;text-decoration:none}
+.import-prinash .import-showcase{display:grid;grid-template-columns:.8fr 1.2fr;gap:8%;align-items:center;padding-top:90px;padding-bottom:90px}
+.import-prinash .import-image-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.import-prinash .import-image-pair img{width:100%;height:320px;object-fit:cover;border-radius:0}
+.import-prinash .import-faq{background:#eaf2f5;padding:90px 0}
+.import-prinash .import-faq details{border-bottom:1px solid #b8c6c9;padding:20px 0;max-width:850px}
+.import-prinash .import-faq summary{cursor:pointer;font-weight:750}
+.import-prinash .import-contact{background:#103b50;color:#fff;padding:75px 0;text-align:center}
+.import-prinash .import-contact h2{color:#fff}
+.import-prinash .import-contact .import-kicker{color:#fff}
+.import-prinash .import-contact a{color:#fff}
+.import-prinash~.import-footer{background:#101e24;color:#fff;padding:26px 0}
+@media(max-width:850px){.import-prinash-head .imported-nav{flex-wrap:wrap;padding-top:18px;padding-bottom:18px}.import-prinash-head nav{order:3;width:100%;font-size:.9rem}.import-prinash .import-about,.import-prinash .import-showcase{grid-template-columns:1fr;gap:30px}.import-prinash .import-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.import-prinash .import-hero{min-height:480px;padding:60px 0}.import-prinash .import-cards{grid-template-columns:1fr}.import-prinash .import-image-pair img{height:190px}.import-prinash-head .import-nav-cta{font-size:.86rem}}

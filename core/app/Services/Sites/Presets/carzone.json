@@ -1,0 +1,53 @@
+{
+  "headline": "Detailing worth driving for",
+  "tagline": "Thoughtful vehicle care, inside and out",
+  "accent": "#b82d3d",
+  "about": "We provide thoughtful, personalised vehicle care services. Ask about availability, service scope and pricing.",
+  "cta_label": "Request detailing",
+  "cta_url": "#booking",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Carzone · Vehicle Care",
+  "seo_description": "Thoughtful vehicle care, inside and out",
+  "services": [
+    {
+      "name": "Car detailing",
+      "description": "Ask us about tailored car detailing options and availability."
+    },
+    {
+      "name": "Interior refresh",
+      "description": "Ask us about tailored interior refresh options and availability."
+    },
+    {
+      "name": "Exterior care",
+      "description": "Ask us about tailored exterior care options and availability."
+    },
+    {
+      "name": "Specialty vehicle care",
+      "description": "Ask us about tailored specialty vehicle care options and availability."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I enquire?",
+      "answer": "Send us your preferred service, location and timing using the contact form."
+    },
+    {
+      "question": "Can I choose a service package?",
+      "answer": "Contact us to discuss suitable options for your needs."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local service areas",
+      "description": "Contact us to confirm coverage for your property."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [],
+  "seo_image": "",
+  "analytics_consent": false
+}

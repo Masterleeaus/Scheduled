@@ -1,0 +1,34 @@
+{
+  "base": "PlusAgency_Cleanto_Recovery_Candidate_Pass115_BLOCKED_PASS58_MARIADB.zip",
+  "pass": 116,
+  "files": {
+    "core/app/Booking/Public/Checkout/CheckoutCustomer.php": {
+      "sha256": "77e019e9eaaaed822a8cc66b66f35e71d5bd5e69149c815b8509383611fb34bf",
+      "bytes": 3455
+    },
+    "core/app/Booking/Public/Checkout/CheckoutNativeCustomer.php": {
+      "sha256": "07306c1374e2cdbf2ad6dcec697d65ed430b9ae56452196a8d1de4098a18e742",
+      "bytes": 1687
+    },
+    "core/resources/views/front/partials/titan-booking-widget.blade.php": {
+      "sha256": "be9fa3ee5cb8e3227fd3868adf9ba45200a133f77ca776d45b851f0f1bc73f46",
+      "bytes": 4671
+    },
+    "assets/front/js/titan-booking-widget.js": {
+      "sha256": "245105161654a82c71b5b75b71c7c18e4a162fc7a4fa26f469e979c4f63a041e",
+      "bytes": 10772
+    },
+    "tests/pass116/structured_address_test.php": {
+      "sha256": "ef7064001bfb6295c100a61317d62a92fe1f392f4da6433969440b9547f6ac4e",
+      "bytes": 2515
+    },
+    "tests/pass116/widget_contract_test.js": {
+      "sha256": "a6673d42f487ee9903ef0b5fee20ff4ce029e19bd5266832ae132a8136cac9fc",
+      "bytes": 983
+    },
+    "PASS116_REPORT.md": {
+      "sha256": "2685fa7f75ec20fa7a7f12fb342e727bfdb736e23796fe723740a7420ddf5d2a",
+      "bytes": 1530
+    }
+  }
+}

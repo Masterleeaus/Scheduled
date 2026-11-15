@@ -1,0 +1,4325 @@
+{
+  "classification": "REVIEW_ONLY_NOT_APPLIED",
+  "sources": [
+    {
+      "file": "private/cleanto/class_configure.php",
+      "sha256": "ec69004d6f364c3037bb771a86f4e3396fd10b07f6b679e1ff56232c78266ce9",
+      "statement_count": 86,
+      "statements": [
+        {
+          "variable": "query",
+          "operation": "CREATE",
+          "table": "ct_addon_service_rate",
+          "line": 19,
+          "sql_sha256": "44053a0de1bd2b0488bb1e2ec23b6452a45205b3a523b239c213fe15293028b3",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "admin_info",
+          "operation": "CREATE",
+          "table": "ct_admin_info",
+          "line": 30,
+          "sql_sha256": "bae568958a4f1a7250faaf56cda77976afd2bb8d7efb4d0bfce313d5c1d55a1c",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "bookings",
+          "operation": "CREATE",
+          "table": "ct_bookings",
+          "line": 63,
+          "sql_sha256": "b11293a71c5ddb7ec514ec0a7a5b6b6a28ef56a985347bde935133e5f60237cd",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "booking_addons",
+          "operation": "CREATE",
+          "table": "ct_booking_addons",
+          "line": 87,
+          "sql_sha256": "88c21e0e71958a817bdccc0cac142054442f276cdef098af5cc25d9a26d1d196",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "coupons",
+          "operation": "CREATE",
+          "table": "ct_coupons",
+          "line": 99,
+          "sql_sha256": "973637ab460b156da2039446a0d8cec3e2e275f26343af364a6b2b194133d2a3",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "frequently_discount",
+          "operation": "CREATE",
+          "table": "ct_frequently_discount",
+          "line": 113,
+          "sql_sha256": "16a6a9b13d5aee37162ca84a2ded1777673323e6a2ead31c82bf5c8e06846950",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "off_days",
+          "operation": "CREATE",
+          "table": "ct_off_days",
+          "line": 128,
+          "sql_sha256": "86475752fef4430e718fafe27586a92c6f21ffb6ef232a237a45804b789a15dc",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "order_client_info",
+          "operation": "CREATE",
+          "table": "ct_order_client_info",
+          "line": 139,
+          "sql_sha256": "027ae338755d10c0d352375e3116af56c7920d775712f3dae849d4af77f7b59f",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "payments",
+          "operation": "CREATE",
+          "table": "ct_payments",
+          "line": 153,
+          "sql_sha256": "2a007f26d1a60a250d036e5094effaf37e0ff17155b10d7ae7ef3a822f3e261f",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "schedule_breaks",
+          "operation": "CREATE",
+          "table": "ct_schedule_breaks",
+          "line": 175,
+          "sql_sha256": "bb1469841ca14fbb6ee7595874a436ea90e9c79c3d913923f21f22383e7c5566",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "schedule_offtimes",
+          "operation": "CREATE",
+          "table": "ct_schedule_offtimes",
+          "line": 187,
+          "sql_sha256": "94f88ad1e1c2c9349bc5f68ab59b29736886b6b94b676b83dd0f47e5a0b238cd",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "services",
+          "operation": "CREATE",
+          "table": "ct_services",
+          "line": 197,
+          "sql_sha256": "ad97d98337c1c339483b83e598df9486f2df99a567920ac12cc47d964a13ee56",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "services_addon",
+          "operation": "CREATE",
+          "table": "ct_services_addon",
+          "line": 210,
+          "sql_sha256": "49e187425a68711bebcb7fd764eab2d188296f39cef851a4c764962817953314",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "services_method",
+          "operation": "CREATE",
+          "table": "ct_services_method",
+          "line": 231,
+          "sql_sha256": "816dec05df6c279f0f3140c1390998fa0adfaf9d1ab3021f4f36b88ca001b729",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "services_methods_units_rate",
+          "operation": "CREATE",
+          "table": "ct_services_methods_units_rate",
+          "line": 242,
+          "sql_sha256": "7f5f2c1f731b4cc6fa27f28138daa6a02bf839ee5ef6a8984a0b63f7b3167503",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "service_methods_design",
+          "operation": "CREATE",
+          "table": "ct_service_methods_design",
+          "line": 253,
+          "sql_sha256": "e8c6cba3a31942204d40cd0dbea924c0299a3d99a893082b2f2b0cab2379181c",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "services_methods_units",
+          "operation": "CREATE",
+          "table": "ct_service_methods_units",
+          "line": 262,
+          "sql_sha256": "18ad5c12443dd9be5097269f59e872011121df93fcabda13caff87f11a0116cb",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_referral_coupon",
+          "operation": "CREATE",
+          "table": "ct_referral_coupon",
+          "line": 285,
+          "sql_sha256": "fae28de693a6099674ca999c875528c69998d836de86ff55709471e399e6e099",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_register_otp",
+          "operation": "CREATE",
+          "table": "ct_register_otp",
+          "line": 298,
+          "sql_sha256": "fd2215027e7e12f663eff4bb71d0deed2583c97fb6e7c6b951f5fe46399b4714",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_staff_gc",
+          "operation": "CREATE",
+          "table": "ct_staff_gc",
+          "line": 307,
+          "sql_sha256": "334cd95ea3d176badde255b22cc8a367a539ef6c72becae3e8832625ea90bb1f",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_transfer_request",
+          "operation": "CREATE",
+          "table": "ct_transfer_request",
+          "line": 324,
+          "sql_sha256": "2d536f477291d6a7368be8cdbffed44123fd988958ae1a5a24ea46d3de7ea681",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_wallet_history",
+          "operation": "CREATE",
+          "table": "ct_wallet_history",
+          "line": 334,
+          "sql_sha256": "5060cf2302e5c73c7275f6d43f0961863fe7c78cdc7a37daf936d613228f40cc",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "settings",
+          "operation": "CREATE",
+          "table": "ct_settings",
+          "line": 353,
+          "sql_sha256": "bdf89206d29f022c3ca3c28e29b3f7209dc0f49fdae0aeea837d75cc7526e2b0",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "users",
+          "operation": "CREATE",
+          "table": "ct_users",
+          "line": 363,
+          "sql_sha256": "9f95e6d47d438f3b22604126fdd54b68b25663590f93aedaf74949588acba651",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "week_days_available",
+          "operation": "CREATE",
+          "table": "ct_week_days_available",
+          "line": 389,
+          "sql_sha256": "9d5a80cbae3bea93b3e516e699971979f4bb59d998a70f02dd147347f4b597ca",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "languages",
+          "operation": "CREATE",
+          "table": "ct_languages",
+          "line": 403,
+          "sql_sha256": "57bf1a866fa4ecbbafa91d645fd0ddfacb5c88fabec42cce54967f6e5784080d",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query1",
+          "operation": "INSERT",
+          "table": "ct_admin_info",
+          "line": 426,
+          "sql_sha256": "6f3bea0b809e65aebebccc47ca4db344cdafa5c6e342b1368d915d05193eaeb9",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": true
+        },
+        {
+          "variable": "query2",
+          "operation": "INSERT",
+          "table": "ct_frequently_discount",
+          "line": 432,
+          "sql_sha256": "786a9ae80df88d1f10ab3ee9beaa566f78646974da40143a1ad7f6f095680c2d",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query3",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 439,
+          "sql_sha256": "2c98940ec541b1bfc7fb8ec947f9f09da74dae609e47df7aedaf6eab1074ed19",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": true
+        },
+        {
+          "variable": "ct_addon_service_rate2",
+          "operation": "ALTER",
+          "table": "ct_addon_service_rate",
+          "line": 717,
+          "sql_sha256": "0aafa41aa25215ae9fdcf6d2de5856c9fddbf1ea26d77a573fe9c7223cd798f3",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "addon_service_id",
+              "unit",
+              "rate"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_admin_info2",
+          "operation": "ALTER",
+          "table": "ct_admin_info",
+          "line": 720,
+          "sql_sha256": "cdc017317b1aa16447cfb71c975510eb9cdc5e8d8ff1e89fbd9b977f835c96c2",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "password",
+              "email",
+              "fullname",
+              "phone",
+              "address",
+              "city",
+              "state",
+              "zip",
+              "country",
+              "role",
+              "description",
+              "commision_value",
+              "image",
+              "service_ids",
+              "staff_wallet_amount",
+              "paypal_api_username",
+              "paypal_api_password",
+              "paypal_api_signature",
+              "paypal_test_mode_status",
+              "revenue_percentage"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_bookings2",
+          "operation": "ALTER",
+          "table": "ct_bookings",
+          "line": 723,
+          "sql_sha256": "fc6d170b3e565777925866a30837c516834ccd82c31ffb8d2083e49a6a60efa2",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "service_id",
+              "method_id",
+              "method_unit_id",
+              "method_unit_qty",
+              "method_unit_qty_rate",
+              "reject_reason",
+              "staff_ids",
+              "gc_event_id",
+              "gc_staff_event_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_coupons2",
+          "operation": "ALTER",
+          "table": "ct_coupons",
+          "line": 727,
+          "sql_sha256": "ae433ae8c60ea6d111c77268f549e14e3c18d6db83500c1f421cf325ca0cad0c",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "coupon_code",
+              "coupon_limit",
+              "coupon_used",
+              "coupon_value"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_email_user2",
+          "operation": "ALTER",
+          "table": "ct_email_user",
+          "line": 730,
+          "sql_sha256": "fd5426ff65719675f4218e97ff9aa79f67d6b8b8b035c8b1a2bdf90d33f10842",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "cus_ids",
+              "cus_sub",
+              "cus_msg",
+              "cus_img",
+              "cus_dt"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_frequently_discount2",
+          "operation": "ALTER",
+          "table": "ct_frequently_discount",
+          "line": 733,
+          "sql_sha256": "91a73d275e274d6b43b5cdb3fcde92be903abf112980ff2941db93a831138b08",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "discount_typename",
+              "days",
+              "rates",
+              "labels",
+              "booking_count",
+              "stripe_plan_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_languages2",
+          "operation": "ALTER",
+          "table": "ct_languages",
+          "line": 736,
+          "sql_sha256": "ecbd683e9457ba00aae21c324c67b74e0d0aa87c112912537136afed8808d698",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "label_data",
+              "language",
+              "admin_labels",
+              "error_labels",
+              "extra_labels",
+              "front_error_labels",
+              "app_labels"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_off_days2",
+          "operation": "ALTER",
+          "table": "ct_off_days",
+          "line": 739,
+          "sql_sha256": "bacd4aeb4200c94bd49155693cff76383cb1689d7aef6b9f7763cadee3e9998f",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "user_id",
+              "lastmodify",
+              "status"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_order_client_info2",
+          "operation": "ALTER",
+          "table": "ct_order_client_info",
+          "line": 742,
+          "sql_sha256": "7600d3d7bbb4909c953dedb45573ddef84628ce2597b48657589b7d10347de20",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "order_id",
+              "client_name",
+              "client_email",
+              "client_phone",
+              "client_personal_info"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_otp2",
+          "operation": "ALTER",
+          "table": "ct_otp",
+          "line": 745,
+          "sql_sha256": "3071ce4e8bf5b136eb4d80022bc16bedb7a27364bc9b95b365f44c41d8836b64",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "email"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_payments2",
+          "operation": "ALTER",
+          "table": "ct_payments",
+          "line": 749,
+          "sql_sha256": "17bf3f1108752012c3fa03bf6df9e7942dc3f743b22525c47ee99038ea0d5feb",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "order_id",
+              "payment_method",
+              "transaction_id",
+              "amount",
+              "discount",
+              "taxes",
+              "partial_amount",
+              "tip",
+              "net_amount",
+              "lastmodify",
+              "frequently_discount_amount",
+              "payment_status"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_rating_review2",
+          "operation": "ALTER",
+          "table": "ct_rating_review",
+          "line": 752,
+          "sql_sha256": "cf01cdc79645d6c09cf7b9a6f21a87077a58c470c1479a4c14389e0b68800184",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "staff_id",
+              "rating",
+              "review"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_recurring_status2",
+          "operation": "ALTER",
+          "table": "ct_recurring_status",
+          "line": 755,
+          "sql_sha256": "4f33c74c61260f0bdd831afa19ab3dea465d01d975180c86422f689f6f5f3d0c",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "recurring_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_referral_coupon2",
+          "operation": "ALTER",
+          "table": "ct_referral_coupon",
+          "line": 758,
+          "sql_sha256": "1fc8059759c3b6ebbaec1cd5525e6e0cd2e44383caccc9e074f7169049b29549",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "client_id",
+              "referral_coupon",
+              "friend_referral_id",
+              "coupon_limit",
+              "coupon_used"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_register_otp2",
+          "operation": "ALTER",
+          "table": "ct_register_otp",
+          "line": 761,
+          "sql_sha256": "6f83782e704ab13efc3fb935c23e02716dad253b7daeb4125c161b197026db16",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "phone"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_schedule_breaks2",
+          "operation": "ALTER",
+          "table": "ct_schedule_breaks",
+          "line": 764,
+          "sql_sha256": "1aeecacf60aca4435ecde70633d3b60bb3b9bcd32e1524efc89ef1cf219c8cb7",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "provider_id",
+              "week_id",
+              "weekday_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_schedule_offtimes2",
+          "operation": "ALTER",
+          "table": "ct_schedule_offtimes",
+          "line": 767,
+          "sql_sha256": "9a9042ff0d4c6f78830a68b25f41798b1f16b8d90441bad988300c0e225785d7",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "provider_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_services2",
+          "operation": "ALTER",
+          "table": "ct_services",
+          "line": 770,
+          "sql_sha256": "4f6de338d828a7034bbf812b027a7f09cdc52a4b4089dcb6b82b410660a639a1",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "title",
+              "description",
+              "color",
+              "image",
+              "position"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_services_addon2",
+          "operation": "ALTER",
+          "table": "ct_services_addon",
+          "line": 773,
+          "sql_sha256": "37cf28e4410863735233f2edf0f5047ddb987c1c593bbe9cf32d2019cc795cde",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "service_id",
+              "addon_service_name",
+              "base_price",
+              "maxqty",
+              "image",
+              "position",
+              "predefine_image",
+              "predefine_image_title",
+              "addon_service_description",
+              "aduration"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_services_method2",
+          "operation": "ALTER",
+          "table": "ct_services_method",
+          "line": 777,
+          "sql_sha256": "b5454ae3e0420e4e3b0ad6d8efd0aa7ab08a9c9cb5aa4b092d718c56c2375981",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "service_id",
+              "method_title",
+              "position"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_services_methods_units_rate2",
+          "operation": "ALTER",
+          "table": "ct_services_methods_units_rate",
+          "line": 781,
+          "sql_sha256": "a84f85e6782d7b117feef6e5222c55021a543e18a416093960ea057dffb54854",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "units_id",
+              "units"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_service_methods_design2",
+          "operation": "ALTER",
+          "table": "ct_service_methods_design",
+          "line": 784,
+          "sql_sha256": "0f605900528ddde90f00c761773af986fa0013f88e16ec7752c47e804e5950f3",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "service_methods_id",
+              "design"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_service_methods_units2",
+          "operation": "ALTER",
+          "table": "ct_service_methods_units",
+          "line": 787,
+          "sql_sha256": "0596f0a1bd8f06c4b12885f58736468687ad77b5af0a412bcce31232e17e738b",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "services_id",
+              "methods_id",
+              "units_title",
+              "base_price",
+              "maxlimit",
+              "position",
+              "limit_title",
+              "unit_symbol",
+              "uduration",
+              "predefine_image",
+              "predefine_image_title",
+              "image"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_settings2",
+          "operation": "ALTER",
+          "table": "ct_settings",
+          "line": 790,
+          "sql_sha256": "7da1bca7d491525ce3afd4b757dd261e111406f29ae6086078d108b298dba88f",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "option_name",
+              "option_value"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_sms_user2",
+          "operation": "ALTER",
+          "table": "ct_sms_user",
+          "line": 796,
+          "sql_sha256": "a80200b9d419956ed456a102ef74518127a0d548e07532dcae43e6cf21c38b10",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "cus_ids",
+              "cus_msg",
+              "cus_dt"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_sms_templates2",
+          "operation": "ALTER",
+          "table": "ct_sms_templates",
+          "line": 801,
+          "sql_sha256": "8576aa70ef4fc387e0c23ae2edb12407eaa4a1aa8fbb75fd05d64c4515d8c1da",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "sms_subject",
+              "sms_message",
+              "default_message"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_staff_commission2",
+          "operation": "ALTER",
+          "table": "ct_staff_commission",
+          "line": 804,
+          "sql_sha256": "c2753afb77924cd80532cb28d69f5b5525f4590d4d70176997097c0d1f2eb428",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "order_id",
+              "staff_id",
+              "amt_payable",
+              "advance_paid",
+              "net_total",
+              "payment_method",
+              "transaction_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_staff_status2",
+          "operation": "ALTER",
+          "table": "ct_staff_status",
+          "line": 807,
+          "sql_sha256": "16e637360911eda36b091c60897c4fe8004733c1b5126430f158e763c550239d",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "staff_id",
+              "order_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_week_days_available2",
+          "operation": "ALTER",
+          "table": "ct_week_days_available",
+          "line": 812,
+          "sql_sha256": "d3815fa0ebabfd56aae2f8f6099d0c1f3443d627b160c629aeb7a715bbe3b38b",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "provider_id",
+              "week_id",
+              "weekday_id",
+              "provider_schedule_type"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "insert_schedule",
+          "operation": "INSERT",
+          "table": "ct_week_days_available",
+          "line": 822,
+          "sql_sha256": "6f56de723dad2d2ed20f9268656ad401e9038a7cb6cefa227b17ef64e1c734e7",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "email_user",
+          "operation": "CREATE",
+          "table": "ct_email_user",
+          "line": 833,
+          "sql_sha256": "2f80f297c3e3913d406bce050a15859749c2b3ff3f9b48e4137c3fa512e22ca0",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "email_user",
+          "operation": "CREATE",
+          "table": "ct_sms_user",
+          "line": 845,
+          "sql_sha256": "1a465edaffcc9aeca6bef9d9a83f2dc6d2a0804012759bfc826ceb9cfd4e4662",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "insert_default_lang",
+          "operation": "INSERT",
+          "table": "ct_languages",
+          "line": 2442,
+          "sql_sha256": "e144bac01d5760f262ba1187c4cdd5a54098b2a38587458c62a86058e16a4210",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": true
+        },
+        {
+          "variable": "insert_default_lang_de_DE",
+          "operation": "INSERT",
+          "table": "ct_languages",
+          "line": 4002,
+          "sql_sha256": "181f5942b37be631d78bec366956d36a101bc7c6f53b74e7e65d7bb99e2527ad",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": true
+        },
+        {
+          "variable": "insert_default_lang_es_ES",
+          "operation": "INSERT",
+          "table": "ct_languages",
+          "line": 5562,
+          "sql_sha256": "f0eae5dca11d5db6f1076c5fd1a8413c750a8e07000926c274a7b9c993c42780",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": true
+        },
+        {
+          "variable": "insert_default_lang_fr_FR",
+          "operation": "INSERT",
+          "table": "ct_languages",
+          "line": 7123,
+          "sql_sha256": "a40aa0a276c5989262997ae7a1ffb47ad648e3affd8393b99504a97d8c0f60d4",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": true
+        },
+        {
+          "variable": "insert_default_lang_pt_PT",
+          "operation": "INSERT",
+          "table": "ct_languages",
+          "line": 8682,
+          "sql_sha256": "2c2c276f48fbee5ecad5564d5dfe1d8f90d3f3ff6b5a3c05162db1315571016d",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": true
+        },
+        {
+          "variable": "insert_default_lang_ru_RU",
+          "operation": "INSERT",
+          "table": "ct_languages",
+          "line": 10242,
+          "sql_sha256": "54ed286c78c9041bc89f43baee16743ec93693a4649346fd17f072233df2c201",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": true
+        },
+        {
+          "variable": "insert_default_lang_ar",
+          "operation": "INSERT",
+          "table": "ct_languages",
+          "line": 11801,
+          "sql_sha256": "43805ff3ec40593ea771e81e3d800cb890db1761f2fb72866a9674feb329621c",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": true
+        },
+        {
+          "variable": "insert_default_lang_zh_CN",
+          "operation": "INSERT",
+          "table": "ct_languages",
+          "line": 13362,
+          "sql_sha256": "923063ecce8e951d254c6d939b1ff2f3eceab0e6e55b232337418810759bd905",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": true
+        },
+        {
+          "variable": "query_staff_payment",
+          "operation": "CREATE",
+          "table": "ct_staff_commission",
+          "line": 13387,
+          "sql_sha256": "effa1bce71181f09b5e9aa4a0ab6566314dacb171c6b44de6749aeda8d97da83",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "remove_fk_constraints_ct_services_addon",
+          "operation": "ALTER",
+          "table": "ct_services_addon",
+          "line": 13404,
+          "sql_sha256": "bbf191d44ea48119fc4269869ec8bd2efd6f1cf89fe7e4db031b4d1b9e46f29b",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "remove_fk_constraints_ct_services_addon_rate",
+          "operation": "ALTER",
+          "table": "ct_addon_service_rate",
+          "line": 13405,
+          "sql_sha256": "aa3cd8485b08a22f45bf96607d926d0e2341c91ae7ad73e0ca1780af21268a5b",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "remove_fk_constraints_ct_services_method",
+          "operation": "ALTER",
+          "table": "ct_services_method",
+          "line": 13406,
+          "sql_sha256": "e6883fe6dd7ee18daa2a7e5dbe20056c145978f28b95609ef53960c9407ae5a4",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "remove_fk_constraints_ct_service_methods_units",
+          "operation": "ALTER",
+          "table": "ct_service_methods_units",
+          "line": 13407,
+          "sql_sha256": "5cbc62cd5bc277c3c58c61d7f43f309aba5ade084e0cf3e34c7474c92f4b16fc",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "remove_fk_constraints_ct_service_methods_units_2",
+          "operation": "ALTER",
+          "table": "ct_service_methods_units",
+          "line": 13408,
+          "sql_sha256": "328ae91ba0142459bc8838bd4774cd04e0c9090dae69b216bdf7b88b14cb7e4a",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "remove_fk_constraints_ct_services_methods_units_rate",
+          "operation": "ALTER",
+          "table": "ct_services_methods_units_rate",
+          "line": 13409,
+          "sql_sha256": "8318ea2f495f7635f2c68e6b1c92b7d560e7bed0ec56ba14c630a7527a3a759e",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "remove_fk_constraints_ct_service_methods_design",
+          "operation": "ALTER",
+          "table": "ct_service_methods_design",
+          "line": 13410,
+          "sql_sha256": "bd8c8020953fa4b34a6d5c9e91c3417fac3aeaee94a9341a0003718b5e702827",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "sms_template",
+          "operation": "CREATE",
+          "table": "ct_sms_templates",
+          "line": 13421,
+          "sql_sha256": "7a112c49361378b0515c0ef76f1ac0953cd412512d8f81703cb956fdb744c6b3",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "sms_template_insert",
+          "operation": "INSERT",
+          "table": "ct_sms_templates",
+          "line": 13434,
+          "sql_sha256": "a8c65e6cbb47a3cfb286a4e872cdc3030be9c0f59cdc5eb2cc0082885cab517d",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "email_template",
+          "operation": "CREATE",
+          "table": "ct_email_templates",
+          "line": 13457,
+          "sql_sha256": "cbcdb6e4f883f76b15939a73a25cdc807ccadf889b3726416c2cafcc98d188f9",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "email_template_insert",
+          "operation": "INSERT",
+          "table": "ct_email_templates",
+          "line": 13468,
+          "sql_sha256": "757c8c119c9e35516c2a8d2dfaa32f3ff26624c200f29ea6e35934e5d125c69a",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "CREATE",
+          "table": "ct_staff_status",
+          "line": 13493,
+          "sql_sha256": "3a8f7562112b6610cdc6410550bd1914cf1532636f8b2e2e7950b2c8cc84d9bd",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "CREATE",
+          "table": "ct_rating_review",
+          "line": 13503,
+          "sql_sha256": "985d477dd5d19a7786303435263ef5e867c101b8cef5ce683119151d5779de09",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "CREATE",
+          "table": "ct_recurring_status",
+          "line": 13513,
+          "sql_sha256": "1b1ec0f0b6f59fc49d58a5c05b1db2ceb8df190bc12031cbd144611b085108db",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "CREATE",
+          "table": "ct_otp",
+          "line": 13522,
+          "sql_sha256": "4d16718f4b72d144118c9bbc356eff214b9fddd36b033d419d0e91a33c6f0f6c",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "queres",
+          "operation": "CREATE",
+          "table": "ct_special_offer",
+          "line": 13531,
+          "sql_sha256": "9779aab34bd7a148b8e0caf7c5d200998d4bf8b1ea8d6b74e98f5f0ea5e3cc5e",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        }
+      ]
+    },
+    {
+      "file": "private/cleanto/objects/class_version_update.php",
+      "sha256": "0142097534ccbaac30677c0976b2b1d7695eb8ec5178e9f8a4d51bc84e87e484",
+      "statement_count": 175,
+      "statements": [
+        {
+          "variable": "languages",
+          "operation": "CREATE",
+          "table": "ct_languages",
+          "line": 14,
+          "sql_sha256": "7dd84847648dffafa0bbde698aa8b0e2da06054ee7f9c08ee862b2bddae20e84",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 23,
+          "sql_sha256": "44d44f592c548a38d0458599e00cf66af3cf95f9107fca871a49d5b97c245e71",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 30,
+          "sql_sha256": "7013154c55b734f80b4901258ebd2a53d8376b014781ee1980058f5e7efa0788",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options",
+          "operation": "ALTER",
+          "table": "ct_services_addon",
+          "line": 34,
+          "sql_sha256": "886ea102b7cf9e91ca190dcd328dc1d6e5134f5c8e051780066b1b79b140fc1c",
+          "columns": {
+            "add": [
+              "predefine_image"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "predefine_image"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 37,
+          "sql_sha256": "87c318efbee6c63786fd8cf33843ec33b3d20eb68b18f866f13e82ff02038034",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "insert_default_lang",
+          "operation": "INSERT",
+          "table": "ct_languages",
+          "line": 672,
+          "sql_sha256": "63cb2fa2a6aca5a92bdffd6147866f60f959879c1920ac11e90f38dd07098577",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": true
+        },
+        {
+          "variable": "remove_fk_constraints_ct_services_addon",
+          "operation": "ALTER",
+          "table": "ct_services_addon",
+          "line": 679,
+          "sql_sha256": "5dffe04fbe2f6bce116611ba9b59701852780dbb84e98a839c7fe234f6cec3b1",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "remove_fk_constraints_ct_services_addon_rate",
+          "operation": "ALTER",
+          "table": "ct_addon_service_rate",
+          "line": 681,
+          "sql_sha256": "b5b1fc300b89627f8037bbaec2e93c78fb5eb2ece2def3d67383338a1ea79fc8",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "remove_fk_constraints_ct_services_method",
+          "operation": "ALTER",
+          "table": "ct_services_method",
+          "line": 683,
+          "sql_sha256": "bcc73e29ceef6606c454f61f24ddfddb3f4d5a1ca014a33027d2dbc14661faec",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "remove_fk_constraints_ct_service_methods_units",
+          "operation": "ALTER",
+          "table": "ct_service_methods_units",
+          "line": 685,
+          "sql_sha256": "93811e59860b5331a931bdc93f5dcbdc375da69460e0f2b567567bf58ebb47dd",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "remove_fk_constraints_ct_service_methods_units_2",
+          "operation": "ALTER",
+          "table": "ct_service_methods_units",
+          "line": 687,
+          "sql_sha256": "c6b88807fe583a55271057549f9ba3f8311f40807989a0d9f30c041b9ec59e27",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "remove_fk_constraints_ct_services_methods_units_rate",
+          "operation": "ALTER",
+          "table": "ct_services_methods_units_rate",
+          "line": 689,
+          "sql_sha256": "d4d49743b25a1017d58809def906a44d6c7b2a55bb7c61ef8a59bf2f98ab79e4",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "remove_fk_constraints_ct_service_methods_design",
+          "operation": "ALTER",
+          "table": "ct_service_methods_design",
+          "line": 691,
+          "sql_sha256": "5a2e2dfcf435126a6b537630c733923057d28a037f67feb7e7a6877c112964d9",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options",
+          "operation": "ALTER",
+          "table": "ct_services_addon",
+          "line": 707,
+          "sql_sha256": "bc26208bfa00de33e2aaa4ec3115c51b23514e14a897a1c15b34ac450903b10f",
+          "columns": {
+            "add": [
+              "predefine_image_title"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "predefine_image_title"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "insert_default_lang",
+          "operation": "INSERT",
+          "table": "ct_languages",
+          "line": 1416,
+          "sql_sha256": "63cb2fa2a6aca5a92bdffd6147866f60f959879c1920ac11e90f38dd07098577",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": true
+        },
+        {
+          "variable": "add_options",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 1420,
+          "sql_sha256": "2e9c11cb1eec407241a4989bd4cb563f8d607458600bbd3fa8263037614b6798",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": true
+        },
+        {
+          "variable": "sms_template",
+          "operation": "CREATE",
+          "table": "ct_sms_templates",
+          "line": 1438,
+          "sql_sha256": "657fe9a4d2037a61872ac64d87be76b305153b0072e69126664c14ab93c6a673",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "sms_template_insert",
+          "operation": "INSERT",
+          "table": "ct_sms_templates",
+          "line": 1450,
+          "sql_sha256": "c84defd5c4bdfa919503a6e456d1269b5e9d87112bd74daac736d55abf73ba6f",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "email_template",
+          "operation": "CREATE",
+          "table": "ct_email_templates",
+          "line": 1465,
+          "sql_sha256": "db4af3dac254d21dbc85108b45fe991ffbb152ba817cadaf2ca859feb47b9ff3",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "email_template_insert",
+          "operation": "INSERT",
+          "table": "ct_email_templates",
+          "line": 1477,
+          "sql_sha256": "9dc71351e43c77cde340403a202cf8be247d03d44cd9da2cd544d9b7c2911cd2",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "update_label_field",
+          "operation": "ALTER",
+          "table": "ct_languages",
+          "line": 1717,
+          "sql_sha256": "1946002ff6015e9599e352ee7e1720ce6d3f71aa4a55bd42469eaf87f8608ec6",
+          "columns": {
+            "add": [],
+            "change": [
+              "label_data"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "update_label_field",
+          "operation": "ALTER",
+          "table": "ct_languages",
+          "line": 1718,
+          "sql_sha256": "55e5d18413e365675d5d36d83a493355162398a444e7c16c57cfced3890870e9",
+          "columns": {
+            "add": [],
+            "change": [
+              "label_data"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "update_settings_table",
+          "operation": "ALTER",
+          "table": "ct_settings",
+          "line": 1721,
+          "sql_sha256": "479c79efc3cde2d19807ca74fa10b8054dc55a1c0918fb8879e9848820d935ff",
+          "columns": {
+            "add": [
+              "postalcode"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "postalcode"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "position_methods",
+          "operation": "ALTER",
+          "table": "ct_services_method",
+          "line": 2117,
+          "sql_sha256": "0f552a743f99b4fd3da00ba660cd2efdf492986c1034c6e3ab83dd3282b09114",
+          "columns": {
+            "add": [
+              "position"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "position"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "position_units",
+          "operation": "ALTER",
+          "table": "ct_service_methods_units",
+          "line": 2118,
+          "sql_sha256": "a5b095ce4703682c05265647f03551f1eac064c5f9ad631ed220e5dd41930461",
+          "columns": {
+            "add": [
+              "position"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "position"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_staff1",
+          "operation": "ALTER",
+          "table": "ct_admin_info",
+          "line": 2119,
+          "sql_sha256": "ba03d6e6fcd06240c0ed811250344e79b5b108d67b12dae9430caa3ec32de6f6",
+          "columns": {
+            "add": [
+              "schedule_type"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "schedule_type"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_staff2",
+          "operation": "ALTER",
+          "table": "ct_admin_info",
+          "line": 2120,
+          "sql_sha256": "267918f80648d2e03e4168439591eabf4b273f310706e1d89a98d745ef777c0e",
+          "columns": {
+            "add": [
+              "role",
+              "description",
+              "enable_booking",
+              "service_commission",
+              "commision_value"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "commision_value",
+            "description",
+            "enable_booking",
+            "role",
+            "service_commission"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "ALTER",
+          "table": "ct_bookings",
+          "line": 2125,
+          "sql_sha256": "c20a71d77957c6677b15076207b60c48ec115b348e1d51b672f8ec8b40168fe3",
+          "columns": {
+            "add": [
+              "staff_ids"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "staff_ids"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query_staff_payment",
+          "operation": "CREATE",
+          "table": "ct_staff_commission",
+          "line": 2132,
+          "sql_sha256": "efdc70ac610edac5f89582339f3b6b6986e3b8037f5bf71c454f63150eff1e9d",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq1",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2155,
+          "sql_sha256": "f2a76a209d5d070c25840face026d748e6ea432fc2b88e989b04567313b67248",
+          "columns": {
+            "add": [],
+            "change": [
+              "user_pwd"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq2",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2156,
+          "sql_sha256": "1cc6df455e367c66b6438f3dff8831c43a7ffc3b3a306933f2aacbb617e3f13a",
+          "columns": {
+            "add": [],
+            "change": [
+              "user_email"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq3",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2157,
+          "sql_sha256": "1aee0db859117ed0a917097c0289163a5623c9d867addfb611bedb2f607128c6",
+          "columns": {
+            "add": [],
+            "change": [
+              "first_name"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq4",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2158,
+          "sql_sha256": "926646d71c5d9cd1a6a253f0de281bc8ace6018464eb4d8cacf9ff953814f1c2",
+          "columns": {
+            "add": [],
+            "change": [
+              "last_name"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq5",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2159,
+          "sql_sha256": "8265d88ca632b204b2690c8dde23d9b63eb15ff088d161b86869cee86e2a52a0",
+          "columns": {
+            "add": [],
+            "change": [
+              "phone"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq6",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2160,
+          "sql_sha256": "22d286fb75119163100bafd1600fc7df27a5a503c09629c73a390b941806213d",
+          "columns": {
+            "add": [],
+            "change": [
+              "zip"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq7",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2161,
+          "sql_sha256": "c4b4073fc84288e76e18e0fab1795b8db9b924c66d1019c4f4dc3b5ca4ae6f56",
+          "columns": {
+            "add": [],
+            "change": [
+              "address"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq8",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2162,
+          "sql_sha256": "c50fd9e8ce07d73175b768cb0d76f81b67a98959538cab507e049791da5860e6",
+          "columns": {
+            "add": [],
+            "change": [
+              "city"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq9",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2163,
+          "sql_sha256": "ad4394d1118d08d3695b0e27625d5513635851bab9b9c2104261b72ecc270239",
+          "columns": {
+            "add": [],
+            "change": [
+              "state"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq10",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2164,
+          "sql_sha256": "dd87e7b476394af55444209300be3854379c4f72235952f324e237ea89d74212",
+          "columns": {
+            "add": [],
+            "change": [
+              "notes"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq11",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2165,
+          "sql_sha256": "b65a028ac3d91da6a7dc315808fe873fec8a6153118560cd7b9c409686ec61b6",
+          "columns": {
+            "add": [],
+            "change": [
+              "vc_status"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq12",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2166,
+          "sql_sha256": "c63af146de964233214d25b7d5bd97b86815d3ecdab445b59e62253765fc33ae",
+          "columns": {
+            "add": [],
+            "change": [
+              "p_status"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq13",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2167,
+          "sql_sha256": "8d2233af6ba94f37a363cb4464f81d7cd785f0d9d048301b40147277e8894941",
+          "columns": {
+            "add": [],
+            "change": [
+              "contact_status"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq14",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2168,
+          "sql_sha256": "5a9c82498d9d78d2ab796258fb5d535f04768a8e80692083d05ee1a53276be94",
+          "columns": {
+            "add": [],
+            "change": [
+              "status"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "qq15",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2169,
+          "sql_sha256": "70109d0e62176473923ff8ddf21c14d12f35ae2e6f50d953f779ee1b82b9cbf4",
+          "columns": {
+            "add": [],
+            "change": [
+              "usertype"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query_email_template",
+          "operation": "ALTER",
+          "table": "ct_email_templates",
+          "line": 2187,
+          "sql_sha256": "10abcfd16728dfe37f983729693cf2aed05f0b9d102216956884ec4d2494deb4",
+          "columns": {
+            "add": [],
+            "change": [
+              "user_type"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "ALTER",
+          "table": "ct_admin_info",
+          "line": 2190,
+          "sql_sha256": "3abd92c3961ab0bc9d96e2fd1b720349b836174a571d51e2f02810759635c077",
+          "columns": {
+            "add": [
+              "image"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "image"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "email_template_insert_staff",
+          "operation": "INSERT",
+          "table": "ct_email_templates",
+          "line": 2193,
+          "sql_sha256": "b4a4bea30b1b6a5c188cb1aa4c2fe3cf96f52c7b6ab0374e7137ef5f1479bca7",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query1",
+          "operation": "ALTER",
+          "table": "ct_payments",
+          "line": 2450,
+          "sql_sha256": "0636b001418f511be006a97d50070c43b719263ae2e5b684d0627275b2b9c807",
+          "columns": {
+            "add": [],
+            "change": [
+              "lastmodify"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query2",
+          "operation": "ALTER",
+          "table": "ct_off_days",
+          "line": 2452,
+          "sql_sha256": "3e82ef4e25ce3032497431682415750389fa20ce58a52da0fe6e8e98f66a125b",
+          "columns": {
+            "add": [],
+            "change": [
+              "user_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query3",
+          "operation": "ALTER",
+          "table": "ct_off_days",
+          "line": 2454,
+          "sql_sha256": "b2cc35c1978688d03ce9621f1d8877a0ac349233186fe8774797e54595f571c7",
+          "columns": {
+            "add": [],
+            "change": [
+              "status"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query4",
+          "operation": "ALTER",
+          "table": "ct_bookings",
+          "line": 2456,
+          "sql_sha256": "0bc2bd02fb682b098fe027a36dbd990f77e517c691e3424297ebcc9266dd7ac5",
+          "columns": {
+            "add": [],
+            "change": [
+              "staff_ids"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query5",
+          "operation": "ALTER",
+          "table": "ct_payments",
+          "line": 2458,
+          "sql_sha256": "0636b001418f511be006a97d50070c43b719263ae2e5b684d0627275b2b9c807",
+          "columns": {
+            "add": [],
+            "change": [
+              "lastmodify"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query6",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2460,
+          "sql_sha256": "0ac7a8887ac3897ea2daebc6aa27ec2fb8e0689dff621193d6218fec447728a1",
+          "columns": {
+            "add": [],
+            "change": [
+              "vc_status"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query7",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 2462,
+          "sql_sha256": "dda610799c436eebeff89590d0a70d8809a43c8b3729586dd35d9d213da3e506",
+          "columns": {
+            "add": [],
+            "change": [
+              "p_status"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_paymentsss",
+          "operation": "ALTER",
+          "table": "ct_payments",
+          "line": 2472,
+          "sql_sha256": "aa7ab704260fc650d362bc623df56694db56d8cf468a670aa25df15fca506ed1",
+          "columns": {
+            "add": [
+              "recurrence_status",
+              "payment_status"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "payment_status",
+            "recurrence_status"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "q1s",
+          "operation": "ALTER",
+          "table": "ct_admin_info",
+          "line": 2476,
+          "sql_sha256": "0885c29943c50f8b3303849e63f3ff507d11fe2e78df82affe97bccb77f758db",
+          "columns": {
+            "add": [
+              "service_ids"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "service_ids"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "q2s",
+          "operation": "ALTER",
+          "table": "ct_week_days_available",
+          "line": 2479,
+          "sql_sha256": "8e656611e2b9d27d1c1313690b9d396d47c6b7cf6c624b2759e43490599fe331",
+          "columns": {
+            "add": [
+              "provider_schedule_type"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "provider_schedule_type"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "q1s",
+          "operation": "ALTER",
+          "table": "ct_languages",
+          "line": 2553,
+          "sql_sha256": "534e4c273969cebce1f8acff78e2ba6c5cc8a7fd5a86f5559b0b9f3ef85713fa",
+          "columns": {
+            "add": [
+              "admin_labels",
+              "error_labels",
+              "extra_labels",
+              "front_error_labels"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "admin_labels",
+            "error_labels",
+            "extra_labels",
+            "front_error_labels"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options",
+          "operation": "ALTER",
+          "table": "ct_bookings",
+          "line": 2927,
+          "sql_sha256": "6c57f2ba9eae0ff65edd77adcefc0722f6e2aa6bb381df97b253aacc63eef204",
+          "columns": {
+            "add": [
+              "gc_event_id",
+              "gc_staff_event_id"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "gc_event_id",
+            "gc_staff_event_id"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "q1s",
+          "operation": "ALTER",
+          "table": "ct_service_methods_units",
+          "line": 3047,
+          "sql_sha256": "aa0b0a5ca96a3fff8396da642679bc2434550b48b2b7c1f41d3f64848f6b0bf6",
+          "columns": {
+            "add": [
+              "limit_title"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "limit_title"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "q1s",
+          "operation": "ALTER",
+          "table": "ct_service_methods_units",
+          "line": 3108,
+          "sql_sha256": "452137e84a630df86c290606fd201cc2676057de5bc559bdd4309a7754b67276",
+          "columns": {
+            "add": [
+              "half_section"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "half_section"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "q1s1",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 3111,
+          "sql_sha256": "54622664a40763a02809e495b46de1d61224a3da7b2c6da2a8f8efa3afa53a51",
+          "columns": {
+            "add": [
+              "cus_dt"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "cus_dt"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "email_user",
+          "operation": "CREATE",
+          "table": "ct_email_user",
+          "line": 3114,
+          "sql_sha256": "1685db5779f5d1b33c23fab8ce3bbc82b618761f7d7deb73ce1843b25474c86c",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "email_user",
+          "operation": "CREATE",
+          "table": "ct_sms_user",
+          "line": 3125,
+          "sql_sha256": "70db569a48fdd66627f95fabd0b25b3c446318753b5a0341aa35fc2d1fa37780",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "CREATE",
+          "table": "ct_staff_status",
+          "line": 3218,
+          "sql_sha256": "b85c9c32dd6b1cca85b7e1366fc8c393606204443524ce5703f833ac9a501fcc",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "q1s",
+          "operation": "ALTER",
+          "table": "ct_languages",
+          "line": 3228,
+          "sql_sha256": "d7f9b6989359a788d28344de1b2ae51425581e37824900fb6f98f622426136e3",
+          "columns": {
+            "add": [
+              "language_status"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "language_status"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "CREATE",
+          "table": "ct_rating_review",
+          "line": 3506,
+          "sql_sha256": "36ec6286d08fe477925ed9992fe3f93d4cf0229ad3c319a5ab53195ccdcbc20c",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "q1s",
+          "operation": "ALTER",
+          "table": "ct_service_methods_units",
+          "line": 3659,
+          "sql_sha256": "ea48e8d6c6b45d7782c5f8d1d4d0473dc198a6caaa3275bf36810c51aec35651",
+          "columns": {
+            "add": [
+              "unit_symbol"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "unit_symbol"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "q1s",
+          "operation": "ALTER",
+          "table": "ct_services_addon",
+          "line": 3662,
+          "sql_sha256": "f9f4d59740e095d23c16e2f1453575ca0dd66cdfb1ca33b75b7dd26ad6996efa",
+          "columns": {
+            "add": [
+              "aduration"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "aduration"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "q1s",
+          "operation": "ALTER",
+          "table": "ct_service_methods_units",
+          "line": 3665,
+          "sql_sha256": "f955ad376daf4fab3886602afc86ced00f81bed2b0f4f913e65c3b1153340f57",
+          "columns": {
+            "add": [
+              "uduration"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "uduration"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "q1s",
+          "operation": "ALTER",
+          "table": "ct_order_client_info",
+          "line": 3668,
+          "sql_sha256": "d9e8202057c1b707346f2e28697732c0ece8c945206a7f9ec0230e1253a91f66",
+          "columns": {
+            "add": [
+              "order_duration"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "order_duration"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "q1s",
+          "operation": "ALTER",
+          "table": "ct_languages",
+          "line": 3671,
+          "sql_sha256": "bd9d5197f4c5c295697becf40bd0d730f5c0e8265d836f65b592d8a2eb2b9274",
+          "columns": {
+            "add": [],
+            "change": [
+              "language"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "ALTER",
+          "table": "ct_service_methods_units",
+          "line": 3837,
+          "sql_sha256": "1a38b7d589a1fc82d9c8cb21420bdbae8d495c04cc6331b6a2af3c2fef794996",
+          "columns": {
+            "add": [
+              "minlimit"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "minlimit"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "CREATE",
+          "table": "ct_otp",
+          "line": 3840,
+          "sql_sha256": "712932d9936622b2d394e48b48e2d8859632118ddc21c3136e62e2eed8a929ec",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "ALTER",
+          "table": "ct_frequently_discount",
+          "line": 4023,
+          "sql_sha256": "0b73ee6e53e17b315b38695a35c283777847c72969ff51be793f768f6cd15519",
+          "columns": {
+            "add": [
+              "days"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "days"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "ALTER",
+          "table": "ct_frequently_discount",
+          "line": 4026,
+          "sql_sha256": "bc47bf540163af9dde1deaade0d7ea2e4c3148f75ead107f06b6bdaf2597b0bc",
+          "columns": {
+            "add": [
+              "booking_count",
+              "stripe_plan_id"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "booking_count",
+            "stripe_plan_id"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "ALTER",
+          "table": "ct_order_client_info",
+          "line": 4041,
+          "sql_sha256": "7ff00907942eca5d70ac7763f1aa3cef63c475604e5f3d02ff509e8026947a3f",
+          "columns": {
+            "add": [
+              "recurring_id"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "recurring_id"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "ALTER",
+          "table": "ct_payments",
+          "line": 4054,
+          "sql_sha256": "f01c657fa4f0b0089f8ff704b2045179f51ec70ad3fca59b0e55d4f434047bd0",
+          "columns": {
+            "add": [],
+            "change": [
+              "frequently_discount"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "ALTER",
+          "table": "ct_payments",
+          "line": 4076,
+          "sql_sha256": "95ea0f3ec1580da21663e17868eb33740168f2361276d0ca8da8476eca0c4655",
+          "columns": {
+            "add": [],
+            "change": [
+              "frequently_discount"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 4079,
+          "sql_sha256": "79d9b80e8fa97702c7109e18d9d0b086492552b8852bf67fc5adf567652d2bf1",
+          "columns": {
+            "add": [
+              "stripe_id"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "stripe_id"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "CREATE",
+          "table": "ct_recurring_status",
+          "line": 4082,
+          "sql_sha256": "b34528224279c1849eb790a73b9b31c205e4a8ac13a28d4c07d5b838a96c766b",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "ALTER",
+          "table": "ct_languages",
+          "line": 4309,
+          "sql_sha256": "873e0a06d8b0a54ccd3334f7ed877624a674439e1f4142dd8dcf0db75f5bced6",
+          "columns": {
+            "add": [
+              "app_labels"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "app_labels"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "ALTER",
+          "table": "ct_email_templates",
+          "line": 4721,
+          "sql_sha256": "2783356521672a2c719218f7b5cf43776812e7e59ff58b941bb9e157e6c9e203",
+          "columns": {
+            "add": [],
+            "change": [
+              "email_template_type"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "ALTER",
+          "table": "ct_sms_templates",
+          "line": 4724,
+          "sql_sha256": "b3490673eb5f2bfb2c615d1406c59cec645267ab34822fbfc658e4c75dda9028",
+          "columns": {
+            "add": [],
+            "change": [
+              "sms_template_type"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "INSERT",
+          "table": "ct_email_templates",
+          "line": 4728,
+          "sql_sha256": "e692283a81edc0ff237cdab82f188e11b5b62e6606a57a80052189418e0cd39c",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "INSERT",
+          "table": "ct_email_templates",
+          "line": 4730,
+          "sql_sha256": "6e9b3b7f2d1714a881f8f5356a1bec58b2899d886d4b69cc5d646895f50516ed",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "INSERT",
+          "table": "ct_email_templates",
+          "line": 4732,
+          "sql_sha256": "aa8b1aa7686252df805960548403e406e4751e5c3fc287d2c299be9fec644f0b",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "INSERT",
+          "table": "ct_sms_templates",
+          "line": 4736,
+          "sql_sha256": "bc9127fc2be19926d28c9dc12e76cd34ead1aa7e037c9583455587d06fc1cff1",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "INSERT",
+          "table": "ct_sms_templates",
+          "line": 4738,
+          "sql_sha256": "885d1d5965d9d5df58868254794c6095ac41fc2e1daf174fb73646194c713301",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "INSERT",
+          "table": "ct_sms_templates",
+          "line": 4740,
+          "sql_sha256": "1e7232caaaeeb4cefe800b83b9644896b7c3679829e746064051071132226f42",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "ALTER",
+          "table": "ct_sms_templates",
+          "line": 4920,
+          "sql_sha256": "51c96a0febe691c85a0d29020530887158db3d6a02ad3a85d5655554b5b355fa",
+          "columns": {
+            "add": [],
+            "change": [
+              "sms_template_type"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "query",
+          "operation": "ALTER",
+          "table": "ct_sms_templates",
+          "line": 4923,
+          "sql_sha256": "d880e63dfb599d1cf869b5773ad313e424a1237547e365fcabf3df768a4ecf82",
+          "columns": {
+            "add": [],
+            "change": [
+              "user_type"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options",
+          "operation": "ALTER",
+          "table": "ct_admin_info",
+          "line": 5098,
+          "sql_sha256": "6ea0b4ef376b326db9b392942dbd1a345fe7153092836cb01731a89d3ad05970",
+          "columns": {
+            "add": [
+              "staff_wallet_amount"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "staff_wallet_amount"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options2",
+          "operation": "ALTER",
+          "table": "ct_admin_info",
+          "line": 5101,
+          "sql_sha256": "69926c0a7912749bb3c0d68422246294d28b8548eaa26e20ff68f883294b31f2",
+          "columns": {
+            "add": [
+              "paypal_api_username"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "paypal_api_username"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options3",
+          "operation": "ALTER",
+          "table": "ct_admin_info",
+          "line": 5104,
+          "sql_sha256": "ee578f0be5e1f3deeda85eb627f0beaf1abfd776b783f04fefc5727c71dd1d02",
+          "columns": {
+            "add": [
+              "paypal_api_password"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "paypal_api_password"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options4",
+          "operation": "ALTER",
+          "table": "ct_admin_info",
+          "line": 5107,
+          "sql_sha256": "f00d3336892f3c22f67a3eb5bcc4f2dc9744af967601540911327803a0750ec6",
+          "columns": {
+            "add": [
+              "paypal_api_signature"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "paypal_api_signature"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options5",
+          "operation": "ALTER",
+          "table": "ct_admin_info",
+          "line": 5110,
+          "sql_sha256": "a215d1c9b933c67c234e7a9789697ad2b2abf65082dc3ffdbbd18cc90d879515",
+          "columns": {
+            "add": [
+              "paypal_test_mode_status"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "paypal_test_mode_status"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options6",
+          "operation": "ALTER",
+          "table": "ct_admin_info",
+          "line": 5113,
+          "sql_sha256": "9caae71a2d03c6d9a5ba8fd7848085666b8333cdbc9a94fe777e93371f7dfc1f",
+          "columns": {
+            "add": [
+              "revenue_percentage"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "revenue_percentage"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options7",
+          "operation": "ALTER",
+          "table": "ct_services_addon",
+          "line": 5116,
+          "sql_sha256": "3c7e21e678e02a85f849191c363d2140c2b6e630702c64980a11a3035a65c14b",
+          "columns": {
+            "add": [
+              "addon_service_description"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "addon_service_description"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options8",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 5119,
+          "sql_sha256": "7e29327baf9f040edcb0b7b7ad2681d052dc621b026086c0ee55a3b624da7bf1",
+          "columns": {
+            "add": [
+              "referal_code"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "referal_code"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options9",
+          "operation": "ALTER",
+          "table": "ct_users",
+          "line": 5122,
+          "sql_sha256": "429533cfe0d7a128de350e0a052a5387f383523e967375824aa3d73ecf83ae2f",
+          "columns": {
+            "add": [
+              "wallet_amount"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "wallet_amount"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_referral_coupon",
+          "operation": "CREATE",
+          "table": "ct_referral_coupon",
+          "line": 5125,
+          "sql_sha256": "63aae0c5e969772baa9021cc6706c0e6b55a7edf21c06e67262c1fd346a2ebe5",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_register_otp",
+          "operation": "CREATE",
+          "table": "ct_register_otp",
+          "line": 5136,
+          "sql_sha256": "2a5138bd75f60e0aa51792ca95de36e4dda3b223463da09cd18757c9acac8acf",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_staff_gc",
+          "operation": "CREATE",
+          "table": "ct_staff_gc",
+          "line": 5144,
+          "sql_sha256": "7a8b01626b36bf547d2c84151500d7a60f06404aec6869cbbf1568056d4462c4",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_transfer_request",
+          "operation": "CREATE",
+          "table": "ct_transfer_request",
+          "line": 5161,
+          "sql_sha256": "b173de36501ce0e629ba8d2902a3becbda03ac111a569101de0c6f1cb9b8895d",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_wallet_history",
+          "operation": "CREATE",
+          "table": "ct_wallet_history",
+          "line": 5171,
+          "sql_sha256": "c4fc2e6dfd20564c6f7547f42ca22df68925836f419509420ca5f6560a5ad1c4",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options11",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5184,
+          "sql_sha256": "075e77bfda707d4f14dc81508763263b7c92f39b64ce5699fa4aa5ca132d067c",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options12",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5187,
+          "sql_sha256": "d78be59ee872567b3a3b2b0f30e9f6caf856da12c4456f7ec5e1a5940053f55b",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options13",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5190,
+          "sql_sha256": "15428662cc645eb8f5c91dac1c18aa80d9c5a4d2d2c329fde36799fd7c9c3bea",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options14",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5194,
+          "sql_sha256": "7f594cd8903be475fe9f67d18f1ffd459563e12becfd3d6319ebbd4383a90760",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options15",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5197,
+          "sql_sha256": "59ecc8b17653353ca88c9d1a98ede61101a82a969c33933ca5aa3a0a0a891b66",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options16",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5201,
+          "sql_sha256": "048b9e7fefb8c14440f54ba09ab0a371b9b59eef6b1c3f5183a5cc0e11bc1450",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options17",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5205,
+          "sql_sha256": "083ef786008f233be2f5cb552a74a64b52ed77d3e2032d9ba926680e843205ea",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options18",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5209,
+          "sql_sha256": "ab856933160b331c2ebc037d71f476f8ffb8baaae29b05856a34088386d4077d",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options19",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5213,
+          "sql_sha256": "0476501e5af42123c7f113c6c614698ff4d9d16124b9fefc6466456e5ab96b11",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options20",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5217,
+          "sql_sha256": "539739c5316c09c94d56adbb0da6c1fd7297204892dae0a7078046bc05c2aaa6",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options21",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5220,
+          "sql_sha256": "47dff2b040f751150cc8d6990086b230081f20ec0b35f99f0abddc360b0af3a2",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options22",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5222,
+          "sql_sha256": "13bf3bb3a598bec2e783009c4cf0b21c982f43546216d3f0e8d4ee284f14ca42",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options23",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5224,
+          "sql_sha256": "1fe407d4c33e008e396ac5c88d6ba0803d639c4973a9bfc1f709e2362b5bc48c",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options24",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5226,
+          "sql_sha256": "45b063cb455dfa6e0be32311e38600fef7969afc1598f29488c97ed3579ac1f9",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options25",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5228,
+          "sql_sha256": "54617859f6d17b545130efd0d9a623c9544ed10f897a7f7d3270c796dac451ee",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_addon_service_rate2",
+          "operation": "ALTER",
+          "table": "ct_addon_service_rate",
+          "line": 5232,
+          "sql_sha256": "fbd11b0dc6701351d3085b0a9da26d498de68e4e298d4bea1a69cb342cc615e3",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "addon_service_id",
+              "unit",
+              "rate"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_admin_info2",
+          "operation": "ALTER",
+          "table": "ct_admin_info",
+          "line": 5235,
+          "sql_sha256": "96e49d47f0313b706d43c329d1f5b81340371973f5f1a393f85160296579b3d4",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "password",
+              "email",
+              "fullname",
+              "phone",
+              "address",
+              "city",
+              "state",
+              "zip",
+              "country",
+              "role",
+              "description",
+              "commision_value",
+              "image",
+              "service_ids",
+              "staff_wallet_amount",
+              "paypal_api_username",
+              "paypal_api_password",
+              "paypal_api_signature",
+              "paypal_test_mode_status",
+              "revenue_percentage"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_bookings2",
+          "operation": "ALTER",
+          "table": "ct_bookings",
+          "line": 5238,
+          "sql_sha256": "fc6d170b3e565777925866a30837c516834ccd82c31ffb8d2083e49a6a60efa2",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "service_id",
+              "method_id",
+              "method_unit_id",
+              "method_unit_qty",
+              "method_unit_qty_rate",
+              "reject_reason",
+              "staff_ids",
+              "gc_event_id",
+              "gc_staff_event_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_coupons2",
+          "operation": "ALTER",
+          "table": "ct_coupons",
+          "line": 5242,
+          "sql_sha256": "2051637c35ab9af85ef898d70329bc1ba1ee5920b742fcc4aa38ba425c95f983",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "coupon_code",
+              "coupon_limit",
+              "coupon_used",
+              "coupon_value"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_email_user2",
+          "operation": "ALTER",
+          "table": "ct_email_user",
+          "line": 5245,
+          "sql_sha256": "4a5ae42ff1f89d3eb908d94ac2b1282ab228e0c560f0516cfc7795c49b41b7bb",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "cus_ids",
+              "cus_sub",
+              "cus_msg",
+              "cus_img",
+              "cus_dt"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_frequently_discount2",
+          "operation": "ALTER",
+          "table": "ct_frequently_discount",
+          "line": 5248,
+          "sql_sha256": "22e632dd6ce58d8937a9fb2718b8f4bdb178609d05801a4e63137df19992ac39",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "discount_typename",
+              "days",
+              "rates",
+              "labels",
+              "booking_count",
+              "stripe_plan_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_languages2",
+          "operation": "ALTER",
+          "table": "ct_languages",
+          "line": 5251,
+          "sql_sha256": "c47fcb67f8820233813c18548c4632ca74f88ccaa12c6011908c0b356d61e61b",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "label_data",
+              "language",
+              "admin_labels",
+              "error_labels",
+              "extra_labels",
+              "front_error_labels",
+              "app_labels"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_off_days2",
+          "operation": "ALTER",
+          "table": "ct_off_days",
+          "line": 5254,
+          "sql_sha256": "adfe1205876f5c05cdded9b261df2513c7c936d6a2f758b0abc8599ca76cae60",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "user_id",
+              "lastmodify",
+              "status"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_order_client_info2",
+          "operation": "ALTER",
+          "table": "ct_order_client_info",
+          "line": 5257,
+          "sql_sha256": "88f75602f57f31e5f83614c05e5c3e4f5ab060f875a128230c7a862dcd68cd8d",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "order_id",
+              "client_name",
+              "client_email",
+              "client_phone",
+              "client_personal_info"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_otp2",
+          "operation": "ALTER",
+          "table": "ct_otp",
+          "line": 5260,
+          "sql_sha256": "6660a52a17805e1b3f8b9350ad502744c415ac9529e8a61953efb5493a63b4e4",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "email"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_payments2",
+          "operation": "ALTER",
+          "table": "ct_payments",
+          "line": 5264,
+          "sql_sha256": "1182dc64b2e10fe0967c6af1a4dc1d7891352a06e42f54eee08be7a7387358f0",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "order_id",
+              "payment_method",
+              "transaction_id",
+              "amount",
+              "discount",
+              "taxes",
+              "partial_amount",
+              "net_amount",
+              "lastmodify",
+              "frequently_discount_amount",
+              "payment_status"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_rating_review2",
+          "operation": "ALTER",
+          "table": "ct_rating_review",
+          "line": 5267,
+          "sql_sha256": "2483336b7e4af1c861ddbaa0064b83f2802fcbae125f1e834a84c3deec720b13",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "staff_id",
+              "rating",
+              "review"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_recurring_status2",
+          "operation": "ALTER",
+          "table": "ct_recurring_status",
+          "line": 5270,
+          "sql_sha256": "4f33c74c61260f0bdd831afa19ab3dea465d01d975180c86422f689f6f5f3d0c",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "recurring_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_referral_coupon2",
+          "operation": "ALTER",
+          "table": "ct_referral_coupon",
+          "line": 5273,
+          "sql_sha256": "269e695d90487b8b6c69d57e5400e0f024ea63175cdcc276d24c9c18fc027db2",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "client_id",
+              "referral_coupon",
+              "friend_referral_id",
+              "coupon_limit",
+              "coupon_used"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_register_otp2",
+          "operation": "ALTER",
+          "table": "ct_register_otp",
+          "line": 5276,
+          "sql_sha256": "46d29f3ddc360ce950f9619716374cbb2c94524a06ea1801eaac94869da34c17",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "phone"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_schedule_breaks2",
+          "operation": "ALTER",
+          "table": "ct_schedule_breaks",
+          "line": 5279,
+          "sql_sha256": "1aeecacf60aca4435ecde70633d3b60bb3b9bcd32e1524efc89ef1cf219c8cb7",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "provider_id",
+              "week_id",
+              "weekday_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_schedule_offtimes2",
+          "operation": "ALTER",
+          "table": "ct_schedule_offtimes",
+          "line": 5282,
+          "sql_sha256": "9a9042ff0d4c6f78830a68b25f41798b1f16b8d90441bad988300c0e225785d7",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "provider_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_services2",
+          "operation": "ALTER",
+          "table": "ct_services",
+          "line": 5285,
+          "sql_sha256": "7a6345d7659a3016855c4d876e3484750be5b1f4e244f9415adb0ea2c2212dd1",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "title",
+              "description",
+              "color",
+              "image",
+              "position"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_services_addon2",
+          "operation": "ALTER",
+          "table": "ct_services_addon",
+          "line": 5288,
+          "sql_sha256": "bffcdf38b46a92430f156af16dd03ad5d0ade5932ea6ef177300be69e32b6b9a",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "service_id",
+              "addon_service_name",
+              "base_price",
+              "maxqty",
+              "image",
+              "position",
+              "predefine_image",
+              "predefine_image_title",
+              "addon_service_description",
+              "aduration"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_services_method2",
+          "operation": "ALTER",
+          "table": "ct_services_method",
+          "line": 5292,
+          "sql_sha256": "186875b5a228a4175344ac2c0a16820e98ee2e154f7f8c758d15ad88da65e299",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "service_id",
+              "method_title",
+              "position"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_services_methods_units_rate2",
+          "operation": "ALTER",
+          "table": "ct_services_methods_units_rate",
+          "line": 5296,
+          "sql_sha256": "c0bf2e0f675fb14c5cd844bce962d1c420a1bb7adbcb47efc6e57b6cc0d155d7",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "units_id",
+              "units"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_service_methods_design2",
+          "operation": "ALTER",
+          "table": "ct_service_methods_design",
+          "line": 5299,
+          "sql_sha256": "0f605900528ddde90f00c761773af986fa0013f88e16ec7752c47e804e5950f3",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "service_methods_id",
+              "design"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_service_methods_units2",
+          "operation": "ALTER",
+          "table": "ct_service_methods_units",
+          "line": 5302,
+          "sql_sha256": "c021bec700e6be62d97f476213bfc800e3d6867bde3e729c512b752ef62916b8",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "services_id",
+              "methods_id",
+              "units_title",
+              "base_price",
+              "maxlimit",
+              "position",
+              "limit_title",
+              "unit_symbol",
+              "uduration"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_settings2",
+          "operation": "ALTER",
+          "table": "ct_settings",
+          "line": 5305,
+          "sql_sha256": "6332ce76ffe66af0a49dfb3ae4089ba1d02e7b89567ec5ea078f16eada597f9b",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "option_name",
+              "option_value"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_sms_user2",
+          "operation": "ALTER",
+          "table": "ct_sms_user",
+          "line": 5311,
+          "sql_sha256": "cda76facc3bab7887c53caa8bc326bde644d4b0288530aee2cb73a46e1e8fc96",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "cus_ids",
+              "cus_msg",
+              "cus_dt"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_sms_templates2",
+          "operation": "ALTER",
+          "table": "ct_sms_templates",
+          "line": 5316,
+          "sql_sha256": "38300ffe738c0285eb7d768074426d7a309cb467b0acc36011907a3ee84bca83",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "sms_subject",
+              "sms_message",
+              "default_message"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_staff_commission2",
+          "operation": "ALTER",
+          "table": "ct_staff_commission",
+          "line": 5319,
+          "sql_sha256": "89fdf3c91c12c0adfc65f8ad3abcf59dd22a34c4c3824df5f08dbbb4a24491ac",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "order_id",
+              "staff_id",
+              "amt_payable",
+              "advance_paid",
+              "net_total",
+              "payment_method",
+              "transaction_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_staff_status2",
+          "operation": "ALTER",
+          "table": "ct_staff_status",
+          "line": 5322,
+          "sql_sha256": "16e637360911eda36b091c60897c4fe8004733c1b5126430f158e763c550239d",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "staff_id",
+              "order_id"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "ct_week_days_available2",
+          "operation": "ALTER",
+          "table": "ct_week_days_available",
+          "line": 5327,
+          "sql_sha256": "3c62ac5d9129ce24af69b697d162ed9695cfadcfefd5156f2b599f73bfca8e8b",
+          "columns": {
+            "add": [],
+            "change": [
+              "id",
+              "provider_id",
+              "week_id",
+              "weekday_id",
+              "provider_schedule_type"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options1",
+          "operation": "ALTER",
+          "table": "ct_admin_info",
+          "line": 5675,
+          "sql_sha256": "a066f7592af89e5c95fb3850fb38302a68109aa96161c7ee049b7ab332f0a73b",
+          "columns": {
+            "add": [
+              "latitude"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "latitude"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options2",
+          "operation": "ALTER",
+          "table": "ct_admin_info",
+          "line": 5677,
+          "sql_sha256": "ac56ec839b68a86d5557919839b356d7db05bd8e1772ce26a99c1ee682d8f3b3",
+          "columns": {
+            "add": [
+              "longitude"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "longitude"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5681,
+          "sql_sha256": "b44f88bb40b824ca8ed1af42fd1b060570f8d72990ddfafe465b31bdbd017aae",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options2",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5684,
+          "sql_sha256": "a1dbb898bda9afb95d1805133b65b1e3e1b78bee6438a432f8d3f14ca0866d3a",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5845,
+          "sql_sha256": "1675e19d329d3c54b251bbf79990b5e2dba52c00b8f67784e31abaa50d4aeb9c",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options2",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5848,
+          "sql_sha256": "09232765dd6623612ba39f9c455f8bd8fb592e7ce472c87fb2d36e618eb5756e",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options3",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5851,
+          "sql_sha256": "958471956e2df7c01e423186df9aaa93268ac25e60ce8883148b82e67df6cf4e",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options4",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5854,
+          "sql_sha256": "da24af61b9b8ef2e4c03b614085f596c7eae20a6fc6794a80d3e4a22cbcbddbc",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options5",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5857,
+          "sql_sha256": "b10e8485e295c03c4f360aa0e33f022c16470fe145d2ed29d3e4b34d010a9777",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options6",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 5860,
+          "sql_sha256": "58ab05d7e58c593fa1bf66c48dff672c8192484716b8eb24857f5a3a7622f281",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "special_off",
+          "operation": "CREATE",
+          "table": "ct_special_offer",
+          "line": 6077,
+          "sql_sha256": "f07218d3f74fd67cf9f9e87b3dfa0eb00e207ea9d01ea2832dafdc79a6e44c90",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "alter_ct_payments",
+          "operation": "ALTER",
+          "table": "ct_payments",
+          "line": 6359,
+          "sql_sha256": "50b395aecda02e21de3e54bcfe3700310b8e793296296a88fed262f5a7a1be24",
+          "columns": {
+            "add": [
+              "tip"
+            ],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [
+            "tip"
+          ],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "alter_ct_service_methods_units",
+          "operation": "ALTER",
+          "table": "ct_service_methods_units",
+          "line": 6385,
+          "sql_sha256": "f7938261a9d1a6b440ffef3c1ddcfa56291fbb7b2472a9e68f7123438e07a36c",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": true
+        },
+        {
+          "variable": "add_options",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 6612,
+          "sql_sha256": "a59f2656bcede0792853f3a2a75fa4cb3b127d4d50fdbd28f0d2565230237658",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options2",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 6615,
+          "sql_sha256": "5588e0fe744f4829fd783a7975987879b43eb57e5477dafdd634d515357ccbda",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options3",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 6618,
+          "sql_sha256": "b6c4e4143218a978b2d766c753f5efa3231342a45e5a1a2b25ec317f600b5961",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options4",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 6621,
+          "sql_sha256": "db9b9e6bef3d68d9a5f30993b6406f0fb83a36893862f191830b603669e60558",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options5",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 6624,
+          "sql_sha256": "e5302d732657947e71c880157fa18d600c7d6fafe90f032c1cc88b88e59e8d11",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options6",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 6627,
+          "sql_sha256": "016404d1723240dd4c5bdedcb0a3fa96df20bf6c015c6db46f91157efdbc595e",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options7",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 6630,
+          "sql_sha256": "4567f3bf90f59586aa6ed7bbab44d55e3d56342f794118b6d4634a91f11366ab",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options8",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 6633,
+          "sql_sha256": "3ce76bd9495be5fe0cff70ed32439c089ed39bef837018261262bf8fdd82f1e9",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options9",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 6636,
+          "sql_sha256": "bcfce8aa99a31cd5e398e39ad25d10655fdee038748d2bdd0481a0c122fe955b",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options10",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 6639,
+          "sql_sha256": "cf579d846707055f6ee09f386851fd415cbd008a17e2242b247ac9c44206c2bf",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "add_options11",
+          "operation": "INSERT",
+          "table": "ct_settings",
+          "line": 6642,
+          "sql_sha256": "7b9f6c4e838a1f72ba92354a9fa6eaf4092458580b61a4384d25778159d5d43c",
+          "columns": {
+            "add": [],
+            "change": [],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        },
+        {
+          "variable": "q1s",
+          "operation": "ALTER",
+          "table": "ct_bookings",
+          "line": 6762,
+          "sql_sha256": "c80545b3c4f5faafc47abb8775bb7e6bee06f46fb9ab4db5d0dc75ae0a9074ec",
+          "columns": {
+            "add": [],
+            "change": [
+              "method_unit_qty"
+            ],
+            "drop": []
+          },
+          "add_columns_already_in_base": [],
+          "dynamic_or_escaped": false
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "The baseline CREATE DDL may already include columns introduced by historical upgrades.",
+    "SQL embedded in expressions or dynamically built strings is NOT automatically extracted.",
+    "Do not replay this inventory against production or assume that version-specific upgrades are ordered.",
+    "Foreign keys, state-dependent updates and data migrations require separate human review."
+  ]
+}

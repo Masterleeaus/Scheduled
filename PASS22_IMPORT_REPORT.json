@@ -1,0 +1,46 @@
+{
+  "pass": 22,
+  "baseline": "Pass21 50 verticals",
+  "source_imports": {
+    "pawfy": {
+      "source": "pawfy-dog-grooming-breeding-html-template-2025-04-07-22-23-37-utc.zip",
+      "full_archive_entries": 155,
+      "adapted_media_assets": 3
+    },
+    "stevenwatkins": {
+      "source": "gym-trainerSrmehranclub.zip",
+      "full_archive_entries": 695,
+      "adapted_media_assets": 3
+    },
+    "carzone": {
+      "source": "GbJ69rZT-Carzone-Car-Repairing-Car-Detailing-Services-Website-Template-hjrf90.zip",
+      "full_archive_entries": 132,
+      "adapted_media_assets": 3
+    }
+  },
+  "templates_added": [
+    "pawfy",
+    "stevenwatkins",
+    "yoga-pilates",
+    "carzone"
+  ],
+  "website_count_after": 19,
+  "landing_count_after": 10,
+  "cleaning_focused_website_templates": 15,
+  "cleaning_focused_landing_templates": 10,
+  "mapped_verticals": {
+    "dog-walking": "pawfy",
+    "pet-and-house-sitting": "pawfy",
+    "pet-grooming": "pawfy",
+    "dog-training": "pawfy",
+    "personal-and-fitness-training": "stevenwatkins",
+    "yoga-and-pilates": "yoga-pilates",
+    "car-detailing": "carzone"
+  },
+  "yoga_graphics": "3 original editable SVG site assets",
+  "known_limits": [
+    "Adapted Blade layouts and selected original image assets; original full HTML page sets not reconstructed page-for-page",
+    "Browser editing and live database acceptance pending",
+    "AI provider-driven custom replacement image creation still requires configured provider"
+  ]
+}

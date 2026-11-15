@@ -1,0 +1,221 @@
+{
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass89_BLOCKED_PASS58_MARIADB.zip",
+  "changed_files": [
+    {
+      "path": "PASS90_TEMPLATE_INTEGRATION_REPORT.json",
+      "operation": "added",
+      "size": 6273,
+      "sha256": "a24e65f4413d9cc381bb2aa66675312d2d2f89b2b5dac9a201341b8f4b0319da"
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/cleanmate.json",
+      "operation": "added",
+      "size": 1774,
+      "sha256": "344593bed81b48135c849c2d057c7717b181ba6299ace2539b3d2571f173161d"
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/clinar.json",
+      "operation": "added",
+      "size": 1827,
+      "sha256": "39a5cf56e84c4e4210fe8e3a9a86febe9df99d7c3eebecb1db3102175034d1c2"
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/handypro.json",
+      "operation": "added",
+      "size": 1778,
+      "sha256": "0035818f399952b6b4b47890907f6598e81e7d7fa41d1a358358813db3e9eb95"
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/klano.json",
+      "operation": "added",
+      "size": 1716,
+      "sha256": "cf213755d775d5269995c631386e5ba3a33ba8c1d94278f97ae1c1b366ba1271"
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/prinash.json",
+      "operation": "added",
+      "size": 1795,
+      "sha256": "6ba22f5d4a732258377ebb66e94bc5733ab11d95298ce31a1c7bdbdc8b3367f8"
+    },
+    {
+      "path": "core/app/Services/Sites/SiteTemplates.php",
+      "operation": "modified",
+      "size": 4110,
+      "sha256": "ff6d43c61270dc2ae7a9e4a121c2bbd31e9fb831280d8b7439c31335f8a0c36c"
+    },
+    {
+      "path": "core/public/assets/sites/imported/cleanmate/detail1.jpg",
+      "operation": "added",
+      "size": 628674,
+      "sha256": "5aed866b085102bc0bd67aadb6d3f4374dc0eff9155bd0c8dffc5f1814e33cdf"
+    },
+    {
+      "path": "core/public/assets/sites/imported/cleanmate/detail2.jpg",
+      "operation": "added",
+      "size": 407748,
+      "sha256": "213055c7d01cb5e9651bc5388abaad9e853deebdb0a8afa8fffab0e163199eb7"
+    },
+    {
+      "path": "core/public/assets/sites/imported/cleanmate/detail3.jpg",
+      "operation": "added",
+      "size": 218811,
+      "sha256": "3a953aff8319fe41129037e2038fce21e0ef4819409d6f99946c23537bc3b096"
+    },
+    {
+      "path": "core/public/assets/sites/imported/cleanmate/hero.jpg",
+      "operation": "added",
+      "size": 363983,
+      "sha256": "935299e605a5690bb941d39f4131f6ab4cc569c64a27b4217350beb6d0d86a45"
+    },
+    {
+      "path": "core/public/assets/sites/imported/clinar/detail1.png",
+      "operation": "added",
+      "size": 3415,
+      "sha256": "bf53d612ac868f178217ae2423809c88ee26703aa361ec5da84ad0eaf98a0b88"
+    },
+    {
+      "path": "core/public/assets/sites/imported/clinar/detail2.jpg",
+      "operation": "added",
+      "size": 5137,
+      "sha256": "99af054640393ee528bba3f469f3424f287d3fbade6db9fc775fce6b30049cd9"
+    },
+    {
+      "path": "core/public/assets/sites/imported/clinar/detail3.jpg",
+      "operation": "added",
+      "size": 5137,
+      "sha256": "99af054640393ee528bba3f469f3424f287d3fbade6db9fc775fce6b30049cd9"
+    },
+    {
+      "path": "core/public/assets/sites/imported/clinar/hero.jpg",
+      "operation": "added",
+      "size": 202317,
+      "sha256": "be4f5188ced7ee8b7c0ef4456cb1dcfa2519f242b3453f624b7576cd368761e7"
+    },
+    {
+      "path": "core/public/assets/sites/imported/handypro/detail1.png",
+      "operation": "added",
+      "size": 85437,
+      "sha256": "b7c0ec1611bd949c2dcc50fca86337bb2a38431ea9a5344209db9cdc7dc3c94d"
+    },
+    {
+      "path": "core/public/assets/sites/imported/handypro/detail3.jpg",
+      "operation": "added",
+      "size": 42988,
+      "sha256": "398bafc245918514c42253964ace8bcf896bcb97ab721fd4d28de9263b9185bc"
+    },
+    {
+      "path": "core/public/assets/sites/imported/handypro/hero.png",
+      "operation": "added",
+      "size": 17705,
+      "sha256": "4a4d452a21fbb29f0937e545218487676ce3e88b8119772efa4382ed6d106f3e"
+    },
+    {
+      "path": "core/public/assets/sites/imported/klano/detail1.jpg",
+      "operation": "added",
+      "size": 2260,
+      "sha256": "8c22341e437ed2137e0c486ec505d5b5d1e8dc1dbcc7eed36f5a32a4cdc21b1b"
+    },
+    {
+      "path": "core/public/assets/sites/imported/klano/detail2.jpg",
+      "operation": "added",
+      "size": 13395,
+      "sha256": "471b975dcde7d09e74556e8ec302093f32a964e0342a2b79b0b6c10a07c765d9"
+    },
+    {
+      "path": "core/public/assets/sites/imported/klano/detail3.jpg",
+      "operation": "added",
+      "size": 13901,
+      "sha256": "6266991cfc7a223b5309b04fc324cd249390118ace6bf68b80db658ae197c4ed"
+    },
+    {
+      "path": "core/public/assets/sites/imported/klano/hero.jpg",
+      "operation": "added",
+      "size": 13354,
+      "sha256": "3fa3fa03307b37a77555839ca3c8e93fa6eaac752aa932996a9b2e8aa439d263"
+    },
+    {
+      "path": "core/public/assets/sites/imported/prinash/detail1.jpg",
+      "operation": "added",
+      "size": 22826,
+      "sha256": "0eef1d6506a84ba2e0dfb7840cb2f3ab79be797edaded906f1826bf36e325591"
+    },
+    {
+      "path": "core/public/assets/sites/imported/prinash/detail2.jpg",
+      "operation": "added",
+      "size": 5179,
+      "sha256": "4cb1697a923bde0759c4b37f7a30aad5b5406f19d6294b9e8174016b1da53693"
+    },
+    {
+      "path": "core/public/assets/sites/imported/prinash/detail3.jpg",
+      "operation": "added",
+      "size": 5179,
+      "sha256": "4cb1697a923bde0759c4b37f7a30aad5b5406f19d6294b9e8174016b1da53693"
+    },
+    {
+      "path": "core/public/assets/sites/imported/prinash/hero.jpg",
+      "operation": "added",
+      "size": 34402,
+      "sha256": "062a58e67870a9ba9d33ec5fcf9489ba922083095f6011995294bd03bab28b16"
+    },
+    {
+      "path": "core/public/assets/sites/themes/cleanmate.css",
+      "operation": "added",
+      "size": 4665,
+      "sha256": "0ea93b3ec87728303635e1867babdb5098d10ae3ee7d1cd8f4669153304b9397"
+    },
+    {
+      "path": "core/public/assets/sites/themes/clinar.css",
+      "operation": "added",
+      "size": 4507,
+      "sha256": "4376af8370204fce7421feb449d0f3cbf5e4c36a834b607b0a334285314bf8f0"
+    },
+    {
+      "path": "core/public/assets/sites/themes/handypro.css",
+      "operation": "added",
+      "size": 4628,
+      "sha256": "79754df08d03951dc64df4a945ba5ad944c5b45996eb2161b9315a8b9e55d446"
+    },
+    {
+      "path": "core/public/assets/sites/themes/klano.css",
+      "operation": "added",
+      "size": 4462,
+      "sha256": "249a91a17f0b73355bacc0f111827ed11f5bbe258fd734549ecff30f076c9c2f"
+    },
+    {
+      "path": "core/public/assets/sites/themes/prinash.css",
+      "operation": "added",
+      "size": 4549,
+      "sha256": "b993845a9f928318cb204f78f5ae154b6fcc084de84e471b065cdd232ffd7549"
+    },
+    {
+      "path": "core/resources/views/front/sites/themes/cleanmate.blade.php",
+      "operation": "added",
+      "size": 3126,
+      "sha256": "6585f7fc9c3ff3d7787be7e18011634999055b3f048ef575820a68f40ffc8a6c"
+    },
+    {
+      "path": "core/resources/views/front/sites/themes/clinar.blade.php",
+      "operation": "added",
+      "size": 3106,
+      "sha256": "3bbb34a0d4793fe7f47710fb9f308f5d8c1c52080f62ce6db4b6b47456211b52"
+    },
+    {
+      "path": "core/resources/views/front/sites/themes/handypro.blade.php",
+      "operation": "added",
+      "size": 3123,
+      "sha256": "e49c0a57692c43a4a26c698d7c18cc34d3f9be888d220d8def8d8d2c7bacd0f9"
+    },
+    {
+      "path": "core/resources/views/front/sites/themes/klano.blade.php",
+      "operation": "added",
+      "size": 3100,
+      "sha256": "353c7b86ccdb30dbc9802cafcea6c99dc813428195e20f36f274d774a991387a"
+    },
+    {
+      "path": "core/resources/views/front/sites/themes/prinash.blade.php",
+      "operation": "added",
+      "size": 3124,
+      "sha256": "f71247d5125bcd6e5c799bb7ea5560d15511b11b8cf7a492f7279f342ee5ccd4"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "pass": 84,
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass83_BLOCKED_PASS58_MARIADB.zip",
+  "status": "recovery candidate; missing Pass 58 and live MariaDB verification",
+  "files": [
+    {
+      "path": "private/booking-sidecar/BookingWriteCoordinator.php",
+      "action": "modified",
+      "old_sha256": "b10d2777f53912da7b0745a22be3f7e44278ac471fcf77008c99f10f095765bf",
+      "new_sha256": "831113544656866ffb58bc05f623bddfee91818d89878e0469d259cea6c9153b",
+      "bytes": 2810
+    },
+    {
+      "path": "private/booking-sidecar/BookingRescheduleCoordinator.php",
+      "action": "modified",
+      "old_sha256": "21a6e588ba62ab27e15a29c259b335fcec685da8466319203bd1b3df8f50cec0",
+      "new_sha256": "126afb31a5406fa8badfd013aac214ec7988722aaf201b495a5ede0db52a379b",
+      "bytes": 3660
+    },
+    {
+      "path": "integration/tests/pass84/01_post_lock_future_guards.php",
+      "action": "added",
+      "old_sha256": null,
+      "new_sha256": "21448341a58d9bf693fe21c1d3d1c39088adbbf088d261c6788416fd22a8ec47",
+      "bytes": 3647
+    }
+  ],
+  "report": "PASS84_REPORT.md"
+}

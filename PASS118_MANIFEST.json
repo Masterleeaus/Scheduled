@@ -1,0 +1,35 @@
+{
+  "pass": 118,
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass117_BLOCKED_PASS58_MARIADB.zip",
+  "created_at_utc": "2026-11-10T02:24:10.624109+00:00",
+  "release_status": "recovery_candidate_blocked_pass58_mariadb",
+  "changes": [
+    {
+      "path": "assets/front/js/titan-booking-widget.js",
+      "change": "modified",
+      "sha256": "a854e67483432499117d1df453bc6aa0e1b2bb771d211e10881064a96eb19d3a",
+      "size_bytes": 11526,
+      "prior_sha256": "245105161654a82c71b5b75b71c7c18e4a162fc7a4fa26f469e979c4f63a041e"
+    },
+    {
+      "path": "core/tests/Booking/pass118_checkout_uncertain_outcome_test.js",
+      "change": "added",
+      "sha256": "925bd9b5f4f46598ca3f846a16d302612c8b6426b6ab71c2c7a7414cf71208d2",
+      "size_bytes": 4819,
+      "prior_sha256": null
+    },
+    {
+      "path": "PASS118_REPORT.md",
+      "change": "added",
+      "sha256": "c349757156b892edbece05171bd8ad83b838e1eb5150ab82064f2217aa64c6ab",
+      "size_bytes": 2162
+    }
+  ],
+  "tests": {
+    "pass118": 10,
+    "pass95": 22,
+    "pass88": 12,
+    "js_syntax": true
+  },
+  "live_mariadb_executed": false
+}

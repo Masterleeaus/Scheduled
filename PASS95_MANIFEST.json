@@ -1,0 +1,26 @@
+{
+  "pass": 95,
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass94_BLOCKED_PASS58_MARIADB.zip",
+  "source_changed_files": [
+    "core/tests/Booking/pass95_public_checkout_transport_test.js",
+    "core/tests/Booking/pass87_public_slot_intent_contract_test.js",
+    "core/resources/views/front/partials/titan-booking-assets.blade.php",
+    "core/resources/views/front/partials/titan-booking-widget.blade.php",
+    "integration/tests/pass66/booking_view_contract.php",
+    "assets/front/js/titan-booking-widget.js",
+    "assets/front/js/titan-booking-transport.js",
+    "PASS95_REPORT.md"
+  ],
+  "sha256": {
+    "core/tests/Booking/pass95_public_checkout_transport_test.js": "b1668b43881a5740af3bb788fc0d783cec3fa0ffa8ea525868d382e0eba5b66b",
+    "core/tests/Booking/pass87_public_slot_intent_contract_test.js": "c6c2ac7163be95fb54690a3e7c605e8cf58d263b7f303cb875fdc2f38df5f6ae",
+    "core/resources/views/front/partials/titan-booking-assets.blade.php": "58dcab7c7ceb82427df8e10d386254bbfb8fe3324a44c311683e2f8ba4ce8863",
+    "core/resources/views/front/partials/titan-booking-widget.blade.php": "6d352199f353f122dc5183d63e2ce52ce17fbd396061ed03449acd48b0a8205e",
+    "integration/tests/pass66/booking_view_contract.php": "44d1c7c15ccb7a586b0f862d5e703ea33f8edb8fe95966ebbf3e211bb88e00c2",
+    "assets/front/js/titan-booking-widget.js": "e5a62baf56283994e31529f992576330f1541c7eea14ea6df0500ac3f5151c58",
+    "assets/front/js/titan-booking-transport.js": "c284521cf235c9d655fc129cacda0fa816702096c8207d1b87e87c649ee99937",
+    "PASS95_REPORT.md": "df6b5c67695c77fc67fb29aa88f2e98153f5e179dbc447e917cd43bbec73ecd3"
+  },
+  "database_evidence": "not executed",
+  "missing_pass58": true
+}

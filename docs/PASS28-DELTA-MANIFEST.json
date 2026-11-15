@@ -1,0 +1,12 @@
+{
+  "pass": 28,
+  "base": "Pass27 cumulative",
+  "changed_files": [
+    "core/app/Services/Sites/SiteCleantoServiceReadiness.php",
+    "core/app/Http/Controllers/Admin/SiteCleantoServiceMapController.php",
+    "core/resources/views/admin/sites/cleanto-service-map.blade.php",
+    "core/resources/views/front/partials/titan-booking-widget.blade.php",
+    "core/tests/Standalone/SiteCleantoServiceReadinessTest.php",
+    "docs/PASS28-REPORT.md"
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "private/booking-sidecar/BookingTimeWindow.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "1e706fc8c3ac8238983bd20423ec75d3e7b19f3d83d75f28b9e27d3f7e9c7f1c",
+    "lines": 15
+  },
+  "private/booking-sidecar/BookingKey.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "747fd5b78f48c6cf0adf0570ced8962b3b62dd6165b187033bb506021c6a7c24",
+    "lines": 13
+  },
+  "private/booking-sidecar/BookingCustomer.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "c46cb419b61304d72f570862fcbcf1afa0cc2f7019c2f10b72bc5d87d85d6c43",
+    "lines": 14
+  },
+  "private/booking-sidecar/BookingStaff.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "3f8b2816e8c23faa710f51cf8e67b934f1b45f0561d4ebcc1a611f378bbbbb7c",
+    "lines": 14
+  },
+  "private/booking-sidecar/BookingService.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "36aff1a94cb4c67308ec97284624ae53bd6cb03f391ed1857c9bdb42dec179ce",
+    "lines": 13
+  },
+  "private/booking-sidecar/BookingMoney.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "eb372e7feff75dcfe5904b2d3d41492077239c74de5e95139cdb7cdde08d6cba",
+    "lines": 14
+  },
+  "private/booking-sidecar/BookingCommand.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "0624be3c4fa8e4887ef6896b4743120bb0b399040b62383d598f44e0dd79f7ea",
+    "lines": 16
+  },
+  "private/booking-sidecar/BookingSchedulePolicy.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "29200b2d1dbd53fcc3df515e176be7f4270817a7665dba5f9a36fa197cad8516",
+    "lines": 12
+  },
+  "private/booking-sidecar/BookingStateMachine.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "15264a9e4d5ac471597940a48786715c37e9f611b69427321345a4590c6d8377",
+    "lines": 14
+  },
+  "private/booking-sidecar/BookingCancellation.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "38f54ec02ffa689c487e2e133d127a1b953769c34ea20696e3b3ca2416416bbc",
+    "lines": 14
+  },
+  "private/booking-sidecar/BookingReschedule.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "36e1fa9450a3eee7980c2ffbc36a0252f8c140ab8b845e427e204e32457f33fc",
+    "lines": 13
+  },
+  "private/booking-sidecar/BookingRecurrenceRule.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "157e5db62420103a1422fdb99f4216d312cf71c820ac316a942352e0b7c28501",
+    "lines": 13
+  },
+  "private/booking-sidecar/BookingRecurrencePlan.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "4031f5047674076a43c99dab0aac130a44aa2f393d853f3d500db00931d426e2",
+    "lines": 17
+  },
+  "private/booking-sidecar/BookingReservationPolicy.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "56ba50b9c0e26644c1b9bb11ccb819e66cb0a4c10833d7b54b6a94e1b45bb824",
+    "lines": 15
+  },
+  "private/booking-sidecar/BookingIdempotency.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "ebe0e159dd51a99bcf2caebecba13984ffe881a279f909ef17f78ebcb6bdea26",
+    "lines": 13
+  },
+  "private/booking-sidecar/BookingQuote.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "62169fc1113f20152c8f534461e538c8cbdc8aae6c4051badb6122832c4f397d",
+    "lines": 13
+  },
+  "private/booking-sidecar/BookingAuditEvent.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "c9c69c2af85c6765c9d03520707dcf77ccf46699da18d085642c6e846c71adbf",
+    "lines": 12
+  },
+  "private/booking-sidecar/BookingResult.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "940f6350cfb66c090b966396c5ef341f286317d2179ba2c9d6a3c41a17f25d1f",
+    "lines": 11
+  },
+  "private/booking-sidecar/BookingPayloadMapper.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "9ae6364f0f777ba087cee1a91d59ebde990cbf9022d4c3754af0cc3ddd859ade",
+    "lines": 13
+  },
+  "integration/schema/pass05_reservation_ledger.mysql.sql": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "7d9d22a64f3e9ea95671d66ccc2dbcba2587a1c111b97a1f9a23fb8a4248c195",
+    "lines": 15
+  },
+  "integration/contracts/pass05_booking_lifecycle.json": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "37966a5786b1b5680897293ea807f2e9988ac3bf28d3c205fd4d5e4e35ea9689",
+    "lines": 28
+  },
+  "integration/tests/pass05_command.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "11fdeda857251a6c9a01eaced6cc8bbd10a1f05f9d0abc88626f4b41aa9217d2",
+    "lines": 8
+  },
+  "integration/tests/pass05_customer.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "fc051fb2b4ac44f2666a5c205015e2e9a57e363b35b9a32dcb46044209f79ff5",
+    "lines": 8
+  },
+  "integration/tests/pass05_state.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "09c57b4d12d4e3f029d54c7f4fb21ac812ed2a77ecb83843f6d3410a2c9490d4",
+    "lines": 8
+  },
+  "integration/tests/pass05_schedule.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "997d99748f89f25feef1f8bb06abd8c9a1cacee200126e0937d9e5f3eaa7999c",
+    "lines": 8
+  },
+  "integration/tests/pass05_recurrence.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "40437d3eb6b794ad8aafe6bed322626305c07808f723360402c0ae067529879b",
+    "lines": 8
+  },
+  "integration/tests/pass05_idempotency.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "37484f55ca82ac9d81124c2d30f2a65d95c87863f341449342e15e9e7553ef1e",
+    "lines": 8
+  },
+  "integration/tests/pass05_money.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "f7953c289c65c23b04bd44755a474e0301042630e074faf09a185c8b1d8bb2ce",
+    "lines": 8
+  },
+  "integration/tests/pass05_reservation.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "1aff97e90a4a60289fc1f6c6870fd9b6908f6cfb5f6b75630b5d6fd89c3e0676",
+    "lines": 8
+  },
+  "integration/tests/pass05_cancel.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "ea9fd3c9b8c3297f98a367094b9fa23210cf87305f6e455d7d429c9b710b4df9",
+    "lines": 8
+  },
+  "integration/tests/pass05_reschedule.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "6824d511fc5a5c6fbe496804d0db5695f249e6f62af9a14a210e0f0a4c56c752",
+    "lines": 8
+  },
+  "integration/tests/pass05_mapper.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "faf6712f502de6afc09fffb5225c3ed711cd0e02d15e3452d1f7abf10c28f3c0",
+    "lines": 8
+  },
+  "integration/tests/pass05_audit.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "6414c40fca43fd4181f067b8195f41023b102b7a28e7c4424d825f6c4b55f9f0",
+    "lines": 8
+  },
+  "integration/tests/pass05_write_gate.php": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "417078797179d01a5bfd2e8572c2f11df40f34ac94ee639f664cc5f483894588",
+    "lines": 10
+  },
+  "integration/reports/pass05_results.json": {
+    "action": "created",
+    "old_sha256": null,
+    "new_sha256": "c7d97966a893a1374d01a41af68a6b2d85e654ed73b8d30453032fde92d10c2f",
+    "lines": 285
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "database": "titan_booking_test_acceptance",
+  "environment": "disposable",
+  "tenant": {
+    "authenticated_owner_id": 1,
+    "verified_pricing_settings": {
+      "tax_enabled": false,
+      "discount_enabled": false,
+      "coupon_enabled": false,
+      "addons_enabled": false,
+      "travel_fee_enabled": false,
+      "deposit_enabled": false
+    }
+  },
+  "create": {
+    "customer": {
+      "name": "Synthetic Booking QA",
+      "email": "concurrency@example.invalid",
+      "phone": "0000000000"
+    },
+    "service": {
+      "service_id": 1,
+      "method_id": 1,
+      "method_unit_id": 1,
+      "quantity": 1
+    },
+    "staff_ids": [
+      1
+    ],
+    "duration_minutes": 60,
+    "start_at": "2026-11-17 14:00:00",
+    "timezone": "Australia/Melbourne"
+  },
+  "reschedule": {
+    "staff_ids": [
+      1
+    ],
+    "duration_minutes": 60,
+    "start_at": "2026-11-18 14:00:00",
+    "timezone": "Australia/Melbourne"
+  }
+}

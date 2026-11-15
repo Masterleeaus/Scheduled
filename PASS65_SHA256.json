@@ -1,0 +1,14 @@
+{
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass64_BLOCKED_PASS58_MARIADB.zip",
+  "files": {
+    "PASS65_REPORT.md": "555ece18dbe7b72758c5dbed2e666e12dc539d2b2a894ee2838f1eb7c2759ee2",
+    "integration/tests/pass65/01_lock_budget_shared.php": "8da25497b746611925b925bc5ea18e046a2036e5c3a39229508600079efc519f",
+    "integration/tests/pass65/02_lock_contention_cleanup.php": "99d8aa76ca104d2ac71e36b68c9a529bba738e55c0aa349e808077ba27d44492",
+    "integration/tests/pass65/03_lock_partial_sql_failure.php": "4c9f01515fa4b130bfa0db13cae7f9cd24d6eaabd8ed4ce09f6bea3f50b91e55",
+    "integration/tests/pass65/04_lock_nonblocking.php": "aec5dd52000c3155763410e361e7573cd702595901caeaa08d6512d1beba2c14",
+    "integration/tests/pass65/05_lock_multiwait_budget.php": "065c65b4f504e60544ebdf94ba63a686d82bfe408f34c8d1f321cc98df7051a1",
+    "integration/tests/pass65/06_lock_validation.php": "5dc1b414e0c08b67cfce6e7bebfbb91fd51392c5e1823e12c13d44297ae0e959",
+    "integration/tests/pass65/bootstrap.php": "d38a556cd1e2f6e4e07942a0e16fb6d4dca8323c306eff0bbbdd3b3e6d32e366",
+    "private/booking-sidecar/BookingLockManager.php": "21674055fec1a1d10745d7ca9ae437add7c10ef161a9bf512162e2ae69aa52c7"
+  }
+}

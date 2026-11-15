@@ -1,0 +1,64 @@
+{
+  "headline": "Beyond the everyday clean.",
+  "tagline": "A detailed reset for the hard-to-reach, the overlooked and the long overdue.",
+  "accent": "#375D4E",
+  "about": "Our deep-clean approach works methodically through agreed priorities, paying close attention to buildup, detailed surfaces and high-use rooms. We plan scope and expected time before work begins.",
+  "cta_label": "Request a tailored quote",
+  "cta_url": "#contact",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Deep cleaning",
+  "seo_description": "A detailed reset for the hard-to-reach, the overlooked and the long overdue.",
+  "services": [
+    {
+      "name": "Kitchen detail",
+      "description": "Focused attention on appliance exteriors, cupboard fronts, splashbacks and reachable corners."
+    },
+    {
+      "name": "Bathroom reset",
+      "description": "A thorough pass over fixtures, tiles, screens and often-missed contact points."
+    },
+    {
+      "name": "Whole-home refresh",
+      "description": "A room-by-room intensive clean tailored to property size and the current condition."
+    },
+    {
+      "name": "Pre-event and post-event",
+      "description": "A practical reset before gatherings or after busy periods, with priorities agreed in advance."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How is a deep clean different?",
+      "answer": "A deep clean typically allows extra time for detailed areas and heavier buildup, with inclusions agreed in your quote."
+    },
+    {
+      "question": "Do I need to prepare the property?",
+      "answer": "It helps to clear fragile items and personal belongings from areas you want cleaned."
+    },
+    {
+      "question": "Can you prioritise particular rooms?",
+      "answer": "Yes. Tell us the most important spaces when requesting your quote."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local Deep service areas",
+      "description": "Contact us to confirm availability for your suburb or neighbourhood."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [
+    {
+      "title": "Deep cleaning preparation",
+      "summary": "A practical checklist before your appointment.",
+      "body": "Clear access to the work area, identify priority surfaces and discuss any delicate materials before cleaning begins.",
+      "slug": "deep-preparation"
+    }
+  ],
+  "seo_image": "",
+  "analytics_consent": false
+}

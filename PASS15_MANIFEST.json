@@ -1,0 +1,34 @@
+{
+  "pass": 15,
+  "baseline": "Master-Copy-PlusAgency-Cleanto-Pass14-CUMULATIVE.zip",
+  "changed_source_files": [
+    "core/app/Http/Controllers/Admin/SiteBrandAgentController.php",
+    "core/app/Services/Sites/AgentAudit.php",
+    "core/app/Services/Sites/AgentMediaPolicy.php",
+    "core/database/migrations/2026_11_11_150001_create_titan_agent_audit_events.php",
+    "core/tests/Feature/Sites/AgentAuditIntegrationTest.php",
+    "core/tests/Unit/Sites/AgentMediaPolicyTest.php"
+  ],
+  "added_source_files": [
+    "core/app/Services/Sites/AgentAudit.php",
+    "core/app/Services/Sites/AgentMediaPolicy.php",
+    "core/database/migrations/2026_11_11_150001_create_titan_agent_audit_events.php",
+    "core/tests/Feature/Sites/AgentAuditIntegrationTest.php",
+    "core/tests/Unit/Sites/AgentMediaPolicyTest.php"
+  ],
+  "modified_source_files": [
+    "core/app/Http/Controllers/Admin/SiteBrandAgentController.php"
+  ],
+  "deleted_files": [],
+  "tested": [
+    "PHP syntax checks",
+    "AgentMediaPolicy site mismatch smoke test"
+  ],
+  "unverified": [
+    "live MariaDB migration",
+    "authenticated browser access",
+    "AI provider requests",
+    "full tenant isolation"
+  ],
+  "created_utc": "2026-11-11T00:39:55.563277+00:00"
+}

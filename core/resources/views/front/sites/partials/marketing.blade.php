@@ -1,0 +1,6 @@
+@if(!empty($document['service_areas']))
+<section class="site-extras wrap" id="service-areas"><h2>Areas we serve</h2><div class="site-feature-grid">@foreach($document['service_areas'] as $area)<article><h3>{{ $area['name'] }}</h3><p>{{ $area['description'] }}</p></article>@endforeach</div></section>
+@endif
+@php($activePromotions=\App\Services\Sites\SiteMarketing::activePromotions($document, now()->toDateString()))
+@if(count($activePromotions))<section class="site-extras wrap" id="offers"><h2>Current offers</h2><div class="site-feature-grid">@foreach($activePromotions as $offer)<article><h3>{{ $offer['description'] }}</h3><p>Quote code: <strong>{{ $offer['code'] }}</strong></p>@if($offer['expires'])<p>Valid until {{ $offer['expires'] }}</p>@endif</article>@endforeach</div></section>@endif
+@if(!empty($document['blog_posts']))<section class="site-extras wrap" id="articles"><h2>Cleaning advice</h2><div class="site-feature-grid">@foreach($document['blog_posts'] as $post)<article id="article-{{ $post['slug'] }}"><h3>{{ $post['title'] }}</h3><p>{{ $post['summary'] }}</p><details><summary>Read article</summary><p class="site-article-body">{!! nl2br(e($post['body'])) !!}</p></details></article>@endforeach</div></section>@endif

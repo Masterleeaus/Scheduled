@@ -1,0 +1,284 @@
+{
+  "pass": 5,
+  "files_changed": 34,
+  "created": 34,
+  "modified": 0,
+  "results": [
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingTimeWindow.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingTimeWindow.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingKey.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingKey.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingCustomer.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingCustomer.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingStaff.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingStaff.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingService.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingService.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingMoney.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingMoney.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingCommand.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingCommand.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingSchedulePolicy.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingSchedulePolicy.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingStateMachine.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingStateMachine.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingCancellation.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingCancellation.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingReschedule.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingReschedule.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingRecurrenceRule.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingRecurrenceRule.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingRecurrencePlan.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingRecurrencePlan.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingReservationPolicy.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingReservationPolicy.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingIdempotency.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingIdempotency.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingQuote.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingQuote.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingAuditEvent.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingAuditEvent.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingResult.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingResult.php"
+    },
+    {
+      "type": "lint",
+      "file": "private/booking-sidecar/BookingPayloadMapper.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/private/booking-sidecar/BookingPayloadMapper.php"
+    },
+    {
+      "type": "lint",
+      "file": "integration/tests/pass05_command.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/integration/tests/pass05_command.php"
+    },
+    {
+      "type": "lint",
+      "file": "integration/tests/pass05_customer.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/integration/tests/pass05_customer.php"
+    },
+    {
+      "type": "lint",
+      "file": "integration/tests/pass05_state.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/integration/tests/pass05_state.php"
+    },
+    {
+      "type": "lint",
+      "file": "integration/tests/pass05_schedule.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/integration/tests/pass05_schedule.php"
+    },
+    {
+      "type": "lint",
+      "file": "integration/tests/pass05_recurrence.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/integration/tests/pass05_recurrence.php"
+    },
+    {
+      "type": "lint",
+      "file": "integration/tests/pass05_idempotency.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/integration/tests/pass05_idempotency.php"
+    },
+    {
+      "type": "lint",
+      "file": "integration/tests/pass05_money.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/integration/tests/pass05_money.php"
+    },
+    {
+      "type": "lint",
+      "file": "integration/tests/pass05_reservation.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/integration/tests/pass05_reservation.php"
+    },
+    {
+      "type": "lint",
+      "file": "integration/tests/pass05_cancel.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/integration/tests/pass05_cancel.php"
+    },
+    {
+      "type": "lint",
+      "file": "integration/tests/pass05_reschedule.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/integration/tests/pass05_reschedule.php"
+    },
+    {
+      "type": "lint",
+      "file": "integration/tests/pass05_mapper.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/integration/tests/pass05_mapper.php"
+    },
+    {
+      "type": "lint",
+      "file": "integration/tests/pass05_audit.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/integration/tests/pass05_audit.php"
+    },
+    {
+      "type": "lint",
+      "file": "integration/tests/pass05_write_gate.php",
+      "ok": true,
+      "details": "No syntax errors detected in /mnt/data/plus_cleanto_work/master/integration/tests/pass05_write_gate.php"
+    },
+    {
+      "type": "test",
+      "file": "integration/tests/pass05_command.php",
+      "ok": true,
+      "details": "pass05_command OK"
+    },
+    {
+      "type": "test",
+      "file": "integration/tests/pass05_customer.php",
+      "ok": true,
+      "details": "pass05_customer OK"
+    },
+    {
+      "type": "test",
+      "file": "integration/tests/pass05_state.php",
+      "ok": true,
+      "details": "pass05_state OK"
+    },
+    {
+      "type": "test",
+      "file": "integration/tests/pass05_schedule.php",
+      "ok": true,
+      "details": "pass05_schedule OK"
+    },
+    {
+      "type": "test",
+      "file": "integration/tests/pass05_recurrence.php",
+      "ok": true,
+      "details": "pass05_recurrence OK"
+    },
+    {
+      "type": "test",
+      "file": "integration/tests/pass05_idempotency.php",
+      "ok": true,
+      "details": "pass05_idempotency OK"
+    },
+    {
+      "type": "test",
+      "file": "integration/tests/pass05_money.php",
+      "ok": true,
+      "details": "pass05_money OK"
+    },
+    {
+      "type": "test",
+      "file": "integration/tests/pass05_reservation.php",
+      "ok": true,
+      "details": "pass05_reservation OK"
+    },
+    {
+      "type": "test",
+      "file": "integration/tests/pass05_cancel.php",
+      "ok": true,
+      "details": "pass05_cancel OK"
+    },
+    {
+      "type": "test",
+      "file": "integration/tests/pass05_reschedule.php",
+      "ok": true,
+      "details": "pass05_reschedule OK"
+    },
+    {
+      "type": "test",
+      "file": "integration/tests/pass05_mapper.php",
+      "ok": true,
+      "details": "pass05_mapper OK"
+    },
+    {
+      "type": "test",
+      "file": "integration/tests/pass05_audit.php",
+      "ok": true,
+      "details": "pass05_audit OK"
+    },
+    {
+      "type": "test",
+      "file": "integration/tests/pass05_write_gate.php",
+      "ok": true,
+      "details": "pass05_write_gate OK"
+    }
+  ],
+  "all_pass": true,
+  "limitations": [
+    "No PDO MySQL or SQLite drivers available for database-backed verification",
+    "Booking writes remain disabled pending atomic legacy order insert and conflict recheck",
+    "Original Cleanto source unchanged"
+  ]
+}

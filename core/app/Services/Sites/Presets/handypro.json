@@ -1,0 +1,57 @@
+{
+  "headline": "A polished clean. Every time.",
+  "tagline": "Professional cleaning for people who value reliability, quality and a personal touch.",
+  "accent": "#1e9cba",
+  "about": "Our practical processes put clear communication, thoughtful scheduling and consistent results first.",
+  "cta_label": "Request a quote",
+  "cta_url": "#contact",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "HandyPro · Cleaning Professionals",
+  "seo_description": "Professional cleaning for people who value reliability, quality and a personal touch.",
+  "services": [
+    {
+      "name": "Home cleaning",
+      "description": "A dependable clean for rooms used every day."
+    },
+    {
+      "name": "Office cleaning",
+      "description": "Tidy, welcoming work environments."
+    },
+    {
+      "name": "Deep cleaning",
+      "description": "Focused attention where ordinary routines stop."
+    },
+    {
+      "name": "Specialist requests",
+      "description": "Tell us what your property needs."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I get a quote?",
+      "answer": "Send us the details of your property and the work required using the enquiry form."
+    },
+    {
+      "question": "Can I tailor the service?",
+      "answer": "Yes. We can discuss the areas, frequency and timing that best suit your needs."
+    },
+    {
+      "question": "What areas do you cover?",
+      "answer": "Get in touch and we will confirm service availability for your location."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local service areas",
+      "description": "Contact us to confirm coverage for your property."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [],
+  "seo_image": "",
+  "analytics_consent": false
+}

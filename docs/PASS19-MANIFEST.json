@@ -1,0 +1,70 @@
+{
+  "pass": 19,
+  "baseline": "Master-Copy-PlusAgency-Cleanto-Pass18-CUMULATIVE.zip",
+  "changed": [
+    {
+      "path": "core/app/Http/Controllers/Admin/LandingCampaignController.php",
+      "bytes": 7907,
+      "sha256": "995dabd7131b8cddfd1fe49b1d11459804b7d30e3af369abc9c03e45114768f5"
+    },
+    {
+      "path": "core/app/Http/Controllers/Front/LandingCampaignController.php",
+      "bytes": 2091,
+      "sha256": "9ac93b95b7744cb85fa759a888ec628e3b480e21e0a85719cd6ab8fdcc20e40e"
+    },
+    {
+      "path": "core/app/Services/Landing/CampaignDesign.php",
+      "bytes": 4887,
+      "sha256": "a34470de2731b512ff9a4f975d988d02a099db470f1315a14b87253019d8bca3"
+    },
+    {
+      "path": "core/app/Services/Landing/CampaignInput.php",
+      "bytes": 2446,
+      "sha256": "fe4ef9e21a08ac40f33a73f11bc17ad131f2874c24ef277c5409164fa132319e"
+    },
+    {
+      "path": "core/resources/views/admin/landing/edit.blade.php",
+      "bytes": 10391,
+      "sha256": "a9a32a186c59e55bba2ac1d0d5b0903055ea458a8d2b16af7f6af54fde23c469"
+    },
+    {
+      "path": "core/resources/views/front/landing/show.blade.php",
+      "bytes": 4009,
+      "sha256": "a7ec50d8344cd8c107156597002e0aa711f55e9e00e54bdc6b0df8c378a954ce"
+    }
+  ],
+  "added": [
+    {
+      "path": "core/app/Services/Landing/PublishedCampaign.php",
+      "bytes": 1090,
+      "sha256": "1be3be89d1daa0d32719c429766ef2a8d21972945d3a4eea9c9b66925a079d6e"
+    },
+    {
+      "path": "core/database/migrations/2026_11_11_190001_add_published_snapshots_to_titan_landing_campaigns.php",
+      "bytes": 1086,
+      "sha256": "bf1e1dfd3bd26f3aa60f3da28a1e47362c507890f359a1f78c76a595f175b7e4"
+    },
+    {
+      "path": "core/tests/Feature/LandingCampaignContentTest.php",
+      "bytes": 859,
+      "sha256": "2cb733a9bfeefbded9c6012ed9616e6571cde958062bf2168b88ad6439e3d30f"
+    },
+    {
+      "path": "core/tests/Feature/LandingPublishedSnapshotTest.php",
+      "bytes": 844,
+      "sha256": "d78ee7135492db01ea832cb142d728f010bbb34bca821cd044ad92687fa071f5"
+    },
+    {
+      "path": "docs/PASS19-LANDING-PUBLISHING.md",
+      "bytes": 1117,
+      "sha256": "eb6a1efcef07182d3f04617e558d81c47fa831b11f4ab5a28f9f6a0e0234af3c"
+    },
+    {
+      "path": "tools/pass19-landing-source-check.php",
+      "bytes": 1172,
+      "sha256": "e2334f8c90040b8f5871242e8a42ba7d59c41eedf157ef41d076eb7c65d83f4d"
+    }
+  ],
+  "deleted": [],
+  "timestamp_utc": "2026-11-11T01:11:32.751533+00:00"
+}

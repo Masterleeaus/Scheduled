@@ -1,0 +1,11 @@
+{
+  "schema": "plusagency.acceptance.evidence.v1",
+  "gates": {
+    "mariadb_migration": {"passed": false},
+    "booking_concurrency": {"passed": false},
+    "template_browser": {"passed": false},
+    "ai_provider": {"passed": false},
+    "stripe_settlement": {"passed": false},
+    "tenant_isolation": {"passed": false}
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "pass": 34,
+  "base": "PlusAgency_Cleanto_Master_Pass33.zip",
+  "unchanged_preserved": 21321,
+  "changed_files": [
+    {
+      "path": "PASS34_REPORT.md",
+      "operation": "added",
+      "sha256": "a63dc578b9aad295a2f12f4f96a0d89db16bb9f440151399e02eddb6b70745b3"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemBinding.php",
+      "operation": "added",
+      "sha256": "d2ba8144bb2d6a1b64fbd7a4ccdc903fe5e52fcd2c082a3be768182079999286"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemCapabilities.php",
+      "operation": "added",
+      "sha256": "c30b99683c2c1e772a00853fa48f262569e43882ed34276087dd08382208af91"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemClock.php",
+      "operation": "added",
+      "sha256": "566b256e256b9aa51be5ede888437556f226ad498865468104fcf7e5e78e7e76"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemFingerprint.php",
+      "operation": "added",
+      "sha256": "bbfda34bdcd2a139a697af727785b6da3459955536399236042f1a5964d2f387"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemGuard.php",
+      "operation": "added",
+      "sha256": "3e5bd04e14e6fef56fe2ae0aca14ec8c1233d77f0f74ce2f98e8c9ca9e3cb81a"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemKey.php",
+      "operation": "added",
+      "sha256": "1139184d8bb4f9ca778582f23d1b166f3e1649feb282a4fb80b59cc07bfc75a9"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemLedger.php",
+      "operation": "added",
+      "sha256": "39a601fc02ddf92671624f3004afe237ddf61effb25cd5ea7251932da9d5782e"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemOutcome.php",
+      "operation": "added",
+      "sha256": "60a8115c4e9d402734767089f5b1f9a279e9bf75bcd9b03a85a1ff37c193ea96"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemPayload.php",
+      "operation": "added",
+      "sha256": "32f7171a8aec5b05dadd387e3dfed196bae1cd061aee8145371c4ee486e05bf3"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemReceipt.php",
+      "operation": "added",
+      "sha256": "c786fe9bdaffae1b380561c5fed6c00e453b8a51e2d716e88888b04112a06685"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemReplay.php",
+      "operation": "added",
+      "sha256": "80b8b3eb2b5e1f3b70cd078eaef5d521007705d0662dfa4ed2e5504d87dace82"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemSchema.php",
+      "operation": "added",
+      "sha256": "682a0779c28f56e768dd420f79c466bb500d18fe6e1f32491ee58161ae015519"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemSelection.php",
+      "operation": "added",
+      "sha256": "c5182dd9f4f622a9171fd9296841e4ecd77afa75bb5ca22ed389e7d53b01f0a7"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemTransaction.php",
+      "operation": "added",
+      "sha256": "5fedfb19557947932088828e2cbcd5bfe8d5ed930976d13ac714dca04b0046c8"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemTransition.php",
+      "operation": "added",
+      "sha256": "453bcbc6e31c0da440bdc95e6ba165370447f87d5a8d3fd017c64f68e0643813"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/RedeemVerify.php",
+      "operation": "added",
+      "sha256": "76a591e1356a716e47d62ac01b571ca4f87236320acc79fda441d803f03a9c4f"
+    },
+    {
+      "path": "integration/tests/pass34_binding.php",
+      "operation": "added",
+      "sha256": "d7b421bd81ecde984cb0e9f078c7d180a95dabf08516fd9d481fe76e2f2fa54e"
+    },
+    {
+      "path": "integration/tests/pass34_capabilities.php",
+      "operation": "added",
+      "sha256": "5ed071e8c2592f05c69b39842acd40ac528c167f093461cae1f98bde170ad95e"
+    },
+    {
+      "path": "integration/tests/pass34_clock.php",
+      "operation": "added",
+      "sha256": "224b9b0a5745df17149c0ffc51f3c416271c6db77099d128b31996a65e2c5d24"
+    },
+    {
+      "path": "integration/tests/pass34_fingerprint.php",
+      "operation": "added",
+      "sha256": "1f552ad46c359958a1aa0acdfa7919199cb967b29a74d04ca4df2205f0358af3"
+    },
+    {
+      "path": "integration/tests/pass34_guard.php",
+      "operation": "added",
+      "sha256": "15af286ef2f270d026cc963053d1d83cef6d45f3c6e5cd0b74caca5881165681"
+    },
+    {
+      "path": "integration/tests/pass34_key.php",
+      "operation": "added",
+      "sha256": "ca98beb9d9da852f324c068d4e43b5fe208f40fa36e92705e8e763b91051683e"
+    },
+    {
+      "path": "integration/tests/pass34_ledger_contract.php",
+      "operation": "added",
+      "sha256": "0e36f6abf3979bf4197e219078d749e76d8ec04e0c4128cbba228e378a05236b"
+    },
+    {
+      "path": "integration/tests/pass34_outcome.php",
+      "operation": "added",
+      "sha256": "1543d4f85e9ae80388ac98aaa25d30ce2499e8eaacb4fcfdc9ad60e3e45c7b5c"
+    },
+    {
+      "path": "integration/tests/pass34_payload.php",
+      "operation": "added",
+      "sha256": "2f1ecf4f4e2c33e58f3b60a3c8a26eacc546c1ebe25e7f96a77c52533c488ad1"
+    },
+    {
+      "path": "integration/tests/pass34_receipt.php",
+      "operation": "added",
+      "sha256": "fa0a844a10d7aed20ad3d91ec25dce1c924e4e9ed2c9690f64b692555e250ec7"
+    },
+    {
+      "path": "integration/tests/pass34_replay.php",
+      "operation": "added",
+      "sha256": "84b641b105b3897efac931c533c62aae419e4e448d880ea1294d6e024dd0a9a3"
+    },
+    {
+      "path": "integration/tests/pass34_schema.php",
+      "operation": "added",
+      "sha256": "1379b9292ea09a38241839c82f15d2916bdb873f0802d594420aec3d24a522ac"
+    },
+    {
+      "path": "integration/tests/pass34_selection.php",
+      "operation": "added",
+      "sha256": "b8ce279ecb7b7ca5e308ddec4f10407704447244528d0840e9ce559eb3c8b3d0"
+    },
+    {
+      "path": "integration/tests/pass34_transaction_contract.php",
+      "operation": "added",
+      "sha256": "9e1ad8d35a1e02b056df758df32b93fad7f05dd208e690b193b86f332440f7a2"
+    },
+    {
+      "path": "integration/tests/pass34_transition.php",
+      "operation": "added",
+      "sha256": "047cbac4ae63c2d2fb3f266b82efc21aa3fd2453e04132f5e91c4a5244b3de9e"
+    },
+    {
+      "path": "integration/tests/pass34_verify.php",
+      "operation": "added",
+      "sha256": "05f2095f044a02366064d38274deb09ce675518e604ac42c9043c0b17acffb96"
+    }
+  ],
+  "removed_files": [],
+  "cumulative_tests": {
+    "passed": 576,
+    "failed": 0
+  },
+  "live_mysql_bookings": 0
+}

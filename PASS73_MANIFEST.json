@@ -1,0 +1,31 @@
+{
+  "pass": 73,
+  "base": "Pass72 recovery candidate",
+  "status": "UNVERIFIED LIVE DB, BLOCKED PASS58",
+  "changed_files": {
+    "core/app/Http/Controllers/Admin/LandingCampaignController.php": "69812eb40ac85f8a06ec06fbe63712b81e072e8d6dddc3287d1c579c07cfdc9d",
+    "core/app/Http/Controllers/Front/LandingCampaignController.php": "e034ce6879996a7e10ae6d998914dadcbc1d185bbe60cf9d3cb3bacb630621c8",
+    "core/app/Services/Landing/CampaignInput.php": "79599b978b592ded33f68d15b7954165bbf5193e984109ada6e65facf6a1fc78",
+    "core/app/Services/Landing/CampaignTemplates.php": "942e47db3a2ed6944223bb6cbcf1ddaf5f25a81468cbab0bd8847973bb4fcc88",
+    "core/database/migrations/2026_11_10_000001_create_titan_landing_campaigns.php": "be50b360d4671723b754a4d29d0109b43c4bec1d579e315743995c3564a5116e",
+    "core/database/migrations/2026_11_10_000002_create_titan_landing_leads.php": "3ee0e1c30990562db9b6eddd4da4f3c2d27e1c477efe42be6e31da59ca3b4e6b",
+    "core/public/assets/landing/admin.js": "a953ccda162ddee73c35e1210519fa9d46dd50b8bb5076f04bfe766334966cfc",
+    "core/public/assets/landing/campaign.css": "23984e85419f1e64634bf355c01c63a111317e23f9abf120b88c7bba2e043bf8",
+    "core/public/assets/landing/campaign.js": "634e3e905ba8ddd913fa05fc1bbfcd103d1fe87698461b3452875ac5a3bf384f",
+    "core/resources/views/admin/landing/edit.blade.php": "49144955867182efa3ea22858b4f69b3523518b42fa5d8bbc909427fb238d58a",
+    "core/resources/views/admin/landing/index.blade.php": "c1df44a91154d928e78632abd6a09c1a0468897ebf62d86bbb73d65db435bf26",
+    "core/resources/views/admin/landing/leads.blade.php": "aad3a30d149934452c7432ef01f3734f24e551611ee4a321f04c93b82309bac5",
+    "core/resources/views/front/landing/show.blade.php": "dcb6b3c6bc7e6aa7b129076850932cb63a97fdc47e9d7e2f3be985d544cfc314",
+    "core/routes/web.php": "8ccb123c07e821c27a30e644cb9333b35317dfddcc0a187a3cef9268a4fda4a2",
+    "core/tests/Feature/LandingCampaignRoutesTest.php": "3f73088bdd41c46175dc5c4ad1cf3667888f0eb2b124d897a12b639556eb3b4c",
+    "tests/landing_contract_test.php": "c0873832397a4ee5caa157bc3d46fb396d6ceadf05ad7dcdf1b828aaa6873693"
+  },
+  "php_lint_checked": 8,
+  "contract_assertions": 12,
+  "notes": [
+    "Non-migrated installations require artisan migrate",
+    "Language id is NOT a tenant security boundary",
+    "Landing templates are configurable structured landing pages, not GrapesJS visual editor",
+    "MariaDB and real browser test unavailable"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "pass": 104,
+  "parent_archive": "PlusAgency_Cleanto_Recovery_Candidate_Pass103_BLOCKED_PASS58_MARIADB.zip",
+  "parent_sha256": "4b44a894f0abf1537f15f0e9265ff82113668d68b0edf4d776743d8acd57db60",
+  "added_paths": [
+    "integration/staging/pass104/PASS104_REPORT.md",
+    "integration/staging/pass104/README.md",
+    "integration/staging/pass104/__pycache__/extract_cleanto_schema.cpython-313.pyc",
+    "integration/staging/pass104/cleanto-8.5-installer-tables.REVIEW.sql",
+    "integration/staging/pass104/extract_cleanto_schema.py",
+    "integration/staging/pass104/schema_inventory.json",
+    "integration/staging/pass104/test_extraction.py"
+  ],
+  "modified_paths": [],
+  "deleted_paths": [],
+  "file_sha256": {
+    "integration/staging/pass104/schema_inventory.json": "3a63293208ce6f72846ad0768d6dcea5c48d7492f807a983e8cbffa7febe04d8",
+    "integration/staging/pass104/PASS104_REPORT.md": "acf49a9faa530773beef3e7aab5e050a90f9d1bde439ee5184e0b123be14fcf0",
+    "integration/staging/pass104/extract_cleanto_schema.py": "24dcf2c25992757b7614243320159f83bb379faf36e0a6da097b6e591c8e41e0",
+    "integration/staging/pass104/README.md": "d3aaba6e6ff45ce6d6a8448027835a081f71bd78d3e8497fa03ecdd13f14908c",
+    "integration/staging/pass104/test_extraction.py": "d0ef4b571db13227b11c83cbb7c4178297ee864f2c164b6ef3f215f83322876e",
+    "integration/staging/pass104/cleanto-8.5-installer-tables.REVIEW.sql": "4b8a7576bbeb1f544e6cc9fc22e13a2c339e9fee5aae077e046e27cdc3e5f23f",
+    "integration/staging/pass104/__pycache__/extract_cleanto_schema.cpython-313.pyc": "181fa503ffcc790357076343c24e83b40cc45329d5ea0999c937f5485b96a351"
+  },
+  "verification": {
+    "schema_extraction_tests": "14/14 PASS",
+    "mysql_transaction": "NOT EXECUTED",
+    "missing_pass58": true
+  }
+}

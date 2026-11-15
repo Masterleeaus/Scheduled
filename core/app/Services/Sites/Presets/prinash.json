@@ -1,0 +1,57 @@
+{
+  "headline": "Bring your exterior back to life.",
+  "tagline": "Considered outdoor washing for driveways, paving and exterior spaces.",
+  "accent": "#146c89",
+  "about": "We assess the materials and condition of each surface before recommending a suitable cleaning approach.",
+  "cta_label": "Request a quote",
+  "cta_url": "#contact",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Prinash · Exterior & Pressure Cleaning",
+  "seo_description": "Considered outdoor washing for driveways, paving and exterior spaces.",
+  "services": [
+    {
+      "name": "Driveways",
+      "description": "Refresh suitable concrete and paved entrances."
+    },
+    {
+      "name": "Outdoor paving",
+      "description": "Targeted washing for paths and courtyard areas."
+    },
+    {
+      "name": "Walls and exteriors",
+      "description": "Appropriate exterior surface care after assessment."
+    },
+    {
+      "name": "Commercial exteriors",
+      "description": "Maintenance visits for suitable outdoor surfaces."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I get a quote?",
+      "answer": "Send us the details of your property and the work required using the enquiry form."
+    },
+    {
+      "question": "Can I tailor the service?",
+      "answer": "Yes. We can discuss the areas, frequency and timing that best suit your needs."
+    },
+    {
+      "question": "What areas do you cover?",
+      "answer": "Get in touch and we will confirm service availability for your location."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local service areas",
+      "description": "Contact us to confirm coverage for your property."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [],
+  "seo_image": "",
+  "analytics_consent": false
+}

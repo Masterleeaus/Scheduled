@@ -1,0 +1,43 @@
+{
+  "pass": 127,
+  "base_archive": "PlusAgency_Cleanto_Recovery_Candidate_Pass126_BLOCKED_PASS58_MARIADB.zip",
+  "status": "recovery_candidate_not_production_ready",
+  "files": [
+    {
+      "path": "PASS127_REPORT.md",
+      "change": "added",
+      "sha256": "0cd7b09dcbfc848ea71b2000f0eea07a86d1a5e78eeffc129f2686b92bc429c3",
+      "previous_sha256": null
+    },
+    {
+      "path": "integration/tests/pass127/response_payment_replay.php",
+      "change": "added",
+      "sha256": "2dc1488d062e279f0a4b0fcfad07b587ad6d0a63635b46629f81392456e9e053",
+      "previous_sha256": null
+    },
+    {
+      "path": "integration/tests/pass13_payment_boundary.php",
+      "change": "modified",
+      "sha256": "6e631f5d4d2508b2b2b32284d1e051ccb432cca6c22abb9cbc1040154cd005b7",
+      "previous_sha256": "a58978f10da6a4e02e695c87be579a05ae8033e59e161cab953dd333598c4982"
+    },
+    {
+      "path": "integration/tests/pass15_response_unpaid.php",
+      "change": "modified",
+      "sha256": "b9a084f67778d983057c8afc6d6b35f5af5e489ca3d88b17b8f0c6e08fafe392",
+      "previous_sha256": "796d78ce60570c5c14f6ea829ddce593ecd673eb080ec314482b405e786b89ee"
+    },
+    {
+      "path": "private/booking-sidecar/BookingWriteResponseGuard.php",
+      "change": "modified",
+      "sha256": "8ffa3b4886c8ec4786e5bc7a75f9aedb744f70cf389b7e9018ae9a3772b9461f",
+      "previous_sha256": "dfec437809e3da7a914f50a3b7ef3f38527a374e8019ed3473b1032db83e5a92"
+    }
+  ],
+  "deleted": [],
+  "acceptance": {
+    "php_regressions": "passed",
+    "live_mariadb": "not_executed",
+    "real_payment_gateway": "not_executed"
+  }
+}

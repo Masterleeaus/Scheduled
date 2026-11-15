@@ -1,0 +1,33 @@
+{
+  "pass": 106,
+  "base": "PlusAgency_Cleanto_Recovery_Candidate_Pass105_BLOCKED_PASS58_MARIADB.zip",
+  "status": "blocked_missing_pass58_and_real_mariadb_acceptance",
+  "added_files": [
+    "integration/staging/pass106/PASS106_REPORT.md",
+    "integration/staging/pass106/README.md",
+    "integration/staging/pass106/build_review_bundle.py",
+    "integration/staging/pass106/review_outputs/REVIEW_STATUS.json",
+    "integration/staging/pass106/review_outputs/concurrency.json",
+    "integration/staging/pass106/review_outputs/lifecycle.json",
+    "integration/staging/pass106/review_outputs/seed-and-schedule.REVIEW.sql",
+    "integration/staging/pass106/test_pass106.py"
+  ],
+  "removed_files": [],
+  "modified_existing_files": [],
+  "sha256": {
+    "integration/staging/pass106/build_review_bundle.py": "65619e8d8397c88345b23a30e2f2979b5f41434258316ee2d36b31b8bce446a3",
+    "integration/staging/pass106/test_pass106.py": "4825ddbbb83342a587ba05c4adfa18f7ddb083fca1f38ba73ca9e19315cd902f",
+    "integration/staging/pass106/PASS106_REPORT.md": "6da81000ecea86dbfef18dc470c464d84562d38d6f6d69053c6ac2e7e9b248e5",
+    "integration/staging/pass106/README.md": "1f54a67c5a45acbbe035a22c3d484d3868617a55618ec49b18e22608c4124653",
+    "integration/staging/pass106/review_outputs/seed-and-schedule.REVIEW.sql": "d578d36b3d2ac22c447813651922b790cf0ba84a0d1a8c3849872dd6213d4beb",
+    "integration/staging/pass106/review_outputs/concurrency.json": "9809a849c500b8ad58ce3708c00e5d20020552d87c358e286bf8095d56aa2b19",
+    "integration/staging/pass106/review_outputs/REVIEW_STATUS.json": "28efe05a602919095e0d21c3cf45bc08871873dd107e3ef303714055eceb1054",
+    "integration/staging/pass106/review_outputs/lifecycle.json": "1c35d491caa556ddec884c26bab3609299b83e9fca6afa2cb9849b3d4cadaaa1"
+  },
+  "checks": {
+    "pass106_assertions": 12,
+    "python_compile": "pass",
+    "mariadb_booking_commit": "not_executed",
+    "browser_checkout": "not_executed"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "pass": 111,
+  "base_archive": "PlusAgency_Cleanto_Recovery_Candidate_Pass110_BLOCKED_PASS58_MARIADB.zip",
+  "added_files": [
+    "integration/staging/pass111/refresh_fixtures.py",
+    "integration/staging/pass111/test_refresh.py",
+    "integration/staging/pass111/README.md",
+    "PASS111_REPORT.md"
+  ],
+  "modified_files": [],
+  "deleted_files": [],
+  "checks": {
+    "pass111_assertions": "55/55",
+    "pass110_assertions": "11/11",
+    "python_compile": "PASS",
+    "live_mariadb": "NOT_EXECUTED"
+  },
+  "status": "RECOVERY_CANDIDATE_BLOCKED",
+  "sha256": {
+    "integration/staging/pass111/refresh_fixtures.py": "87f6d064d84b0b087ae8d64858f4647d00aca49af170474825e77c8c05ba30d1",
+    "integration/staging/pass111/test_refresh.py": "25df7ec673b2246b50ab621aa10335a92dbf252595ab3fd1facf2cd3359ea149",
+    "integration/staging/pass111/README.md": "e2a5cc1ff5dc09408f4920be46464aa0f2ba0a297ad1a77368a86067a93e54be",
+    "PASS111_REPORT.md": "2f9d63430b0a7974cfba372e11c6dac880a47025cf8f4c79b2ed56b3bdcca2b0"
+  }
+}

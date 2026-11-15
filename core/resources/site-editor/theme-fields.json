@@ -1,0 +1,302 @@
+{
+  "residential": {
+    "copy": {
+      "copy_01": "HOME CLEANING · MADE PERSONAL",
+      "copy_02": "ROOM TO BREATHE",
+      "copy_03": "Care that fits your home",
+      "copy_04": "OUR APPROACH",
+      "copy_05": "A simpler way to feel at home",
+      "copy_06": "Good to know",
+      "copy_07": "Tell us what you need cleaned",
+      "copy_08": "Describe your home and the service you have in mind."
+    },
+    "images": {}
+  },
+  "commercial": {
+    "copy": {
+      "copy_01": "COMMERCIAL PROPERTY SERVICES",
+      "copy_02": "Cleaning that works around business",
+      "copy_03": "Consistency in every visit.",
+      "copy_04": "Planning your service",
+      "copy_05": "Discuss your site requirements",
+      "copy_06": "Share your premises, preferred schedule and cleaning priorities."
+    },
+    "images": {}
+  },
+  "carpet": {
+    "copy": {
+      "copy_01": "CARPET / FABRIC / UPHOLSTERY",
+      "copy_02": "SPECIALIST SURFACE CARE",
+      "copy_03": "Support for the textures you love",
+      "copy_04": "CONSIDERED CARE",
+      "copy_05": "Every material has a story",
+      "copy_06": "Fabric care questions",
+      "copy_07": "Ask about your fabrics",
+      "copy_08": "Let us know the material, condition and rooms involved."
+    },
+    "images": {}
+  },
+  "office": {
+    "copy": {
+      "copy_01": "BUILT FOR BUSINESS ROUTINES",
+      "copy_02": "THE WAY WE WORK",
+      "copy_03": "Care with a clear scope",
+      "copy_04": "OUR SERVICES",
+      "copy_05": "Care for the working day",
+      "copy_06": "HELPFUL ANSWERS",
+      "copy_07": "Before you get started",
+      "copy_08": "Let's talk about your space",
+      "copy_09": "Share the details of the services you need."
+    },
+    "images": {}
+  },
+  "handypro": {
+    "copy": {
+      "copy_01": "TRUSTED CLEANING PROFESSIONALS",
+      "copy_02": "WHY CHOOSE US",
+      "copy_03": "Care you can count on",
+      "copy_04": "OUR SERVICES",
+      "copy_05": "Cleaning that works for you",
+      "copy_06": "A FRESH PERSPECTIVE",
+      "copy_07": "Details make the difference",
+      "copy_08": "GOOD TO KNOW",
+      "copy_09": "Frequently asked questions",
+      "copy_10": "GET IN TOUCH",
+      "copy_11": "Ready for a fresh start?",
+      "copy_12": "Tell us about your space and we'll help you plan the next step."
+    },
+    "images": {
+      "image_01": "/assets/sites/imported/handypro/detail1.png",
+      "image_02": "/assets/sites/imported/handypro/detail3.jpg",
+      "image_03": "/assets/sites/imported/handypro/hero.png"
+    }
+  },
+  "klano": {
+    "copy": {
+      "copy_01": "A FRESHER WAY TO CLEAN",
+      "copy_02": "WHY CHOOSE US",
+      "copy_03": "Care you can count on",
+      "copy_04": "OUR SERVICES",
+      "copy_05": "Cleaning that works for you",
+      "copy_06": "A FRESH PERSPECTIVE",
+      "copy_07": "Details make the difference",
+      "copy_08": "GOOD TO KNOW",
+      "copy_09": "Frequently asked questions",
+      "copy_10": "GET IN TOUCH",
+      "copy_11": "Ready for a fresh start?",
+      "copy_12": "Tell us about your space and we'll help you plan the next step."
+    },
+    "images": {
+      "image_01": "/assets/sites/imported/klano/detail1.jpg",
+      "image_02": "/assets/sites/imported/klano/detail2.jpg",
+      "image_03": "/assets/sites/imported/klano/detail3.jpg"
+    }
+  },
+  "multiservice": {
+    "copy": {
+      "copy_01": "ONE POINT OF CONTACT",
+      "copy_02": "OUR SERVICES",
+      "copy_03": "Find your fit",
+      "copy_04": "THE WAY WE WORK",
+      "copy_05": "Care with a clear scope",
+      "copy_06": "HELPFUL ANSWERS",
+      "copy_07": "Before you get started",
+      "copy_08": "Let's talk about your space",
+      "copy_09": "Share the details of the services you need."
+    },
+    "images": {}
+  },
+  "pressure": {
+    "copy": {
+      "copy_01": "SURFACE BY SURFACE",
+      "copy_02": "THE WAY WE WORK",
+      "copy_03": "Care with a clear scope",
+      "copy_04": "OUR SERVICES",
+      "copy_05": "Outdoor areas, renewed",
+      "copy_06": "HELPFUL ANSWERS",
+      "copy_07": "Before you get started",
+      "copy_08": "Let's talk about your space",
+      "copy_09": "Share the details of the services you need."
+    },
+    "images": {}
+  },
+  "windows": {
+    "copy": {
+      "copy_01": "CLEAR GLASS · BRIGHTER SPACES",
+      "copy_02": "GLASS CARE OPTIONS",
+      "copy_03": "A clearer finish, whatever the setting",
+      "copy_04": "A THOUGHTFUL APPROACH",
+      "copy_05": "Designed around your property",
+      "copy_06": "Questions, answered",
+      "copy_07": "Ready for a clearer view?",
+      "copy_08": "Tell us about your windows and access requirements."
+    },
+    "images": {}
+  },
+  "deep": {
+    "copy": {
+      "copy_01": "THOROUGH BY DESIGN",
+      "copy_02": "OUR SERVICES",
+      "copy_03": "Detail is our difference",
+      "copy_04": "THE WAY WE WORK",
+      "copy_05": "Care with a clear scope",
+      "copy_06": "HELPFUL ANSWERS",
+      "copy_07": "Before you get started",
+      "copy_08": "Let's talk about your space",
+      "copy_09": "Share the details of the services you need."
+    },
+    "images": {}
+  },
+  "end-of-lease": {
+    "copy": {
+      "copy_01": "One less thing to organise",
+      "copy_02": "HOW WE HELP",
+      "copy_03": "Focused on the final details",
+      "copy_04": "Before the handover",
+      "copy_05": "Planning your move?",
+      "copy_06": "Send the property details and any required cleaning checklist."
+    },
+    "images": {}
+  },
+  "shortstay": {
+    "copy": {
+      "copy_01": "READY FOR THE NEXT GUEST",
+      "copy_02": "OUR SERVICES",
+      "copy_03": "Turnovers with a plan",
+      "copy_04": "HELPFUL ANSWERS",
+      "copy_05": "Before you get started",
+      "copy_06": "THE WAY WE WORK",
+      "copy_07": "Care with a clear scope",
+      "copy_08": "Let's talk about your space",
+      "copy_09": "Share the details of the services you need."
+    },
+    "images": {}
+  },
+  "cleanmate": {
+    "copy": {
+      "copy_01": "CLEAN HOMES. HAPPY DAYS.",
+      "copy_02": "WHY CHOOSE US",
+      "copy_03": "Care you can count on",
+      "copy_04": "OUR SERVICES",
+      "copy_05": "Cleaning that works for you",
+      "copy_06": "A FRESH PERSPECTIVE",
+      "copy_07": "Details make the difference",
+      "copy_08": "GOOD TO KNOW",
+      "copy_09": "Frequently asked questions",
+      "copy_10": "GET IN TOUCH",
+      "copy_11": "Ready for a fresh start?",
+      "copy_12": "Tell us about your space and we'll help you plan the next step."
+    },
+    "images": {
+      "image_01": "/assets/sites/imported/cleanmate/detail1.jpg",
+      "image_02": "/assets/sites/imported/cleanmate/detail2.jpg",
+      "image_03": "/assets/sites/imported/cleanmate/detail3.jpg"
+    }
+  },
+  "prinash": {
+    "copy": {
+      "copy_01": "POWERFUL RESULTS. CAREFUL METHODS.",
+      "copy_02": "WHY CHOOSE US",
+      "copy_03": "Care you can count on",
+      "copy_04": "OUR SERVICES",
+      "copy_05": "Cleaning that works for you",
+      "copy_06": "A FRESH PERSPECTIVE",
+      "copy_07": "Details make the difference",
+      "copy_08": "GOOD TO KNOW",
+      "copy_09": "Frequently asked questions",
+      "copy_10": "GET IN TOUCH",
+      "copy_11": "Ready for a fresh start?",
+      "copy_12": "Tell us about your space and we'll help you plan the next step."
+    },
+    "images": {
+      "image_01": "/assets/sites/imported/prinash/detail1.jpg",
+      "image_02": "/assets/sites/imported/prinash/detail2.jpg",
+      "image_03": "/assets/sites/imported/prinash/detail3.jpg"
+    }
+  },
+  "clinar": {
+    "copy": {
+      "copy_01": "MAINTENANCE & CLEANING",
+      "copy_02": "WHY CHOOSE US",
+      "copy_03": "Care you can count on",
+      "copy_04": "OUR SERVICES",
+      "copy_05": "Cleaning that works for you",
+      "copy_06": "A FRESH PERSPECTIVE",
+      "copy_07": "Details make the difference",
+      "copy_08": "GOOD TO KNOW",
+      "copy_09": "Frequently asked questions",
+      "copy_10": "GET IN TOUCH",
+      "copy_11": "Ready for a fresh start?",
+      "copy_12": "Tell us about your space and we'll help you plan the next step."
+    },
+    "images": {
+      "image_01": "/assets/sites/imported/clinar/detail1.png",
+      "image_02": "/assets/sites/imported/clinar/detail2.jpg",
+      "image_03": "/assets/sites/imported/clinar/detail3.jpg"
+    }
+  },
+  "pawfy": {
+    "copy": {
+      "copy_01": "GOOD CARE, HAPPY PETS",
+      "copy_02": "Our approach",
+      "copy_03": "What we can do for you",
+      "copy_04": "Let’s talk about your goals",
+      "copy_05": "Questions and answers",
+      "copy_06": "Request a pet-care appointment",
+      "copy_07": "Choose a pet service and preferred time. We will confirm availability with you."
+    },
+    "images": {
+      "image_01": "/assets/sites/imported/pawfy/hero.png",
+      "image_02": "/assets/sites/imported/pawfy/about.png",
+      "image_03": "/assets/sites/imported/pawfy/gallery.png"
+    }
+  },
+  "stevenwatkins": {
+    "copy": {
+      "copy_01": "MOVE STRONGER EVERY DAY",
+      "copy_02": "Our approach",
+      "copy_03": "What we can do for you",
+      "copy_04": "Let’s talk about your goals",
+      "copy_05": "Questions and answers",
+      "copy_06": "Request a personal-training session",
+      "copy_07": "Tell us which session suits you and your preferred time."
+    },
+    "images": {
+      "image_01": "/assets/sites/imported/stevenwatkins/hero.jpg",
+      "image_02": "/assets/sites/imported/stevenwatkins/detail.jpg",
+      "image_03": "/assets/sites/imported/stevenwatkins/gallery.jpg"
+    }
+  },
+  "yoga-pilates": {
+    "copy": {
+      "copy_01": "BREATHE · MOVE · RESTORE",
+      "copy_02": "Our approach",
+      "copy_03": "What we can do for you",
+      "copy_04": "Let’s talk about your goals",
+      "copy_05": "Questions and answers",
+      "copy_06": "Request a yoga or Pilates session",
+      "copy_07": "Choose a class and preferred time."
+    },
+    "images": {
+      "image_01": "/assets/sites/imported/yoga-pilates/yoga-hero.svg",
+      "image_02": "/assets/sites/imported/yoga-pilates/yoga-detail.svg",
+      "image_03": "/assets/sites/imported/yoga-pilates/yoga-pattern.svg"
+    }
+  },
+  "carzone": {
+    "copy": {
+      "copy_01": "VEHICLE CARE REIMAGINED",
+      "copy_02": "Our approach",
+      "copy_03": "What we can do for you",
+      "copy_04": "Let’s talk about your goals",
+      "copy_05": "Questions and answers",
+      "copy_06": "Request vehicle detailing",
+      "copy_07": "Choose a service and preferred appointment time."
+    },
+    "images": {
+      "image_01": "/assets/sites/imported/carzone/hero.jpg",
+      "image_02": "/assets/sites/imported/carzone/detail.jpg",
+      "image_03": "/assets/sites/imported/carzone/gallery.jpg"
+    }
+  }
+}

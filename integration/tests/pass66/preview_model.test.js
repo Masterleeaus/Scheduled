@@ -1,0 +1,22 @@
+'use strict';
+const assert = require('node:assert/strict');
+const model = require('../../../assets/front/js/titan-booking-preview-model');
+let passed=0;
+function test(name,fn){try{fn();passed++;console.log('PASS '+name);}catch(error){console.error('FAIL '+name);throw error;}}
+const fixture=()=>({preview_only:true,booking_writes_enabled:false,services:[{id:1,label:'Home cleaning'}],methods:[{id:2,service_id:1,label:'Per hour'}],units:[{id:3,method_id:2,label:'Hours'}],staff:[{id:4,label:'Cleaner'}]});
+test('valid preview catalogue',()=>assert.equal(model.catalogue(fixture()).services.length,1));
+test('reject write-enabled catalogue',()=>assert.throws(()=>model.catalogue({...fixture(),booking_writes_enabled:true})));
+test('reject unsafe service label',()=>assert.throws(()=>model.catalogue({...fixture(),services:[{id:1,label:''}]})));
+test('reject orphan methods',()=>assert.throws(()=>model.catalogue({...fixture(),methods:[{id:2,service_id:5,label:'Bad'}]})));
+test('reject orphan units',()=>assert.throws(()=>model.catalogue({...fixture(),units:[{id:3,method_id:99,label:'Bad'}]})));
+test('reject duplicate staff ids',()=>assert.throws(()=>model.catalogue({...fixture(),staff:[{id:4,label:'A'},{id:4,label:'B'}]})));
+test('accept read-only slots',()=>assert.equal(model.slots({preview_only:true,booking_writes_enabled:false,appointment_created:false,available_starts:['2026-11-11T09:00:00+11:00']}).length,1));
+test('reject appointment creation',()=>assert.throws(()=>model.slots({preview_only:true,booking_writes_enabled:false,appointment_created:true,available_starts:[]})));
+test('reject write flag',()=>assert.throws(()=>model.slots({preview_only:true,booking_writes_enabled:true,appointment_created:false,available_starts:[]})));
+test('reject duplicate slots',()=>assert.throws(()=>model.slots({preview_only:true,booking_writes_enabled:false,appointment_created:false,available_starts:['2026-11-11T09:00:00+11:00','2026-11-11T09:00:00+11:00']})));
+test('reject malformed slot',()=>assert.throws(()=>model.slots({preview_only:true,booking_writes_enabled:false,appointment_created:false,available_starts:['tomorrow']})));
+test('accept range start',()=>assert.equal(model.dateWithinWindow('2026-11-10','2026-11-10',90),true));
+test('accept range end',()=>assert.equal(model.dateWithinWindow('2027-02-08','2026-11-10',90),true));
+test('reject out of range',()=>assert.equal(model.dateWithinWindow('2027-02-09','2026-11-10',90),false));
+test('reject invalid date',()=>assert.equal(model.dateWithinWindow('2026-02-30','2026-02-01',90),false));
+console.log('Passed '+passed+' preview-model tests');

@@ -1,0 +1,31 @@
+{
+  "pass": 82,
+  "base": "PlusAgency_Cleanto_Recovery_Candidate_Pass81_BLOCKED_PASS58_MARIADB.zip",
+  "replaced": [
+    "integration/mysql/lifecycle/ConcurrencyAcceptanceRunner.php",
+    "integration/mysql/lifecycle/ConcurrencySupervisor.php"
+  ],
+  "added": [
+    "PASS82_REPORT.md",
+    "integration/tests/pass82_barrier_runtime.php"
+  ],
+  "files": {
+    "PASS82_REPORT.md": {
+      "bytes": 1534,
+      "sha256": "4a02abd4f123e11dfe325ebe4a594d4f7dcc3e7a27d2b092134ee2157081c169"
+    },
+    "integration/mysql/lifecycle/ConcurrencyAcceptanceRunner.php": {
+      "bytes": 1533,
+      "sha256": "a0bf7035ba7e1007c6d6e69a91fe1d923b6d0523cacddeee289b451fb54432b6"
+    },
+    "integration/mysql/lifecycle/ConcurrencySupervisor.php": {
+      "bytes": 2252,
+      "sha256": "2df8849d8f65dde35a1e335090c608cad29072e1d2abd87ae1a80ceb0475fa0a"
+    },
+    "integration/tests/pass82_barrier_runtime.php": {
+      "bytes": 2237,
+      "sha256": "c6c6a5c6f026967a4d98473560adda4a4e50d620ebb9f16ac76ada3449ed39ef"
+    }
+  },
+  "missing_pass58": true
+}

@@ -1,0 +1,479 @@
+{
+  "source": "private/cleanto/class_configure.php",
+  "source_sha256": "ec69004d6f364c3037bb771a86f4e3396fd10b07f6b679e1ff56232c78266ce9",
+  "table_count": 36,
+  "tables": [
+    {
+      "name": "ct_addon_service_rate",
+      "columns": [
+        "id",
+        "addon_service_id",
+        "unit",
+        "rules",
+        "rate"
+      ]
+    },
+    {
+      "name": "ct_admin_info",
+      "columns": [
+        "id",
+        "password",
+        "email",
+        "fullname",
+        "phone",
+        "address",
+        "city",
+        "state",
+        "zip",
+        "country",
+        "role",
+        "description",
+        "enable_booking",
+        "service_commission",
+        "commision_value",
+        "schedule_type",
+        "image",
+        "service_ids",
+        "staff_wallet_amount",
+        "paypal_api_username",
+        "paypal_api_password",
+        "paypal_api_signature",
+        "paypal_test_mode_status",
+        "revenue_percentage",
+        "latitude",
+        "longitude"
+      ]
+    },
+    {
+      "name": "ct_bookings",
+      "columns": [
+        "id",
+        "order_id",
+        "client_id",
+        "order_date",
+        "booking_date_time",
+        "service_id",
+        "method_id",
+        "method_unit_id",
+        "method_unit_qty",
+        "method_unit_qty_rate",
+        "booking_status",
+        "reject_reason",
+        "reminder_status",
+        "lastmodify",
+        "read_status",
+        "staff_ids",
+        "gc_event_id",
+        "gc_staff_event_id"
+      ]
+    },
+    {
+      "name": "ct_booking_addons",
+      "columns": [
+        "id",
+        "order_id",
+        "service_id",
+        "addons_service_id",
+        "addons_service_qty",
+        "addons_service_rate"
+      ]
+    },
+    {
+      "name": "ct_coupons",
+      "columns": [
+        "id",
+        "coupon_code",
+        "coupon_type",
+        "coupon_limit",
+        "coupon_used",
+        "coupon_value",
+        "coupon_expiry",
+        "status"
+      ]
+    },
+    {
+      "name": "ct_frequently_discount",
+      "columns": [
+        "id",
+        "discount_typename",
+        "days",
+        "d_type",
+        "rates",
+        "labels",
+        "booking_count",
+        "stripe_plan_id",
+        "status"
+      ]
+    },
+    {
+      "name": "ct_off_days",
+      "columns": [
+        "id",
+        "user_id",
+        "off_date",
+        "lastmodify",
+        "status"
+      ]
+    },
+    {
+      "name": "ct_order_client_info",
+      "columns": [
+        "id",
+        "order_id",
+        "client_name",
+        "client_email",
+        "client_phone",
+        "client_personal_info",
+        "order_duration",
+        "recurring_id"
+      ]
+    },
+    {
+      "name": "ct_payments",
+      "columns": [
+        "id",
+        "order_id",
+        "payment_method",
+        "transaction_id",
+        "amount",
+        "discount",
+        "taxes",
+        "partial_amount",
+        "payment_date",
+        "net_amount",
+        "lastmodify",
+        "frequently_discount",
+        "frequently_discount_amount",
+        "recurrence_status",
+        "tip",
+        "payment_status"
+      ]
+    },
+    {
+      "name": "ct_schedule_breaks",
+      "columns": [
+        "id",
+        "provider_id",
+        "week_id",
+        "weekday_id",
+        "break_start",
+        "break_end"
+      ]
+    },
+    {
+      "name": "ct_schedule_offtimes",
+      "columns": [
+        "id",
+        "provider_id",
+        "start_date_time",
+        "end_date_time"
+      ]
+    },
+    {
+      "name": "ct_services",
+      "columns": [
+        "id",
+        "title",
+        "description",
+        "color",
+        "image",
+        "status",
+        "position"
+      ]
+    },
+    {
+      "name": "ct_services_addon",
+      "columns": [
+        "id",
+        "service_id",
+        "addon_service_name",
+        "base_price",
+        "maxqty",
+        "image",
+        "multipleqty",
+        "status",
+        "position",
+        "predefine_image",
+        "predefine_image_title",
+        "addon_service_description",
+        "aduration"
+      ]
+    },
+    {
+      "name": "ct_services_method",
+      "columns": [
+        "id",
+        "service_id",
+        "method_title",
+        "status",
+        "position"
+      ]
+    },
+    {
+      "name": "ct_services_methods_units_rate",
+      "columns": [
+        "id",
+        "units_id",
+        "units",
+        "rules",
+        "rates"
+      ]
+    },
+    {
+      "name": "ct_service_methods_design",
+      "columns": [
+        "id",
+        "service_methods_id",
+        "design"
+      ]
+    },
+    {
+      "name": "ct_service_methods_units",
+      "columns": [
+        "id",
+        "services_id",
+        "methods_id",
+        "units_title",
+        "base_price",
+        "minlimit",
+        "maxlimit",
+        "status",
+        "position",
+        "limit_title",
+        "unit_symbol",
+        "half_section",
+        "uduration",
+        "predefine_image",
+        "predefine_image_title",
+        "image"
+      ]
+    },
+    {
+      "name": "ct_referral_coupon",
+      "columns": [
+        "id",
+        "client_id",
+        "referral_coupon",
+        "friend_referral_id",
+        "coupon_limit",
+        "coupon_used"
+      ]
+    },
+    {
+      "name": "ct_register_otp",
+      "columns": [
+        "id",
+        "phone",
+        "otp"
+      ]
+    },
+    {
+      "name": "ct_staff_gc",
+      "columns": [
+        "id",
+        "gc_id",
+        "gc_status",
+        "gc_token",
+        "gc_status_configure",
+        "gc_status_sync_configure",
+        "gc_client_id",
+        "gc_client_secret",
+        "gc_frontend_url",
+        "gc_admin_url",
+        "staff_id",
+        "gc_api_key"
+      ]
+    },
+    {
+      "name": "ct_transfer_request",
+      "columns": [
+        "request_id",
+        "staff_id",
+        "email_id",
+        "request_amount",
+        "status"
+      ]
+    },
+    {
+      "name": "ct_wallet_history",
+      "columns": [
+        "id",
+        "client_id",
+        "wallet_amount",
+        "wallet_amount_status",
+        "wallet_trans_id",
+        "wallet_method",
+        "lastmodify"
+      ]
+    },
+    {
+      "name": "ct_settings",
+      "columns": [
+        "id",
+        "option_name",
+        "option_value",
+        "postalcode"
+      ]
+    },
+    {
+      "name": "ct_users",
+      "columns": [
+        "id",
+        "user_email",
+        "user_pwd",
+        "first_name",
+        "last_name",
+        "phone",
+        "zip",
+        "address",
+        "city",
+        "state",
+        "notes",
+        "vc_status",
+        "p_status",
+        "contact_status",
+        "status",
+        "usertype",
+        "cus_dt",
+        "stripe_id",
+        "referal_code",
+        "wallet_amount"
+      ]
+    },
+    {
+      "name": "ct_week_days_available",
+      "columns": [
+        "id",
+        "provider_id",
+        "week_id",
+        "weekday_id",
+        "day_start_time",
+        "day_end_time",
+        "off_day",
+        "provider_schedule_type"
+      ]
+    },
+    {
+      "name": "ct_languages",
+      "columns": [
+        "id",
+        "label_data",
+        "language",
+        "admin_labels",
+        "error_labels",
+        "extra_labels",
+        "front_error_labels",
+        "language_status",
+        "app_labels"
+      ]
+    },
+    {
+      "name": "ct_email_user",
+      "columns": [
+        "id",
+        "cus_ids",
+        "cus_sub",
+        "cus_msg",
+        "cus_img",
+        "cus_dt"
+      ]
+    },
+    {
+      "name": "ct_sms_user",
+      "columns": [
+        "id",
+        "cus_ids",
+        "cus_msg",
+        "cus_dt"
+      ]
+    },
+    {
+      "name": "ct_staff_commission",
+      "columns": [
+        "id",
+        "order_id",
+        "staff_id",
+        "amt_payable",
+        "advance_paid",
+        "net_total",
+        "payment_method",
+        "transaction_id",
+        "payment_date"
+      ]
+    },
+    {
+      "name": "ct_sms_templates",
+      "columns": [
+        "id",
+        "sms_subject",
+        "sms_message",
+        "default_message",
+        "sms_template_status",
+        "sms_template_type",
+        "user_type"
+      ]
+    },
+    {
+      "name": "ct_email_templates",
+      "columns": [
+        "id",
+        "email_subject",
+        "email_message",
+        "default_message",
+        "email_template_status",
+        "email_template_type",
+        "user_type"
+      ]
+    },
+    {
+      "name": "ct_staff_status",
+      "columns": [
+        "id",
+        "staff_id",
+        "order_id",
+        "status"
+      ]
+    },
+    {
+      "name": "ct_rating_review",
+      "columns": [
+        "id",
+        "staff_id",
+        "order_id",
+        "rating",
+        "review"
+      ]
+    },
+    {
+      "name": "ct_recurring_status",
+      "columns": [
+        "id",
+        "recurring_id",
+        "status"
+      ]
+    },
+    {
+      "name": "ct_otp",
+      "columns": [
+        "id",
+        "email",
+        "otp",
+        "status"
+      ]
+    },
+    {
+      "name": "ct_special_offer",
+      "columns": [
+        "coupon_value",
+        "coupon_date",
+        "coupon_type",
+        "special_text"
+      ]
+    }
+  ],
+  "limitations": [
+    "Only literal CREATE TABLE statements; not ALTER statements or installer upgrades",
+    "No seed rows or database transaction executed",
+    "Do not promote or import into production without schema review"
+  ]
+}

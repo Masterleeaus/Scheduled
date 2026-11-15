@@ -1,0 +1,53 @@
+{
+  "pass": 37,
+  "base": "PlusAgency_Cleanto_Master_Pass36.zip",
+  "substantive_changed": 29,
+  "added": 24,
+  "modified": 5,
+  "focused_tests_passed": 15,
+  "php_lint_passed": 28,
+  "live_mysql_tested": false,
+  "public_booking_enabled": false,
+  "original_cleanto_modified": 0,
+  "features": [
+    "lock acquisition cleanup and retention on release failure",
+    "replay persisted selection checks",
+    "customer control character rejection",
+    "explicit independent write evidence gate"
+  ],
+  "created": [
+    "core/app/Booking/Public/Redemption/CommitBookingOrderPolicy.php",
+    "core/app/Booking/Public/Redemption/CommitBookingStatusPolicy.php",
+    "core/app/Booking/Public/Redemption/CommitCustomerIdentityPolicy.php",
+    "core/app/Booking/Public/Redemption/CommitIntentReplayPolicy.php",
+    "core/app/Booking/Public/Redemption/CommitReleaseEvidencePolicy.php",
+    "core/app/Booking/Public/Redemption/CommitReplayPersistedReader.php",
+    "core/app/Booking/Public/Redemption/CommitReplaySelectionEvidence.php",
+    "core/app/Booking/Public/Redemption/CommitResultPolicy.php",
+    "core/app/Booking/Public/Redemption/CommitSourceOfTruth.php",
+    "integration/tests/pass37_booking_ids.php",
+    "integration/tests/pass37_customer_controls.php",
+    "integration/tests/pass37_customer_valid.php",
+    "integration/tests/pass37_lock_double_before.php",
+    "integration/tests/pass37_lock_double_failure.php",
+    "integration/tests/pass37_lock_failed_release.php",
+    "integration/tests/pass37_lock_partial_cleanup.php",
+    "integration/tests/pass37_lock_without_before.php",
+    "integration/tests/pass37_no_public_confirmation.php",
+    "integration/tests/pass37_private_gate_contract.php",
+    "integration/tests/pass37_release_missing_flag.php",
+    "integration/tests/pass37_release_verified_contract.php",
+    "integration/tests/pass37_replay_source_contract.php",
+    "integration/tests/pass37_status_policy.php",
+    "integration/tests/pass37_writer_customer_contract.php"
+  ],
+  "modified_paths": [
+    "core/app/Booking/Public/Redemption/CommitLegacyAdapter.php",
+    "core/app/Booking/Public/Redemption/CommitLegacyGateway.php",
+    "core/app/Booking/Public/Redemption/CommitLegacyLockBoundary.php",
+    "core/app/Booking/Public/Redemption/CommitOrchestrator.php",
+    "integration/tests/pass36_gateway_private_gate_contract.php"
+  ],
+  "deleted": [],
+  "regression_scripts_passed": 633
+}

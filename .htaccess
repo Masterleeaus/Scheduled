@@ -1,0 +1,31 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Private application source, tests, diagnostics and version-control metadata
+    # must never be served by the public HTTP document root.
+    RewriteRule ^(?:core|private|tools|tests|docs|integration|development|scripts|PASS05_EVIDENCE|\.git|\.svn)(?:/|$) - [F,L,NC]
+    RewriteRule ^(?:PASS[0-9]+(?:_[A-Za-z0-9_-]+)*|RECOVERY_STATUS_PASS[0-9]+)\.(?:json|md)$ - [F,L,NC]
+    # The database dump and private configuration files are never web assets.
+    RewriteRule ^installer/database\.sql$ - [F,L,NC]
+    RewriteRule (^|/)(?:\.env(?:\..*)?|composer\.(?:json|lock)|package(?:-lock)?\.json|phpunit\.xml(?:\.dist)?|artisan)$ - [F,L,NC]
+    RewriteRule \.(?:sql|sqlite|db|bak|backup|log|ini|conf|yml|yaml|dist|md|map)$ - [F,L,NC]
+
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>

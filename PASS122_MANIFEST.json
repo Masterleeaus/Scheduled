@@ -1,0 +1,42 @@
+{
+  "pass": 122,
+  "base": "Pass 121 cumulative recovery candidate",
+  "changed": [
+    {
+      "path": "core/app/Booking/Public/Checkout/CheckoutRecovery.php",
+      "sha256": "202d910617cf36bfa346a7645e2e5ad465010070d9f3f9e2903f6247224ad22b",
+      "old_sha256": "233180dffd7fda03eb5e5142b691b64c809551e7a354240221a92d620a8ecba4"
+    },
+    {
+      "path": "core/app/Booking/Public/Checkout/CheckoutRecoveryReader.php",
+      "sha256": "d60dd5f5f33f8ed5b8620fc2926ad0cace0e3184c371a6217e99b683745bb9da",
+      "old_sha256": "b097a9eeecbb68e8969065fab2bcb273df975177506ea06562f12c1404380984"
+    },
+    {
+      "path": "core/tests/booking/pass121_recovery_native_schema_test.php",
+      "sha256": "12c183fbec7988436abf1e14c0957bea61548571b60b43b9e49fd68de417749f",
+      "old_sha256": "964b990121f93b7a94fa607b41cd73959b296f4c2eb8015b062f46a6c208da3f"
+    },
+    {
+      "path": "PASS122_REPORT.md",
+      "sha256": "a7fc8a6a07cf4e61422cb00724984d6525a243cf7f0819e959d0da98153fcdde",
+      "old_sha256": null
+    }
+  ],
+  "tests": [
+    {
+      "file": "core/tests/booking/pass121_recovery_native_schema_test.php",
+      "exit": 0,
+      "output": "Pass 121 native Cleanto recovery: 42 assertions passed",
+      "stderr": ""
+    },
+    {
+      "file": "core/tests/booking/pass119_recovery_test.php",
+      "exit": 0,
+      "output": "Pass 119 recovery assertions: 9 passed",
+      "stderr": ""
+    }
+  ],
+  "database": "not executed",
+  "missing_pass": 58
+}

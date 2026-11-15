@@ -1,0 +1,8 @@
+{
+  "replace-with-random-32-byte-hex-instance-key": {
+    "enabled": false,
+    "dsn": "mysql:host=db.internal;port=3306;dbname=booking_example;charset=utf8mb4",
+    "db_user": "booking_example_user",
+    "db_password": "REPLACE_IN_SECRET_MANAGER"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "headline": "A workplace ready for tomorrow.",
+  "tagline": "Consistent site care that fits working hours, access rules and team routines.",
+  "accent": "#334C66",
+  "about": "A clear cleaning plan keeps occupied workplaces comfortable while respecting security, shared facilities and operational schedules. We agree frequencies, responsibilities and escalation contacts upfront.",
+  "cta_label": "Request a tailored quote",
+  "cta_url": "#contact",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Office janitorial",
+  "seo_description": "Consistent site care that fits working hours, access rules and team routines.",
+  "services": [
+    {
+      "name": "Daily shared-area care",
+      "description": "Regular attention to receptions, work zones and high-use touchpoints as agreed in the scope."
+    },
+    {
+      "name": "Washrooms and amenities",
+      "description": "Scheduled cleaning and checks for bathrooms, kitchens and shared facilities."
+    },
+    {
+      "name": "After-hours services",
+      "description": "Arrange cleaning outside busy times where site access and staff coverage allow."
+    },
+    {
+      "name": "Periodic detail work",
+      "description": "Deeper targeted maintenance to complement the routine janitorial schedule."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can cleaning happen outside office hours?",
+      "answer": "Availability depends on access arrangements and staff schedules; we can discuss suitable windows."
+    },
+    {
+      "question": "How do you manage access and security?",
+      "answer": "Site procedures, keys and authorised contact arrangements are agreed before work starts."
+    },
+    {
+      "question": "Can different areas have different frequencies?",
+      "answer": "Yes. We can quote a schedule tailored to each work zone."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local Office service areas",
+      "description": "Contact us to confirm availability for your suburb or neighbourhood."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [
+    {
+      "title": "Office cleaning preparation",
+      "summary": "A practical checklist before your appointment.",
+      "body": "Clear access to the work area, identify priority surfaces and discuss any delicate materials before cleaning begins.",
+      "slug": "office-preparation"
+    }
+  ],
+  "seo_image": "",
+  "analytics_consent": false
+}

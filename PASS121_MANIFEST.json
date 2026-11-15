@@ -1,0 +1,43 @@
+{
+  "pass": 121,
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass120_BLOCKED_PASS58_MARIADB.zip",
+  "changed_files": [
+    {
+      "path": "assets/front/js/titan-booking-widget.js",
+      "status": "modified",
+      "size": 14853,
+      "sha256": "974585c947b30074248f4aceb5a5b8530d7fcfbdf7d7c1ca467363d61e5d7e4d"
+    },
+    {
+      "path": "core/app/Booking/Public/Checkout/CheckoutRecovery.php",
+      "status": "modified",
+      "size": 2369,
+      "sha256": "233180dffd7fda03eb5e5142b691b64c809551e7a354240221a92d620a8ecba4"
+    },
+    {
+      "path": "core/app/Booking/Public/Checkout/CheckoutRecoveryReader.php",
+      "status": "modified",
+      "size": 2868,
+      "sha256": "b097a9eeecbb68e8969065fab2bcb273df975177506ea06562f12c1404380984"
+    },
+    {
+      "path": "core/tests/booking/pass119_recovery_test.php",
+      "status": "modified",
+      "size": 2634,
+      "sha256": "db7947609cff0e261e2bcf9f37154a6ba7f55b5c0ae06f3e7a5f731d83230121"
+    },
+    {
+      "path": "core/tests/booking/pass121_recovery_native_schema_test.php",
+      "status": "added",
+      "size": 4441,
+      "sha256": "964b990121f93b7a94fa607b41cd73959b296f4c2eb8015b062f46a6c208da3f"
+    }
+  ],
+  "removed_files": [],
+  "database_acceptance": "not executed",
+  "known_blockers": [
+    "MariaDB runtime unavailable",
+    "Pass 58 history missing",
+    "browser end-to-end unverified"
+  ]
+}

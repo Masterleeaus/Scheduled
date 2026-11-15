@@ -1,0 +1,64 @@
+{
+  "headline": "Every arrival begins with confidence.",
+  "tagline": "Reliable turnovers built around real check-in deadlines and guest expectations.",
+  "accent": "#815468",
+  "about": "We help hosts prepare guest-ready properties through repeatable room checks, agreed linen coordination and clear communication about access and turnaround windows.",
+  "cta_label": "Request a tailored quote",
+  "cta_url": "#contact",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Short-stay turnover",
+  "seo_description": "Reliable turnovers built around real check-in deadlines and guest expectations.",
+  "services": [
+    {
+      "name": "Between-stay refresh",
+      "description": "An agreed guest-readiness checklist for bathrooms, kitchens, bedrooms and shared spaces."
+    },
+    {
+      "name": "Linen coordination",
+      "description": "Support for linen changeovers according to your supply and laundering arrangements."
+    },
+    {
+      "name": "Consumable checks",
+      "description": "Check and report agreed guest essentials; restocking arrangements are confirmed separately."
+    },
+    {
+      "name": "Condition reporting",
+      "description": "Flag visible issues and missing items to your designated contact before the next arrival."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can you work between check-out and check-in?",
+      "answer": "Share the dates and access arrangements so we can assess the available turnaround window."
+    },
+    {
+      "question": "Do you supply linen and consumables?",
+      "answer": "We confirm supplies, storage and restocking responsibilities before your first service."
+    },
+    {
+      "question": "Can you follow our property checklist?",
+      "answer": "Yes. We can work from an agreed checklist for each property."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local Shortstay service areas",
+      "description": "Contact us to confirm availability for your suburb or neighbourhood."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [
+    {
+      "title": "Shortstay cleaning preparation",
+      "summary": "A practical checklist before your appointment.",
+      "body": "Clear access to the work area, identify priority surfaces and discuss any delicate materials before cleaning begins.",
+      "slug": "shortstay-preparation"
+    }
+  ],
+  "seo_image": "",
+  "analytics_consent": false
+}

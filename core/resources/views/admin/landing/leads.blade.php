@@ -1,0 +1,3 @@
+@extends('admin.layout')
+@section('content')<div class="container-fluid"><h2>Leads — {{ $campaign->name }}</h2><p><a href="{{ route('admin.landing.edit',$campaign->id) }}">Back to campaign</a></p>
+<table class="table"><thead><tr><th>Date</th><th>Name</th><th>Email</th><th>Phone</th><th>Enquiry</th><th>Source</th></tr></thead><tbody>@foreach($leads as $lead)<tr><td>{{ $lead->created_at }}</td><td>{{ $lead->name }}</td><td>{{ $lead->email }}</td><td>{{ $lead->phone }}</td><td>{{ $lead->message }}</td><td>{{ $lead->utm_source }}</td></tr>@endforeach</tbody></table>{{ $leads->links() }}</div>@endsection

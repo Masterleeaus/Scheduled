@@ -1,0 +1,57 @@
+{
+  "pass": 22,
+  "base_archive": "Master-Copy-PlusAgency-Cleanto-Pass21-50-VERTICALS-CUMULATIVE.zip",
+  "files_changed": 30,
+  "added": [
+    "core/app/Services/Sites/Presets/pawfy.json",
+    "core/app/Services/Sites/Presets/stevenwatkins.json",
+    "core/app/Services/Sites/Presets/yoga-pilates.json",
+    "core/app/Services/Sites/Presets/carzone.json",
+    "core/resources/views/front/sites/themes/pawfy.blade.php",
+    "core/resources/views/front/sites/themes/stevenwatkins.blade.php",
+    "core/resources/views/front/sites/themes/yoga_pilates.blade.php",
+    "core/resources/views/front/sites/themes/carzone.blade.php",
+    "core/public/assets/sites/themes/pawfy.css",
+    "core/public/assets/sites/themes/stevenwatkins.css",
+    "core/public/assets/sites/themes/yoga-pilates.css",
+    "core/public/assets/sites/themes/carzone.css",
+    "core/public/assets/sites/imported/pawfy/hero.png",
+    "core/public/assets/sites/imported/pawfy/about.png",
+    "core/public/assets/sites/imported/pawfy/gallery.png",
+    "core/public/assets/sites/imported/stevenwatkins/hero.jpg",
+    "core/public/assets/sites/imported/stevenwatkins/detail.jpg",
+    "core/public/assets/sites/imported/stevenwatkins/gallery.jpg",
+    "core/public/assets/sites/imported/carzone/hero.jpg",
+    "core/public/assets/sites/imported/carzone/detail.jpg",
+    "core/public/assets/sites/imported/carzone/gallery.jpg",
+    "core/public/assets/sites/imported/yoga-pilates/yoga-hero.svg",
+    "core/public/assets/sites/imported/yoga-pilates/yoga-detail.svg",
+    "core/public/assets/sites/imported/yoga-pilates/yoga-pattern.svg",
+    "PASS22_IMPORT_REPORT.json",
+    "PASS22_REPORT.md",
+    "tests/pass22_imported_vertical_templates_test.php"
+  ],
+  "modified": [
+    "core/app/Services/Sites/SiteTemplates.php",
+    "core/resources/data/business-verticals.json",
+    "core/resources/site-editor/theme-fields.json"
+  ],
+  "deleted": [],
+  "donors": {
+    "pawfy": {
+      "source": "pawfy-dog-grooming-breeding-html-template-2025-04-07-22-23-37-utc.zip",
+      "full_archive_entries": 155,
+      "adapted_media_assets": 3
+    },
+    "stevenwatkins": {
+      "source": "gym-trainerSrmehranclub.zip",
+      "full_archive_entries": 695,
+      "adapted_media_assets": 3
+    },
+    "carzone": {
+      "source": "GbJ69rZT-Carzone-Car-Repairing-Car-Detailing-Services-Website-Template-hjrf90.zip",
+      "full_archive_entries": 132,
+      "adapted_media_assets": 3
+    }
+  }
+}

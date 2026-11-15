@@ -1,0 +1,22 @@
+{
+  "pass": 99,
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass98_BLOCKED_PASS58_MARIADB.zip",
+  "status": "RECOVERY_CANDIDATE_BLOCKED_PASS58_MARIADB",
+  "changed_files": [
+    {
+      "path": "core/app/Booking/Public/Checkout/CheckoutCustomer.php",
+      "sha256": "f88555ac7c8af5c000ae83a76c5ac83d05a528b7bade78d6a363f03ce4531a0f",
+      "bytes": 2866
+    },
+    {
+      "path": "core/tests/Booking/pass99_phone_native_boundary_test.php",
+      "sha256": "976e9c0f1b9a360fdee9faf6198144fe1d0ba3ddcac57f9c93c5115ad6f0f4f9",
+      "bytes": 1841
+    },
+    {
+      "path": "PASS99_REPORT.md",
+      "sha256": "4ac8f6bb3517b47c8e59213f75f5578e507c26a36bcfa22999b5e954b6a4e5f2",
+      "bytes": 1002
+    }
+  ]
+}

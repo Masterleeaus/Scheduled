@@ -1,0 +1,91 @@
+{
+  "pass": 10,
+  "baseline": "Master-Copy-PlusAgency-Cleanto-Pass09-CUMULATIVE.zip",
+  "change_kind": "additions_only",
+  "new_files": [
+    "core/app/Booking/Diagnostics/BookingSchemaSnapshot.php",
+    "core/app/Booking/Diagnostics/BookingTenantProbe.php",
+    "core/app/Console/Commands/VerifyCleantoTenants.php",
+    "core/tests/Booking/pass10_schema_snapshot_test.php",
+    "core/tests/Booking/pass10_readiness_contract_test.php",
+    "docs/booking/PASS10_MARIADB_ACCEPTANCE.md"
+  ],
+  "modified_files": [],
+  "removed_files": [],
+  "live_mariadb_tests": "blocked: pdo_mysql absent; no MariaDB runtime",
+  "known_legacy_test_failures": [
+    "pass89_checkout_commit_compatibility_test.php",
+    "pass92_checkout_native_handoff_test.php",
+    "pass100_response_contract_test.php"
+  ],
+  "checks": {
+    "lint:core/app/Booking/Diagnostics/BookingSchemaSnapshot.php": {
+      "exit": 0,
+      "output": "No syntax errors detected in /mnt/data/pass10_work/app/core/app/Booking/Diagnostics/BookingSchemaSnapshot.php"
+    },
+    "lint:core/app/Booking/Diagnostics/BookingTenantProbe.php": {
+      "exit": 0,
+      "output": "No syntax errors detected in /mnt/data/pass10_work/app/core/app/Booking/Diagnostics/BookingTenantProbe.php"
+    },
+    "lint:core/app/Console/Commands/VerifyCleantoTenants.php": {
+      "exit": 0,
+      "output": "No syntax errors detected in /mnt/data/pass10_work/app/core/app/Console/Commands/VerifyCleantoTenants.php"
+    },
+    "lint:core/tests/Booking/pass10_schema_snapshot_test.php": {
+      "exit": 0,
+      "output": "No syntax errors detected in /mnt/data/pass10_work/app/core/tests/Booking/pass10_schema_snapshot_test.php"
+    },
+    "lint:core/tests/Booking/pass10_readiness_contract_test.php": {
+      "exit": 0,
+      "output": "No syntax errors detected in /mnt/data/pass10_work/app/core/tests/Booking/pass10_readiness_contract_test.php"
+    },
+    "run:core/tests/Booking/pass10_schema_snapshot_test.php": {
+      "exit": 0,
+      "output": "Pass 10 schema snapshot tests passed"
+    },
+    "run:core/tests/Booking/pass10_readiness_contract_test.php": {
+      "exit": 0,
+      "output": "PASS operator-only Artisan command\nPASS missing PDO refuses inspection\nPASS no public release auto-toggle\nPASS read-only information schema\nPASS prepared metadata query\nPASS connection tenant identity pinned\nPASS no production acceptance fabrication\nPASS live concurrency not assumed\nPASS financial settlement not assumed\nPASS real executor remains guarded"
+    },
+    "legacy:pass88_checkout_validation_test.php": {
+      "exit": 0,
+      "tail": "Pass 88 checkout validation: 12 cases passed\n\n"
+    },
+    "legacy:pass89_checkout_commit_compatibility_test.php": {
+      "exit": 255,
+      "tail": "n /mnt/data/pass10_work/app/core/tests/Booking/pass89_checkout_commit_compatibility_test.php:20\nStack trace:\n#0 /mnt/data/pass10_work/app/core/tests/Booking/pass89_checkout_commit_compatibility_test.php(22): check()\n#1 {main}\n  thrown in /mnt/data/pass10_work/app/core/tests/Booking/pass89_checkout_commit_compatibility_test.php on line 20\n"
+    },
+    "legacy:pass92_checkout_native_handoff_test.php": {
+      "exit": 255,
+      "tail": "to phone size in /mnt/data/pass10_work/app/core/tests/Booking/pass92_checkout_native_handoff_test.php:11\nStack trace:\n#0 /mnt/data/pass10_work/app/core/tests/Booking/pass92_checkout_native_handoff_test.php(22): rejected()\n#1 {main}\n  thrown in /mnt/data/pass10_work/app/core/tests/Booking/pass92_checkout_native_handoff_test.php on line 11\n"
+    },
+    "legacy:pass92_source_connection_test.php": {
+      "exit": 0,
+      "tail": "Pass92 native source handoff: 6 assertions passed\n\n"
+    },
+    "legacy:pass93_submission_gate_test.php": {
+      "exit": 0,
+      "tail": "Pass 93: 7 assertions passed; no DB transaction claimed\n\n"
+    },
+    "legacy:pass94_native_executor_test.php": {
+      "exit": 0,
+      "tail": "Pass 94: 16 security and native-loader assertions passed; no live booking claim\n\n"
+    },
+    "legacy:pass96_tenant_checkout_readiness_test.php": {
+      "exit": 0,
+      "tail": "Pass 96: 18 assertions passed; no MariaDB booking transaction claimed\n\n"
+    },
+    "legacy:pass98_submission_replay_test.php": {
+      "exit": 0,
+      "tail": "Pass 98: 12 replay propagation assertions passed; database not exercised\n\n"
+    },
+    "legacy:pass99_phone_native_boundary_test.php": {
+      "exit": 0,
+      "tail": "Pass 99 phone boundary: 15 assertions passed\n\n"
+    },
+    "legacy:pass100_response_contract_test.php": {
+      "exit": 1,
+      "tail": "\nPHP Warning:  file_get_contents(/mnt/data/pass10_work/app/core/tests/Booking/core/app/Http/Controllers/Front/BookingPublicSubmissionController.php): Failed to open stream: No such file or directory in /mnt/data/pass10_work/app/core/tests/Booking/pass100_response_contract_test.php on line 17\nFAIL submission rejects malformed input\n"
+    }
+  }
+}

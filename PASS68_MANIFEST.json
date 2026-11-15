@@ -1,0 +1,40 @@
+{
+  "pass": 68,
+  "base": "PlusAgency_Cleanto_Recovery_Candidate_Pass67_BLOCKED_PASS58_MARIADB.zip",
+  "status": "RECOVERY_CANDIDATE_MISSING_PASS58",
+  "payment_writes_enabled": false,
+  "new_files": [
+    "PASS68_REPORT.md",
+    "core/app/Booking/Public/Payment/PaymentBookingMatch.php",
+    "core/app/Booking/Public/Payment/PaymentBoundary.php",
+    "core/app/Booking/Public/Payment/PaymentIdentity.php",
+    "core/app/Booking/Public/Payment/PaymentMoney.php",
+    "core/app/Booking/Public/Payment/PaymentOutcome.php",
+    "core/app/Booking/Public/Payment/PaymentReplayDecision.php",
+    "core/app/Booking/Public/Payment/PaymentWebhookCandidate.php",
+    "core/app/Booking/Public/Payment/StripeTestEvent.php",
+    "core/app/Booking/Public/Payment/StripeTestSignature.php",
+    "integration/tests/pass68/bootstrap.php",
+    "integration/tests/pass68/webhook_test.php"
+  ],
+  "sha256": {
+    "core/app/Booking/Public/Payment/StripeTestEvent.php": "29f426890ca40784634ab6eec2629376646bc7ddfc99a40aac3fa4828595edc2",
+    "core/app/Booking/Public/Payment/PaymentOutcome.php": "baa30d0237b8f0ebf64f8bba79befe039e5342fe21448933f1bd3fcfddaba36f",
+    "core/app/Booking/Public/Payment/PaymentBoundary.php": "135593aecadf07b491442bd091d2044ff1bd25ea55e8d3c63fdfbd5b85d0a738",
+    "core/app/Booking/Public/Payment/PaymentReplayDecision.php": "5a12edd178f604c6e4cf6158ff198387a31397b42988d5ceba9f2e687521042e",
+    "core/app/Booking/Public/Payment/PaymentMoney.php": "230db09a7b16fadcdcf1763acf90b4c72348348cd2b3ebd57bf45e1f7171c73f",
+    "core/app/Booking/Public/Payment/StripeTestSignature.php": "ba19e2724c0e1b91b48743d8ea8fd65245f155a8a7b0b5de7b8c8d3e481e27bc",
+    "core/app/Booking/Public/Payment/PaymentWebhookCandidate.php": "cd837e42363969c0511262200c318b19472613c373858f84fd35f03d4a8d74e4",
+    "core/app/Booking/Public/Payment/PaymentBookingMatch.php": "d747191028751ce90e203fd0e4ab2965cf098b12462d518379fac515dbccecc3",
+    "core/app/Booking/Public/Payment/PaymentIdentity.php": "4e2194203ea4541b8dc753a9561e1afdd45620df262fd20d1fcd1834df14965e",
+    "integration/tests/pass68/bootstrap.php": "59933300f516c179cdda8c868549fa890291ada2566d7112a9986e3f70bbe441",
+    "integration/tests/pass68/webhook_test.php": "24f8402a4914bb090eb990560cf0566c15f8e177b36b9e371149e22debd08bc2",
+    "PASS68_REPORT.md": "522345bd37242a5cf861a912ab2a35a5f18046faa09979936ea4716bcbb3605a"
+  },
+  "checks": {
+    "pass68_assertions": "30/30",
+    "new_php_lint": "11/11",
+    "mariadb": "NOT RUN",
+    "stripe_webhook": "NOT RUN"
+  }
+}

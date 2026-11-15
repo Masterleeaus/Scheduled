@@ -1,0 +1,85 @@
+{
+  "pass": 6,
+  "base_archive": "Master-Copy-PlusAgency-Cleanto-Pass05-CUMULATIVE.zip",
+  "changes": [
+    {
+      "path": "core/app/Http/Controllers/Admin/SiteBrandAgentController.php",
+      "action": "added",
+      "sha256": "cf5e46e2752848b6ddd1e0dabb7e79267f203c5e465998e1ad830374c54bc8ce",
+      "bytes": 5953
+    },
+    {
+      "path": "core/app/Services/Sites/BrandMedia.php",
+      "action": "added",
+      "sha256": "32acd5adb80e799b418f890ce2de64dbdd0be6d1552e8bf6d1f13cd24c489076",
+      "bytes": 994
+    },
+    {
+      "path": "core/app/Services/Sites/BrandProposal.php",
+      "action": "added",
+      "sha256": "fd62d171837f74ba722e4d69eb343ac455084bd363f735ea9636977811d30eab",
+      "bytes": 1971
+    },
+    {
+      "path": "core/app/Services/Sites/BrandProvider.php",
+      "action": "added",
+      "sha256": "249f8356cd4f9476ca02a7a565bb586e0818fd673a66e360d93be0200cbb9fd1",
+      "bytes": 3649
+    },
+    {
+      "path": "core/app/Services/Sites/SiteMarketing.php",
+      "action": "modified",
+      "sha256": "638fd0a01913dfc61b29ab2277e156c599ad1a26494db3594231b2f5c8b76a93",
+      "bytes": 2877
+    },
+    {
+      "path": "core/config/services.php",
+      "action": "modified",
+      "sha256": "f8f92eab441a35b4d66fd8eb42c6fc34238479c98826c8a542ec978c3db6d024",
+      "bytes": 2075
+    },
+    {
+      "path": "core/database/migrations/2026_11_11_000006_create_titan_brand_proposals_table.php",
+      "action": "added",
+      "sha256": "c9a74539e140ed74c6e81614a92f20e344d00278d757befbd32db9ecca1f8ae2",
+      "bytes": 745
+    },
+    {
+      "path": "core/resources/views/admin/sites/brand-agent.blade.php",
+      "action": "added",
+      "sha256": "54a2c4086c9fd1d9b3d882fa20fbc79966730c7163fa2db33e22ec0e11ac84be",
+      "bytes": 3917
+    },
+    {
+      "path": "core/resources/views/admin/sites/edit.blade.php",
+      "action": "modified",
+      "sha256": "7fb42ac01636452570ce1f1415dd02971e7a8b09493b1b33f08df2bdb202e993",
+      "bytes": 5136
+    },
+    {
+      "path": "core/routes/web.php",
+      "action": "modified",
+      "sha256": "92fb0f62ee589a8868f25f162c8bf73840e8344f18befae932c60961dc07db1a",
+      "bytes": 102428
+    },
+    {
+      "path": "core/tests/Feature/Sites/BrandAgentRoutesTest.php",
+      "action": "added",
+      "sha256": "d3a21fd564496243ee62d370e4d9fb066f1bff316e5c82c16e8e9db46f8388d4",
+      "bytes": 314
+    },
+    {
+      "path": "core/tests/Unit/Sites/BrandProposalTest.php",
+      "action": "added",
+      "sha256": "8ce03b494ab360d09b54871e2a691f4feb96c5e134af047664ae7a869ed653a6",
+      "bytes": 851
+    }
+  ],
+  "tests": {
+    "php_lint_count": 50,
+    "php_lint_failures": 0,
+    "browser_tests": "not run",
+    "database_tests": "not run",
+    "provider_live_tests": "not run"
+  }
+}

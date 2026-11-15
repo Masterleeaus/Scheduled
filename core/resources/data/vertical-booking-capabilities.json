@@ -1,0 +1,407 @@
+{
+  "schema_version": 1,
+  "count": 50,
+  "description": "Vertical-specific presentation. Availability, staff and price are always loaded from verified Cleanto; no fabricated prices or appointments.",
+  "verticals": [
+    {
+      "vertical_key": "residential-cleaning",
+      "vertical_name": "Residential cleaning",
+      "industry_group": "Cleaning services",
+      "recommended_template": "residential",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "commercial-and-office-cleaning",
+      "vertical_name": "Commercial and office cleaning",
+      "industry_group": "Cleaning services",
+      "recommended_template": "commercial",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "bond-and-end-of-lease-cleaning",
+      "vertical_name": "Bond and end-of-lease cleaning",
+      "industry_group": "Cleaning services",
+      "recommended_template": "end-of-lease",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "post-construction-clean",
+      "vertical_name": "Post-construction clean",
+      "industry_group": "Cleaning services",
+      "recommended_template": "deep",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "construction-site-clean-up",
+      "vertical_name": "Construction-site clean-up",
+      "industry_group": "Cleaning services",
+      "recommended_template": "commercial",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "strata-and-common-area-cleaning",
+      "vertical_name": "Strata and common-area cleaning",
+      "industry_group": "Cleaning services",
+      "recommended_template": "office",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "hard-floor-care",
+      "vertical_name": "Hard floor care",
+      "industry_group": "Cleaning services",
+      "recommended_template": "deep",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "carpet-and-upholstery-cleaning",
+      "vertical_name": "Carpet and upholstery cleaning",
+      "industry_group": "Cleaning services",
+      "recommended_template": "carpet",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "window-cleaning-all-heights",
+      "vertical_name": "Window cleaning (all heights)",
+      "industry_group": "Cleaning services",
+      "recommended_template": "windows",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "pressure-cleaning-all-heights",
+      "vertical_name": "Pressure cleaning (all heights)",
+      "industry_group": "Cleaning services",
+      "recommended_template": "pressure",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "roof-soft-washing",
+      "vertical_name": "Roof soft washing",
+      "industry_group": "Cleaning services",
+      "recommended_template": "pressure",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "solar-panel-cleaning",
+      "vertical_name": "Solar panel cleaning",
+      "industry_group": "Cleaning services",
+      "recommended_template": "windows",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "healthcare-cleaning-ndis-homes",
+      "vertical_name": "Healthcare cleaning (NDIS homes)",
+      "industry_group": "Cleaning services",
+      "recommended_template": "residential",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "medical-equipment-cleaning-external-only",
+      "vertical_name": "Medical equipment cleaning (external only)",
+      "industry_group": "Cleaning services",
+      "recommended_template": "deep",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "short-stay-turnover-cleaning",
+      "vertical_name": "Short-stay turnover cleaning",
+      "industry_group": "Cleaning services",
+      "recommended_template": "shortstay",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "car-detailing",
+      "vertical_name": "Car detailing",
+      "industry_group": "Vehicles, appliances and furniture",
+      "recommended_template": "carzone",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "specialty-appliance-and-machine-cleaning",
+      "vertical_name": "Specialty appliance and machine cleaning",
+      "industry_group": "Vehicles, appliances and furniture",
+      "recommended_template": "handypro",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "furniture-restoration",
+      "vertical_name": "Furniture restoration",
+      "industry_group": "Vehicles, appliances and furniture",
+      "recommended_template": "handypro",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "handyman",
+      "vertical_name": "Handyman",
+      "industry_group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "plastering",
+      "vertical_name": "Plastering",
+      "industry_group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "painting",
+      "vertical_name": "Painting",
+      "industry_group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "tiling",
+      "vertical_name": "Tiling",
+      "industry_group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "flat-pack-and-fixture-installation",
+      "vertical_name": "Flat-pack and fixture installation",
+      "industry_group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "locksmith-and-door-installation",
+      "vertical_name": "Locksmith and door installation",
+      "industry_group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "deck-and-fence-maintenance",
+      "vertical_name": "Deck and fence maintenance",
+      "industry_group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "timber-floor-restoration",
+      "vertical_name": "Timber floor restoration",
+      "industry_group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "stone-and-terrazzo-restoration",
+      "vertical_name": "Stone and terrazzo restoration",
+      "industry_group": "Trades and property maintenance",
+      "recommended_template": "pressure",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "lawn-and-turf-care",
+      "vertical_name": "Lawn and turf care",
+      "industry_group": "Outdoor and garden",
+      "recommended_template": "cleanmate",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "garden-maintenance-and-clean-ups",
+      "vertical_name": "Garden maintenance and clean-ups",
+      "industry_group": "Outdoor and garden",
+      "recommended_template": "cleanmate",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "irrigation-servicing",
+      "vertical_name": "Irrigation servicing",
+      "industry_group": "Outdoor and garden",
+      "recommended_template": "cleanmate",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "landscaping",
+      "vertical_name": "Landscaping",
+      "industry_group": "Outdoor and garden",
+      "recommended_template": "cleanmate",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "pond-and-water-feature-maintenance",
+      "vertical_name": "Pond and water-feature maintenance",
+      "industry_group": "Outdoor and garden",
+      "recommended_template": "cleanmate",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "pool-and-spa-servicing",
+      "vertical_name": "Pool and spa servicing",
+      "industry_group": "Outdoor and garden",
+      "recommended_template": "cleanmate",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "aquarium-maintenance",
+      "vertical_name": "Aquarium maintenance",
+      "industry_group": "Outdoor and garden",
+      "recommended_template": "cleanmate",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "dog-walking",
+      "vertical_name": "Dog walking",
+      "industry_group": "Pet services",
+      "recommended_template": "pawfy",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "pet-and-house-sitting",
+      "vertical_name": "Pet and house sitting",
+      "industry_group": "Pet services",
+      "recommended_template": "pawfy",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "pet-grooming",
+      "vertical_name": "Pet grooming",
+      "industry_group": "Pet services",
+      "recommended_template": "pawfy",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "dog-training",
+      "vertical_name": "Dog training",
+      "industry_group": "Pet services",
+      "recommended_template": "pawfy",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "mobile-hairdressing-and-barbering",
+      "vertical_name": "Mobile hairdressing and barbering",
+      "industry_group": "Personal services and beauty",
+      "recommended_template": "klano",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "mobile-beauty",
+      "vertical_name": "Mobile beauty",
+      "industry_group": "Personal services and beauty",
+      "recommended_template": "clinar",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "mobile-massage",
+      "vertical_name": "Mobile massage",
+      "industry_group": "Personal services and beauty",
+      "recommended_template": "klano",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "makeup-artistry",
+      "vertical_name": "Makeup artistry",
+      "industry_group": "Personal services and beauty",
+      "recommended_template": "klano",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "mobile-nail-technology",
+      "vertical_name": "Mobile nail technology",
+      "industry_group": "Personal services and beauty",
+      "recommended_template": "klano",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "personal-and-fitness-training",
+      "vertical_name": "Personal and fitness training",
+      "industry_group": "Health, fitness and wellbeing",
+      "recommended_template": "stevenwatkins",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "yoga-and-pilates",
+      "vertical_name": "Yoga and Pilates",
+      "industry_group": "Health, fitness and wellbeing",
+      "recommended_template": "yoga-pilates",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "nutrition-weight-loss-and-dieting-consultant",
+      "vertical_name": "Nutrition, weight loss and dieting consultant",
+      "industry_group": "Health, fitness and wellbeing",
+      "recommended_template": "klano",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "tutoring",
+      "vertical_name": "Tutoring",
+      "industry_group": "Education",
+      "recommended_template": "klano",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "real-estate-portfolio-management",
+      "vertical_name": "Real estate portfolio management",
+      "industry_group": "Property and hospitality",
+      "recommended_template": "office",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "short-stay-host-management",
+      "vertical_name": "Short-stay host management",
+      "industry_group": "Property and hospitality",
+      "recommended_template": "shortstay",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    },
+    {
+      "vertical_key": "high-risk-cleaning",
+      "vertical_name": "High-risk cleaning",
+      "industry_group": "Specialist",
+      "recommended_template": "deep",
+      "booking_mode": "service-appointment",
+      "confirmed_reservation_requires_verified_cleanto": true
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+<?php
+declare(strict_types=1);
+namespace App\Booking\Public\Redemption;
+final class RedeemPayload { public static function validate(array $payload):array { $allowed=['intent_token','customer_email','customer_name'];foreach($payload as $key=>$_){if(!in_array($key,$allowed,true))throw new \InvalidArgumentException('Privileged field supplied');} $token=$payload['intent_token']??null; if(!is_string($token)||strlen($token)<60||strlen($token)>8192)throw new \InvalidArgumentException('Invalid token');$email=$payload['customer_email']??null;if(!is_string($email)||strlen($email)>254||!filter_var($email,FILTER_VALIDATE_EMAIL))throw new \InvalidArgumentException('Invalid email');$name=$payload['customer_name']??null;if(!is_string($name)||strlen(trim($name))<1||strlen($name)>120)throw new \InvalidArgumentException('Invalid name');return ['intent_token'=>$token,'customer_email'=>strtolower($email),'customer_name'=>trim($name)];} }

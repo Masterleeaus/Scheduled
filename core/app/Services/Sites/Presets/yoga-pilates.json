@@ -1,0 +1,53 @@
+{
+  "headline": "Move with intention. Feel the difference.",
+  "tagline": "Grounded yoga and Pilates sessions for all experience levels",
+  "accent": "#8b6c91",
+  "about": "We provide thoughtful, personalised mindful movement services. Ask about availability, service scope and pricing.",
+  "cta_label": "Request a class",
+  "cta_url": "#booking",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Yoga & Pilates · Mindful Movement",
+  "seo_description": "Grounded yoga and Pilates sessions for all experience levels",
+  "services": [
+    {
+      "name": "Yoga sessions",
+      "description": "Ask us about tailored yoga sessions options and availability."
+    },
+    {
+      "name": "Pilates classes",
+      "description": "Ask us about tailored pilates classes options and availability."
+    },
+    {
+      "name": "Private instruction",
+      "description": "Ask us about tailored private instruction options and availability."
+    },
+    {
+      "name": "Gentle mobility",
+      "description": "Ask us about tailored gentle mobility options and availability."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I enquire?",
+      "answer": "Send us your preferred service, location and timing using the contact form."
+    },
+    {
+      "question": "Can I choose a service package?",
+      "answer": "Contact us to discuss suitable options for your needs."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local service areas",
+      "description": "Contact us to confirm coverage for your property."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [],
+  "seo_image": "",
+  "analytics_consent": false
+}

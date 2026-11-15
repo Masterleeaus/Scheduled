@@ -1,0 +1,1 @@
+(function(){'use strict';var form=document.querySelector('form');if(!form)return;var submit=form.querySelector('button[type=submit]');form.addEventListener('submit',function(){if(submit&&form.checkValidity()){submit.disabled=true;submit.textContent='Sending…';}});})();

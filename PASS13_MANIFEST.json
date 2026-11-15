@@ -1,0 +1,98 @@
+{
+  "pass": 13,
+  "baseline": "Master-Copy-PlusAgency-Cleanto-Pass12-CUMULATIVE.zip",
+  "timestamp_utc": "2026-11-11T00:29:27.489113+00:00",
+  "files": [
+    {
+      "path": "private/booking-sidecar/BookingOwnerFilters.php",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "b2c365608b0d305db340c6edba073d3e85dbe82810353335d170cf135212bad0",
+      "bytes": 2132
+    },
+    {
+      "path": "private/booking-sidecar/BookingOwnerListing.php",
+      "status": "modified",
+      "old_sha256": "b8e912443fc2e367fa0d3956437073a3bae4395922fb20938d9d9f927b4bf78c",
+      "new_sha256": "ca975be3871b40ba51be620d98e72a93cc44910b1f2f32ccafd052c129471315",
+      "bytes": 1408
+    },
+    {
+      "path": "private/booking-sidecar/BookingOwnerSummary.php",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "14f43b5ea581de67a8d719cbb6345b355cd413b16b57a4b581a4d274eb004806",
+      "bytes": 850
+    },
+    {
+      "path": "private/booking-sidecar/BookingOwnerOperationPolicy.php",
+      "status": "modified",
+      "old_sha256": "1634cb04fc7c198375a54594e16b65a8b25a0c0e08b62da531f787cef836b7e1",
+      "new_sha256": "a621cce9d69642690ffae278c7c4667712b2210ddaf3fedaa7ad67f10fa96999",
+      "bytes": 865
+    },
+    {
+      "path": "private/booking-sidecar/RequestHandler.php",
+      "status": "modified",
+      "old_sha256": "9196bb840ba1908c400a681fffb18164358ab47df2bb0c87774f1587ae8bbe84",
+      "new_sha256": "4368d2baa3da912af98d5467acc261f4dcc49311abd28fc305919178da7e6e97",
+      "bytes": 1569
+    },
+    {
+      "path": "private/booking-sidecar/BookingOwnerOperations.php",
+      "status": "modified",
+      "old_sha256": "58cddb6cdab5879a8e09f0f90e033090f0a341a6e584f46a8dbef97e837cad24",
+      "new_sha256": "61f7c534d7a3fae662327942becbb06cbdd0410d81f70af58b7fc5d15e90a243",
+      "bytes": 1363
+    },
+    {
+      "path": "core/app/Booking/BookingOwnerGateway.php",
+      "status": "modified",
+      "old_sha256": "f55277cde6d8666ed378c9100682b096c306ac9a02a11ee5cf8fee306999bfa4",
+      "new_sha256": "eb709c5b10bc1b31e2bd919cec51df400e02aeb60191ba263281e69a95c938d9",
+      "bytes": 1016
+    },
+    {
+      "path": "core/app/Http/Controllers/User/BookingOwnerController.php",
+      "status": "modified",
+      "old_sha256": "0c6bd074ad914f041d722cc803c8e257ac874e5a1ecaf1c347416f1e5b3a8abb",
+      "new_sha256": "484be8739755f024d2e624c7a3bc1f8aa95ae1f1198fb15951b47428f62f081f",
+      "bytes": 3919
+    },
+    {
+      "path": "core/routes/web.php",
+      "status": "modified",
+      "old_sha256": "cff59443750847737b97d8b5e0fa3b824eda19c9424f3ff7b4913e7434d417ae",
+      "new_sha256": "8346398be04162ac13877f6282ce3626bb4993c18e0416e95221e0404e14048d",
+      "bytes": 102445
+    },
+    {
+      "path": "core/resources/views/user/booking-management.blade.php",
+      "status": "modified",
+      "old_sha256": "88713a7a6613190c2eeaa01897259ed8862e5ea3af50222fa02ff3e04b4b183a",
+      "new_sha256": "23e8cb5d0011d3058d996c476987d3fad4f6db60e7aa9020aa04269785e82702",
+      "bytes": 3731
+    },
+    {
+      "path": "assets/user/js/titan-booking-owner.js",
+      "status": "modified",
+      "old_sha256": "4fac6be869e930687bc00c18950c589b53dc056b2d834aa0d18b9772e3b692e9",
+      "new_sha256": "482a4310675f693b07ec431347c346d23dd840352271832b3916a85d9f348e6e",
+      "bytes": 4457
+    },
+    {
+      "path": "core/tests/Unit/BookingOwnerOperationalFiltersTest.php",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "57b059cdf10f5bd6cb65591b7ef3a92c2cef7e941ae987af7d72324b07e01cbb",
+      "bytes": 1004
+    },
+    {
+      "path": "PASS13_REPORT.md",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "86d5ff333255ec5dd012dd57277d6bb24172b03b6d601bf460c0659221540f6b",
+      "bytes": 1039
+    }
+  ]
+}

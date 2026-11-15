@@ -1,0 +1,162 @@
+{
+  "base": "PlusAgency_Cleanto_Recovery_Candidate_Pass77_BLOCKED_PASS58_MARIADB.zip",
+  "changes": [
+    {
+      "path": "PASS78_REPORT.md",
+      "change": "added",
+      "sha256": "9025f0c76849dfe2e637c677381978d7230ccade163bef2a1f268bafd111f36b",
+      "bytes": 1072
+    },
+    {
+      "path": "core/app/Http/Controllers/Front/TitanSiteController.php",
+      "change": "modified",
+      "sha256": "1802f6ba120bfe9dfd712262e4b4fb04c8c7edc72764625bbcb77a101cd568a0",
+      "bytes": 1735
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/carpet.json",
+      "change": "modified",
+      "sha256": "fac0e58f7311f635c3caa6e99da8f64016e44c8b012e05d9dace2ef7eea53453",
+      "bytes": 2285
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/commercial.json",
+      "change": "modified",
+      "sha256": "814663bde02e4b808dd13bae33511c762b3f4d3f0177c8d537df4f60c49386fd",
+      "bytes": 2366
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/deep.json",
+      "change": "modified",
+      "sha256": "6abc4a09fe46e4a55f6786321df5c01c28a20b937aa76eae97a74c02bb62c64f",
+      "bytes": 2421
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/end-of-lease.json",
+      "change": "modified",
+      "sha256": "a99dfbb2c5d17888a65250ba025e50fbcb1bfc847828bf2d30632b191e5b392a",
+      "bytes": 2358
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/multiservice.json",
+      "change": "modified",
+      "sha256": "2c687f1f790097c44fc710b632813c64ca580fc293f98858537531d3a2f239f1",
+      "bytes": 2453
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/office.json",
+      "change": "modified",
+      "sha256": "ebb3f9163bb522e1c49ea65a5c10c9b1f8b19498b6a6df37f984f86a97591ef5",
+      "bytes": 2435
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/pressure.json",
+      "change": "modified",
+      "sha256": "5b261fe782d8488748ffc0376a321ec35bb7a5a11a30bd7eb0ab9635a1aaa2a8",
+      "bytes": 2475
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/residential.json",
+      "change": "modified",
+      "sha256": "263ae7093b600d349a6b2b7896bb5fd36aff560ad3ca88151d6df357f42b44d8",
+      "bytes": 2295
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/shortstay.json",
+      "change": "modified",
+      "sha256": "55f49f098bd1dece9e6b9fa78231b0c47e3cc692659c1eb98c5703d80c842de5",
+      "bytes": 2422
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/windows.json",
+      "change": "modified",
+      "sha256": "a74271990262ffbb8303f31762ad5427da849e9d32c1e8453ec74dcb628f76ae",
+      "bytes": 2254
+    },
+    {
+      "path": "core/app/Services/Sites/SiteDocument.php",
+      "change": "modified",
+      "sha256": "40ac8494ad5f288a95f5544aa553eea913ab4c4e52b471fbec9dfd7b8e71456a",
+      "bytes": 3872
+    },
+    {
+      "path": "core/app/Services/Sites/SiteLeadValidator.php",
+      "change": "modified",
+      "sha256": "32fa793ccfe103ef96f9e8589c262583b420905717a0d59b22237bde85b6cc7c",
+      "bytes": 1385
+    },
+    {
+      "path": "core/app/Services/Sites/SiteMarketing.php",
+      "change": "added",
+      "sha256": "87b93b43fd6233e3f9345703a85729f6963f5a4f9612d378645ccbc24f95dae7",
+      "bytes": 2775
+    },
+    {
+      "path": "core/app/Services/Sites/SiteTemplates.php",
+      "change": "modified",
+      "sha256": "b53afb779e69f5095ea1fe651ab7b1f53b3b595da93a1a01850c20dc74c31602",
+      "bytes": 3001
+    },
+    {
+      "path": "core/database/migrations/2026_11_10_000006_add_attribution_to_titan_site_leads.php",
+      "change": "added",
+      "sha256": "7d2958e724627bb9c0f06ce6ab324c7b81ac1297de2ea43154567deb59655179",
+      "bytes": 606
+    },
+    {
+      "path": "core/public/assets/sites/marketing.css",
+      "change": "added",
+      "sha256": "f8c1ed3c62a714dc432707d9ebf24130aef3af14530c027c0a68f120f1a88324",
+      "bytes": 384
+    },
+    {
+      "path": "core/public/assets/sites/site-editor.js",
+      "change": "modified",
+      "sha256": "9c55ca51d6cfe2b312ddcd627141a80b0d337c8c6554790cf19baf87062d4c91",
+      "bytes": 3476
+    },
+    {
+      "path": "core/resources/views/admin/sites/leads.blade.php",
+      "change": "modified",
+      "sha256": "f0caef337503ff34b51638c84af8663115d77dbfd34d7383139cbd7fc6033cbc",
+      "bytes": 828
+    },
+    {
+      "path": "core/resources/views/front/sites/partials/features.blade.php",
+      "change": "modified",
+      "sha256": "dd25d050868b2c9bcb8334a82e6f632ccc308b7864cfa68a4f583f8aeb274ec8",
+      "bytes": 952
+    },
+    {
+      "path": "core/resources/views/front/sites/partials/lead-form.blade.php",
+      "change": "modified",
+      "sha256": "e28b25a9feb90904496cd356ebc63d0f343d8c0ca78727919913c7e41547da43",
+      "bytes": 2329
+    },
+    {
+      "path": "core/resources/views/front/sites/partials/marketing.blade.php",
+      "change": "added",
+      "sha256": "d110f552cba9db5396c3d88f57dc428f8305b9391c72d59dc010b59958bffc76",
+      "bytes": 1237
+    },
+    {
+      "path": "core/resources/views/front/sites/show.blade.php",
+      "change": "modified",
+      "sha256": "af85d0abadaf03fce73f2272ba689b0ea372a8fe92f4d5aac028a6e5675f5f3a",
+      "bytes": 2925
+    },
+    {
+      "path": "tests/pass78_marketing_contract_test.php",
+      "change": "added",
+      "sha256": "9bd129a5e33211fefa701fd67cab6102e06f9f9a9900ac3806198ba1fe5a261c",
+      "bytes": 1805
+    },
+    {
+      "path": "tests/pass78_marketing_runtime_test.php",
+      "change": "added",
+      "sha256": "825feb44c3b48dd51c12fefdd6b0819addcf8ec2609430647a1aa667692f4de6",
+      "bytes": 2085
+    }
+  ],
+  "missing_pass58": true
+}

@@ -1,0 +1,186 @@
+{
+  "pass": 39,
+  "base": "PlusAgency_Cleanto_Master_Pass38.zip",
+  "substantive_files": 35,
+  "source_files": 9,
+  "tests": 26,
+  "changes": [
+    {
+      "path": "core/app/Booking/Public/Redemption/CommitEvidence.php",
+      "action": "modified",
+      "sha256": "9b9983792798cdb2c9049e5eecf6c3085932d12f49cbbeb428320607327ad4cf"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/CommitEvidenceReader.php",
+      "action": "modified",
+      "sha256": "c93bdda8ab7220ef2ef0a383335aea198b807904ed673cba34b279fbad445967"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/CommitLegacyAdapter.php",
+      "action": "modified",
+      "sha256": "80e28b12240ff3d161b699e28b5c4e8093279ca3c5df752c8cdcc4c82c25d62e"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/CommitLegacyEvidenceReader.php",
+      "action": "modified",
+      "sha256": "a48b842f7f34a6bd048a4f4d372e8ec91ca9c9dd9e6818566bfdce09f4384d2b"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/CommitOrchestrator.php",
+      "action": "modified",
+      "sha256": "ae9a4318c97f9e3c4ebe7dd0abcb809129b5cafead28b5a6e9c68544cd9def6b"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/CommitOrderReader.php",
+      "action": "modified",
+      "sha256": "9dab6286c8c1d3d57aa08fe96e2370cd9e4f2a7db5130a51131c0af64d2a7171"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/CommitPersistenceProof.php",
+      "action": "modified",
+      "sha256": "8005b7937a317c3d296ab6062d763f8f59557dba3d4b2bfb46eabbd2d92c07e4"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/CommitReplayPersistedReader.php",
+      "action": "modified",
+      "sha256": "923fde6f23e6edb905e184b3b3e9c89aeb732ac46179085fa9b4be2344cf3624"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/CommitReplaySelectionEvidence.php",
+      "action": "modified",
+      "sha256": "cfbb8a0dcbce0dcc32556f554bb7522317151918e4150176a6a17157b66e2954"
+    },
+    {
+      "path": "integration/tests/pass35_commit_evidence_reject.php",
+      "action": "modified",
+      "sha256": "aa7bbf24fc82d727330575a2ee061e6e06dabff5b7afa229c7ec74b0d300e0eb"
+    },
+    {
+      "path": "integration/tests/pass35_commit_evidence_valid.php",
+      "action": "modified",
+      "sha256": "aa8d8ce310161f2cb8abae1cd7d679a863f37a29928bba90179020a1ddf29974"
+    },
+    {
+      "path": "integration/tests/pass35_commit_replay_valid.php",
+      "action": "modified",
+      "sha256": "4c5bd10df39e55dafd8f032c38ced47b1beeb36f69eaaf658a658ef4ff69bf40"
+    },
+    {
+      "path": "integration/tests/pass38/transaction_gate.php",
+      "action": "modified",
+      "sha256": "231558ee36b224b309f2fad0bb6cbed8ad2d8abd0f0cf0458209fda4cd9eb874"
+    },
+    {
+      "path": "integration/tests/pass39/commit_in_transaction.php",
+      "action": "added",
+      "sha256": "cd34cb3b7a2863d39f664f94769b87c66f9d68f00cf0277139333e724562e282"
+    },
+    {
+      "path": "integration/tests/pass39/evidence_checks_status.php",
+      "action": "added",
+      "sha256": "14fe135b5c4fe3a972fad79f28f0bb96f7b45b8b1d6e31267087f5dc35a518fa"
+    },
+    {
+      "path": "integration/tests/pass39/evidence_row_unique.php",
+      "action": "added",
+      "sha256": "f8b8c6211ebb80e7cc2057bb5bf7c7686d941348cc316764a58d868e9f992e65"
+    },
+    {
+      "path": "integration/tests/pass39/evidence_uses_id.php",
+      "action": "added",
+      "sha256": "b378e5d7cdb250e5706a9d6877b032a8488c8d589d4ba8c15b16aae36f4306dd"
+    },
+    {
+      "path": "integration/tests/pass39/inactive_status_behavior.php",
+      "action": "added",
+      "sha256": "43e81c2ce943013cb728a330a10853f85d5aaffea13447c8870086587fe0bd86"
+    },
+    {
+      "path": "integration/tests/pass39/initial_commit_before_ledger.php",
+      "action": "added",
+      "sha256": "d34d541e9834d0273955d79756d644afa068b735ef5f440ad6ccf93b8034d95d"
+    },
+    {
+      "path": "integration/tests/pass39/initial_commit_order_proof.php",
+      "action": "added",
+      "sha256": "85ed5d2ccc983030523c4fbc2b61fccd890dc6fecf8f8d45be59c644ece1295d"
+    },
+    {
+      "path": "integration/tests/pass39/legacy_row_limit.php",
+      "action": "added",
+      "sha256": "4da16a6e0df07391c05408d7d7d0adfe21aaacaab2e83ae306f0efd3c55af97f"
+    },
+    {
+      "path": "integration/tests/pass39/legacy_row_lock.php",
+      "action": "added",
+      "sha256": "1077cc40e3e87acbb0c126499011c07817b74af604f1309b84826eaaca978169"
+    },
+    {
+      "path": "integration/tests/pass39/legacy_writer_transaction_recheck.php",
+      "action": "added",
+      "sha256": "6bd288766a35a6ef97ddb4f3d996fc0ebf1cdd93475007fef188b9b01dceaca2"
+    },
+    {
+      "path": "integration/tests/pass39/order_contact_behavior.php",
+      "action": "added",
+      "sha256": "fc2495f825bbb470456f03aa9dcb89d442caa7c76f50015b264517ce5f2f2cbb"
+    },
+    {
+      "path": "integration/tests/pass39/order_customer_link.php",
+      "action": "added",
+      "sha256": "8fa7ad95df68daa9a1d73cef7021a1d6a1379d899b42e816a29949057a18b40e"
+    },
+    {
+      "path": "integration/tests/pass39/order_duration_limit.php",
+      "action": "added",
+      "sha256": "c1fbb93113904ea1bebc6c8a573e8b89b25e634a7d9b0a009c9a5aad5dd9193b"
+    },
+    {
+      "path": "integration/tests/pass39/order_mismatch_behavior.php",
+      "action": "added",
+      "sha256": "1a07fb095d24862b7bdc1ed02c76acf80436fd2d38b75bcc24b2a95c15d93a0a"
+    },
+    {
+      "path": "integration/tests/pass39/order_row_lock.php",
+      "action": "added",
+      "sha256": "5263d10418538e40d4ccc5d635e82ad96d5f8024b84f8de6dcd484a31f2ce746"
+    },
+    {
+      "path": "integration/tests/pass39/order_row_unique.php",
+      "action": "added",
+      "sha256": "f2bfcf7b4a3557bdc65c14eec8886e37128fcab757855bf8a0688246e755c8b0"
+    },
+    {
+      "path": "integration/tests/pass39/persisted_id_behavior.php",
+      "action": "added",
+      "sha256": "743b4f3a6a26ec960d04ebe0169740edbe73b9f46d4f6c9b81bb509c06dd0f4d"
+    },
+    {
+      "path": "integration/tests/pass39/persistence_order_check.php",
+      "action": "added",
+      "sha256": "29c1ca169f17623b56eea60462e897565e0696648d9b597cd7d7b85437c33b12"
+    },
+    {
+      "path": "integration/tests/pass39/persistence_status_check.php",
+      "action": "added",
+      "sha256": "d73e43cf8ac5aa7f7f52130bbc203537bb352d0f4110910441de9ff851f37b8d"
+    },
+    {
+      "path": "integration/tests/pass39/replay_order_proof.php",
+      "action": "added",
+      "sha256": "87b5909afd11e80e467b750a6d8fdfeed25547ce193a32730a79638d28fb6e3a"
+    },
+    {
+      "path": "integration/tests/pass39/replay_read_lock.php",
+      "action": "added",
+      "sha256": "0119bc1554f13845c248fee0c7c5dbd85760dd7ccfd10117c925f1d1bd793491"
+    },
+    {
+      "path": "integration/tests/pass39/replay_status_canonical.php",
+      "action": "added",
+      "sha256": "7598f7bea32c6aebc0f16f39d125642b01f55453088f010006e3f0929342be67"
+    }
+  ],
+  "regressions_passed": 673,
+  "regressions_total": 673
+}

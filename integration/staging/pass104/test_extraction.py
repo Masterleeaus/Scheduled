@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+"""Extraction regression: no database, no PHP execution, no network."""
+import importlib.util, pathlib, tempfile, hashlib, json, sys
+script=pathlib.Path(__file__).with_name('extract_cleanto_schema.py')
+spec=importlib.util.spec_from_file_location('schema_extractor',script)
+m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+installer=pathlib.Path(sys.argv[1])
+source=installer.read_text(encoding='utf-8', errors='replace')
+checks=[]
+def check(condition,label):
+ checks.append((bool(condition),label))
+ if not condition:print('FAIL:',label)
+rows=m.extract(source)
+check(len(rows)==36,'36 installer tables')
+check(len({name for name,sql in rows})==36,'distinct table names')
+check(all(sql.endswith(';') for name,sql in rows),'terminated DDL')
+check(all(sql.lstrip().upper().startswith('CREATE TABLE') for name,sql in rows),'only CREATE TABLE')
+check(all('ENGINE=' in sql.upper() for name,sql in rows),'explicit engines')
+check({'ct_bookings','ct_order_client_info','ct_payments','ct_services','ct_users'}.issubset({name for name,sql in rows}),'booking core present')
+check('titan_booking_intent_claims' not in {name for name,sql in rows},'integration ledger is separate')
+with tempfile.TemporaryDirectory() as d:
+ a=m.produce(installer,d)
+ check(a['table_count']==36,'export inventory complete')
+ check(a['source_sha256']==hashlib.sha256(installer.read_bytes()).hexdigest(),'provenance hash')
+ sql=(pathlib.Path(d)/'cleanto-8.5-installer-tables.REVIEW.sql').read_text()
+ check(sql.count('-- ct_')==36,'exported DDL count')
+ check('NOT equivalent' in sql,'candidate disclaimer')
+ check(sql.find('ct_bookings')>0 and 'ct_order_client_info' in sql,'booking DDL exported')
+try:m.extract(source.replace('CREATE TABLE IF NOT EXISTS `ct_bookings`','CREATE TABLE IF NOT EXISTS `ct_broken`',1))
+except ValueError: check(True,'missing critical table rejected')
+else:check(False,'missing critical table rejected')
+try:m.extract(source+'\n$x = "CREATE TABLE `ct_bookings` (`id` int) ENGINE=InnoDB;";')
+except ValueError:check(True,'duplicated DDL rejected')
+else:check(False,'duplicated DDL rejected')
+print(json.dumps({'passed':sum(a for a,b in checks),'total':len(checks),'failed':[b for a,b in checks if not a]},indent=2))
+sys.exit(0 if all(a for a,b in checks) else 1)

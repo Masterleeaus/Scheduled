@@ -1,0 +1,24 @@
+{
+  "pass": 86,
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass85_BLOCKED_PASS58_MARIADB.zip",
+  "changed": [
+    {
+      "path": "core/app/Booking/Public/Redemption/CommitLegacyEvidenceReader.php",
+      "sha256": "8720f86c810d82039303bbfba91d6f3725e91dbe1fde75bb15b0cba1c3ae626b",
+      "bytes": 825,
+      "kind": "modified"
+    },
+    {
+      "path": "tests/pass86_booking_evidence_readback.php",
+      "sha256": "ca88cee9a9657d69802ef420d2dc5d32ce1709502dcbac3f53710d67b56c720a",
+      "bytes": 2141,
+      "kind": "added"
+    },
+    {
+      "path": "PASS86_REPORT.md",
+      "sha256": "20aad4b33c063e974e730fb55727c7af1f59e363f17f2ea1cfb3f5f10ea4702b",
+      "bytes": 1020,
+      "kind": "added"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+-- REVIEW REQUIRED: apply only after checking existing table shape. Do NOT overlay incompatible Pass 05 SQL.
+CREATE TABLE IF NOT EXISTS titan_booking_requests (
+ request_key VARCHAR(96) CHARACTER SET ascii COLLATE ascii_bin NOT NULL PRIMARY KEY,
+ fingerprint CHAR(64) CHARACTER SET ascii NOT NULL,
+ state VARCHAR(16) NOT NULL,
+ booking_id BIGINT UNSIGNED DEFAULT NULL,
+ created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

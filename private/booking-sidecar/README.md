@@ -1,0 +1,9 @@
+# Private Cleanto booking runtime — Pass 02
+
+The original Cleanto 8.5 PHP source stays unchanged in `../cleanto/`. This **separate, private** sidecar adds an authenticated read-only service-catalogue operation directly against the original `ct_services` schema. No public Cleanto PHP scripts are exposed. The `services` and `health` operations are allowlisted; create, slots, cancel and payment deliberately fail closed pending live scheduling tests and a configured database. There is no runnable booking lifecycle yet.
+
+Required deployment: dedicated internal HTTPS host; network access restricted to PlusAgency; PHP extensions `pdo_mysql`, `pdo_sqlite`; private persistent SQLite nonce file path (writable, not web-served); private JSON tenant config outside docroot (`BOOKING_TENANTS_FILE`), `BOOKING_NONCE_SQLITE`, and a matching `BOOKING_INTERNAL_SECRET` of at least 32 bytes. Serve only `entrypoint.php` for `POST /internal/bookings` through the reverse proxy. Do **not** point document root at `private/`, `cleanto/` or the module directory. Exclude `tenants.json`, database secrets and SQLite nonce ledger from distributed ZIPs.
+
+Original Cleanto schema remains the source of truth. Each tenant must have separately provisioned database credentials and a complete Cleanto schema before service read works; `ct_services.status = 'E'` is the original enabled flag. Tenant identity is determined solely by a server-selected random instance key signed by Laravel, never from body payload. Authorization to use the Laravel controller remains unconnected until the main application account/guard mapping is verified.
+
+Current CLI environment may lack `pdo_mysql` and `pdo_sqlite`: PHP syntax and envelope/contract tests can run, but no integration with an actual MySQL database can be claimed until proper drivers and fixtures are installed.

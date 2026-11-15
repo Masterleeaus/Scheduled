@@ -1,0 +1,30 @@
+{
+  "approved_for_import": false,
+  "canonical_ledger_tables": 2,
+  "live_mariadb_evidence": false,
+  "migrations_reconciled": false,
+  "missing_pass58": true,
+  "native_tables": 36,
+  "output_sha256": {
+    "cleanto-plus-ledger.REVIEW.sql": "6038cd057549a78b624c1d009c5e13f5f72bbab903632e2e4d6d366984dc4610",
+    "concurrency.json": "9809a849c500b8ad58ce3708c00e5d20020552d87c358e286bf8095d56aa2b19",
+    "lifecycle.json": "1c35d491caa556ddec884c26bab3609299b83e9fca6afa2cb9849b3d4cadaaa1",
+    "seed-and-schedule.REVIEW.sql": "d578d36b3d2ac22c447813651922b790cf0ba84a0d1a8c3849872dd6213d4beb"
+  },
+  "schema_known_gaps": [
+    "Cleanto installer ALTER operations and version-specific updates not validated against MariaDB",
+    "No installed/upgraded native schema comparison",
+    "Historical ledger is incompatible and requires separate migration"
+  ],
+  "source_sha256": {
+    "concurrency": "9809a849c500b8ad58ce3708c00e5d20020552d87c358e286bf8095d56aa2b19",
+    "contract": "7ce1928c59d6a8a67be0b484f12326c857cc92104c80669650641f40471d68bf",
+    "inventory": "3a63293208ce6f72846ad0768d6dcea5c48d7492f807a983e8cbffa7febe04d8",
+    "legacy": "7d9d22a64f3e9ea95671d66ccc2dbcba2587a1c111b97a1f9a23fb8a4248c195",
+    "lifecycle": "1c35d491caa556ddec884c26bab3609299b83e9fca6afa2cb9849b3d4cadaaa1",
+    "native": "4b8a7576bbeb1f544e6cc9fc22e13a2c339e9fee5aae077e046e27cdc3e5f23f",
+    "seed": "d578d36b3d2ac22c447813651922b790cf0ba84a0d1a8c3849872dd6213d4beb",
+    "sidecar": "0dbb80195a3e1c822ee8592cad98ee8ed311371c768c7d8b426821265169b38d"
+  },
+  "status": "REVIEW_ONLY_NOT_EXECUTED"
+}

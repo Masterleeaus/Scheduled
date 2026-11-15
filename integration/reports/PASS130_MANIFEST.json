@@ -1,0 +1,37 @@
+{
+  "pass": 130,
+  "base_archive": "PlusAgency_Cleanto_Recovery_Candidate_Pass129_BLOCKED_PASS58_MARIADB.zip",
+  "readiness": "BLOCKED_PASS58_MARIADB",
+  "changed_files": [
+    {
+      "path": "core/app/Booking/Public/Checkout/CheckoutPaymentRecord.php",
+      "sha256": "1ab65d61c1d5abf7e61903613ac3b2c75be1cb99583c1677d15bdc4cf1ac0792",
+      "bytes": 3678,
+      "action": "modified"
+    },
+    {
+      "path": "core/tests/booking/pass128_payment_record_test.php",
+      "sha256": "00f672b21edd30c90d64c96619ccbf27efa69c4b07debf7b339c1391482d9f91",
+      "bytes": 2713,
+      "action": "modified"
+    },
+    {
+      "path": "core/tests/booking/pass129_payment_evidence_integrity_test.php",
+      "sha256": "c841e19fb9e72ea8377c46e7180e12f2ce804fdba6a4b1a3e1d5600d3f98fde0",
+      "bytes": 2480,
+      "action": "modified"
+    },
+    {
+      "path": "core/tests/booking/pass130_payment_date_money_test.php",
+      "sha256": "9b2fba28037d655aee91d7932b96353e47cedb2dfc80b00e872198ba311eac2b",
+      "bytes": 2154,
+      "action": "added"
+    },
+    {
+      "path": "integration/reports/PASS130_REPORT.md",
+      "sha256": "8f7ecea62ca9f257136e4ec2b0fc62509f681e2e77082acdf41b7f3cec3d6d99",
+      "bytes": 1464,
+      "action": "added"
+    }
+  ]
+}

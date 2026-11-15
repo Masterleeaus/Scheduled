@@ -1,0 +1,64 @@
+{
+  "headline": "Come home to calm.",
+  "tagline": "Reliable, thoughtful home cleaning for the spaces that matter most.",
+  "accent": "#254D69",
+  "about": "From regular upkeep to a complete seasonal refresh, we focus on the details that make home feel welcoming. Tell us the rooms, your priorities and preferred schedule.",
+  "cta_label": "Request a tailored quote",
+  "cta_url": "#contact",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Home cleaning",
+  "seo_description": "Reliable, thoughtful home cleaning for the spaces that matter most.",
+  "services": [
+    {
+      "name": "Recurring home care",
+      "description": "Flexible weekly, fortnightly and monthly visits that keep your home feeling fresh."
+    },
+    {
+      "name": "One-off refresh",
+      "description": "A thorough reset before visitors, after an event or whenever life gets busy."
+    },
+    {
+      "name": "Kitchen and bathrooms",
+      "description": "Focused attention for high-use areas, fixtures and touchpoints."
+    },
+    {
+      "name": "Moving day support",
+      "description": "Practical cleaning assistance when you are settling in or moving on."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I choose my cleaning priorities?",
+      "answer": "Yes. Share the rooms and tasks you care about most when requesting a quote."
+    },
+    {
+      "question": "Are supplies included?",
+      "answer": "Ask about products and equipment when arranging your service; inclusions depend on your quote."
+    },
+    {
+      "question": "Can I book an ongoing visit?",
+      "answer": "Tell us your preferred frequency and we can discuss an appropriate schedule."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local Residential service areas",
+      "description": "Contact us to confirm availability for your suburb or neighbourhood."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [
+    {
+      "title": "Residential cleaning preparation",
+      "summary": "A practical checklist before your appointment.",
+      "body": "Clear access to the work area, identify priority surfaces and discuss any delicate materials before cleaning begins.",
+      "slug": "residential-preparation"
+    }
+  ],
+  "seo_image": "",
+  "analytics_consent": false
+}

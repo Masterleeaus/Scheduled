@@ -1,0 +1,42 @@
+{
+  "pass": "1 - baseline plus imported Cleanto and tenant integration contracts",
+  "source_archives_sha256": {
+    "plusagency": "f48a1c23a4d8ebb949e4ffe478c80e4668909304d56a47fa34550fd3a03ec639",
+    "cleanto": "8968aec677ff0888599aa39f3b9909c3db526a53e424557c6adc761d29b61b26",
+    "updater": "1a8d41f1da0300bfae70c445e40afebd134cd9ac1d513da7e697e07d067fcc56"
+  },
+  "source_integrity": {
+    "cleanto_php_files": "preserved unchanged",
+    "excluded_files": [
+      "core/.env",
+      "private/cleanto/extension/GoogleCalendar/error_log"
+    ],
+    "reconciled_file": "core/routes/web.php recovered from updater/routes/web.php; runtime compatibility not yet verified"
+  },
+  "new_files": [
+    "core/app/Booking/BookingEnvelopeSigner.php",
+    "core/app/Booking/BookingFacade.php",
+    "core/app/Booking/BookingPayload.php",
+    "core/app/Booking/BookingTenantRegistry.php",
+    "core/app/Booking/InternalBookingClient.php",
+    "core/app/Http/Controllers/Booking/BookingSlotsController.php",
+    "core/config/booking_internal.php",
+    "core/database/migrations/2026_11_09_000001_create_booking_integration_tables.php",
+    "integration/README.md",
+    "integration/tests/booking_contract.php"
+  ],
+  "modified_files": [
+    "core/routes/web.php"
+  ],
+  "deleted_files": [
+    "core/.env",
+    "private/cleanto/extension/GoogleCalendar/error_log"
+  ],
+  "checks": {
+    "standalone_tests_passed": 8,
+    "standalone_tests_failed": 0,
+    "laravel_runtime": "not started",
+    "cleanto_booking_lifecycle": "not tested",
+    "production_readiness": false
+  }
+}

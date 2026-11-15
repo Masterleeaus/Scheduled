@@ -1,0 +1,42 @@
+{
+  "pass": 97,
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass96_BLOCKED_PASS58_MARIADB.zip",
+  "changes": [
+    {
+      "path": "core/app/Booking/Public/Redemption/CommitLegacyFingerprint.php",
+      "operation": "modified",
+      "bytes": 960,
+      "sha256": "09902e31378e084cbca021fec0dd9867aad4fc89f053820c0041ff97ed24a0ce"
+    },
+    {
+      "path": "core/app/Booking/Public/Redemption/CommitLegacyGateway.php",
+      "operation": "modified",
+      "bytes": 1176,
+      "sha256": "4a03a1d38ecdd1d41c888c45d3c566c74f4eb3e98804d3d98983a254a68dfb0e"
+    },
+    {
+      "path": "integration/tests/pass97_personal_info_fingerprint.php",
+      "operation": "added",
+      "bytes": 2781,
+      "sha256": "e97683309c6354e82a0657996852ec05ca5c3d266b03d16c2af78ab33e875e06"
+    }
+  ],
+  "tests": {
+    "integration/tests/pass97_personal_info_fingerprint.php": {
+      "exit": 0,
+      "output": "PASS 10 Pass97 personal-info fingerprint checks"
+    },
+    "integration/tests/pass34_fingerprint.php": {
+      "exit": 0,
+      "output": "PASS pass34_fingerprint\\n"
+    },
+    "integration/tests/pass36_fingerprint_order_independent.php": {
+      "exit": 0,
+      "output": "PASS"
+    },
+    "php_pdo_drivers": "",
+    "mariadb_runtime": "not available: no mysqld/mariadb/docker binaries found"
+  },
+  "release_ready": false,
+  "missing_pass58": true
+}

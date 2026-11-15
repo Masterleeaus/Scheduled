@@ -1,0 +1,44 @@
+
+/* Source-adapted klano website theme. Styling is scoped to its installed site. */
+.import-klano-head,.import-klano~.import-footer{font-family:system-ui,-apple-system,sans-serif}
+.import-klano-head{background:#fff;color:#263238;border-bottom:1px solid #e0e5e6}
+.import-klano-head .imported-nav{display:flex;align-items:center;justify-content:space-between;min-height:80px;gap:20px}
+.import-klano-head .import-brand{font-weight:850;font-size:1.35rem;color:#263238;text-decoration:none}
+.import-klano-head nav{display:flex;gap:22px;flex-wrap:wrap}
+.import-klano-head nav a{color:#263238;text-decoration:none;font-weight:600}
+.import-klano-head .import-nav-cta{background:var(--site-accent);color:#fff;padding:12px 18px;border-radius:16px;text-decoration:none;font-weight:750}
+.import-klano{color:#263238;background:#fff;font-family:system-ui,-apple-system,sans-serif}
+.import-klano .import-hero{background:linear-gradient(90deg,rgba(23,39,48,.90),rgba(23,39,48,.15)),url('/assets/sites/imported/klano/hero.jpg') center/cover no-repeat;color:#fff;min-height:530px;display:flex;align-items:center;padding:90px 0}
+.import-klano .import-hero-grid{width:100%}
+.import-klano .import-hero-copy{max-width:670px}
+.import-klano .import-kicker{font-weight:800;letter-spacing:.17em;font-size:.79rem;text-transform:uppercase;color:var(--site-accent);margin-bottom:20px}
+.import-klano .import-hero .import-kicker{color:#fff}
+.import-klano h1{font-size:clamp(2.7rem,5.5vw,5.5rem);letter-spacing:-.04em;line-height:1.05;margin:0 0 23px;font-weight:850;color:#fff}
+.import-klano h2{font-size:clamp(2rem,3.2vw,3.2rem);line-height:1.15;letter-spacing:-.03em;margin:0 0 24px;color:#263238}
+.import-klano h3{margin:0 0 12px;font-size:1.25rem;color:#263238}
+.import-klano p{line-height:1.75}
+.import-klano .import-subtitle{font-size:1.2rem;max-width:560px;margin-bottom:32px}
+.import-klano .import-primary{display:inline-flex;gap:18px;align-items:center;background:var(--site-accent);color:#fff;padding:16px 24px;text-decoration:none;font-weight:800;border-radius:16px}
+.import-klano .import-about{display:grid;grid-template-columns:1fr 1fr;gap:7%;align-items:center;padding-top:92px;padding-bottom:92px}
+.import-klano .import-about-art img{width:100%;max-height:450px;object-fit:cover;border-radius:16px;display:block}
+.import-klano .import-about-copy p{max-width:560px}
+.import-klano .import-text-link{font-weight:750;color:var(--site-accent)}
+.import-klano .import-services{background:#fff9ed;padding:90px 0}
+.import-klano .import-services h2{max-width:740px}
+.import-klano .import-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.import-klano .import-service{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:16px;padding:30px;box-shadow:0 7px 24px rgba(0,0,0,.035);transform:none}
+.import-klano .import-number{display:block;color:var(--site-accent);font-weight:900;font-size:1.3rem;margin-bottom:20px}
+.import-klano .import-service a{color:var(--site-accent);font-weight:750;text-decoration:none}
+.import-klano .import-showcase{display:grid;grid-template-columns:.8fr 1.2fr;gap:8%;align-items:center;padding-top:90px;padding-bottom:90px}
+.import-klano .import-image-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.import-klano .import-image-pair img{width:100%;height:320px;object-fit:cover;border-radius:16px}
+.import-klano .import-faq{background:#fff9ed;padding:90px 0}
+.import-klano .import-faq details{border-bottom:1px solid #b8c6c9;padding:20px 0;max-width:850px}
+.import-klano .import-faq summary{cursor:pointer;font-weight:750}
+.import-klano .import-contact{background:#263238;color:#fff;padding:75px 0;text-align:center}
+.import-klano .import-contact h2{color:#fff}
+.import-klano .import-contact .import-kicker{color:#fff}
+.import-klano .import-contact a{color:#fff}
+.import-klano~.import-footer{background:#101e24;color:#fff;padding:26px 0}
+@media(max-width:850px){.import-klano-head .imported-nav{flex-wrap:wrap;padding-top:18px;padding-bottom:18px}.import-klano-head nav{order:3;width:100%;font-size:.9rem}.import-klano .import-about,.import-klano .import-showcase{grid-template-columns:1fr;gap:30px}.import-klano .import-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.import-klano .import-hero{min-height:480px;padding:60px 0}.import-klano .import-cards{grid-template-columns:1fr}.import-klano .import-image-pair img{height:190px}.import-klano-head .import-nav-cta{font-size:.86rem}}

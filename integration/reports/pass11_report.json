@@ -1,0 +1,205 @@
+{
+  "pass": 11,
+  "baseline": "PlusAgency_Cleanto_Master_Pass10.zip",
+  "source_files_added_or_modified": 36,
+  "implementation_files": 14,
+  "new_test_files": 22,
+  "php_lint_passed": 36,
+  "regression_tests_passed": 129,
+  "regression_tests_failed": 0,
+  "original_cleanto_changed": 0,
+  "available_pdo_drivers": "[]",
+  "live_mysql_tested": false,
+  "booking_creation_enabled": false,
+  "reschedule_dispatch_enabled": false,
+  "production_ready": false,
+  "summary": "Strict read-only rescheduling preflight, legacy booking/order SQL readers and optimistic write adapter (not exposed), shared-order protection, staff lock planning, schedule evidence requirements, idempotency scoping and source-level regression coverage.",
+  "notes": [
+    "No vendor Cleanto files modified.",
+    "Read-only preview is not wired to public API; runtime integration testing needed.",
+    "Rescheduling can change Cleanto order-level duration: shared orders must be separately verified before writes.",
+    "Pricing, transaction concurrency and tenant authorization remain gated."
+  ],
+  "changes": {
+    "private/booking-sidecar/BookingRescheduleCommand.php": {
+      "action": "added",
+      "bytes": 624,
+      "sha256": "2a805aee7c0c50f0ee39e4e415ba54ed42217ac95caf91becf2c898764ca43cf"
+    },
+    "private/booking-sidecar/BookingRescheduleIdempotency.php": {
+      "action": "added",
+      "bytes": 461,
+      "sha256": "0982cbdb49bd33616f884e24dc11a7e56327f7d68cc8afe1e18aa8d432ef9292"
+    },
+    "private/booking-sidecar/BookingRescheduleConflictFilter.php": {
+      "action": "added",
+      "bytes": 574,
+      "sha256": "3c7de2799353642a051d32389098c15415ed7d28bcce1d7da01361ac4f113bd9"
+    },
+    "private/booking-sidecar/BookingReschedulePreview.php": {
+      "action": "added",
+      "bytes": 864,
+      "sha256": "3ada14ef0c4583f6fd30e8b7768a711480c56d71efff83be99c899afa429ac9d"
+    },
+    "private/booking-sidecar/BookingRescheduleReadiness.php": {
+      "action": "added",
+      "bytes": 556,
+      "sha256": "810c90924799f4f21b1beb28469c13335ead6c53a8235071c8e4599b860cdca5"
+    },
+    "private/booking-sidecar/BookingRescheduleDurationPolicy.php": {
+      "action": "added",
+      "bytes": 483,
+      "sha256": "e40cd77a1f3b3aced2b1c9ff36a3825d3785a677d4b7a1f56790f93c403b87e0"
+    },
+    "private/booking-sidecar/BookingRescheduleOrderReader.php": {
+      "action": "added",
+      "bytes": 1231,
+      "sha256": "699b08a2b416f9c85c9ca1ef7969a6a9d8ad365672588507f5a8f2f068cbf734"
+    },
+    "private/booking-sidecar/BookingRescheduleWriter.php": {
+      "action": "added",
+      "bytes": 820,
+      "sha256": "10e9e1a1a0cd8719ea9bcc5eebb3e69da6af296413e68c12979624ffe88a8b42"
+    },
+    "private/booking-sidecar/BookingRescheduleLockPlan.php": {
+      "action": "added",
+      "bytes": 555,
+      "sha256": "3aa42151c8fd62f3a5649fb047e0bbd3f0617c1d14ba7106b2e71fa6772ebf72"
+    },
+    "private/booking-sidecar/BookingRescheduleState.php": {
+      "action": "added",
+      "bytes": 452,
+      "sha256": "71d86444e6d14c205b9feced6fbcf79aff864130cea86c7000b27339e5d693e2"
+    },
+    "private/booking-sidecar/BookingRescheduleSqlContract.php": {
+      "action": "added",
+      "bytes": 565,
+      "sha256": "6e4c6a68adcfe9c5555c5d029f417034abd2d3002a9d9f30dc275bfb28c806c7"
+    },
+    "private/booking-sidecar/BookingRescheduleScheduleEvidence.php": {
+      "action": "added",
+      "bytes": 685,
+      "sha256": "13ded970c2c4a80123069c87452581861b6092903916da111addbd087588f85a"
+    },
+    "private/booking-sidecar/BookingRescheduleOverlapPolicy.php": {
+      "action": "added",
+      "bytes": 388,
+      "sha256": "ef38e2dc4cb1cbb7eb792ac222f7f052368c37d328637c32f219d549d8aacac9"
+    },
+    "private/booking-sidecar/BookingRescheduleDurationWriter.php": {
+      "action": "added",
+      "bytes": 635,
+      "sha256": "ac8522b46c02f0446dc2319dd0c727b55d5dda94fead93d471b283f0f59a0ba9"
+    },
+    "integration/tests/pass11_dispatch_fail_closed.php": {
+      "action": "added",
+      "bytes": 877,
+      "sha256": "c8c3c1a037eeddb935b21c2b519f6661a1a39894d39b8a4ee098effef308d968"
+    },
+    "integration/tests/pass11_conflict_self.php": {
+      "action": "added",
+      "bytes": 824,
+      "sha256": "a1c7a1ba083691a53598d30968597e7cd53eea1569b9a2866cc9b0da981e7e75"
+    },
+    "integration/tests/pass11_duration_shared.php": {
+      "action": "added",
+      "bytes": 817,
+      "sha256": "d2dc3b7d30c90eaa117a3b60df8310368f033768c95fb761194bfa316bef4550"
+    },
+    "integration/tests/pass11_idempotency_actor.php": {
+      "action": "added",
+      "bytes": 943,
+      "sha256": "11aeec0444b0ffd835876c7c221f7d368274458038d03e82f38540cebcbecd97"
+    },
+    "integration/tests/pass11_conflict_other.php": {
+      "action": "added",
+      "bytes": 819,
+      "sha256": "86550819523398541f794e098d45065e3f95b2d235bb541dcc646bdb905a5ed5"
+    },
+    "integration/tests/pass11_sql_contract.php": {
+      "action": "added",
+      "bytes": 848,
+      "sha256": "52d023fcede7c47ec1e3e0156f9807382167847f810315a781adb489d53e0483"
+    },
+    "integration/tests/pass11_command_parse.php": {
+      "action": "added",
+      "bytes": 989,
+      "sha256": "fe07ef3745a1a9f230289bc177a16ce7fdb9e57c5c39b6123fb3acf38ae00fea"
+    },
+    "integration/tests/pass11_optimistic_writer_contract.php": {
+      "action": "added",
+      "bytes": 916,
+      "sha256": "791ec6d0846d637056b7229af24e3e204fb981dc5b66ec671d17f1a30c8a1b7a"
+    },
+    "integration/tests/pass11_order_row_lock_contract.php": {
+      "action": "added",
+      "bytes": 909,
+      "sha256": "f6dcec9d04b75da959f8cdb56715dc1733a6237a7f42386dff3e02486e466616"
+    },
+    "integration/tests/pass11_source_preservation.php": {
+      "action": "added",
+      "bytes": 846,
+      "sha256": "aa776fd80f4a7c63252f2acf9e1dc913ae2f72bc86b70a702bbf85797b97761f"
+    },
+    "integration/tests/pass11_preview_conflict.php": {
+      "action": "added",
+      "bytes": 1011,
+      "sha256": "7ff1d0c49b28d5feddef5816a16efbbd96d548d92d52a87bf3048127e6488e35"
+    },
+    "integration/tests/pass11_state_active.php": {
+      "action": "added",
+      "bytes": 785,
+      "sha256": "d043b6d3a04f9e8c9ecde719f3743bfa07fd11022e954bc9471abef1f614edc4"
+    },
+    "integration/tests/pass11_preview_missing_staff.php": {
+      "action": "added",
+      "bytes": 994,
+      "sha256": "df88468f2e28e59c93b8461c3e1230695889331c6177ef8f35059d9962f681d1"
+    },
+    "integration/tests/pass11_state_terminal.php": {
+      "action": "added",
+      "bytes": 788,
+      "sha256": "4710f5c7a241a90af7c7643185b33e1dea60c1f45417a1557d4a2fd077cf355b"
+    },
+    "integration/tests/pass11_evidence_stale.php": {
+      "action": "added",
+      "bytes": 924,
+      "sha256": "6e2860254400182ba57545db09d9b12719e22c6f1b083bfb6bcd4eea4e3617d7"
+    },
+    "integration/tests/pass11_idempotency_scope.php": {
+      "action": "added",
+      "bytes": 855,
+      "sha256": "fa609f6308f93b7c62cc0d7bf7be24afe607ebb1c6de33b14292d0a6243618f5"
+    },
+    "integration/tests/pass11_lock_union.php": {
+      "action": "added",
+      "bytes": 835,
+      "sha256": "56a2de71a28ffbb70d17d4d5e1d4e2bbb6ccaa32457f2418c92710370b62284b"
+    },
+    "integration/tests/pass11_evidence_verified.php": {
+      "action": "added",
+      "bytes": 931,
+      "sha256": "6951beed4e5299697f13d2a949c5583a6f39b237fff81848630b2d547655429e"
+    },
+    "integration/tests/pass11_readiness_closed.php": {
+      "action": "added",
+      "bytes": 853,
+      "sha256": "eec01b75b24d70db99437b0de7a3400b88ad3551c782edc3db7441c80626bcd8"
+    },
+    "integration/tests/pass11_duration_single.php": {
+      "action": "added",
+      "bytes": 814,
+      "sha256": "15a864702d65d4c5341070fb9dfb6e806a3b893377a9466a37ed7bcb331d4287"
+    },
+    "integration/tests/pass11_command_bad_reason.php": {
+      "action": "added",
+      "bytes": 968,
+      "sha256": "c0a2727450d2003f18dd01307e66277751d070556039b4bb99ee5a93d9399b23"
+    },
+    "integration/tests/pass11_preview_success.php": {
+      "action": "added",
+      "bytes": 1032,
+      "sha256": "f62d85cec116bc068307741a1ae34af53aa9748d88c667dfc23d47058f00d00f"
+    }
+  }
+}

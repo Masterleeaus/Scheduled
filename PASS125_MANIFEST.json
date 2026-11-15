@@ -1,0 +1,93 @@
+{
+  "pass": 125,
+  "base": "PlusAgency_Cleanto_Recovery_Candidate_Pass124_BLOCKED_PASS58_MARIADB.zip",
+  "scope": "recovery Cleanto customer-order linkage and location verification",
+  "changes": [
+    {
+      "path": "core/app/Booking/Public/Checkout/CheckoutRecovery.php",
+      "operation": "modified",
+      "before_sha256": "202d910617cf36bfa346a7645e2e5ad465010070d9f3f9e2903f6247224ad22b",
+      "after_sha256": "b3cf2c19cfd6c327672d64336d0b0d2746761a898af362f20cc7936af9f0040b",
+      "bytes": 2414
+    },
+    {
+      "path": "core/app/Booking/Public/Checkout/CheckoutRecoveryReader.php",
+      "operation": "modified",
+      "before_sha256": "6a35f6d7bf52337d33122d5187f466d28d2fe314f9b34bdf5d468ab670797e8d",
+      "after_sha256": "73daf367144a51db24b55b61fe681fa9c3d0a01eff2a4543e1e229203ed5c0d7",
+      "bytes": 4838
+    },
+    {
+      "path": "core/app/Http/Controllers/Front/BookingPublicRecoveryController.php",
+      "operation": "modified",
+      "before_sha256": "5b0073383446e42e401b28eb70bf687f3ecc8965875b9a349e91b1b6c561220d",
+      "after_sha256": "f4767a8abd3dca0eb9280ef97adbb26abd5b0b0b5384b250f4d05a96280cbf90",
+      "bytes": 2700
+    },
+    {
+      "path": "core/tests/booking/pass121_recovery_native_schema_test.php",
+      "operation": "modified",
+      "before_sha256": "30a64d2867f94b006664634c4770ff0f5a985eee0c53b0e9e1e64c61be269f85",
+      "after_sha256": "5f33351f95ef1683c9aa77238c4ff823390d98f77adec9e07c159d398d23102d",
+      "bytes": 9738
+    },
+    {
+      "path": "core/tests/booking/pass123_recovery_controller_wiring_test.php",
+      "operation": "modified",
+      "before_sha256": "ca2a25c5b8794b41bb74590438fc44f7e674940b8e1949c30d4a47355f6898d5",
+      "after_sha256": "3d9f4878d9214c8ca5d9c2585d70720f3ee573acbdcca84b2638fc80b21b5b4f",
+      "bytes": 1601
+    },
+    {
+      "path": "PASS125_REPORT.md",
+      "operation": "added",
+      "before_sha256": null,
+      "after_sha256": "205a0ef6c1890b2999ae3ee4d97e71df727ae30b12a7557adf8c1a02a8e86467",
+      "bytes": 1719
+    }
+  ],
+  "tests": [
+    {
+      "path": "core/app/Booking/Public/Checkout/CheckoutRecovery.php",
+      "result": "No syntax errors detected in /mnt/data/pa125_work/core/app/Booking/Public/Checkout/CheckoutRecovery.php",
+      "success": true
+    },
+    {
+      "path": "core/app/Booking/Public/Checkout/CheckoutRecoveryReader.php",
+      "result": "No syntax errors detected in /mnt/data/pa125_work/core/app/Booking/Public/Checkout/CheckoutRecoveryReader.php",
+      "success": true
+    },
+    {
+      "path": "core/app/Http/Controllers/Front/BookingPublicRecoveryController.php",
+      "result": "No syntax errors detected in /mnt/data/pa125_work/core/app/Http/Controllers/Front/BookingPublicRecoveryController.php",
+      "success": true
+    },
+    {
+      "path": "core/tests/booking/pass121_recovery_native_schema_test.php",
+      "result": "No syntax errors detected in /mnt/data/pa125_work/core/tests/booking/pass121_recovery_native_schema_test.php",
+      "success": true
+    },
+    {
+      "path": "core/tests/booking/pass123_recovery_controller_wiring_test.php",
+      "result": "No syntax errors detected in /mnt/data/pa125_work/core/tests/booking/pass123_recovery_controller_wiring_test.php",
+      "success": true
+    },
+    {
+      "path": "core/tests/booking/pass121_recovery_native_schema_test.php",
+      "result": "Pass 121 native Cleanto recovery: 58 assertions passed",
+      "success": true
+    },
+    {
+      "path": "core/tests/booking/pass123_recovery_controller_wiring_test.php",
+      "result": "Pass 123 controller and recovery reader wiring: 6 assertions passed",
+      "success": true
+    },
+    {
+      "path": "core/tests/booking/pass119_recovery_test.php",
+      "result": "Pass 119 recovery assertions: 9 passed",
+      "success": true
+    }
+  ],
+  "live_mariadb_evidence": false,
+  "production_ready": false
+}

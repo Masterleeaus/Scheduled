@@ -1,0 +1,187 @@
+{
+  "pass": 4,
+  "files": {
+    "private/booking-sidecar/AvailabilityPayload.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "58703d0c3a487f8d53cc9d04a63e95859cbbdb36224cc12873702b48e250a658",
+      "lines": 19
+    },
+    "private/booking-sidecar/ScheduleCalendar.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "be878b42ea78486e294f7ad50d989c3efdb89c1c208238c75456657d3fd062fc",
+      "lines": 18
+    },
+    "private/booking-sidecar/ScheduleReader.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "3702f35d9674d77935283322b1f90dd2425a83ce776c279bc6b240a88d12d701",
+      "lines": 24
+    },
+    "private/booking-sidecar/StaffShiftWindow.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "79a1b8a6803ea8c6ebc16f604c7df16c6d66499adb6164ccd544e108467c3b83",
+      "lines": 19
+    },
+    "private/booking-sidecar/TimeOfDay.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "96f78a1ec98798a462b320898ec9639f2799f5605701556e5ef305e2fcbd36e9",
+      "lines": 14
+    },
+    "private/booking-sidecar/IntervalSet.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "12f066c12c6955ab200dc4be0155dab8ac51d6055284be3b422fd4f78c136909",
+      "lines": 30
+    },
+    "private/booking-sidecar/BreakWindow.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "2d9374fd3a4cee88c4f04a0d2a3b1aaf3be272e659a5274adb81f87c7c1c7d5d",
+      "lines": 21
+    },
+    "private/booking-sidecar/TimeOffWindow.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "7953be72e0592b800e5855b71abb42b6eb89a7a162398de866ccecccf468ac3f",
+      "lines": 14
+    },
+    "private/booking-sidecar/DayOffPolicy.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "0633e14a00555385c395c4f775e6ceb80777abe488ba0698093f770cd1608b92",
+      "lines": 7
+    },
+    "private/booking-sidecar/SlotGrid.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "ee276982d80a295ef582f6e8293e664d9fa8b2171594baa98a3925a3199bdefd",
+      "lines": 19
+    },
+    "private/booking-sidecar/BookingBusyWindow.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "20c50c0dfbb77de3a0064a260be090d5e2d1340bc89ccfe3af371abd25e6ec8a",
+      "lines": 16
+    },
+    "private/booking-sidecar/AvailabilityEngine.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "cff7779a0e19c0d9f5be1dee1aca6af93fb1480b58f03513e8aa16075fc31311",
+      "lines": 14
+    },
+    "private/booking-sidecar/AvailabilityReader.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "2f222c2df27601098b8b305a35da79b0d0dc092bfc1fd1bd5f124441122e39b8",
+      "lines": 15
+    },
+    "private/booking-sidecar/Dispatcher.php": {
+      "action": "modified",
+      "before_sha256": "8d3d7f8021a0305f87fffbf23b123dafd673ee6a269bdd54f4af7252c620caca",
+      "after_sha256": "40d0439824fc9087c68b719d7a471e3b083dd94f1376588b0e88a38a5b14a03b",
+      "lines": 17
+    },
+    "private/booking-sidecar/RequestHandler.php": {
+      "action": "modified",
+      "before_sha256": "17092ea2ed63305f2d23d5f039d612f0f4b73ac66109ef4ea12ed051c66a9a7d",
+      "after_sha256": "834ef1cd3d108991e56b749d89fb726796d11d1d858943db447f4ef6778ea65a",
+      "lines": 20
+    },
+    "core/app/Booking/InternalBookingClient.php": {
+      "action": "modified",
+      "before_sha256": "693958e748da8afddc3daa8ed07480eddc1f5d417cd979c1293bcec1144c7af5",
+      "after_sha256": "c5ddda9c27b86c7e8cfeac09319cacd6712a39ab14c12492cfdb59a1de54b90f",
+      "lines": 40
+    },
+    "core/app/Booking/BookingAvailabilityRequest.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "5310da6c72cccdcb337a4cacaf97dcf685559b7b991661d57a73c7d72959aff5",
+      "lines": 17
+    },
+    "core/app/Booking/BookingAvailabilityGateway.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "800875fc387b14016af46c2a13ed0f95cc5612479cc5e33439b2543e5e3519ce",
+      "lines": 10
+    },
+    "integration/tests/pass04_availability_payload.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "f14600680829757390282dc610f674590c50646247b06eb279aa21a530602c32",
+      "lines": 9
+    },
+    "integration/tests/pass04_schedule_calendar.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "49d774f8f3a6a4bc7782bae7c6202160fc611446557ffdc3ccc31715619ea493",
+      "lines": 9
+    },
+    "integration/tests/pass04_interval_set.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "e56365edf4d642b9ede3d143c352b02b0e021db1c6267d8f107fba4a2e3e2099",
+      "lines": 9
+    },
+    "integration/tests/pass04_time_of_day.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "dfd11d86feb6e874bb580e9b305f3bf357d751321937d275d9cc24332b4d56a6",
+      "lines": 9
+    },
+    "integration/tests/pass04_shift_window.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "637a63541dba89ee5f8ec58bbafdbef771cf61705278fc11cf8646ad4789c04d",
+      "lines": 9
+    },
+    "integration/tests/pass04_break_window.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "d2955dbcb7b26ce60744eeffa4598e94fdcecdb05c4be5b21577f9bdd918a2b5",
+      "lines": 9
+    },
+    "integration/tests/pass04_time_off.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "5e27b3f24f57fe1bbc3f412527e7002d66372bef60d4f153d39c83f4b9d3a2db",
+      "lines": 9
+    },
+    "integration/tests/pass04_slot_grid.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "976a02a89afa41d29eacd44d2a4bc6683d415bd457a5d8c17ee116dbd74aba21",
+      "lines": 9
+    },
+    "integration/tests/pass04_busy_window.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "0a34d779ed4b68a5c2e34633e6bf09a4253e842136438e20b8f41ca11bad6bbe",
+      "lines": 9
+    },
+    "integration/tests/pass04_availability_engine.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "291d80cc19e89cd3637966d9b29a2b986b230550e6ac2856f28ff16e713e5046",
+      "lines": 9
+    },
+    "integration/tests/pass04_gateway_contract.php": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "938b7c585b54d05af8d18d0e1909c769e1854a9301838b293f6aca6985486734",
+      "lines": 9
+    },
+    "integration/PASS4_REPORT.md": {
+      "action": "created",
+      "before_sha256": null,
+      "after_sha256": "81fbf8efdcb08a0b0240313deb28a1a533102afc0cef88cebcf0c48b043611d0",
+      "lines": 15
+    }
+  },
+  "changed_count": 30,
+  "source_preserved": true
+}

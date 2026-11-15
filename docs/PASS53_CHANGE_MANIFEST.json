@@ -1,0 +1,15 @@
+{
+  "pass": 53,
+  "base_archive": "Master-Copy-PlusAgency-Cleanto-Pass52-FIRST-ADMIN-ATOMICITY-CUMULATIVE.zip",
+  "changed": [
+    "core/vendor/rachidlaasri/laravel-installer/src/Helpers/InstalledFileManager.php"
+  ],
+  "added": [
+    "tests/pass53-installer-marker-once.php",
+    "tests/pass53-marker-fixture/InstalledFileManager.php",
+    "docs/PASS53_INSTALL_MARKER_ATOMICITY.md",
+    "docs/PASS53_CHANGE_MANIFEST.json"
+  ],
+  "removed": [],
+  "verification": "local unit + route CLI; no MariaDB"
+}

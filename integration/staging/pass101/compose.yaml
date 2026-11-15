@@ -1,0 +1,42 @@
+# Isolated, disposable booking acceptance. No published ports or production connection.
+services:
+  mariadb-test:
+    image: mariadb:11.4
+    environment:
+      MARIADB_ROOT_PASSWORD: ${PA101_ROOT_PASSWORD:?Required disposable root password}
+      MARIADB_DATABASE: titan_booking_test_acceptance
+      MARIADB_USER: booking_test
+      MARIADB_PASSWORD: ${PA101_DB_PASSWORD:?Required disposable database password}
+    networks: [acceptance]
+    healthcheck:
+      test: ["CMD-SHELL", "healthcheck.sh --connect --innodb_initialized"]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+    tmpfs:
+      - /var/lib/mysql:rw,size=512m
+  booking-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /workspace
+    volumes:
+      - ../../..:/workspace:ro
+      - ${PA101_FIXTURES_DIR:?Required local fixture directory}:/fixtures:ro
+    environment:
+      BOOKING_TEST_HOST: mariadb-test
+      BOOKING_TEST_DATABASE: titan_booking_test_acceptance
+      BOOKING_TEST_USER: booking_test
+      BOOKING_TEST_PASSWORD: ${PA101_DB_PASSWORD:?Required disposable database password}
+      BOOKING_LIFECYCLE_FIXTURE: /fixtures/lifecycle.json
+      BOOKING_CONCURRENCY_FIXTURE: /fixtures/concurrency.json
+      BOOKING_LIFECYCLE_ACK: I_UNDERSTAND_THIS_WRITES_TEST_DATA
+      BOOKING_ACCEPT_TEST_ONLY: YES_DISPOSABLE_ONLY
+    depends_on:
+      mariadb-test:
+        condition: service_healthy
+    networks: [acceptance]
+    command: ["bash", "integration/staging/pass101/acceptance.sh"]
+networks:
+  acceptance:
+    internal: true

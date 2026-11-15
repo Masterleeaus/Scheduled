@@ -1,0 +1,161 @@
+{
+  "pass": 56,
+  "base": "PlusAgency_Cleanto_Master_Pass55.zip",
+  "counts": {
+    "added": 26,
+    "modified": 7,
+    "deleted": 0,
+    "unmodified_preserved": 22003,
+    "substantive_php_files": 33
+  },
+  "added": [
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyProtocol.php",
+      "sha256": "f0ea0e95a26c474db95cca0a87c0dfb68773477d2b147bffc76fe6d0ff5132e7"
+    },
+    {
+      "path": "integration/tests/pass56/01_directory_created.php",
+      "sha256": "d1fe399f68f8374c4e8992c3a7274be724a9c3eade8f5a1441f791408e396f00"
+    },
+    {
+      "path": "integration/tests/pass56/02_directory_rejects_arbitrary.php",
+      "sha256": "c6fda1b906dc68ff5bbf2fa8516d67f6db73cee28ffd749f1d68860e75371ccf"
+    },
+    {
+      "path": "integration/tests/pass56/03_directory_rejects_symlink.php",
+      "sha256": "4a9c96f998ede52dbc3666b68e6513580a3081c7bafee378154f68c2977528f4"
+    },
+    {
+      "path": "integration/tests/pass56/04_cleanup_rejects_unexpected.php",
+      "sha256": "686a32dadbaa9b3d95381ffa18aa9978e2ddf9777e28e6910231e235957d6383"
+    },
+    {
+      "path": "integration/tests/pass56/05_cleanup_rejects_nested.php",
+      "sha256": "3e201c748591a3784f0004d0651ee1b615b46c4203355323a5e333673475c438"
+    },
+    {
+      "path": "integration/tests/pass56/06_barrier_corrupt_ready.php",
+      "sha256": "76ac3262961d10dc6aeecbd439e86ddeb660386ff7674cc23746b09964da601d"
+    },
+    {
+      "path": "integration/tests/pass56/07_barrier_corrupt_go.php",
+      "sha256": "0a41067f7b7b8904084754a25276fb022770675645b91819ae8a0bcc1369f131"
+    },
+    {
+      "path": "integration/tests/pass56/08_barrier_rejects_early_ready.php",
+      "sha256": "58d1529144a1e4515aaa08f9c008aff901b8a8e33760becdb149d54d3634efd7"
+    },
+    {
+      "path": "integration/tests/pass56/09_barrier_ready_idempotent.php",
+      "sha256": "b146b7bf3e2f37f72b54d80036a13d07b5f17dc3f1eff496bfac321af04554b1"
+    },
+    {
+      "path": "integration/tests/pass56/10_release_rejects_duplicate.php",
+      "sha256": "9b705c05875718db9175bb7eb2583c59e7a913998f7a99f1535574b80b8a12a7"
+    },
+    {
+      "path": "integration/tests/pass56/11_release_rejects_symlink.php",
+      "sha256": "81afe020ab3165a3ff518648d5855c343537882407b1c5cb58e37ed921342e56"
+    },
+    {
+      "path": "integration/tests/pass56/12_result_round_trip.php",
+      "sha256": "1b2243e86c2bdf9d1fcb0050a7a77e0b6c5a54727be53d15e19452e7f79ec4f6"
+    },
+    {
+      "path": "integration/tests/pass56/13_result_rejects_overwrite.php",
+      "sha256": "b7cf933ce0d1aff0ccc956a73bd8c864f1a60cdf9b3f8b6881bf47eaf7e0368f"
+    },
+    {
+      "path": "integration/tests/pass56/14_result_rejects_symlink.php",
+      "sha256": "d03a968e7e7f5f414525ea74877f6d02ba56215753af08c5afee8f506f582c39"
+    },
+    {
+      "path": "integration/tests/pass56/15_result_rejects_oversize.php",
+      "sha256": "500a484b20f6ef7e70a44ca3a37516fc776bc30b1248039350400ccbbfa116c1"
+    },
+    {
+      "path": "integration/tests/pass56/16_result_rejects_truncated.php",
+      "sha256": "66a8806082843ff2c3667fe88eb8ebc751f4197a81e4bf99abfb5f4d9e4ce896"
+    },
+    {
+      "path": "integration/tests/pass56/17_result_rejects_extra_fields.php",
+      "sha256": "ff295745ff8afb1504d89d8f4bb63e3e41e7f038b9e70d956492325bcc173c72"
+    },
+    {
+      "path": "integration/tests/pass56/18_result_rejects_empty_reason.php",
+      "sha256": "dd3e3723ae887103adaaca70c69fef24778df88ca1fd83a250696fa3980110d2"
+    },
+    {
+      "path": "integration/tests/pass56/19_result_rejects_overflow_id.php",
+      "sha256": "b11a5806f6f582fb1193bc4473381eb6a70f422d54a550d8de6349d9db3b6964"
+    },
+    {
+      "path": "integration/tests/pass56/20_result_rejects_wrong_worker.php",
+      "sha256": "ffe66b17463d798144e65691a542345ca892639cf5355ba5f0f90de00f1835ec"
+    },
+    {
+      "path": "integration/tests/pass56/21_result_accepts_rejection.php",
+      "sha256": "fa5208c8ad788006859b75e29a512d6092fcc5189c99cf759a8de40c5cf2b573"
+    },
+    {
+      "path": "integration/tests/pass56/22_supervisor_invalid_handle_count.php",
+      "sha256": "31954ea059ce66effc6e97694c39867f686ffaacd816302224f5008d3b8d9946"
+    },
+    {
+      "path": "integration/tests/pass56/23_supervisor_invalid_timeout.php",
+      "sha256": "3ed9083f72e557a6844e7a731a3a3b1824c429258dcfbd461db04f6d40a6b4c5"
+    },
+    {
+      "path": "integration/tests/pass56/24_process_invalid_directory.php",
+      "sha256": "829edf6fa1d11eed7c963de89b9d37097ce0800c97f1438636ba596aa5556c62"
+    },
+    {
+      "path": "integration/tests/pass56/25_protocol_bounded_file.php",
+      "sha256": "39fc91bfcc57f9299abb1105361a6b913fe73b916664e47ea8a30d5057aef67d"
+    }
+  ],
+  "modified": [
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyAcceptanceRunner.php",
+      "before_sha256": "58578673d74612ad6544ae26d4cdb83f7289d33f85306b0dcf01bb1766c7a6d5",
+      "after_sha256": "900bc0546d4773797a5655c860c773924819567628e3aa5ad439865875c6a642"
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyBarrier.php",
+      "before_sha256": "a00fe7fc4776d5a8163067ef089d883f9926c3d07534d571abe59d247fbd03b6",
+      "after_sha256": "50139cb7706e3868bc3c5171702d42e7c56706fea084b2ad54e708a11679390c"
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyDirectory.php",
+      "before_sha256": "04c095c8eb1af85df319ba47a626d8f9911646e35829d9a252db7dc1ccfd25c4",
+      "after_sha256": "08d727c942c5ebc11a956679a87ae8351c32bd3e5485b6008a3201b045fb7360"
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyProcess.php",
+      "before_sha256": "b8b31f4971c7986f3e8dddfaf75105bed1500895b16fb63726caebc69c8c16e8",
+      "after_sha256": "66c4648e4bd8d03c776593323878dab0693c37316bc96705d5d62775223ed4b2"
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyResult.php",
+      "before_sha256": "b68a4ba54ddf32af47fc62504d8c04f1a9b028681c8dec9e562396a9b51c3d68",
+      "after_sha256": "2f8c062132d147dbb9db56b903a228bc13efe5359999763260c5568186f29dc9"
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyResultStore.php",
+      "before_sha256": "5985909d75f17a7bf20cac858eef07786729e85194b96d8e5f43ef936dba7ed3",
+      "after_sha256": "de37fd9d5d67bc168dab0bb6f55c3078fa99f3601e9853dea9d7d4a5c6141c96"
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencySupervisor.php",
+      "before_sha256": "6edf00d0496cc028f788aa2ba21d31daf3672fd28f1e7f18a731dce489e717aa",
+      "after_sha256": "40d1f1f37a321da59bb90b6ee0956ed07da943a2ef5705dd2b2592b3231140f0"
+    }
+  ],
+  "deleted": [],
+  "verification": {
+    "regression_executable_php": "1063/1063",
+    "changed_php_lint": "33/33",
+    "original_cleanto_modified": 0,
+    "live_mysql_transactions": 0
+  }
+}

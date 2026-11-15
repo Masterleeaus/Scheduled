@@ -1,0 +1,47 @@
+{
+  "pass": 117,
+  "base": "PlusAgency_Cleanto_Recovery_Candidate_Pass116_BLOCKED_PASS58_MARIADB.zip",
+  "files": [
+    {
+      "path": "private/booking-sidecar/BookingWriteProofReader.php",
+      "operation": "modified",
+      "sha256": "9e3903c35c33e747c2f09e32d60586fcfb2aea3437e71d50091880858d1e9e41",
+      "size_bytes": 1438,
+      "prior_sha256": "529e93d52f1a2847cdfef352c857dea03d8a6b9dc2db7187539c8ad0cf1f81b8"
+    },
+    {
+      "path": "private/booking-sidecar/BookingWriteProofRows.php",
+      "operation": "modified",
+      "sha256": "5eef49cba3f743850a85af8b5bc3be2528290e64a1395a92e5f4c50efe5c3f0a",
+      "size_bytes": 1155,
+      "prior_sha256": "ffd754c95df93e72cb82f47260feafee27fc2b0b30d4b37d395896d7311f7c44"
+    },
+    {
+      "path": "private/booking-sidecar/BookingWriteProofOrderDate.php",
+      "operation": "added",
+      "sha256": "fbcacf61ed7cd3cbc4c3b10743bf8b2c5fa926959201bcfebb3f7995bea52c0b",
+      "size_bytes": 805,
+      "prior_sha256": null
+    },
+    {
+      "path": "tests/pass117/booking_order_date_proof_test.php",
+      "operation": "added",
+      "sha256": "39941f7476aa0759f69343e711b82a709b0011b3bb9bd48b0d849ba39929fccb",
+      "size_bytes": 1467,
+      "prior_sha256": null
+    },
+    {
+      "path": "tests/pass117/booking_full_row_date_test.php",
+      "operation": "added",
+      "sha256": "88b0ee26eda2d93569a530d820da90ef8f1d2ee2f6e1775dd61bce8a65237373",
+      "size_bytes": 1967,
+      "prior_sha256": null
+    },
+    {
+      "path": "PASS117_REPORT.md",
+      "operation": "added",
+      "sha256": "b340d8eb4518aff0044802cc4064da23a90a45406bb6f2b137831e18b60914b0",
+      "size_bytes": 1800
+    }
+  ]
+}

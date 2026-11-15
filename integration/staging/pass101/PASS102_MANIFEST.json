@@ -1,0 +1,44 @@
+{
+  "pass": 102,
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass101_BLOCKED_PASS58_MARIADB.zip",
+  "source_changes": [
+    {
+      "path": "integration/staging/pass101/acceptance.sh",
+      "action": "modified",
+      "old_sha256": "94df8b197f118ce05115e1109ab8a89796951bd3972ef6e9020caae57a6e36bb",
+      "sha256": "7463257a334208d1c811fce1d83f38a43fcc935aac5bf8a953eac7ddfd3758a2",
+      "bytes": 1757
+    },
+    {
+      "path": "integration/staging/pass101/README.md",
+      "action": "modified",
+      "old_sha256": "7523ab29658ce59da48b71e4d54ce7797ccbfe429287f9fedb4e114fffac3f82",
+      "sha256": "f0e621dea7e10743b76369f813b70571af96de290d8411072d6a30c77e8b7ae8",
+      "bytes": 3694
+    },
+    {
+      "path": "integration/staging/pass101/verify_reports.php",
+      "action": "added",
+      "old_sha256": null,
+      "sha256": "ca44cf4c00f174c1b925070c387bf71dff5353d865bf23b7ac8336c5a2b269ca",
+      "bytes": 3781
+    },
+    {
+      "path": "integration/staging/pass101/tests/check_evidence.php",
+      "action": "added",
+      "old_sha256": null,
+      "sha256": "7d14db476a3f634ab1caf523e63670ce565a4973165ed7102ccab2c5ddd7c9cb",
+      "bytes": 3348
+    },
+    {
+      "path": "integration/staging/pass101/PASS102_REPORT.md",
+      "action": "added",
+      "old_sha256": null,
+      "sha256": "77822c8f9677d1f5e3d3ad2cc341b45cb1c9ae541082174c3c0fe8837251a446",
+      "bytes": 1557
+    }
+  ],
+  "removed": [],
+  "database_acceptance": "NOT_RUN",
+  "production_ready": false
+}

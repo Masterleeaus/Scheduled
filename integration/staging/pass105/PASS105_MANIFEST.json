@@ -1,0 +1,44 @@
+{
+  "pass": 105,
+  "baseline": "Pass104 recovery candidate",
+  "changed_files": [
+    {
+      "path": "integration/staging/pass105/PASS105_REPORT.md",
+      "sha256": "1e9c1653b3fe4b258ac46420bd93ee08d6f96c4ab6a973ce7b12f800b70bf774",
+      "bytes": 2038
+    },
+    {
+      "path": "integration/staging/pass105/README.md",
+      "sha256": "54b4cb7df7df0f36bc24326956aa3bc0c96f9fe8e4132acc2943d4301f4317fa",
+      "bytes": 2159
+    },
+    {
+      "path": "integration/staging/pass105/generate_synthetic_seed.py",
+      "sha256": "c7b78a3a4d05acd4e1177b03f2716cec0bf80f63ca1fc1d48e6232a37d40f04e",
+      "bytes": 2422
+    },
+    {
+      "path": "integration/staging/pass105/inventory_native_upgrades.py",
+      "sha256": "27c73fbe75134f94ce8e07bff3109e6030614e1e5d09623dd28a88d25fe66f21",
+      "bytes": 3016
+    },
+    {
+      "path": "integration/staging/pass105/synthetic-seed.REVIEW.sql",
+      "sha256": "35e4fe60e3df5ec78379309659fa692320cd2246e09a4fda3c931528ca6b58d0",
+      "bytes": 1456
+    },
+    {
+      "path": "integration/staging/pass105/test_pass105.py",
+      "sha256": "8ee199474fe96f20f9d65c7b368e3724af7b002804b56332b3c10a9a1acc229e",
+      "bytes": 1551
+    },
+    {
+      "path": "integration/staging/pass105/upgrade_inventory.json",
+      "sha256": "ac45dbe206161482eaa77620cc6b6b591a7288c186d34880db3a15a86f7ed8e5",
+      "bytes": 130402
+    }
+  ],
+  "deleted_files": [],
+  "actual_database_acceptance": false,
+  "missing_pass58": true
+}

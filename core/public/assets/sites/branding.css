@@ -1,0 +1,10 @@
+/* Shared validated site branding tokens; loaded after individual theme sheets. */
+body{font-family:var(--brand-font,system-ui,sans-serif);background:var(--brand-background,#f8fafc);color:var(--brand-ink,#24313d)}
+.wrap,.head-inner{max-width:var(--brand-max-width,1100px)}
+body .button,body .primary-action,body button[type=submit]{border-radius:var(--brand-radius,12px)}
+body .tiles article,body details{border-radius:var(--brand-radius,12px)}
+body .theme-section{padding-top:calc(5rem * var(--brand-spacing,1))!important;padding-bottom:calc(5rem * var(--brand-spacing,1))!important}
+body .theme-section .wrap,body section.wrap{max-width:var(--brand-max-width,1100px)}
+body .theme-footer,body footer{background:var(--brand-ink,#24313d)}
+body a:not(.button):not(.primary-action){accent-color:var(--brand-primary,#23466f)}
+@media(max-width:700px){body .theme-section{padding-top:calc(3rem * var(--brand-spacing,1))!important;padding-bottom:calc(3rem * var(--brand-spacing,1))!important}}

@@ -1,0 +1,23 @@
+{
+  "pass": 48,
+  "base": "Master-Copy-PlusAgency-Cleanto-Pass47-DISPOSABLE-INSTALL-ACCEPTANCE-CUMULATIVE.zip",
+  "added": [
+    "tests/pass48-staging-network-evidence.php",
+    "docs/PASS48_STAGING_ACCEPTANCE.md"
+  ],
+  "modified": [
+    ".htaccess",
+    "integration/install/pass47/http-security-check.sh",
+    "integration/install/pass47/compose.yaml",
+    "integration/install/pass47/run.sh",
+    "integration/install/pass47/README.md"
+  ],
+  "deleted": [],
+  "checks": {
+    "new_contract": 22,
+    "pass47_contract": 19,
+    "bash_syntax": 2,
+    "php_lint": 1,
+    "docker_runtime": "unavailable"
+  }
+}

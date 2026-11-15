@@ -1,0 +1,12 @@
+{
+  "pass": 113,
+  "baseline_sha256": "1b3ae56fa6134c6722fd26c7b145d833472b1d5639977411736f1270d07400c1",
+  "changed": {
+    "integration/staging/pass101/acceptance.sh": "50ead25d26421d8bc6f67bd3ed4cca4acec94a216443bebe017071e6956a9cce",
+    "integration/staging/pass113/live_probe.php": "8f8e0fe1e13be6b5346fd1ac486c6ebbddb623db3d5a26c1f43e75651556f749",
+    "integration/staging/pass113/test_live_contract.php": "a57f6af55b30f5d899427abf6d76a4da5d4e7c3d96474c673c1d5852acf37d99",
+    "integration/staging/pass113/README.md": "0e22a63dae2283e4579a88e1e45f2941ca69741701128f6f828c6d465b9895c9",
+    "integration/staging/pass113/LiveSeedContract.php": "b493d6c688518871536a25f7dc2fc5700cf367f797581081e365afa40977bc8a",
+    "integration/staging/pass113/PASS113_REPORT.md": "cdb3d1008ef4fbf11b89a31bf2062f182eb314235fb055e65cfdc446f1f22f06"
+  }
+}

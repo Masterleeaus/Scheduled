@@ -1,0 +1,63 @@
+{
+  "pass": 30,
+  "base": "Master-Copy-PlusAgency-Cleanto-Pass29-NATIVE-SERVICE-ADMIN-CUMULATIVE.zip",
+  "modified": [
+    "private/booking-sidecar/Dispatcher.php",
+    "private/booking-sidecar/RequestHandler.php",
+    "core/app/Http/Controllers/Admin/SiteCleantoServiceMapController.php",
+    "core/resources/views/admin/sites/cleanto-service-map.blade.php",
+    "core/routes/web.php",
+    "PASS30_REPORT.md"
+  ],
+  "added": [
+    "private/booking-sidecar/CleantoServiceUnitAdministration.php",
+    "private/booking-sidecar/UNIT-ADMINISTRATION.md",
+    "core/app/Http/Controllers/Admin/SiteCleantoServiceUnitController.php",
+    "core/tests/Standalone/CleantoUnitAdministrationPass30.php"
+  ],
+  "removed": [],
+  "checks": "25/25 targeted assertions and syntax lint",
+  "validation": "no live MySQL or browser",
+  "files": {
+    "private/booking-sidecar/CleantoServiceUnitAdministration.php": {
+      "sha256": "f71a553fc3428549e8d7ea9d6987db735650e28fa629935d8fca0cb1ade128f1",
+      "bytes": 5197
+    },
+    "private/booking-sidecar/Dispatcher.php": {
+      "sha256": "fee6d7b0588d2cf8364804ac691c968d26c65f72522e6effacd42cd30792cab0",
+      "bytes": 2048
+    },
+    "private/booking-sidecar/RequestHandler.php": {
+      "sha256": "a073a777f576dd206394db64eddfb1cb6aa73ae0df8b716120b1d0cf17637ef2",
+      "bytes": 1686
+    },
+    "private/booking-sidecar/UNIT-ADMINISTRATION.md": {
+      "sha256": "11434789fc044b8d8820b4cdc36f0332e8faa2897e808a0a8989da871639fffe",
+      "bytes": 603
+    },
+    "core/app/Http/Controllers/Admin/SiteCleantoServiceUnitController.php": {
+      "sha256": "5af3013ee54b0cea680765a988351f63335b33ba2d6ccac4c7a9d7b09fc3b7e7",
+      "bytes": 2353
+    },
+    "core/app/Http/Controllers/Admin/SiteCleantoServiceMapController.php": {
+      "sha256": "3f32b9de6dd05859c31e53cd08d2f98b7ba5addbedf00f9e6b083b49bc3fcc4b",
+      "bytes": 3401
+    },
+    "core/resources/views/admin/sites/cleanto-service-map.blade.php": {
+      "sha256": "596265846945e95e3934c69c00fd35a1924c775b2653a5ba106671679364d65d",
+      "bytes": 6573
+    },
+    "core/routes/web.php": {
+      "sha256": "45e1096f35855077a7cef04fba7604c9bb406255bd30d0f48f9e695238e9ae84",
+      "bytes": 104761
+    },
+    "core/tests/Standalone/CleantoUnitAdministrationPass30.php": {
+      "sha256": "4ccb28dedd0b99c91470015786c2740efa54947453275cd9d46534441bc3aad1",
+      "bytes": 2638
+    },
+    "PASS30_REPORT.md": {
+      "sha256": "a53d835033fddf22d7435a3f69a7d2396403b3f81647a9f1c6049569da7bd079",
+      "bytes": 2155
+    }
+  }
+}

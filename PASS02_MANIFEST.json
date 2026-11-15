@@ -1,0 +1,61 @@
+{
+  "pass": 2,
+  "base": "Master-Copy-PlusAgency-Cleanto-Pass01-CUMULATIVE.zip",
+  "changes": [
+    {
+      "path": "core/app/Http/Controllers/Admin/LandingCampaignController.php",
+      "status": "modified",
+      "sha256": "4d5ae6fb4ac02513d63dccb3907e0a506eaf8e75d2e63e4dbb028ac4d21135d0"
+    },
+    {
+      "path": "core/app/Http/Controllers/Admin/TitanSiteController.php",
+      "status": "modified",
+      "sha256": "42934c921e708a547ca6f7a2fb4ae9f2d9fd5c73c7efe454236316593990c8e1"
+    },
+    {
+      "path": "core/app/Services/Sites/SiteTemplates.php",
+      "status": "modified",
+      "sha256": "1ac4ed4aaa337543293505f15e38bf11fd4dbe3bc2ad0723322657e61b48dd6e"
+    },
+    {
+      "path": "core/app/Services/Sites/TemplateRegistry.php",
+      "status": "added",
+      "sha256": "7552b55c274ddb49969ab4fc8a420109a6c0c937371b5608367e32caf9fa620e"
+    },
+    {
+      "path": "core/resources/views/admin/landing/edit.blade.php",
+      "status": "modified",
+      "sha256": "41e27e472149ec869dcb59e9aeaab5b5d21c19f88b0ec15d52302c1336e3e3e5"
+    },
+    {
+      "path": "core/resources/views/admin/landing/index.blade.php",
+      "status": "modified",
+      "sha256": "bcaddbb4a2f1cde0c51735ca8a632f16f1b6c504c1c41dbb557e9d84e9cce2f6"
+    },
+    {
+      "path": "core/resources/views/admin/sites/create.blade.php",
+      "status": "modified",
+      "sha256": "a4526dd14a50cdf052bd4982a4ad77c9a16544f9747eb47489f4d455f910b940"
+    },
+    {
+      "path": "core/resources/views/admin/sites/edit.blade.php",
+      "status": "modified",
+      "sha256": "3c201994e2e0b014c01d595b5be0f16da399ab7dbe1ef9ef0a4d4ccb73fa8383"
+    },
+    {
+      "path": "core/resources/views/admin/sites/index.blade.php",
+      "status": "modified",
+      "sha256": "dd3ee23923c1173a229f55bd2d84a2b8ee339ac2350417927ffaaec2f10eea57"
+    },
+    {
+      "path": "core/routes/web.php",
+      "status": "modified",
+      "sha256": "3d65a91178fa2c36563f07adb6c021d01a19a287e4a41bd91300f7d37a1ab5af"
+    },
+    {
+      "path": "core/tests/Feature/TemplateInstantiationPass02Test.php",
+      "status": "added",
+      "sha256": "84185cc01b2280878947f54d9c60c26340c6cce75609b60c726f87230fa1764d"
+    }
+  ]
+}

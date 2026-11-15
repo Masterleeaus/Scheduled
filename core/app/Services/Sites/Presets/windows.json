@@ -1,0 +1,64 @@
+{
+  "headline": "See your space in a new light.",
+  "tagline": "Carefully planned glass cleaning with a clearer finish.",
+  "accent": "#276A91",
+  "about": "Make the most of natural light with routine or one-off glass cleaning. Access conditions, height, site restrictions and surface suitability are assessed before service confirmation.",
+  "cta_label": "Request a tailored quote",
+  "cta_url": "#contact",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Window cleaning",
+  "seo_description": "Carefully planned glass cleaning with a clearer finish.",
+  "services": [
+    {
+      "name": "Residential windows",
+      "description": "Interior and exterior glass options for accessible household windows."
+    },
+    {
+      "name": "Shopfront glass",
+      "description": "Customer-facing glazing and entrance glass to support a clean first impression."
+    },
+    {
+      "name": "Tracks and frames",
+      "description": "Optional detailing of accessible frames, tracks and sills."
+    },
+    {
+      "name": "Scheduled glass care",
+      "description": "Discuss routine cleaning at intervals that suit the property."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can you clean upper-level windows?",
+      "answer": "Access requirements and safety must be assessed before any work is confirmed."
+    },
+    {
+      "question": "Do you include tracks and screens?",
+      "answer": "Specify these extras in your enquiry so they can be quoted accurately."
+    },
+    {
+      "question": "What if the weather changes?",
+      "answer": "Weather-sensitive work may need a revised appointment for safety and quality."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local Windows service areas",
+      "description": "Contact us to confirm availability for your suburb or neighbourhood."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [
+    {
+      "title": "Windows cleaning preparation",
+      "summary": "A practical checklist before your appointment.",
+      "body": "Clear access to the work area, identify priority surfaces and discuss any delicate materials before cleaning begins.",
+      "slug": "windows-preparation"
+    }
+  ],
+  "seo_image": "",
+  "analytics_consent": false
+}

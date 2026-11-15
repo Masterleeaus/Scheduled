@@ -1,0 +1,145 @@
+{
+  "pass": 76,
+  "base": "PlusAgency_Cleanto_Recovery_Candidate_Pass75_BLOCKED_PASS58_MARIADB.zip",
+  "scope": "Five new cleaning-site designs and integration with 10-template dispatcher",
+  "changed": [
+    {
+      "path": "PASS76_MANIFEST.json",
+      "status": "added",
+      "sha256": "6bd17fbf4ca43f0e52bd69b72e05c909309ebd6d4d8973f04818c31bf8f7405b",
+      "bytes": 4267
+    },
+    {
+      "path": "PASS76_REPORT.md",
+      "status": "added",
+      "sha256": "56bfb175db43e094f2223249612eaee98820852d7db85b0f0934a498e56a3b63",
+      "bytes": 1136
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/deep.json",
+      "status": "added",
+      "sha256": "c9d02640765a401efc7a2ed1559c07d679204fbd44e363c8bcb03597f23d81e5",
+      "bytes": 1814
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/multiservice.json",
+      "status": "added",
+      "sha256": "34244867cacaf38303709d3fd9ebfc412f77db25c3a227e96d973ee8b4bc71ca",
+      "bytes": 1822
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/office.json",
+      "status": "added",
+      "sha256": "2f27311fd9f436b089bf191696776bf4ca6ade058e0f8b1decfce7a875a27da9",
+      "bytes": 1822
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/pressure.json",
+      "status": "added",
+      "sha256": "3448f2f3dc06ce6170ce2d5ec09b47f52ab59b78a6f8b16a61f7ab5512655819",
+      "bytes": 1856
+    },
+    {
+      "path": "core/app/Services/Sites/Presets/shortstay.json",
+      "status": "added",
+      "sha256": "b5cab2000023585ec74dedea973e6b300c4f16212c1a1ef31324061b6d852366",
+      "bytes": 1800
+    },
+    {
+      "path": "core/app/Services/Sites/SiteTemplates.php",
+      "status": "modified",
+      "sha256": "19be7b527dcac37ac0ce51ee73696f89e0aaef7f14d07c4ef678ea2fb31bd0a2",
+      "bytes": 2955
+    },
+    {
+      "path": "core/public/assets/sites/themes/deep.css",
+      "status": "added",
+      "sha256": "22887206d91a2dab341f860bdda7f87db2240ed927c361d321aa5b0a687ccb6a",
+      "bytes": 2049
+    },
+    {
+      "path": "core/public/assets/sites/themes/multiservice.css",
+      "status": "added",
+      "sha256": "9d5253387c5de33431ef96078910ffa0e4b9646521d473e3f7942637f69c6ab6",
+      "bytes": 2411
+    },
+    {
+      "path": "core/public/assets/sites/themes/office.css",
+      "status": "added",
+      "sha256": "5dae74071e9c55f4c76802caf2731c5d0ec8110e1ee1cf91f3693c9244baac28",
+      "bytes": 2144
+    },
+    {
+      "path": "core/public/assets/sites/themes/pressure.css",
+      "status": "added",
+      "sha256": "40568b716cbf74a1f9fe682bc00532ed9c7f1bc69da756d97e3e9884d5b9a70d",
+      "bytes": 2203
+    },
+    {
+      "path": "core/public/assets/sites/themes/shortstay.css",
+      "status": "added",
+      "sha256": "cde3ebbcd9bfb93eed739b3512112f18ca8c550675e321dd0de95ad55bec615b",
+      "bytes": 2236
+    },
+    {
+      "path": "core/resources/views/front/sites/show.blade.php",
+      "status": "modified",
+      "sha256": "11877b9a165a7dd2b7c01e34937566daa1febc533f797a2f7c37cc1b1e93b46f",
+      "bytes": 2254
+    },
+    {
+      "path": "core/resources/views/front/sites/themes/deep.blade.php",
+      "status": "added",
+      "sha256": "b855a396be635876a8e791f0a3133a505f951771f0cf78e0b080c9fdc3bc2190",
+      "bytes": 2061
+    },
+    {
+      "path": "core/resources/views/front/sites/themes/multiservice.blade.php",
+      "status": "added",
+      "sha256": "e97b427d9f416f149f3d046ed3d17b48a6e1de4f4795cb1f1626a7571f22cfbf",
+      "bytes": 2060
+    },
+    {
+      "path": "core/resources/views/front/sites/themes/office.blade.php",
+      "status": "added",
+      "sha256": "4f3d0fc81a0bfc224016896ab69c5a7c71a13591dbf8d5a8dc76c0a0c30f48b2",
+      "bytes": 2072
+    },
+    {
+      "path": "core/resources/views/front/sites/themes/pressure.blade.php",
+      "status": "added",
+      "sha256": "257ecf4d9ab52474c106cc1160aeb3016d06062d1c95215d9411862404ef2b3a",
+      "bytes": 2063
+    },
+    {
+      "path": "core/resources/views/front/sites/themes/shortstay.blade.php",
+      "status": "added",
+      "sha256": "784ff172b58259f7327a9946d7035cf12f45564692f6d31d51744d46c1232226",
+      "bytes": 2069
+    },
+    {
+      "path": "tests/pass75_site_templates_test.php",
+      "status": "modified",
+      "sha256": "ca01804ad46b43275f0667e5d2f5b95ac9db17786caedddf8dfa79317d5d4f0e",
+      "bytes": 2280
+    },
+    {
+      "path": "tests/pass76_all_ten_templates_test.php",
+      "status": "added",
+      "sha256": "e078438698136d090857519f5f61d0fd61c3bfcefb5953a50730fce06c1ecbf4",
+      "bytes": 2334
+    }
+  ],
+  "tests": {
+    "php_syntax": 9,
+    "all_ten_template_assertions": "PASS 186 assertions",
+    "db": "not_run",
+    "browser": "not_run"
+  },
+  "blockers": [
+    "Pass 58 still missing",
+    "MariaDB acceptance not run",
+    "Tenant isolation unverified",
+    "GrapesJS full visual editing not integrated"
+  ]
+}

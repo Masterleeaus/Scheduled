@@ -1,0 +1,46 @@
+{
+  "pass": 123,
+  "base_archive": "PlusAgency_Cleanto_Recovery_Candidate_Pass122_BLOCKED_PASS58_MARIADB.zip",
+  "base_archive_sha256": "4ff5cc8e44d5e92280ab902424436e433b7f364b25ce0fe087756f0a68b6f424",
+  "production_files_changed": 2,
+  "regression_files_changed_or_added": 2,
+  "files": [
+    {
+      "path": "core/app/Http/Controllers/Front/BookingPublicRecoveryController.php",
+      "change": "modified",
+      "old_sha256": "c2db1964ac02b733617dc0584b0094bc4c786cc4cfbd22a4020380d1ef522bbc",
+      "sha256": "5b0073383446e42e401b28eb70bf687f3ecc8965875b9a349e91b1b6c561220d",
+      "bytes": 2672
+    },
+    {
+      "path": "core/app/Booking/Public/Checkout/CheckoutRecoveryReader.php",
+      "change": "modified",
+      "old_sha256": "d60dd5f5f33f8ed5b8620fc2926ad0cace0e3184c371a6217e99b683745bb9da",
+      "sha256": "6a35f6d7bf52337d33122d5187f466d28d2fe314f9b34bdf5d468ab670797e8d",
+      "bytes": 4024
+    },
+    {
+      "path": "core/tests/booking/pass121_recovery_native_schema_test.php",
+      "change": "modified",
+      "old_sha256": "12c183fbec7988436abf1e14c0957bea61548571b60b43b9e49fd68de417749f",
+      "sha256": "30a64d2867f94b006664634c4770ff0f5a985eee0c53b0e9e1e64c61be269f85",
+      "bytes": 7520
+    },
+    {
+      "path": "core/tests/booking/pass123_recovery_controller_wiring_test.php",
+      "change": "added",
+      "old_sha256": null,
+      "sha256": "ca2a25c5b8794b41bb74590438fc44f7e674940b8e1949c30d4a47355f6898d5",
+      "bytes": 1531
+    },
+    {
+      "path": "PASS123_REPORT.md",
+      "change": "added",
+      "old_sha256": null,
+      "sha256": "9248351826a0e60b8cb944803729f4c5b95d15ffa1ac8b2fb39403bef30b65dd",
+      "bytes": 1858
+    }
+  ],
+  "runtime_database_acceptance": "BLOCKED: no MariaDB/Docker/pdo_mysql",
+  "production_ready": false
+}

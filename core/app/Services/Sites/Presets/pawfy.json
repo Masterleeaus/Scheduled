@@ -1,0 +1,53 @@
+{
+  "headline": "Care for every companion",
+  "tagline": "Warm, dependable services for pets and their people",
+  "accent": "#87a83c",
+  "about": "We provide thoughtful, personalised pet care services. Ask about availability, service scope and pricing.",
+  "cta_label": "Request pet care",
+  "cta_url": "#booking",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Pawfy · Pet Care",
+  "seo_description": "Warm, dependable services for pets and their people",
+  "services": [
+    {
+      "name": "Dog walking",
+      "description": "Ask us about tailored dog walking options and availability."
+    },
+    {
+      "name": "Pet sitting",
+      "description": "Ask us about tailored pet sitting options and availability."
+    },
+    {
+      "name": "Grooming",
+      "description": "Ask us about tailored grooming options and availability."
+    },
+    {
+      "name": "Training",
+      "description": "Ask us about tailored training options and availability."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I enquire?",
+      "answer": "Send us your preferred service, location and timing using the contact form."
+    },
+    {
+      "question": "Can I choose a service package?",
+      "answer": "Contact us to discuss suitable options for your needs."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local service areas",
+      "description": "Contact us to confirm coverage for your property."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [],
+  "seo_image": "",
+  "analytics_consent": false
+}

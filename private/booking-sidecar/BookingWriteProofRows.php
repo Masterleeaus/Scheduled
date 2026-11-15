@@ -1,0 +1,5 @@
+<?php
+declare(strict_types=1);
+namespace Titan\BookingSidecar;
+/** Pass 44: assert that persisted Cleanto records match the transaction input. */
+final class BookingWriteProofRows { public static function check(array $booking,array $order,int $id,array $cmd,string $rate):void { if(BookingWriteProofId::check($booking['id']??null)!==$id)throw new \DomainException('Wrong persisted booking');BookingWriteProofLink::check($booking,$order);BookingWriteProofService::check($booking,$cmd['service']);BookingWriteProofStaff::check($booking['staff_ids']??null,$cmd['staff_ids']);BookingWriteProofStatus::check($booking['booking_status']??null);BookingWriteProofTime::check($booking['booking_date_time']??null,$cmd['window']['local_start']);BookingWriteProofOrderDate::check($booking['order_date']??null,$cmd['window']['local_start']);BookingWriteProofDuration::check($order['order_duration']??null,$cmd['duration_minutes']);BookingWriteProofCustomer::check($order,$cmd['customer']);BookingWriteProofPersonalInfo::check($order['client_personal_info']??null,$cmd['personal_info']??[]);BookingWriteProofRate::check($booking['method_unit_qty_rate']??null,$rate);} }

@@ -1,0 +1,11 @@
+test_changed_file_is_not_counted_as_missing (test_source_recovery_audit.RecoveryTests.test_changed_file_is_not_counted_as_missing) ... ok
+test_detect_missing_historical_file (test_source_recovery_audit.RecoveryTests.test_detect_missing_historical_file) ... ok
+test_identical_has_no_missing_files (test_source_recovery_audit.RecoveryTests.test_identical_has_no_missing_files) ... ok
+test_reject_duplicate_members (test_source_recovery_audit.RecoveryTests.test_reject_duplicate_members) ... ok
+test_reject_traversal (test_source_recovery_audit.RecoveryTests.test_reject_traversal) ... ok
+test_template_invalid_accent (test_source_recovery_audit.RecoveryTests.test_template_invalid_accent) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.007s
+
+OK

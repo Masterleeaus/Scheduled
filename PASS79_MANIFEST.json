@@ -1,0 +1,28 @@
+{
+  "pass": 79,
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass78_BLOCKED_PASS58_MARIADB.zip",
+  "status": "RECOVERY_CANDIDATE_BLOCKED_PASS58_MARIADB",
+  "changed": [
+    "core/app/Http/Controllers/Admin/TitanSiteController.php",
+    "core/app/Http/Controllers/Front/LandingCampaignController.php",
+    "core/app/Http/Controllers/Front/TitanSiteController.php",
+    "core/app/Services/Sites/SiteDocument.php"
+  ],
+  "added": [
+    "PASS79_REPORT.md",
+    "integration/tests/pass79/deployment_preflight.php",
+    "integration/tests/pass79/site_document_mbstring_fallback.php",
+    "integration/tests/pass79/website_release_contract.php"
+  ],
+  "deleted": [],
+  "sha256": {
+    "PASS79_REPORT.md": "6b1374ee876b705212da37b516ea845df9be9f563fd7b0ba00cb23d9b8c4a6cc",
+    "core/app/Http/Controllers/Admin/TitanSiteController.php": "8f48292deb8a92326ade6d5d1a95ce121a97d4269fba106871b7729aa93c85ad",
+    "core/app/Http/Controllers/Front/LandingCampaignController.php": "5bc577b305acd2397a57177cd70dc8e451c9778f9fcc82e64c90eb6d019f703f",
+    "core/app/Http/Controllers/Front/TitanSiteController.php": "77c91928355c3d99ba91d747cf50e3a6d1d99d5c49c7365a8422dac1bb6a83ae",
+    "core/app/Services/Sites/SiteDocument.php": "d822cb83e21e9e892ef304733d3f8684eb8e81f4dd39107d27d19231fc3c6911",
+    "integration/tests/pass79/deployment_preflight.php": "850d26880b8b8d0bc84ff475720881714f86492402875418562f21eafe01aac4",
+    "integration/tests/pass79/site_document_mbstring_fallback.php": "d119c3fcf1d2ca1beca4ed12a935322ba3e6d720729bad17183717c9dda01110",
+    "integration/tests/pass79/website_release_contract.php": "0795604c3e9ab6d2060c75c9328b8a28f762e4ad1936de2354894c3c5af211d4"
+  }
+}

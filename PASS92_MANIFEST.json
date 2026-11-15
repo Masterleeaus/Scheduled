@@ -1,0 +1,27 @@
+{
+  "pass": 92,
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass91_MERGED_BOOKING_AND_FIVE_THEMES_BLOCKED_DB.zip",
+  "changed": [
+    "core/app/Booking/Public/Redemption/CommitLegacyAdapter.php",
+    "core/app/Booking/Public/Redemption/CommitLegacyGateway.php",
+    "core/app/Booking/Public/Redemption/CommitCleantoNativeGateway.php",
+    "core/app/Booking/Public/Checkout/CheckoutCommitCompatibility.php"
+  ],
+  "added": [
+    "core/app/Booking/Public/Checkout/CheckoutNativeCustomer.php",
+    "core/tests/Booking/pass92_checkout_native_handoff_test.php",
+    "core/tests/Booking/pass92_source_connection_test.php",
+    "PASS92_REPORT.md"
+  ],
+  "deleted": [],
+  "files": {
+    "core/app/Booking/Public/Redemption/CommitLegacyAdapter.php": "a9014f29674ab9077d932706a0ef48b6ea8287e8fd70b82fe479413172804042",
+    "core/app/Booking/Public/Redemption/CommitLegacyGateway.php": "639804aa51b14571fa29e605dcbd29e363ec80436dfb28ffcf94c2665303de22",
+    "core/app/Booking/Public/Redemption/CommitCleantoNativeGateway.php": "96dd64f11876a9d7b245492b696c3c96137e7d186770e9f5e9fa43429b931a36",
+    "core/app/Booking/Public/Checkout/CheckoutNativeCustomer.php": "4453922d4994b294b34636ef20be3d3a0a3364175f48ded8aaf80e3dfcdbc9bf",
+    "core/app/Booking/Public/Checkout/CheckoutCommitCompatibility.php": "4e3c7f6dc381140067fef70f1576fa6f82795ac73dbff9e9e32fdaaf647e3b2a",
+    "core/tests/Booking/pass92_checkout_native_handoff_test.php": "8281b285e5833b4a8a09ab6aeab08e084747da3e8c771e87daebfed6fbfef4b9",
+    "core/tests/Booking/pass92_source_connection_test.php": "fb2f9f8437ff5ac8df89689222f803746560107a8e7913dbf3f059e52015f89d",
+    "PASS92_REPORT.md": "9efb0439de80c883aeda86467d2af9fdfb938e7b7bcc8bdae9fc7cc3bbba76fc"
+  }
+}

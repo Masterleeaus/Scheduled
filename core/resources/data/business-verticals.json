@@ -1,0 +1,407 @@
+{
+  "schema_version": 1,
+  "count": 50,
+  "verticals": [
+    {
+      "id": 1,
+      "key": "residential-cleaning",
+      "name": "Residential cleaning",
+      "group": "Cleaning services",
+      "recommended_template": "residential",
+      "new_course": false
+    },
+    {
+      "id": 2,
+      "key": "commercial-and-office-cleaning",
+      "name": "Commercial and office cleaning",
+      "group": "Cleaning services",
+      "recommended_template": "commercial",
+      "new_course": false
+    },
+    {
+      "id": 3,
+      "key": "bond-and-end-of-lease-cleaning",
+      "name": "Bond and end-of-lease cleaning",
+      "group": "Cleaning services",
+      "recommended_template": "end-of-lease",
+      "new_course": false
+    },
+    {
+      "id": 4,
+      "key": "post-construction-clean",
+      "name": "Post-construction clean",
+      "group": "Cleaning services",
+      "recommended_template": "deep",
+      "new_course": false
+    },
+    {
+      "id": 5,
+      "key": "construction-site-clean-up",
+      "name": "Construction-site clean-up",
+      "group": "Cleaning services",
+      "recommended_template": "commercial",
+      "new_course": false
+    },
+    {
+      "id": 6,
+      "key": "strata-and-common-area-cleaning",
+      "name": "Strata and common-area cleaning",
+      "group": "Cleaning services",
+      "recommended_template": "office",
+      "new_course": false
+    },
+    {
+      "id": 7,
+      "key": "hard-floor-care",
+      "name": "Hard floor care",
+      "group": "Cleaning services",
+      "recommended_template": "deep",
+      "new_course": false
+    },
+    {
+      "id": 8,
+      "key": "carpet-and-upholstery-cleaning",
+      "name": "Carpet and upholstery cleaning",
+      "group": "Cleaning services",
+      "recommended_template": "carpet",
+      "new_course": false
+    },
+    {
+      "id": 9,
+      "key": "window-cleaning-all-heights",
+      "name": "Window cleaning (all heights)",
+      "group": "Cleaning services",
+      "recommended_template": "windows",
+      "new_course": false
+    },
+    {
+      "id": 10,
+      "key": "pressure-cleaning-all-heights",
+      "name": "Pressure cleaning (all heights)",
+      "group": "Cleaning services",
+      "recommended_template": "pressure",
+      "new_course": false
+    },
+    {
+      "id": 11,
+      "key": "roof-soft-washing",
+      "name": "Roof soft washing",
+      "group": "Cleaning services",
+      "recommended_template": "pressure",
+      "new_course": false
+    },
+    {
+      "id": 12,
+      "key": "solar-panel-cleaning",
+      "name": "Solar panel cleaning",
+      "group": "Cleaning services",
+      "recommended_template": "windows",
+      "new_course": false
+    },
+    {
+      "id": 13,
+      "key": "healthcare-cleaning-ndis-homes",
+      "name": "Healthcare cleaning (NDIS homes)",
+      "group": "Cleaning services",
+      "recommended_template": "residential",
+      "new_course": false
+    },
+    {
+      "id": 14,
+      "key": "medical-equipment-cleaning-external-only",
+      "name": "Medical equipment cleaning (external only)",
+      "group": "Cleaning services",
+      "recommended_template": "deep",
+      "new_course": false
+    },
+    {
+      "id": 15,
+      "key": "short-stay-turnover-cleaning",
+      "name": "Short-stay turnover cleaning",
+      "group": "Cleaning services",
+      "recommended_template": "shortstay",
+      "new_course": false
+    },
+    {
+      "id": 16,
+      "key": "car-detailing",
+      "name": "Car detailing",
+      "group": "Vehicles, appliances and furniture",
+      "recommended_template": "carzone",
+      "new_course": false
+    },
+    {
+      "id": 17,
+      "key": "specialty-appliance-and-machine-cleaning",
+      "name": "Specialty appliance and machine cleaning",
+      "group": "Vehicles, appliances and furniture",
+      "recommended_template": "handypro",
+      "new_course": false
+    },
+    {
+      "id": 18,
+      "key": "furniture-restoration",
+      "name": "Furniture restoration",
+      "group": "Vehicles, appliances and furniture",
+      "recommended_template": "handypro",
+      "new_course": false
+    },
+    {
+      "id": 19,
+      "key": "handyman",
+      "name": "Handyman",
+      "group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "new_course": false
+    },
+    {
+      "id": 20,
+      "key": "plastering",
+      "name": "Plastering",
+      "group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "new_course": false
+    },
+    {
+      "id": 21,
+      "key": "painting",
+      "name": "Painting",
+      "group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "new_course": false
+    },
+    {
+      "id": 22,
+      "key": "tiling",
+      "name": "Tiling",
+      "group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "new_course": false
+    },
+    {
+      "id": 23,
+      "key": "flat-pack-and-fixture-installation",
+      "name": "Flat-pack and fixture installation",
+      "group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "new_course": false
+    },
+    {
+      "id": 24,
+      "key": "locksmith-and-door-installation",
+      "name": "Locksmith and door installation",
+      "group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "new_course": false
+    },
+    {
+      "id": 25,
+      "key": "deck-and-fence-maintenance",
+      "name": "Deck and fence maintenance",
+      "group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "new_course": false
+    },
+    {
+      "id": 26,
+      "key": "timber-floor-restoration",
+      "name": "Timber floor restoration",
+      "group": "Trades and property maintenance",
+      "recommended_template": "handypro",
+      "new_course": false
+    },
+    {
+      "id": 27,
+      "key": "stone-and-terrazzo-restoration",
+      "name": "Stone and terrazzo restoration",
+      "group": "Trades and property maintenance",
+      "recommended_template": "pressure",
+      "new_course": false
+    },
+    {
+      "id": 28,
+      "key": "lawn-and-turf-care",
+      "name": "Lawn and turf care",
+      "group": "Outdoor and garden",
+      "recommended_template": "cleanmate",
+      "new_course": false
+    },
+    {
+      "id": 29,
+      "key": "garden-maintenance-and-clean-ups",
+      "name": "Garden maintenance and clean-ups",
+      "group": "Outdoor and garden",
+      "recommended_template": "cleanmate",
+      "new_course": false
+    },
+    {
+      "id": 30,
+      "key": "irrigation-servicing",
+      "name": "Irrigation servicing",
+      "group": "Outdoor and garden",
+      "recommended_template": "cleanmate",
+      "new_course": false
+    },
+    {
+      "id": 31,
+      "key": "landscaping",
+      "name": "Landscaping",
+      "group": "Outdoor and garden",
+      "recommended_template": "cleanmate",
+      "new_course": false
+    },
+    {
+      "id": 32,
+      "key": "pond-and-water-feature-maintenance",
+      "name": "Pond and water-feature maintenance",
+      "group": "Outdoor and garden",
+      "recommended_template": "cleanmate",
+      "new_course": false
+    },
+    {
+      "id": 33,
+      "key": "pool-and-spa-servicing",
+      "name": "Pool and spa servicing",
+      "group": "Outdoor and garden",
+      "recommended_template": "cleanmate",
+      "new_course": false
+    },
+    {
+      "id": 34,
+      "key": "aquarium-maintenance",
+      "name": "Aquarium maintenance",
+      "group": "Outdoor and garden",
+      "recommended_template": "cleanmate",
+      "new_course": false
+    },
+    {
+      "id": 35,
+      "key": "dog-walking",
+      "name": "Dog walking",
+      "group": "Pet services",
+      "recommended_template": "pawfy",
+      "new_course": false
+    },
+    {
+      "id": 36,
+      "key": "pet-and-house-sitting",
+      "name": "Pet and house sitting",
+      "group": "Pet services",
+      "recommended_template": "pawfy",
+      "new_course": false
+    },
+    {
+      "id": 37,
+      "key": "pet-grooming",
+      "name": "Pet grooming",
+      "group": "Pet services",
+      "recommended_template": "pawfy",
+      "new_course": false
+    },
+    {
+      "id": 38,
+      "key": "dog-training",
+      "name": "Dog training",
+      "group": "Pet services",
+      "recommended_template": "pawfy",
+      "new_course": true
+    },
+    {
+      "id": 39,
+      "key": "mobile-hairdressing-and-barbering",
+      "name": "Mobile hairdressing and barbering",
+      "group": "Personal services and beauty",
+      "recommended_template": "klano",
+      "new_course": false
+    },
+    {
+      "id": 40,
+      "key": "mobile-beauty",
+      "name": "Mobile beauty",
+      "group": "Personal services and beauty",
+      "recommended_template": "clinar",
+      "new_course": false
+    },
+    {
+      "id": 41,
+      "key": "mobile-massage",
+      "name": "Mobile massage",
+      "group": "Personal services and beauty",
+      "recommended_template": "klano",
+      "new_course": false
+    },
+    {
+      "id": 42,
+      "key": "makeup-artistry",
+      "name": "Makeup artistry",
+      "group": "Personal services and beauty",
+      "recommended_template": "klano",
+      "new_course": true
+    },
+    {
+      "id": 43,
+      "key": "mobile-nail-technology",
+      "name": "Mobile nail technology",
+      "group": "Personal services and beauty",
+      "recommended_template": "klano",
+      "new_course": true
+    },
+    {
+      "id": 44,
+      "key": "personal-and-fitness-training",
+      "name": "Personal and fitness training",
+      "group": "Health, fitness and wellbeing",
+      "recommended_template": "stevenwatkins",
+      "new_course": false
+    },
+    {
+      "id": 45,
+      "key": "yoga-and-pilates",
+      "name": "Yoga and Pilates",
+      "group": "Health, fitness and wellbeing",
+      "recommended_template": "yoga-pilates",
+      "new_course": false
+    },
+    {
+      "id": 46,
+      "key": "nutrition-weight-loss-and-dieting-consultant",
+      "name": "Nutrition, weight loss and dieting consultant",
+      "group": "Health, fitness and wellbeing",
+      "recommended_template": "klano",
+      "new_course": true
+    },
+    {
+      "id": 47,
+      "key": "tutoring",
+      "name": "Tutoring",
+      "group": "Education",
+      "recommended_template": "klano",
+      "new_course": true
+    },
+    {
+      "id": 48,
+      "key": "real-estate-portfolio-management",
+      "name": "Real estate portfolio management",
+      "group": "Property and hospitality",
+      "recommended_template": "office",
+      "new_course": false
+    },
+    {
+      "id": 49,
+      "key": "short-stay-host-management",
+      "name": "Short-stay host management",
+      "group": "Property and hospitality",
+      "recommended_template": "shortstay",
+      "new_course": true
+    },
+    {
+      "id": 50,
+      "key": "high-risk-cleaning",
+      "name": "High-risk cleaning",
+      "group": "Specialist",
+      "recommended_template": "deep",
+      "new_course": false
+    }
+  ],
+  "note": "Industry vertical configuration; not course files and not 50 separate designs."
+}

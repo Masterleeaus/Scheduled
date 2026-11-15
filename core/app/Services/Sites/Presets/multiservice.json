@@ -1,0 +1,64 @@
+{
+  "headline": "One conversation. The right cleaning plan.",
+  "tagline": "Flexible cleaning support for homes, workplaces and changing project needs.",
+  "accent": "#31556A",
+  "about": "Different spaces call for different methods. Tell us what needs attention and we will help identify suitable services and schedule options without implying that every specialist task is automatically included.",
+  "cta_label": "Request a tailored quote",
+  "cta_url": "#contact",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Multi-service cleaning",
+  "seo_description": "Flexible cleaning support for homes, workplaces and changing project needs.",
+  "services": [
+    {
+      "name": "Home cleaning",
+      "description": "Recurring upkeep or a one-off refresh arranged around household priorities."
+    },
+    {
+      "name": "Commercial cleaning",
+      "description": "Practical maintenance plans for offices, shared facilities and suitable business premises."
+    },
+    {
+      "name": "Move-out cleans",
+      "description": "A more detailed clean when spaces are being prepared for handover or new occupants."
+    },
+    {
+      "name": "Specialist requests",
+      "description": "Discuss windows, carpets or external surfaces so we can confirm appropriate scope and capability."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I combine services in one quote?",
+      "answer": "Yes. List the services and locations you need so we can review the combined scope."
+    },
+    {
+      "question": "Do you cover residential and commercial jobs?",
+      "answer": "Let us know the property type and work required so we can confirm availability."
+    },
+    {
+      "question": "How are services priced?",
+      "answer": "Pricing depends on scope, condition, location and any specialist requirements."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local Multiservice service areas",
+      "description": "Contact us to confirm availability for your suburb or neighbourhood."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [
+    {
+      "title": "Multiservice cleaning preparation",
+      "summary": "A practical checklist before your appointment.",
+      "body": "Clear access to the work area, identify priority surfaces and discuss any delicate materials before cleaning begins.",
+      "slug": "multiservice-preparation"
+    }
+  ],
+  "seo_image": "",
+  "analytics_consent": false
+}

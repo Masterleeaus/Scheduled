@@ -1,0 +1,32 @@
+{
+  "pass": 47,
+  "base": "Master-Copy-PlusAgency-Cleanto-Pass46-EXACT-MIGRATION-SCHEMA-CUMULATIVE.zip",
+  "added": [
+    "docs/PASS47_INSTALL_ACCEPTANCE.md",
+    "integration/install/pass47/Dockerfile",
+    "integration/install/pass47/README.md",
+    "integration/install/pass47/compose.yaml",
+    "integration/install/pass47/entrypoint.sh",
+    "integration/install/pass47/http-security-check.sh",
+    "integration/install/pass47/run.sh",
+    "tests/pass47-staging-contract.php"
+  ],
+  "modified": [],
+  "removed": [],
+  "source_files": 8,
+  "sha256": {
+    "integration/install/pass47/http-security-check.sh": "8c110246563736054dd14a625787e56c811a0b79c990c4117a02c09b1c059c33",
+    "integration/install/pass47/compose.yaml": "861754107dd63aa312be58e2444739c7a52a0be6aad7d2c91fa70a094bac76bd",
+    "integration/install/pass47/run.sh": "790e485fcc01641a36d93a09481b7514c1ee17230317663eceaa240915da760a",
+    "integration/install/pass47/Dockerfile": "7183acbb036c9fa1eae07b170e9709dfb1477f9a79290c378f3a0c48b033a7ce",
+    "integration/install/pass47/entrypoint.sh": "6396686e544d5e0ed990cc260e89a315320a34b0764a05ca4314adcff7b662da",
+    "integration/install/pass47/README.md": "9c0ea56b04ce98e9fb567d5d2bf96d3110beb72011f82b627ef7f6df61fa28c2",
+    "tests/pass47-staging-contract.php": "2ad0b067705fa6ff569b8daaaa08350ae27f51b120a8e279dc66793bb4f2ae5d",
+    "docs/PASS47_INSTALL_ACCEPTANCE.md": "e0e93279e89402699447b048ae16ff22546f28c6f90eb02d1a923fe2fd9ea605"
+  },
+  "tested": {
+    "staging_contract": "19/19",
+    "bash_syntax": "passed",
+    "docker_live": "blocked_missing_docker"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "pass": 3,
+  "created": [
+    "private/booking-sidecar/Interval.php",
+    "private/booking-sidecar/BookingConflictReader.php",
+    "private/booking-sidecar/ConflictPayload.php",
+    "core/app/Booking/BookingBusyRequest.php",
+    "core/app/Booking/BookingConflictGateway.php",
+    "integration/tests/conflict_contract.php",
+    "integration/PASS3_REPORT.md"
+  ],
+  "modified": [
+    "private/booking-sidecar/RequestHandler.php",
+    "private/booking-sidecar/Dispatcher.php",
+    "core/app/Booking/InternalBookingClient.php"
+  ],
+  "removed": [],
+  "preserved_original_cleanto": true,
+  "test_suites": [
+    {
+      "test": "integration/tests/booking_contract.php",
+      "last_line": "PASS: expired envelope rejected"
+    },
+    {
+      "test": "integration/tests/sidecar_contract.php",
+      "last_line": "TOTAL PASS 9"
+    },
+    {
+      "test": "integration/tests/conflict_contract.php",
+      "last_line": "TOTAL PASS 12"
+    }
+  ],
+  "php_lint_passed": 9,
+  "database_runtime_tested": false,
+  "booking_creation_enabled": false
+}

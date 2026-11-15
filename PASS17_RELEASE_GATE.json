@@ -1,0 +1,158 @@
+{
+  "scope": "OFFLINE_SOURCE_REGRESSION_ONLY",
+  "timestamp_utc": "2026-11-11T00:55:54.722739+00:00",
+  "environment": {
+    "php": "/usr/bin/php",
+    "node": "/opt/nvm/versions/node/v22.16.0/bin/node",
+    "pdo_mysql": false,
+    "mariadb": false
+  },
+  "tests": [
+    {
+      "name": "templates_and_assets",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "{\n    \"result\": \"PASS\",\n    \"checks\": 162,\n    \"website_templates\": 15,\n    \"landing_templates\": 10\n}"
+    },
+    {
+      "name": "booking_fail_closed_contract",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "{\"result\":\"PASS\",\"checks\":5}"
+    },
+    {
+      "name": "booking_readiness",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "PASS operator-only Artisan command\nPASS missing PDO refuses inspection\nPASS no public release auto-toggle\nPASS read-only information schema\nPASS prepared metadata query\nPASS connection tenant identity pinned\nPASS no production acceptance fabrication\nPASS live concurrency not assumed\nPASS financial settlement not assumed\nPASS real executor remains guarded"
+    },
+    {
+      "name": "booking_schema",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass 10 schema snapshot tests passed"
+    },
+    {
+      "name": "booking_response",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "PASS submission rejects malformed input\nPASS submission validation text\nPASS submission infrastructure failure\nPASS submission native executor path\nPASS submission replay status\nPASS submission fail closed\nPASS validation invalid inputs\nPASS validation infrastructure status\nPASS native storage contracts\nPASS private response headers"
+    },
+    {
+      "name": "booking_validation",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass 88 checkout validation: 12 cases passed"
+    },
+    {
+      "name": "native_customer_handoff",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass92 native checkout data: 13 assertions passed"
+    },
+    {
+      "name": "native_checkout_compatibility",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass89 checkout/native persistence compatibility: 9/9 passed"
+    },
+    {
+      "name": "native_checkout_executor",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass 94: 16 security and native-loader assertions passed; no live booking claim"
+    },
+    {
+      "name": "booking_source_handoff",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass92 native source handoff: 6 assertions passed"
+    },
+    {
+      "name": "booking_submission_gate",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass 93: 7 assertions passed; no DB transaction claimed"
+    },
+    {
+      "name": "booking_tenant_readiness",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass 96: 18 assertions passed; no MariaDB booking transaction claimed"
+    },
+    {
+      "name": "booking_replay",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass 98: 12 replay propagation assertions passed; database not exercised"
+    },
+    {
+      "name": "booking_phone_boundary",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass 99 phone boundary: 15 assertions passed"
+    },
+    {
+      "name": "payment_reconciliation",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass 12 reconciliation: 12 checks passed"
+    },
+    {
+      "name": "stripe_inbox",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass 12 Stripe inbox: 13 checks passed"
+    },
+    {
+      "name": "booking_widget",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "PASS 11 public booking widget contracts: 13 assertions passed"
+    },
+    {
+      "name": "booking_transport",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass 88 checkout contract: 12 checks passed"
+    },
+    {
+      "name": "booking_widget_uncertain_outcome",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass118/120 uncertain submission and recovery: 14 assertions passed"
+    },
+    {
+      "name": "booking_recovery_widget",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass 120 recovery widget contract assertions: 12 passed"
+    },
+    {
+      "name": "legacy_booking_intent_contract",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "PASS actual intent endpoint\nPASS validates preview scope\nPASS requires booking writes disabled\nPASS rejects false confirmation\nPASS rejects false payment\nPASS fetch credentials same origin\nPASS abort on selection changes\nPASS supports pressed-state selection\nPASS does not persist preview token\nPASS never sends personal data\nPASS has semantic intent status\nPASS prevents treating preview as reservation\nPASS sends selection identifiers\nPASS guards stale slot\n14 assertions passed"
+    },
+    {
+      "name": "legacy_booking_transport_contract",
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "Pass95 booking browser transport: 22 assertions passed"
+    }
+  ],
+  "missing_acceptance": [
+    "Laravel/PHPUnit with DOM/XML extensions",
+    "real MariaDB booking transactions and migrations",
+    "authenticated browser editing of 25 templates",
+    "live AI image and copy provider",
+    "Stripe official test-mode checkout and webhook settlement",
+    "cross-tenant live database security"
+  ],
+  "summary": {
+    "PASS": 22,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "release_accepted": false
+}

@@ -1,0 +1,229 @@
+{
+  "pass": 10,
+  "baseline": "PlusAgency_Cleanto_Master_Pass09.zip",
+  "source_files_added_or_modified": 34,
+  "sources": [
+    "private/booking-sidecar/BookingMutationActor.php",
+    "private/booking-sidecar/BookingBookingLifecycleGuard.php",
+    "private/booking-sidecar/BookingMutationLedger.php",
+    "private/booking-sidecar/BookingCancellationCoordinator.php",
+    "private/booking-sidecar/BookingCancellationPolicy.php",
+    "private/booking-sidecar/BookingMutationReplay.php",
+    "private/booking-sidecar/BookingMutationCustomerScope.php",
+    "private/booking-sidecar/BookingMutationReader.php",
+    "private/booking-sidecar/BookingCancellationInput.php",
+    "private/booking-sidecar/BookingMutationRecord.php",
+    "private/booking-sidecar/BookingMutationFingerprint.php",
+    "private/booking-sidecar/BookingCancellationReadiness.php",
+    "integration/tests/pass10_cancel_terminal.php",
+    "integration/tests/pass10_actor_ok.php",
+    "integration/tests/pass10_customer_cancel_status.php",
+    "integration/tests/pass10_replay_pending.php",
+    "integration/tests/pass10_contract_ledger.php",
+    "integration/tests/pass10_owner_cancel_status.php",
+    "integration/tests/pass10_fingerprint_stable.php",
+    "integration/tests/pass10_contract_dispatcher_closed.php",
+    "integration/tests/pass10_gate_closed.php",
+    "integration/tests/pass10_contract_sql.php",
+    "integration/tests/pass10_record_normalize.php",
+    "integration/tests/pass10_replay_completed.php",
+    "integration/tests/pass10_actor_invalid.php",
+    "integration/tests/pass10_replay_mismatch.php",
+    "integration/tests/pass10_record_bad_status.php",
+    "integration/tests/pass10_cancel_input_invalid.php",
+    "integration/tests/pass10_contract_ownership.php",
+    "integration/tests/pass10_contract_transaction.php",
+    "integration/tests/pass10_cancel_input_ok.php",
+    "integration/tests/pass10_fingerprint_actor.php",
+    "integration/tests/pass10_readiness_missing.php",
+    "integration/tests/pass10_readiness_full.php"
+  ],
+  "php_lint_passed": 34,
+  "regression_tests_passed": 107,
+  "regression_tests_failed": 0,
+  "new_tests": 22,
+  "original_cleanto_changed": 0,
+  "available_pdo_drivers": "[]",
+  "live_mysql_tested": false,
+  "booking_creation_enabled": false,
+  "cancellation_dispatch_enabled": false,
+  "production_ready": false,
+  "summary": "Private cancellation command pipeline with ownership based on ct_bookings.client_id, legacy transition checks, locked record reads, transaction wrapper, optimistic status writer and idempotency ledger. Not wired to public dispatcher pending live MySQL verification.",
+  "notes": [
+    "No vendor Cleanto files edited.",
+    "Cleanto guest bookings with client_id=0 are not eligible for customer authenticated cancellation without future verified account linking.",
+    "Real DB locking, status SQL and concurrency tests remain outstanding."
+  ],
+  "changes": {
+    "private/booking-sidecar/BookingMutationActor.php": {
+      "action": "added",
+      "bytes": 459,
+      "sha256": "532909e3d01e0cd6c920ea70461c961193cd3017441aba56ea3b8e56e4201eb8"
+    },
+    "private/booking-sidecar/BookingBookingLifecycleGuard.php": {
+      "action": "added",
+      "bytes": 479,
+      "sha256": "98cafa400fcc260d6ec1dcc243fdbd593de7b788b2b23b03de193e7fc5af40e4"
+    },
+    "private/booking-sidecar/BookingMutationLedger.php": {
+      "action": "added",
+      "bytes": 730,
+      "sha256": "79b059f1ecd7cfbe248b40213d6514dabb8ce36ebe8260ae50a6c6365e1947a7"
+    },
+    "private/booking-sidecar/BookingCancellationCoordinator.php": {
+      "action": "added",
+      "bytes": 1729,
+      "sha256": "705b58488d6ad3d06ffcaebf2c913f45e274b74fecb874b57308504a5bb858bb"
+    },
+    "private/booking-sidecar/BookingCancellationPolicy.php": {
+      "action": "added",
+      "bytes": 438,
+      "sha256": "360a6b5191662f9698d2143f6f1f64901756913794f0c93bd7f1a04b92b84a6d"
+    },
+    "private/booking-sidecar/BookingMutationReplay.php": {
+      "action": "added",
+      "bytes": 645,
+      "sha256": "4aa87f86eba9e40fb0254a8704f582c3bcb2c6fc81624c8bc1a21298b2ccda24"
+    },
+    "private/booking-sidecar/BookingMutationCustomerScope.php": {
+      "action": "added",
+      "bytes": 673,
+      "sha256": "7b8a83dc4095ffb0c44d69e06b28056873ef1da9075ca1ee002daa0c8bc8648e"
+    },
+    "private/booking-sidecar/BookingMutationReader.php": {
+      "action": "added",
+      "bytes": 757,
+      "sha256": "ad5687741df1acda5a106aeb57574bb4993114a069ebd89941b5719babb8f11b"
+    },
+    "private/booking-sidecar/BookingCancellationInput.php": {
+      "action": "added",
+      "bytes": 682,
+      "sha256": "8dd9c22c6c452a088bd129eed48074a76cd7384efd892d49e76ab70de848465a"
+    },
+    "private/booking-sidecar/BookingMutationRecord.php": {
+      "action": "added",
+      "bytes": 1126,
+      "sha256": "e1895992cf3d025d1c36ce7a8ddfabceb86ced7a26bd6854ff124d623dc96c84"
+    },
+    "private/booking-sidecar/BookingMutationFingerprint.php": {
+      "action": "added",
+      "bytes": 516,
+      "sha256": "e90c894718dd15781b60f05f8da180303040dace39457a0ef24194481d8e77b4"
+    },
+    "private/booking-sidecar/BookingCancellationReadiness.php": {
+      "action": "added",
+      "bytes": 550,
+      "sha256": "7c239681aaa15837460bfbfef5538c4b2f78e69834cc114dd4e06f8628c1dfad"
+    },
+    "integration/tests/pass10_cancel_terminal.php": {
+      "action": "added",
+      "bytes": 476,
+      "sha256": "5093ee8792d3ab2282fc33437347fb31dee15d59de638e346483ca86d573bf36"
+    },
+    "integration/tests/pass10_actor_ok.php": {
+      "action": "added",
+      "bytes": 434,
+      "sha256": "8ea73051445d3c97d3c14308d2bea89ae640dd81610899535de140126c4e1d5c"
+    },
+    "integration/tests/pass10_customer_cancel_status.php": {
+      "action": "added",
+      "bytes": 433,
+      "sha256": "c30417e3556cf6dc1d447d53adb5bc51fe8ed26bc12c9684631ca7069b960e3d"
+    },
+    "integration/tests/pass10_replay_pending.php": {
+      "action": "added",
+      "bytes": 531,
+      "sha256": "cdf6c32074e613d7f082fc057b94026209a022d1c4b1b65c8d9cf2ef23d30644"
+    },
+    "integration/tests/pass10_contract_ledger.php": {
+      "action": "added",
+      "bytes": 497,
+      "sha256": "12e68af1fb7801661b3077d03f403b5fd324135cb1153cc5222ffdd4447905e4"
+    },
+    "integration/tests/pass10_owner_cancel_status.php": {
+      "action": "added",
+      "bytes": 427,
+      "sha256": "3907b48d127a7403332d714131faa351b9283d3df93bbc1c7d512315710a05d0"
+    },
+    "integration/tests/pass10_fingerprint_stable.php": {
+      "action": "added",
+      "bytes": 518,
+      "sha256": "feb96831f1b39d04a7cbee1b267f55099dec1c4b08263ff25f22f709dcaf60cc"
+    },
+    "integration/tests/pass10_contract_dispatcher_closed.php": {
+      "action": "added",
+      "bytes": 507,
+      "sha256": "9827c790d1f0b0dbfc753a653f70b9e512d0001e261b254298eb1ba9727a7426"
+    },
+    "integration/tests/pass10_gate_closed.php": {
+      "action": "added",
+      "bytes": 471,
+      "sha256": "14ed5f88d4714f5f27e7611dc3a87d344847f1d36848fdb31907682c15c9ad35"
+    },
+    "integration/tests/pass10_contract_sql.php": {
+      "action": "added",
+      "bytes": 525,
+      "sha256": "d0e8ac8b518f83acf693093528e013824c92430874922aa322ea41edff1536dd"
+    },
+    "integration/tests/pass10_record_normalize.php": {
+      "action": "added",
+      "bytes": 536,
+      "sha256": "999343fcfafc3a2f11c1bf04567b5700fd1aa20bf194221e2869a8c01b734607"
+    },
+    "integration/tests/pass10_replay_completed.php": {
+      "action": "added",
+      "bytes": 489,
+      "sha256": "8152fb36ed665529d74c3b324f47ce7f4c67a1c7436958c01b96ab9b61c0d7dd"
+    },
+    "integration/tests/pass10_actor_invalid.php": {
+      "action": "added",
+      "bytes": 491,
+      "sha256": "5d279d6a11a16c4b7e9643daaeb406c69a9ada0f16496b94437439ae443f2b41"
+    },
+    "integration/tests/pass10_replay_mismatch.php": {
+      "action": "added",
+      "bytes": 550,
+      "sha256": "f646299132f4e154b9cb8a230beb68b39732cdb12bfda45b95fad91c1b2270e5"
+    },
+    "integration/tests/pass10_record_bad_status.php": {
+      "action": "added",
+      "bytes": 522,
+      "sha256": "42ac820ace7ac5417efd355d879d95a9b62e37376aedf97a8f3551beb0dbd192"
+    },
+    "integration/tests/pass10_cancel_input_invalid.php": {
+      "action": "added",
+      "bytes": 528,
+      "sha256": "e4ee97969d66514b10c483c3d6db86abddde52a3f3758d3204f76e1fd9dc1568"
+    },
+    "integration/tests/pass10_contract_ownership.php": {
+      "action": "added",
+      "bytes": 514,
+      "sha256": "e7cf0389c4084f9f5e38e496601b894c1b3a2f953da2032d1049ca96ef9bac8f"
+    },
+    "integration/tests/pass10_contract_transaction.php": {
+      "action": "added",
+      "bytes": 565,
+      "sha256": "3cb1c935a71332e497b4f80aa4d89f82fda283a73f320900a4737d72549ccd0b"
+    },
+    "integration/tests/pass10_cancel_input_ok.php": {
+      "action": "added",
+      "bytes": 502,
+      "sha256": "ae346ac63f04983ff797e60805d9fc6cac6da65ed5200ec60240e69d4e3f3c59"
+    },
+    "integration/tests/pass10_fingerprint_actor.php": {
+      "action": "added",
+      "bytes": 555,
+      "sha256": "fbedb1f91a8931c1f17cad3f3bd2d4bad6bdbe8eb60d3d4b0cbfcca787c0cae9"
+    },
+    "integration/tests/pass10_readiness_missing.php": {
+      "action": "added",
+      "bytes": 498,
+      "sha256": "7a4c9280c5744c9455937553a5bd10796337ac7d285b2d6b25ee3e3731157646"
+    },
+    "integration/tests/pass10_readiness_full.php": {
+      "action": "added",
+      "bytes": 572,
+      "sha256": "2536253a1a1a6337a526ac24cd55fe23a027846d4e631b82531c7fd74e18325f"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "headline": "Bring back the softness.",
+  "tagline": "Specialist attention for fabrics, floors and the everyday marks of life.",
+  "accent": "#655384",
+  "about": "Different fibres and fabrics need different approaches. We discuss the material, use, condition and treatment suitability before confirming a service plan.",
+  "cta_label": "Request a tailored quote",
+  "cta_url": "#contact",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Carpet and upholstery",
+  "seo_description": "Specialist attention for fabrics, floors and the everyday marks of life.",
+  "services": [
+    {
+      "name": "Carpet refresh",
+      "description": "Discuss treatment options for installed carpets and high-traffic rooms."
+    },
+    {
+      "name": "Sofa and lounge care",
+      "description": "Condition-aware fabric assessment and appropriate cleaning options."
+    },
+    {
+      "name": "Rugs and runners",
+      "description": "Care considerations for removable textiles and delicate materials."
+    },
+    {
+      "name": "Targeted spot treatment",
+      "description": "Assessment of marks and stains; complete removal cannot be promised."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Will every stain disappear?",
+      "answer": "Results vary by stain, fibre, age and prior treatments; complete removal cannot be guaranteed."
+    },
+    {
+      "question": "How long will it take to dry?",
+      "answer": "Drying depends on fabric, weather, airflow and treatment. Confirm the estimate when booking."
+    },
+    {
+      "question": "Do you clean delicate fabrics?",
+      "answer": "Please provide fabric details first so suitability can be assessed."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local Carpet service areas",
+      "description": "Contact us to confirm availability for your suburb or neighbourhood."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [
+    {
+      "title": "Carpet cleaning preparation",
+      "summary": "A practical checklist before your appointment.",
+      "body": "Clear access to the work area, identify priority surfaces and discuss any delicate materials before cleaning begins.",
+      "slug": "carpet-preparation"
+    }
+  ],
+  "seo_image": "",
+  "analytics_consent": false
+}

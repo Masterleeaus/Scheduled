@@ -1,0 +1,57 @@
+{
+  "headline": "Every space deserves exceptional care.",
+  "tagline": "Professional cleaning and ongoing property care with dependable attention to detail.",
+  "accent": "#1269a2",
+  "about": "Flexible cleaning and maintenance plans for homes, workplaces and managed properties.",
+  "cta_label": "Request a quote",
+  "cta_url": "#contact",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Clinar · Maintenance & Cleaning",
+  "seo_description": "Professional cleaning and ongoing property care with dependable attention to detail.",
+  "services": [
+    {
+      "name": "Home care",
+      "description": "Careful regular and detailed cleaning for comfortable living."
+    },
+    {
+      "name": "Commercial maintenance",
+      "description": "Scheduled upkeep for offices and shared facilities."
+    },
+    {
+      "name": "End-of-tenancy",
+      "description": "Detailed presentation for handovers and fresh starts."
+    },
+    {
+      "name": "Property refresh",
+      "description": "One-off attention to high-use and neglected spaces."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I get a quote?",
+      "answer": "Send us the details of your property and the work required using the enquiry form."
+    },
+    {
+      "question": "Can I tailor the service?",
+      "answer": "Yes. We can discuss the areas, frequency and timing that best suit your needs."
+    },
+    {
+      "question": "What areas do you cover?",
+      "answer": "Get in touch and we will confirm service availability for your location."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local service areas",
+      "description": "Contact us to confirm coverage for your property."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [],
+  "seo_image": "",
+  "analytics_consent": false
+}

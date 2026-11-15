@@ -1,0 +1,32 @@
+<?php
+declare(strict_types=1);
+require __DIR__.'/bootstrap.php';
+use App\Booking\Public\Intent\{IntentInput,IntentCatalogueProof,IntentSlotProof,IntentRequestProof,IntentIssuer,IntentVerifier,IntentTimeProof};
+$now=time();$zone='Australia/Melbourne';$date=(new DateTimeImmutable('tomorrow',new DateTimeZone($zone)))->format('Y-m-d');
+$raw=['service_id'=>1,'method_id'=>2,'unit_id'=>3,'staff_id'=>4,'quantity'=>1,'date_time'=>$date.'T10:00:00','duration_minutes'=>60,'timezone'=>$zone];
+$selection=IntentInput::parse($raw);$count=0;
+$catalogue=['services'=>[['id'=>1]],'methods'=>[['id'=>2,'service_id'=>1]],'units'=>[['id'=>3,'method_id'=>2]],'staff'=>[['id'=>4]],'preview_only'=>true,'booking_writes_enabled'=>false];
+IntentCatalogueProof::validate($selection,$catalogue);$count++;
+foreach(['services'=>'service_id','methods'=>'method_id','units'=>'unit_id','staff'=>'staff_id'] as $collection=>$field){$bad=$catalogue;$bad[$collection][0]['id']=900;rejects(fn()=>IntentCatalogueProof::validate($selection,$bad),'foreign '.$collection);$count++;}
+$bad=$catalogue;$bad['methods'][0]['service_id']=99;rejects(fn()=>IntentCatalogueProof::validate($selection,$bad),'method relationship');$count++;
+$bad=$catalogue;$bad['units'][0]['method_id']=99;rejects(fn()=>IntentCatalogueProof::validate($selection,$bad),'unit relationship');$count++;
+$bad=$catalogue;$bad['staff'][]=['id'=>4];rejects(fn()=>IntentCatalogueProof::validate($selection,$bad),'duplicate staff');$count++;
+$bad=$catalogue;$bad['booking_writes_enabled']=true;rejects(fn()=>IntentCatalogueProof::validate($selection,$bad),'write enabled');$count++;
+$req=IntentRequestProof::availabilityInput($selection);check($req['date']===$date && $req['staff_id']===4 && count($req)===4,'availability request');$count++;
+$stamp=new DateTimeImmutable($selection['date_time'],new DateTimeZone($zone));$iso=$stamp->format('Y-m-d\TH:i:sP');
+IntentTimeProof::assertFuture($selection,$now);$count++;
+rejects(fn()=>IntentTimeProof::assertFuture($selection,$now+86400*3),'past slot');$count++;
+$avail=['available_starts'=>[$iso],'preview_only'=>true,'booking_writes_enabled'=>false,'appointment_created'=>false];
+IntentSlotProof::validate($selection,$avail);$count++;
+$bad=$avail;$bad['available_starts']=['tomorrow'];rejects(fn()=>IntentSlotProof::validate($selection,$bad),'malformed timestamp');$count++;
+$bad=$avail;$bad['available_starts']=[];rejects(fn()=>IntentSlotProof::validate($selection,$bad),'missing time');$count++;
+$bad=$avail;$bad['available_starts']=[$iso,$iso];rejects(fn()=>IntentSlotProof::validate($selection,$bad),'duplicate slot');$count++;
+$bad=$avail;$bad['appointment_created']=true;rejects(fn()=>IntentSlotProof::validate($selection,$bad),'write state');$count++;
+$secret=str_repeat('s',40);$token=IntentIssuer::issue('example.com',7,$raw,$secret,$now);
+$data=IntentVerifier::verify($token,'example.com',7,$secret,$now);check($data['selection']===$selection && $data['scope']==='preview_only','signed preview token');$count++;
+rejects(fn()=>IntentVerifier::verify($token,'other.com',7,$secret,$now),'host bound');$count++;
+rejects(fn()=>IntentVerifier::verify($token,'example.com',8,$secret,$now),'tenant bound');$count++;
+rejects(fn()=>IntentVerifier::verify($token,'example.com',7,$secret,$now+601),'expiration');$count++;
+rejects(fn()=>IntentVerifier::verify($token.'x','example.com',7,$secret,$now),'tamper');$count++;
+rejects(fn()=>IntentVerifier::verify(str_repeat('x',4201),'example.com',7,$secret,$now),'oversized');$count++;
+echo "Pass 67 security assertions: $count passed\n";

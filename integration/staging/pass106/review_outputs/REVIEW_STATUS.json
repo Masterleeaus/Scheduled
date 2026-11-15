@@ -1,0 +1,12 @@
+{
+  "native_tables": 36,
+  "seed_rows": 5,
+  "schedule_rows": 5,
+  "table_inventory_sha256": "e421c3e992c17f5261f7701810a95156bf42d58fd073ff70b07d53af437f7bed",
+  "synthetic_only": true,
+  "mariadb_import_executed": false,
+  "booking_commit_verified": false,
+  "schedule_semantics_approved": false,
+  "schema_upgrade_reconciliation_complete": false,
+  "blocking_note": "DO NOT use as release evidence or auto-import without reviewing installer upgrades and schedule conventions."
+}

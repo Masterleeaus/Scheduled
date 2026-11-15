@@ -1,0 +1,27 @@
+{
+  "contract_version": 1,
+  "operations": [
+    "booking_create",
+    "booking_cancel",
+    "booking_reschedule"
+  ],
+  "status": "design_only_not_enabled",
+  "booking_create_required": [
+    "idempotency_key",
+    "staff_ids",
+    "service",
+    "customer",
+    "start_at",
+    "timezone",
+    "duration_minutes"
+  ],
+  "security_constraints": [
+    "tenant_database_selected_server_side",
+    "authenticated_business_owner",
+    "durable_idempotency",
+    "per_staff_serialization",
+    "requery_conflicts_under_lock",
+    "server_calculated_prices",
+    "payment_confirmation_before_settlement"
+  ]
+}

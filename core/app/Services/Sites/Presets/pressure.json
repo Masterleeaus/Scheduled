@@ -1,0 +1,64 @@
+{
+  "headline": "Give the outdoors a fresh start.",
+  "tagline": "Considered surface cleaning for paths, driveways and exterior living areas.",
+  "accent": "#285975",
+  "about": "We assess the material, condition and access before recommending a suitable exterior cleaning approach. Not every surface is suitable for high pressure; our quoted scope reflects that.",
+  "cta_label": "Request an assessment",
+  "cta_url": "#contact",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Pressure washing",
+  "seo_description": "Considered surface cleaning for paths, driveways and exterior living areas.",
+  "services": [
+    {
+      "name": "Driveways and entrances",
+      "description": "Remove everyday grime from appropriate hardscape surfaces after a material and condition check."
+    },
+    {
+      "name": "Paths and paved areas",
+      "description": "Targeted washing for walkways and paved spaces, with drainage and surrounding areas considered."
+    },
+    {
+      "name": "Patios and outdoor living",
+      "description": "Refresh entertaining spaces using a method suited to the surface and its finish."
+    },
+    {
+      "name": "Commercial hardscape",
+      "description": "Scheduled exterior maintenance for suitable entrances, forecourts and accessible paved zones."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is pressure washing safe on every surface?",
+      "answer": "No. Delicate coatings, loose masonry and some surfaces may require lower pressure or another method."
+    },
+    {
+      "question": "Do I need to provide water access?",
+      "answer": "Access needs depend on the site and equipment. We confirm this before scheduling."
+    },
+    {
+      "question": "Will all stains disappear?",
+      "answer": "Results vary by surface, staining and previous treatment. We discuss realistic expectations first."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local Pressure service areas",
+      "description": "Contact us to confirm availability for your suburb or neighbourhood."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [
+    {
+      "title": "Pressure cleaning preparation",
+      "summary": "A practical checklist before your appointment.",
+      "body": "Clear access to the work area, identify priority surfaces and discuss any delicate materials before cleaning begins.",
+      "slug": "pressure-preparation"
+    }
+  ],
+  "seo_image": "",
+  "analytics_consent": false
+}

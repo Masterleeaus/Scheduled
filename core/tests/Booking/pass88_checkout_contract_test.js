@@ -1,0 +1,15 @@
+const assert=require('assert'),fs=require('fs'),path=require('path');
+const root=path.resolve(__dirname,'../..');
+const controller=fs.readFileSync(path.join(root,'app/Http/Controllers/Front/BookingPublicCheckoutController.php'),'utf8');
+const route=fs.readFileSync(path.join(root,'routes/web.php'),'utf8');
+const widget=fs.readFileSync(path.resolve(root,'../assets/front/js/titan-booking-widget.js'),'utf8');
+const html=fs.readFileSync(path.join(root,'resources/views/front/partials/titan-booking-widget.blade.php'),'utf8');
+assert(route.includes("/titan-booking/checkout/validate"));
+for (const name of ['IntentVerifier::verify','IntentCatalogueProof::validate','IntentSlotProof::validate','IntentTimeProof::assertFuture','CheckoutRequest::parse']) assert(controller.includes(name),name);
+assert(controller.includes('no-store'));
+assert(!controller.includes('CommitOrchestrator::execute'));
+assert(widget.includes('validatedToken=null'));
+assert(widget.includes('checkoutForm.hidden=true'));
+assert(widget.includes('customer.consent'));
+assert(html.includes('data-booking-checkout-form'));
+console.log('Pass 88 checkout contract: 12 checks passed');

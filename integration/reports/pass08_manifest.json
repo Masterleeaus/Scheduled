@@ -1,0 +1,187 @@
+{
+  "private/booking-sidecar/BookingPreviewStaffPolicy.php": {
+    "action": "created",
+    "sha256": "df52ba13b658c2e4a1749690e0546bf5b98df7542fb7528805d560230d8f223e",
+    "bytes": 388
+  },
+  "private/booking-sidecar/BookingPreviewLimit.php": {
+    "action": "created",
+    "sha256": "46c522deb4439ec718f063da601b25b3a9036439ae78e39322d23dc83f225b64",
+    "bytes": 540
+  },
+  "private/booking-sidecar/BookingPreviewDisplaySlots.php": {
+    "action": "created",
+    "sha256": "ba5c7e9ec6e637fd5e6d8cd945fcb89aac9a379aa6c01923d751467d446da202",
+    "bytes": 587
+  },
+  "private/booking-sidecar/RequestHandler.php": {
+    "action": "modified",
+    "sha256": "337eea3f6a0660ddda771de77f2eae7b744190157e1723b309759462f3e75298",
+    "bytes": 1411
+  },
+  "private/booking-sidecar/BookingPreviewReader.php": {
+    "action": "created",
+    "sha256": "9b38d6fc907377377bd10877ee5ad18b2d10cf6420121a5425421603ae57b41b",
+    "bytes": 914
+  },
+  "private/booking-sidecar/Dispatcher.php": {
+    "action": "modified",
+    "sha256": "9a4ad8692947cac03eccd2351bf6db945875cfd24368ee595eeb548cea480b20",
+    "bytes": 1255
+  },
+  "private/booking-sidecar/BookingPreviewRequest.php": {
+    "action": "created",
+    "sha256": "be46989871fd9b8c466888c8415a57fed155fde03de682293dde77ce6f7fcd6c",
+    "bytes": 788
+  },
+  "private/booking-sidecar/BookingPreviewResult.php": {
+    "action": "created",
+    "sha256": "77e66e91e82cae378841751f41e305ea85ed5f01b8e388410057b8422ba8570c",
+    "bytes": 502
+  },
+  "private/booking-sidecar/BookingPreviewAvailabilityQuery.php": {
+    "action": "created",
+    "sha256": "efe82ff0391bdc95e90082fc75e9f204ae4ae2b6e263236810dc8b934c1da25c",
+    "bytes": 429
+  },
+  "private/booking-sidecar/BookingPreviewSlotWindow.php": {
+    "action": "created",
+    "sha256": "afcf95a059d5725acedf89b01dd7360e13e656a75d450ee17b04dd5ae08467ff",
+    "bytes": 495
+  },
+  "private/booking-sidecar/BookingPreviewSlot.php": {
+    "action": "created",
+    "sha256": "f9e3154fd975bcc23eb1f98f7905fef2cdb0458c5e19170ce7927303a6bc7195",
+    "bytes": 636
+  },
+  "private/booking-sidecar/BookingPreviewModifiers.php": {
+    "action": "created",
+    "sha256": "213ccc0ab1d7bc5d27032785dff28dd6b286294a221ce13e363a082e3464399f",
+    "bytes": 454
+  },
+  "private/booking-sidecar/BookingPreviewSettings.php": {
+    "action": "created",
+    "sha256": "f9ba1f4ed702817e63d4ba51f68cc4eb5ea74ac15af305d2d3b94dbd08a34142",
+    "bytes": 320
+  },
+  "private/booking-sidecar/BookingPreviewSchedule.php": {
+    "action": "created",
+    "sha256": "d96981b64170cb51e88ecb4dec916e0c2fd9de9ed9a51cda008ecdddbe2cdc6d",
+    "bytes": 508
+  },
+  "private/booking-sidecar/BookingPreviewPrice.php": {
+    "action": "created",
+    "sha256": "921ab6ff8262d6c80689df714d7968f566915b797e865569db9707f7271bf0a4",
+    "bytes": 578
+  },
+  "private/booking-sidecar/BookingPreviewPlanner.php": {
+    "action": "created",
+    "sha256": "6bf080d710678f4edb80a3581837a6b5a14345cd46c74314134118a34e59ad49",
+    "bytes": 479
+  },
+  "private/booking-sidecar/BookingPreviewIntersection.php": {
+    "action": "created",
+    "sha256": "2efabb1cdbd28ca4651c60b74c8842ce11a2e3c67d0948fb9153c4afe722c3f5",
+    "bytes": 543
+  },
+  "private/booking-sidecar/BookingPreviewRateAssumptions.php": {
+    "action": "created",
+    "sha256": "84df1936936c003d8ac88a43ad9787275fcad78a2a12691ea1b161464c1b3477",
+    "bytes": 403
+  },
+  "private/booking-sidecar/BookingPreviewReadiness.php": {
+    "action": "created",
+    "sha256": "27db3d6f7012fdc98ceeea203c7ae67449ae94f7cf3145e2df586446eaa685a5",
+    "bytes": 293
+  },
+  "integration/tests/pass08_request_bad.php": {
+    "action": "created",
+    "sha256": "c85fdcff37559a693914faa2ef863ad78a2f4b4ade75c2f86996f81934c1b4c0",
+    "bytes": 897
+  },
+  "integration/tests/pass08_staff_missing.php": {
+    "action": "created",
+    "sha256": "12039b6e7ebd78523168d905023918cdc197a140de2c842146725efa7636549b",
+    "bytes": 691
+  },
+  "integration/tests/pass08_result_non_reservable.php": {
+    "action": "created",
+    "sha256": "f6dac69951847e5be2e5c5b9ed2275898c75ad10e777177bebe57fe032f46470",
+    "bytes": 956
+  },
+  "integration/tests/pass08_query_scoping.php": {
+    "action": "created",
+    "sha256": "beb6c606465bda931542a5b397f77800ea7a587b1b640e48f16cd4de8d9ac695",
+    "bytes": 1019
+  },
+  "integration/tests/pass08_slot_bounds.php": {
+    "action": "created",
+    "sha256": "f162bc694f80cce8648c4ab1b56a16aecc15c7cbc9b0334b48d063df98cebf82",
+    "bytes": 836
+  },
+  "integration/tests/pass08_price.php": {
+    "action": "created",
+    "sha256": "892dd5044d9bcc5402d36faadef183bc2d31bcdab03c9095ae129da3b21b8106",
+    "bytes": 1197
+  },
+  "integration/tests/pass08_limits.php": {
+    "action": "created",
+    "sha256": "77b063af7a1c29b35f719de1f4bbe045e08257927480be82cce0e4c1e2306f83",
+    "bytes": 946
+  },
+  "integration/tests/pass08_all_staff.php": {
+    "action": "created",
+    "sha256": "fd93cb960176ae556d7f3839229bd298eebd2b6ebcc9a722429800ac5ae6e9ae",
+    "bytes": 1028
+  },
+  "integration/tests/pass08_readiness.php": {
+    "action": "created",
+    "sha256": "7cee2f08e2310b4c55b2a646553d47edbe5f81f4ccd981fe5d407a039d8b136a",
+    "bytes": 717
+  },
+  "integration/tests/pass08_planner.php": {
+    "action": "created",
+    "sha256": "5e49add5e605493d5d6e7622a7b575ea1fdae7b618cf153289a5e07f44a0e09d",
+    "bytes": 1250
+  },
+  "integration/tests/pass08_slot_iso.php": {
+    "action": "created",
+    "sha256": "055b4a13ea832be5493afe7e48bf2c161ebee85e19183b42e2a3d736a20a188e",
+    "bytes": 689
+  },
+  "integration/tests/pass08_dispatch_contract.php": {
+    "action": "created",
+    "sha256": "db72cb33f9ffab02d4ef9372f933ab3054485650d0f6310bd7337c21ba5d0f55",
+    "bytes": 698
+  },
+  "integration/tests/pass08_modifiers.php": {
+    "action": "created",
+    "sha256": "1183f5d04e3d74806fe682202e68dd9644894269afd35bfc65e36ca13e33ef62",
+    "bytes": 747
+  },
+  "integration/tests/pass08_display.php": {
+    "action": "created",
+    "sha256": "25cdd0bcd8cb13ba829d84bb576f0a33756f06c16765b717f8e65696da702a04",
+    "bytes": 701
+  },
+  "integration/tests/pass08_request_valid.php": {
+    "action": "created",
+    "sha256": "0938a445675da08f7064f9b683ea8bc7ca1fd0c4f7d7638c20552f32e7d0d578",
+    "bytes": 879
+  },
+  "integration/tests/pass08_intersection.php": {
+    "action": "created",
+    "sha256": "708025f95a4171ba972defd0eec626776c09521cd3dadc58c474b83d0a3a0356",
+    "bytes": 729
+  },
+  "integration/tests/pass08_settings.php": {
+    "action": "created",
+    "sha256": "ea8843343ca79a7a42d0fca381ffaf50d9833f11505427eae1e644b12bccb0a0",
+    "bytes": 882
+  },
+  "integration/reports/pass08_report.json": {
+    "action": "created",
+    "sha256": "36156b52621588f9b7ccd53a7796b936f5e01bc7a5b2f5eba719f2325e94013f",
+    "bytes": 7961
+  }
+}

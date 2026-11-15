@@ -1,0 +1,64 @@
+{
+  "headline": "A better workplace starts here.",
+  "tagline": "Planned cleaning support that fits your operations and works around your people.",
+  "accent": "#176165",
+  "about": "Give customers and teams an environment that feels organised and well maintained. We tailor service scope and frequency to the site, business hours and access needs.",
+  "cta_label": "Request a tailored quote",
+  "cta_url": "#contact",
+  "contact_email": "",
+  "phone": "",
+  "seo_title": "Commercial cleaning",
+  "seo_description": "Planned cleaning support that fits your operations and works around your people.",
+  "services": [
+    {
+      "name": "Office and shared spaces",
+      "description": "Desks, breakout rooms, reception and communal areas kept presentation-ready."
+    },
+    {
+      "name": "Retail and customer areas",
+      "description": "Cleaning plans aligned with public-facing spaces and trading hours."
+    },
+    {
+      "name": "Amenities and washrooms",
+      "description": "Routine attention to high-traffic facilities and consumable touchpoints."
+    },
+    {
+      "name": "After-hours visits",
+      "description": "Discuss timing options designed to minimise workplace interruptions."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can visits be scheduled outside office hours?",
+      "answer": "Describe your trading hours when requesting a quote so suitable options can be discussed."
+    },
+    {
+      "question": "Do you support more than one location?",
+      "answer": "Provide the locations and service requirements so a practical plan can be assessed."
+    },
+    {
+      "question": "Can we customise a checklist?",
+      "answer": "Yes. A scope can be prepared around your priorities and premises."
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "team": [],
+  "service_areas": [
+    {
+      "name": "Local Commercial service areas",
+      "description": "Contact us to confirm availability for your suburb or neighbourhood."
+    }
+  ],
+  "promotions": [],
+  "blog_posts": [
+    {
+      "title": "Commercial cleaning preparation",
+      "summary": "A practical checklist before your appointment.",
+      "body": "Clear access to the work area, identify priority surfaces and discuss any delicate materials before cleaning begins.",
+      "slug": "commercial-preparation"
+    }
+  ],
+  "seo_image": "",
+  "analytics_consent": false
+}

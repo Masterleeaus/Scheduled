@@ -1,0 +1,15 @@
+{
+  "archive_integrity_ok": true,
+  "issues": [],
+  "migration_count": 274,
+  "notices": [
+    "Template catalogue is stored outside the expected optional directory; inspect manually",
+    "Historical Pass 58 provenance still unresolved; not automatically a release blocker if functionality is verified"
+  ],
+  "operational_gate": "NOT_TESTED",
+  "schema": "plusagency.release.preflight.v1",
+  "source": "/mnt/data/Master-Copy-PlusAgency-Cleanto-Pass17-CUMULATIVE.zip",
+  "source_file_count": 22738,
+  "source_gate": "PASS",
+  "template_json_candidates": 16
+}

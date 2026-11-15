@@ -1,0 +1,198 @@
+{
+  "pass": 22,
+  "baseline": "PlusAgency_Cleanto_Master_Pass21.zip",
+  "changed": [
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyAcceptanceRunner.php",
+      "operation": "modified",
+      "sha256": "3003d6292788c2415f5e4a55a2f6eb3dc1722997077342086e19bb6551b7e6f6",
+      "bytes": 1521
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyBookingReadback.php",
+      "operation": "added",
+      "sha256": "632f8a525cb3452ff1be4eacbb2cdcdd8e27db8b63537b633a3da8ff28b81e07",
+      "bytes": 633
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyDatabaseEvidence.php",
+      "operation": "added",
+      "sha256": "210439316f3dfc3847e3b8c69615cbd8d0470a7b3bd82380e20978a9f5f373aa",
+      "bytes": 587
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyDeadline.php",
+      "operation": "added",
+      "sha256": "af29e9cee4aadb55694cf51cae00c9b88870c500ed222d971bc9681ad395ae34",
+      "bytes": 409
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyEvidencePreflight.php",
+      "operation": "added",
+      "sha256": "c17fcc554b4ac38a7ac134e9f75a59925513c85d8ea50b9694cfd84d2c89ef56",
+      "bytes": 467
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyEvidenceReport.php",
+      "operation": "added",
+      "sha256": "d029ad2533387792d10a4b5834efa829f2e0f6118891bc11169a08bf7be3f085",
+      "bytes": 387
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyFailureCategory.php",
+      "operation": "added",
+      "sha256": "eecc69bd229d71b93700510a06c18d5426222ae3cb0e2de95a5f5e69badbe1e1",
+      "bytes": 359
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyFixtureIdentity.php",
+      "operation": "added",
+      "sha256": "95ad0daaa4da3acd5295bfc6d1986418798ae4f843417b768915187e64278442",
+      "bytes": 1007
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyOutcome.php",
+      "operation": "modified",
+      "sha256": "f39200bb778fcb9ef2ebe03e87640fbc6001a78e9c1be1d0ff785e7cf4a9194d",
+      "bytes": 881
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyOutcomeEvidence.php",
+      "operation": "added",
+      "sha256": "d49a0daeaf260d14c7462427151ca6e1129c1119b60a8b05179a5b50e7d1c3f4",
+      "bytes": 450
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyProcess.php",
+      "operation": "modified",
+      "sha256": "b8b31f4971c7986f3e8dddfaf75105bed1500895b16fb63726caebc69c8c16e8",
+      "bytes": 2055
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyProcessOutput.php",
+      "operation": "added",
+      "sha256": "aea943bde9cb2c34a1d476dbd3de921e18e4e7dcc42f8e9793c20bf09448bb2c",
+      "bytes": 328
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyReadbackPolicy.php",
+      "operation": "added",
+      "sha256": "d364e7e559faafd5f82e669366ad74faa7bf69985fe01acd25c4f7c5d0a7e7c9",
+      "bytes": 899
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyResultGuard.php",
+      "operation": "added",
+      "sha256": "122807e7c4839d004baec8b6dd67c0f24ff4c2d759617f7baa14dc881c166a90",
+      "bytes": 382
+    },
+    {
+      "path": "integration/mysql/lifecycle/ConcurrencyWorkerExit.php",
+      "operation": "added",
+      "sha256": "d6b6104fd41152ae8820b97077a6f2fecf5b78e9126aeb43339daf8e190c8459",
+      "bytes": 346
+    },
+    {
+      "path": "integration/tests/pass22_deadline_bounds.php",
+      "operation": "added",
+      "sha256": "7c8c2231e41e2512a693de96fd84c28da7701c48c83bad41f7d6c8efd65d597d",
+      "bytes": 561
+    },
+    {
+      "path": "integration/tests/pass22_deadline_expiry.php",
+      "operation": "added",
+      "sha256": "fb10980eeeea2eb87f3ef04270af7e48b39efa1efc27ca2e26cdd67f0ec78445",
+      "bytes": 500
+    },
+    {
+      "path": "integration/tests/pass22_evidence_report.php",
+      "operation": "added",
+      "sha256": "4f03c5d96de1e523a04bafd2a6d2ed8cbec1cabbcc7a71bd1bc8462108f8ca84",
+      "bytes": 564
+    },
+    {
+      "path": "integration/tests/pass22_evidence_report_missing.php",
+      "operation": "added",
+      "sha256": "5c7f85581b6cdc1b6d475d0a6a1cfc8d64d9382998f57d31239252ef41f25089",
+      "bytes": 512
+    },
+    {
+      "path": "integration/tests/pass22_failure_category.php",
+      "operation": "added",
+      "sha256": "e4dc3ad5dec85888db32b66a97531ee7c1017b89595ade07b13f85182796e75d",
+      "bytes": 598
+    },
+    {
+      "path": "integration/tests/pass22_fixture_identity.php",
+      "operation": "added",
+      "sha256": "1fb48cc2684c25793383dbbe194eedee54dab4d25cfd74bc80c1584f7e732108",
+      "bytes": 507
+    },
+    {
+      "path": "integration/tests/pass22_fixture_identity_duplicate.php",
+      "operation": "added",
+      "sha256": "6f25d6873172e8722e32c5b9c51870d8d3a9a850179e37872c1f5ee355d21f30",
+      "bytes": 520
+    },
+    {
+      "path": "integration/tests/pass22_outcome_evidence.php",
+      "operation": "added",
+      "sha256": "efb06fea06dc329e5b2875c493c070438109a0fa4908d0537def1c5e1434a42a",
+      "bytes": 567
+    },
+    {
+      "path": "integration/tests/pass22_outcome_evidence_reject.php",
+      "operation": "added",
+      "sha256": "fd4341d3d2a058b6d68df218e5aff8ba9a72e3c7501492d4e42b13e3db743816",
+      "bytes": 543
+    },
+    {
+      "path": "integration/tests/pass22_outcome_failure_misclassification.php",
+      "operation": "added",
+      "sha256": "ab18df3706de6fbdba75c941380cd1ed9a465b7d17d68d6fadb3c43d2a4e9f9c",
+      "bytes": 587
+    },
+    {
+      "path": "integration/tests/pass22_process_output_limit.php",
+      "operation": "added",
+      "sha256": "6d46985aaceb9f189064f902769593ef2da3287f928df2c4a5ebc062a116b346",
+      "bytes": 557
+    },
+    {
+      "path": "integration/tests/pass22_readback_policy_valid.php",
+      "operation": "added",
+      "sha256": "b066ea5680248dfadb47a3e7d784e6128a85216698febc358e1a8e3d56fd9074",
+      "bytes": 603
+    },
+    {
+      "path": "integration/tests/pass22_readback_policy_wrong_staff.php",
+      "operation": "added",
+      "sha256": "3b82aa40e16d8b253d8116b886f2f9ac81c88605991d9ea86f3cb5dc28806ff7",
+      "bytes": 630
+    },
+    {
+      "path": "integration/tests/pass22_readback_policy_wrong_time.php",
+      "operation": "added",
+      "sha256": "536387018fe0b140a33c60570c0a807d4063df651124d5b3d16b6bd0d9ccbe54",
+      "bytes": 635
+    },
+    {
+      "path": "integration/tests/pass22_result_guard.php",
+      "operation": "added",
+      "sha256": "d965b7786b91fe968d727fb17eb47a9dae0914f832f869d639becc521bc02299",
+      "bytes": 539
+    },
+    {
+      "path": "integration/tests/pass22_worker_exit_ok.php",
+      "operation": "added",
+      "sha256": "5c47c8d559968048dbbba7149a5878b8feb739d12afd46529ce3f47c08b987d5",
+      "bytes": 499
+    }
+  ],
+  "deleted": [],
+  "php_regression": {
+    "passed": 342,
+    "failed": 0
+  },
+  "live_mysql": "skipped"
+}

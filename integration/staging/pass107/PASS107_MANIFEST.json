@@ -1,0 +1,33 @@
+{
+  "pass": 107,
+  "base": "PlusAgency_Cleanto_Recovery_Candidate_Pass106_BLOCKED_PASS58_MARIADB.zip",
+  "added": [
+    "integration/staging/pass107/ledger_and_schedule_audit.py",
+    "integration/staging/pass107/native_schedule_source.php",
+    "integration/staging/pass107/README.md",
+    "integration/staging/pass107/PASS107_REPORT.md",
+    "integration/staging/pass107/test_pass107.py"
+  ],
+  "modified": [
+    "integration/staging/pass106/build_review_bundle.py"
+  ],
+  "deleted": [],
+  "sha256": {
+    "integration/staging/pass107/ledger_and_schedule_audit.py": "bacb44c1fc2c8c1ef6415ec3f7bce9dd7e34e1efae8600d6178a9fe1fdd643ca",
+    "integration/staging/pass107/native_schedule_source.php": "f0917d6b245176c56b186898501e8eeaabd840d081d6c86f40f9fa883e40baab",
+    "integration/staging/pass107/README.md": "85ba87b9389ce8e32cbca5420900cf4e2284c499a71c89ea0e35ed9792999e73",
+    "integration/staging/pass107/PASS107_REPORT.md": "947e2cc21f3c2f5520f228f93d4815a332880f32b10c8795971fe0605ca06e33",
+    "integration/staging/pass107/test_pass107.py": "49c5bcd0666c7d7775e98f057814c1d108a2f7a83ba79c1c86e156e7de1a84d6",
+    "integration/staging/pass106/build_review_bundle.py": "ad3f277af601c61648c8bc3939898fc085321b339e1ac38f0bc13f80ae975a9f"
+  },
+  "checks": {
+    "pass107_assertions": 102,
+    "pass106_regression": "Pass 106: 12 schema/fixture/safety assertions passed",
+    "mariadb_executed": false
+  },
+  "blockers": [
+    "Pass 58 missing",
+    "No MariaDB runtime",
+    "No live booking transaction"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "pass": 88,
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass87_BLOCKED_PASS58_MARIADB.zip",
+  "changes": [
+    {
+      "path": "PASS88_MANIFEST.json",
+      "sha256": "4f8a3206a81851aff3ac5ff39433e8ea7bcc878ba4be49e9bd0fb674610e950a",
+      "size": 1812
+    },
+    {
+      "path": "PASS88_REPORT.md",
+      "sha256": "9be0ab3325f0c2fa3ee5fdb0363eef19fb7fb0421485c85d75986ee681129650",
+      "size": 1226
+    },
+    {
+      "path": "assets/front/js/titan-booking-widget.js",
+      "sha256": "4dad26ebcb9ca40382be4adf61e7e75a224a968ebc0c439bd534404874844610",
+      "size": 9748
+    },
+    {
+      "path": "core/app/Booking/Public/Checkout/CheckoutCustomer.php",
+      "sha256": "a87044b70a9a4b0fab0b3bc1716c7fcbb4c8f3c40c6bac2736a3a55d1ea3f249",
+      "size": 1993
+    },
+    {
+      "path": "core/app/Booking/Public/Checkout/CheckoutRequest.php",
+      "sha256": "6430eb41c388dc9125aff910254afbfe09691279c0ee0d40a2990cdcb1f2dd62",
+      "size": 556
+    },
+    {
+      "path": "core/app/Http/Controllers/Front/BookingPublicCheckoutController.php",
+      "sha256": "1527c94585f88800b94645e69bd05dc37bc84b649644ecc9a264166840104dc7",
+      "size": 2543
+    },
+    {
+      "path": "core/resources/views/front/partials/titan-booking-widget.blade.php",
+      "sha256": "b9396faaf2a20aa8cd532d2a909dc75ef35886f9f9db9879fd93705f03a132e9",
+      "size": 3851
+    },
+    {
+      "path": "core/routes/web.php",
+      "sha256": "fc67272636875d527a981c9701ca8a8fe436641a7fa3257934ca666d70b5624f",
+      "size": 100812
+    },
+    {
+      "path": "core/tests/Booking/pass88_checkout_contract_test.js",
+      "sha256": "9c496a990ddd5d73d816c109765a27e483dc81b3a9c5ca3efb876134860da830",
+      "size": 1151
+    },
+    {
+      "path": "core/tests/Booking/pass88_checkout_validation_test.php",
+      "sha256": "6f1e8dc2e8d4030dfd8c152c7446596a6bc33b3239f0a06905380953dbaec641",
+      "size": 1306
+    }
+  ],
+  "status": "MariaDB and missing Pass58 still blocking release"
+}

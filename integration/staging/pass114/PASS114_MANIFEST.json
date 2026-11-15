@@ -1,0 +1,37 @@
+{
+  "pass": 114,
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass113_BLOCKED_PASS58_MARIADB.zip",
+  "status": "RECOVERY_CANDIDATE_DB_BLOCKED_PASS58",
+  "changed_files": [
+    {
+      "path": "integration/staging/pass113/LiveSeedContract.php",
+      "action": "modified",
+      "old_sha256": "b493d6c688518871536a25f7dc2fc5700cf367f797581081e365afa40977bc8a",
+      "new_sha256": "2f50f7f50bb731a2dc243c7a0c32970e92db1a5e1abacd8730eff97bd2972ccd",
+      "bytes": 2320
+    },
+    {
+      "path": "integration/staging/pass113/live_probe.php",
+      "action": "modified",
+      "old_sha256": "8f8e0fe1e13be6b5346fd1ac486c6ebbddb623db3d5a26c1f43e75651556f749",
+      "new_sha256": "06297ef9822a6f3da542137a292ffaee207529c40ea3d8a4052807a1cca7fc65",
+      "bytes": 4054
+    },
+    {
+      "path": "integration/staging/pass113/test_live_contract.php",
+      "action": "modified",
+      "old_sha256": "a57f6af55b30f5d899427abf6d76a4da5d4e7c3d96474c673c1d5852acf37d99",
+      "new_sha256": "8fa1d5fa2a42d2958cbbb2f717c9dc33a5ffa5b456573d687a5d7aa18a0d1964",
+      "bytes": 2283
+    },
+    {
+      "path": "integration/staging/pass114/PASS114_REPORT.md",
+      "action": "added",
+      "old_sha256": null,
+      "new_sha256": "269bc2bac1decc2b507a0a8e6efeb3384bc83a9049bf86f7f577d4c462590c82",
+      "bytes": 1700
+    }
+  ],
+  "real_mariadb": false,
+  "browser_checkout": false
+}

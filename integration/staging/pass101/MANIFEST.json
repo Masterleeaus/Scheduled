@@ -1,0 +1,24 @@
+{
+  "pass": 101,
+  "base": "Pass100 cumulative recovery candidate",
+  "role": "staging integration delivery; not live MariaDB acceptance",
+  "files": {
+    "integration/staging/pass101/compose.yaml": "827fd629e43483c5b548227e7b1eea3d932d93054f517656db43a3951ed66750",
+    "integration/staging/pass101/PASS101_REPORT.md": "ec45888394740e7a084c7f4bf9a20a6da735c2d7a4cffd6dde335ef791c6ff4f",
+    "integration/staging/pass101/acceptance.sh": "94df8b197f118ce05115e1109ab8a89796951bd3972ef6e9020caae57a6e36bb",
+    "integration/staging/pass101/Dockerfile": "135f9f4d451850c637d06f46d25e74ea6741d4bdeed85986d90289dd4270c755",
+    "integration/staging/pass101/run.sh": "e2853754386d0e546b4ed077806c70d35bbc80cd1d8429e1dfa753b58a1748ec",
+    "integration/staging/pass101/README.md": "7523ab29658ce59da48b71e4d54ce7797ccbfe429287f9fedb4e114fffac3f82",
+    "integration/staging/pass101/tests/check_contract.php": "f9105a35f62deab5c64f11fc474742e9451e2bab9c37e167509854fbda318cc7"
+  },
+  "tests": {
+    "staging_contract": "19/19 PASS",
+    "bash_syntax": "PASS",
+    "mariadb_booking": "NOT RUN"
+  },
+  "blockers": [
+    "missing Pass58 lineage",
+    "no Docker/MariaDB runtime on local host",
+    "missing reviewed Cleanto schema and synthetic fixtures"
+  ]
+}

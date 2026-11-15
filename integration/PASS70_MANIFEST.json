@@ -1,0 +1,97 @@
+{
+  "baseline": "PlusAgency_Cleanto_Recovery_Candidate_Pass69_BLOCKED_PASS58_MARIADB.zip",
+  "pass": 70,
+  "status": "recovery_candidate_missing_pass58_no_db_acceptance",
+  "changed": [
+    {
+      "path": "integration/PASS70_REPORT.md",
+      "action": "added",
+      "sha256": "0055b5ce608aadff5207e5930f9f5e7cc4c0bd5f743557e0bb8183ef08a16433",
+      "bytes": 1543
+    },
+    {
+      "path": "integration/tests/pass70/01_shared_deadline.php",
+      "action": "added",
+      "sha256": "27b0b2840b10bcca54fb838db475cbec646b253954c6f82837f98b0e92f9a879",
+      "bytes": 440
+    },
+    {
+      "path": "integration/tests/pass70/02_expired_deadline_cleanup.php",
+      "action": "added",
+      "sha256": "aebce4f36b9e8100c9ef54f5107cbc8a34f213b2ee98a84cca01ce9c46b4bd09",
+      "bytes": 396
+    },
+    {
+      "path": "integration/tests/pass70/03_short_budget.php",
+      "action": "added",
+      "sha256": "a65c4fcba021b853cff334bfe1b8c71f5b25c572c538db0daf21dd71f568b4a5",
+      "bytes": 365
+    },
+    {
+      "path": "integration/tests/pass70/04_local_cap.php",
+      "action": "added",
+      "sha256": "4c050be32cbce7231412379defbdb42081c77c998f61d5b1e66fa891d6638eba",
+      "bytes": 357
+    },
+    {
+      "path": "integration/tests/pass70/05_bad_deadline.php",
+      "action": "added",
+      "sha256": "b61b1b4d914843a658075f67c7d9ac957ffb942d573ef27b7b95ebeec5bdf8ab",
+      "bytes": 340
+    },
+    {
+      "path": "integration/tests/pass70/06_zero_timeout.php",
+      "action": "added",
+      "sha256": "73e6a0c28c732c7c158739e08ba74a18a190603f4323377bd2e2642997de8cc1",
+      "bytes": 320
+    },
+    {
+      "path": "integration/tests/pass70/07_failure_releases_previous.php",
+      "action": "added",
+      "sha256": "0003919d3bd583bd4bbdd6682896aec62e967e3237e443280d160a8c77b60ca0",
+      "bytes": 430
+    },
+    {
+      "path": "integration/tests/pass70/08_existing_held_skipped.php",
+      "action": "added",
+      "sha256": "e69ef0cd4a909d9ceabbaf67faf3f506a7fba1bbc606fc25e13f0f23e5163574",
+      "bytes": 364
+    },
+    {
+      "path": "integration/tests/pass70/09_reschedule_contract.php",
+      "action": "added",
+      "sha256": "1bd1b02326d78145b999f4933d65da7cfa5ebf5a5ae4cc0569fb918e060c70d1",
+      "bytes": 465
+    },
+    {
+      "path": "integration/tests/pass70/10_cancellation_unchanged.php",
+      "action": "added",
+      "sha256": "03eda4675798bba4cd3e2ce86b1044059716f51bc78ba878a601bdf6acbea8eb",
+      "bytes": 370
+    },
+    {
+      "path": "integration/tests/pass70/bootstrap.php",
+      "action": "added",
+      "sha256": "8080fcd3a205f1e4265de8311c920d342cf5d494376cf01bffef6b3077d89d26",
+      "bytes": 1155
+    },
+    {
+      "path": "private/booking-sidecar/BookingLockManager.php",
+      "action": "modified",
+      "sha256": "463b6dd5372d926c8a44a11435cd413cb69b6e32f3555de6e57d7148fe4e52b6",
+      "bytes": 3303
+    },
+    {
+      "path": "private/booking-sidecar/BookingRescheduleCoordinator.php",
+      "action": "modified",
+      "sha256": "21a6e588ba62ab27e15a29c259b335fcec685da8466319203bd1b3df8f50cec0",
+      "bytes": 3357
+    }
+  ],
+  "verification": {
+    "new_tests": 10,
+    "existing_tests": 6,
+    "php_lint": 13,
+    "database": "not run"
+  }
+}
