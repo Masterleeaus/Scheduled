@@ -48,7 +48,7 @@ jobs:
         run: |
           git fetch origin main
           python - <<'PY'
-          import os, pathlib, zipfile, subprocess
+          import os, pathlib, zipfile, subprocess, hashlib
           archive=pathlib.Path(os.environ['RUNNER_TEMP'])/'pass56/Master-Copy-PlusAgency-Cleanto-Pass56-DATABASE-IDENTITY-CUMULATIVE.zip'
           tree=subprocess.check_output(['git','ls-tree','-r','-z','origin/main'])
           blobs={}
