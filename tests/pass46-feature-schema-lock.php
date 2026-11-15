@@ -17,8 +17,8 @@ namespace {
  use Illuminate\Support\Facades\Schema;
  $dir=__DIR__.'/../core/database/migrations';
  $files=M::files($dir);
- if(count($files)!==20) exit(1);
- // Every 2026 migration on disk must be listed exactly once, and the list must match the disk.
+ if(count($files)!==21) exit(1);
+ // Every 2126 migration on disk must be listed exactly once, and the list must match the disk.
  $ref=new ReflectionClassConstant(M::class,'REQUIRED_MIGRATIONS');
  $required=$ref->getValue();
  $disk=array_map(fn($f)=>basename($f,'.php'), glob($dir.'/2026_*.php'));
@@ -37,5 +37,5 @@ namespace {
  unlink($tmp.'/'.basename(reset($files)));
  try {M::files($tmp);exit(5);} catch(\RuntimeException $e) {}
  foreach(glob($tmp.'/*') as $f) unlink($f); rmdir($tmp);
- echo "PASS: exact 20 migrations, all tables, altered columns, rejects unexpected and missing migrations\n";
+ echo "PASS: exact 21 migrations, all tables, altered columns, rejects unexpected and missing migrations\n";
 }
