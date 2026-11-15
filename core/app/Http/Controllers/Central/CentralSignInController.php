@@ -62,7 +62,7 @@ class CentralSignInController extends Controller
         }
 
         try {
-            $localUserId = $links->localUserId($verified['iss'], $verified['sub']);
+            $localUserId = $links->localUserId($verified['iss'], $verified['sub'], $verified['organisationId']);
             $user = $localUserId === null ? null : User::find($localUserId);
         } catch (\Throwable $e) {
             // Missing migrations or unavailable database must never bypass verified link lookup.

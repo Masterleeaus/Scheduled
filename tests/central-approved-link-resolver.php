@@ -17,20 +17,25 @@ $check = static function (bool $condition, string $message) use (&$checks): void
 };
 $lookups = [];
 $resolver = new DatabaseCentralUserLinkResolver(
-    static function (string $issuerDigest, string $subjectDigest) use (&$lookups): string {
-        $lookups[] = [$issuerDigest, $subjectDigest];
+    static function (string $issuerDigest, string $subjectDigest, string $org) use (&$lookups): string {
+        $lookups[] = [$issuerDigest, $subjectDigest, $org];
         return '42';
     }
 );
-$check($resolver->localUserId('https://central.example.test', 'subject-1') === 42, 'approved local user mapped');
-$check($lookups[0] === [hash('sha256', 'https://central.example.test'), hash('sha256', 'subject-1')], 'verified claims alone form the key');
-$check($resolver->localUserId('', 'subject-1') === null, 'empty issuer denied');
-$check($resolver->localUserId('https://central.example.test', '') === null, 'empty subject denied');
+$check($resolver->localUserId('https://central.example.test', 'subject-1', '0f8fad5b-d9cb-469f-a165-70867728950e') === 42, 'approved local user mapped');
+$check($lookups[0] === [hash('sha256', 'https://central.example.test'), hash('sha256', 'subject-1'), '0f8fad5b-d9cb-469f-a165-70867728950e'], 'verified claims alone form the key');
+$check($resolver->localUserId('', 'subject-1', '0f8fad5b-d9cb-469f-a165-70867728950e') === null, 'empty issuer denied');
+$check($resolver->localUserId('https://central.example.test', '', '0f8fad5b-d9cb-469f-a165-70867728950e') === null, 'empty subject denied');
 $check(count($lookups) === 1, 'invalid claims never reach storage');
+$check($lookups[0][2] === '0f8fad5b-d9cb-469f-a165-70867728950e', 'verified company is part of the lookup');
+$check($resolver->localUserId('issuer', 'subject', '') === null, 'missing verified company denied');
+$check($resolver->localUserId('issuer', 'subject', 'other-company') === null, 'untrusted company identifier denied');
+$check(count($lookups) === 1, 'invalid company never reaches storage');
+
 $denied = new DatabaseCentralUserLinkResolver(static fn () => null);
-$check($denied->localUserId('issuer', 'subject') === null, 'missing or revoked link denied');
+$check($denied->localUserId('issuer', 'subject', '0f8fad5b-d9cb-469f-a165-70867728950e') === null, 'missing or revoked link denied');
 foreach ([0, -1, '1.2', 'x@y.test', [], false] as $invalid) {
     $resolver = new DatabaseCentralUserLinkResolver(static fn () => $invalid);
-    $check($resolver->localUserId('issuer', 'subject') === null, 'nonpositive or malformed local id denied');
+    $check($resolver->localUserId('issuer', 'subject', '0f8fad5b-d9cb-469f-a165-70867728950e') === null, 'nonpositive or malformed local id denied');
 }
 echo "{$checks}/{$checks} Central approved account-link checks passed".PHP_EOL;
