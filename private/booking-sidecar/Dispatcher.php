@@ -15,6 +15,8 @@ final class Dispatcher {
   if($operation==='booking_preview_capabilities')return BookingPreviewReadiness::response();
   if($operation==='booking_preview')return (new BookingPreviewReader($this->db,$this->tenantConfig['verified_pricing_settings']??[]))->preview($payload);
   if($operation==='health')return ['booking_database'=>'connected','booking_writes_enabled'=>BookingWriteFeatureGate::enabled($this->tenantConfig),'capabilities'=>BookingOperationStatus::forTenant($this->tenantConfig),'release_requirements'=>BookingTenantMutationDocumentation::requirements()];
+  // Contract lifecycle names: routed to the owner-gated coordinators only when the flags are on; otherwise unsupported (default off).
+  if(BookingLifecycleGate::handles($operation)&&BookingLifecycleGate::enabled($this->tenantConfig)){BookingLifecycleSubmissionSafety::assertSafe($payload);return (new BookingOwnerOperations($this->db,$this->tenantConfig))->dispatch(BookingLifecycleGate::ownerOperation($operation),$payload);}
   if(in_array($operation,['owner_booking_list','owner_booking_get','owner_booking_create','owner_booking_cancel','owner_booking_reschedule'],true))return (new BookingOwnerOperations($this->db,$this->tenantConfig))->dispatch($operation,$payload);
   throw new \InvalidArgumentException('Unsupported booking operation');
  }

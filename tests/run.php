@@ -456,6 +456,8 @@ foreach ($readNames as $name) {
     check(in_array($name, $declared, true), "env template: {$name} is read by CentralConfig but missing from core/.env.example");
 }
 
+require_once __DIR__.'/booking_event_outbox_test.php';
+
 // --- Report -----------------------------------------------------------------
 $total = $passed + count($failures);
 foreach ($failures as $label) {
