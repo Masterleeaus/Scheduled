@@ -38,8 +38,8 @@ final class DatabaseCentralUserLinkResolverTest extends TestCase
         $resolver = new DatabaseCentralUserLinkResolver($lookup);
         self::assertNull($resolver->localUserId('', 'sub', '0f8fad5b-d9cb-469f-a165-70867728950e'));
         self::assertNull($resolver->localUserId('issuer', '', '0f8fad5b-d9cb-469f-a165-70867728950e'));
-        self::assertNull($resolver->localUserId(str_repeat('i', 2049), 'sub'));
-        self::assertNull($resolver->localUserId('issuer', str_repeat('s', 2049)));
+        self::assertNull($resolver->localUserId(str_repeat('i', 2049), 'sub', '0f8fad5b-d9cb-469f-a165-70867728950e'));
+        self::assertNull($resolver->localUserId('issuer', str_repeat('s', 2049), '0f8fad5b-d9cb-469f-a165-70867728950e'));
     }
 
     public function test_malformed_local_ids_are_not_accepted(): void
@@ -55,7 +55,7 @@ final class DatabaseCentralUserLinkResolverTest extends TestCase
     public function test_issuer_and_subject_are_not_normalised_into_another_identity(): void
     {
         $digests = [];
-        $resolver = new DatabaseCentralUserLinkResolver(static function ($issuer, $subject) use (&$digests) {
+        $resolver = new DatabaseCentralUserLinkResolver(static function ($issuer, $subject, $org) use (&$digests) {
             $digests[] = [$issuer, $subject];
             return null;
         });
