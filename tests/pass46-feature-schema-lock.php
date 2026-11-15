@@ -17,7 +17,13 @@ namespace {
  use Illuminate\Support\Facades\Schema;
  $dir=__DIR__.'/../core/database/migrations';
  $files=M::files($dir);
- if(count($files)!==18) exit(1);
+ if(count($files)!==20) exit(1);
+ // Every 2026 migration on disk must be listed exactly once, and the list must match the disk.
+ $ref=new ReflectionClassConstant(M::class,'REQUIRED_MIGRATIONS');
+ $required=$ref->getValue();
+ $disk=array_map(fn($f)=>basename($f,'.php'), glob($dir.'/2026_*.php'));
+ if(count($required)!==count(array_unique($required))) exit(6);
+ if(array_diff($disk,$required)!==[] || array_diff($required,$disk)!==[]) exit(7);
  DB::$installed=array_keys($files); M::verify($dir);
  Schema::$missingTable='booking_request_keys';
  try {M::verify($dir);exit(2);} catch(\RuntimeException $e) {} Schema::$missingTable='';
@@ -31,5 +37,5 @@ namespace {
  unlink($tmp.'/'.basename(reset($files)));
  try {M::files($tmp);exit(5);} catch(\RuntimeException $e) {}
  foreach(glob($tmp.'/*') as $f) unlink($f); rmdir($tmp);
- echo "PASS: exact 18 migrations, all tables, altered columns, rejects unexpected and missing migrations\n";
+ echo "PASS: exact 20 migrations, all tables, altered columns, rejects unexpected and missing migrations\n";
 }
