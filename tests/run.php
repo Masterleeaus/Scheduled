@@ -290,12 +290,24 @@ function bookingRefusal(string $operation): ?string
 }
 $bookingConfig['booking_internal.contract_operations_enabled'] = false;
 foreach (['booking_create', 'booking_cancel', 'booking_reschedule'] as $contract) {
-    check(bookingRefusal($contract) === 'Unsupported booking operation', "booking client: {$contract} refused while flag off");
+    check(bookingRefusal($contract) === 'Booking contract writes must go through BookingOwnerGateway', "booking client: {$contract} refused without gateway while flag off");
 }
 $bookingConfig['booking_internal.contract_operations_enabled'] = true;
 foreach (['booking_create', 'booking_cancel', 'booking_reschedule'] as $contract) {
-    // Flag on: passes the allowlist and stops at the (unconfigured) endpoint check, before any HTTP call.
-    check(bookingRefusal($contract) === 'Private booking endpoint not configured', "booking client: {$contract} admitted when flag on");
+    // Flag on still refuses: contract writes never reach the sidecar without BookingOwnerGateway routing.
+    check(bookingRefusal($contract) === 'Booking contract writes must go through BookingOwnerGateway', "booking client: {$contract} refused without gateway while flag on");
+}
+$gatewayRefusal = static function (string $operation): ?string {
+    try {
+        (new App\Booking\BookingOwnerGateway(new App\Booking\BookingTenantRegistry(), new App\Booking\InternalBookingClient()))->call(1, $operation, []);
+    } catch (InvalidArgumentException $e) {
+        return $e->getMessage();
+    }
+
+    return null;
+};
+foreach (['booking_create', 'booking_cancel', 'booking_reschedule'] as $contract) {
+    check($gatewayRefusal($contract) === 'Unsupported operation', "booking gateway: {$contract} is not a gateway operation");
 }
 check(bookingRefusal('booking_delete_all') === 'Unsupported booking operation', 'booking client: unknown operation still refused with flag on');
 check(bookingRefusal('owner_booking_cancel_all') === 'Unsupported booking operation', 'booking client: near-miss operation still refused');

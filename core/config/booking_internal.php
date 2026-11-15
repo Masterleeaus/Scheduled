@@ -4,7 +4,8 @@ return [
  'secret'=>env('BOOKING_INTERNAL_SECRET',''),
  // Booking writes are tenant-sidecar settings; this Laravel layer cannot enable them.
  'owner_booking_management'=>env('BOOKING_OWNER_MANAGEMENT',true),
- // Off by default: admits the contract names booking_create/booking_cancel/booking_reschedule to the internal client.
+ // Reserved, default off, and currently inert: InternalBookingClient refuses booking_create/booking_cancel/booking_reschedule
+ // whatever this value is, because BookingOwnerGateway has no route for them. Do not enable without gateway routing.
  'contract_operations_enabled'=>env('BOOKING_CONTRACT_OPERATIONS_ENABLED',false),
  // Owner-initiated booking_create is off unless explicitly enabled in deployment config.
  // The sidecar additionally requires per-tenant verified write flags (BookingWriteFeatureGate).
