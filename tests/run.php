@@ -341,6 +341,17 @@ check($durable->claim('scheduled', 'key-a', $eid) === false, 'db store: claim su
 $dbConsumer = new EventConsumer(new SignedEventVerifier($secret), $store, 'scheduled', ['example.v1' => $handler], $orgId);
 $dbBody = signedBody(array_merge($base, ['idempotencyKey' => 'k-db']), $secret);
 check($dbConsumer->handle($dbBody, $nowOk) === 'processed' && $dbConsumer->handle($dbBody, $nowOk) === 'duplicate', 'db store: consumer replay protection through the database');
+// --- Env template: every variable CentralConfig reads must be declared in core/.env.example ---
+$configSource = (string) file_get_contents(dirname(__DIR__).'/core/app/Central/Config/CentralConfig.php');
+$template = (string) file_get_contents(dirname(__DIR__).'/core/.env.example');
+preg_match_all("/(?:required|lookup)\\(\\s*'([A-Z][A-Z0-9_]*)'\\s*\\)/", $configSource, $readMatches);
+$readNames = array_values(array_unique($readMatches[1]));
+preg_match_all('/^([A-Z][A-Z0-9_]*)=/m', $template, $templateMatches);
+$declared = $templateMatches[1];
+check(count($readNames) >= 9, 'env template: CentralConfig read set was found by the scan');
+foreach ($readNames as $name) {
+    check(in_array($name, $declared, true), "env template: {$name} is read by CentralConfig but missing from core/.env.example");
+}
 
 // --- Report -----------------------------------------------------------------
 $total = $passed + count($failures);
