@@ -12,7 +12,7 @@ use RuntimeException;
 final class LegacySqlImporter
 {
     /** Marker in installer/database.sql where the PayUmoney salt belongs. */
-    public const PAYUMONEY_SALT_PLACEHOLDER = '__PAYUMONEY_SALT__';
+    public const PAYUMONEY_SALT_PLACEHOLDER = '<PAYUMONEY_SALT>';
 
     /** Environment variable that supplies the PayUmoney salt at install time. */
     public const PAYUMONEY_SALT_ENV = 'PAYUMONEY_SALT';
