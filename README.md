@@ -1,75 +1,71 @@
-# Scheduled
+# ScheduledAt.Work — bookings, websites and landing pages
 
-> **Titan Zero suite:** ScheduledAt.Work is the bookings, websites and landing pages app upgrade. It is available with every Titan Zero plugin, alongside the AI Assistant and AI Agent Team upgrades and the other three app upgrades (SuperchargedAt.Work, SkilledAt.Work and SortedAt.Work). The description below is the repository's existing text and is pending review against that role.
+**Repository:** `Masterleeaus/Scheduled` · **Application:** ScheduledAt.Work · **Maintained architecture review:** 18 November 2026
 
+Scheduled is Titan Zero's service-business **booking and website-building application**. It combines the imported PlusAgency website/page-builder platform and Cleanto's scheduling capabilities. The **target** is one Laravel application, one booking/calendar authority and Central-backed company identity. The source currently contains legacy installer and database assumptions; being committed to `main` is **not** proof that the integrated system is production-ready.
 
-Scheduled combines the PlusAgency website platform with the Cleanto booking system in one Laravel codebase.
+## What Scheduled is responsible for
 
-The complete cumulative application source is committed to `main`. The archive import was verified against all 22,919 supplied files before the uploaded ZIP was removed. Historical pass reports and manifests have been removed from the repository root; earlier revisions remain available in Git history.
+| Area | Intended capability | Delivery distinction |
+| --- | --- | --- |
+| Booking | Services, staff, locations, calendars, availability, holds, atomic booking, rescheduling, cancellation and waitlists | Existing imported functionality requires full lifecycle and concurrency acceptance ([#46](https://github.com/Masterleeaus/Scheduled/issues/46), [#47](https://github.com/Masterleeaus/Scheduled/issues/47), [#58](https://github.com/Masterleeaus/Scheduled/issues/58)) |
+| Commerce | Deposits, checkout, payment callbacks, refunds and recovery | Provider signing, idempotency and sandbox tests are outstanding ([#64](https://github.com/Masterleeaus/Scheduled/issues/64)) |
+| Websites | Business websites, landing pages, templates, editor, publishing and lead capture | Integrated **ten-template** builder and end-to-end publishing acceptance remain open ([#48](https://github.com/Masterleeaus/Scheduled/issues/48)) |
+| Operations | Assignment, recurrence, route constraints, recovery queues, failed jobs and operational observability | Finish with runnable tests ([#63](https://github.com/Masterleeaus/Scheduled/issues/63), [#65](https://github.com/Masterleeaus/Scheduled/issues/65)) |
+| Cross-app booking | Versioned availability, booking commitment, events and Front Desk handoff | Scheduled is the **integrated** booking source of truth; never permit two concurrently writable authorities ([#56](https://github.com/Masterleeaus/Scheduled/issues/56), [#67](https://github.com/Masterleeaus/Scheduled/issues/67)) |
 
-## Application areas
+AI may **recommend** slots, teams or routes, but the deterministic booking engine enforces capacity, permissions, pricing and time constraints. Supercharged owns customer communications and autonomous agents; Sorted owns jobs and invoicing; Skilled owns training eligibility.
 
-- Business websites and landing pages, template editing, publishing, and enquiry capture.
-- Business vertical catalogues and service presentation.
-- Cleanto booking integration, including availability, checkout, booking recovery, staff assignment, and payment webhook handlers.
-- Business-owner and administrator interfaces.
-- Installation, database migration, and deployment verification tools.
+## Titan Zero architecture and deployment modes
 
-Source inclusion does not establish live acceptance. Clean database installation, complete booking flows, template editing and publishing, and provider payments still require verification in a configured environment.
+The [Central architecture decisions](https://github.com/Masterleeaus/Central/blob/main/TITAN_ARCHITECTURE_DECISIONS.md), particularly ADR-009, define the **target** for the five connected products (Central, Scheduled, Sorted, Skilled and Supercharged):
 
-## Repository layout
+- **One physical PostgreSQL database** with one centrally coordinated, immutable migration ledger and separate least-privilege credentials, not five separate app databases.
+- Logto-backed **Central OIDC** sign-in and canonical UUID `company_id`; every product must enforce company membership and role/permission boundaries.
+- Scheduled becomes **one in-process Laravel application**. `private/cleanto/` is retained upstream code to integrate or migrate, not a separately deployed ongoing booking sidecar.
+- Booking, payment and customer handoffs require signed/versioned commands or events, replay/idempotency protection and migration/reconciliation tests.
+- The independently installed **Scheduling & Enquiries Manager** WordPress plugin continues to support fully local Free booking if disconnected. An integrated site switches authority only through a tested, explicit mode negotiation and cutover; no silent dual-write.
 
-| Path | Purpose |
+**This target is not a completed migration.** The inherited README/deployment setup still contains MySQL/MariaDB assumptions. [#15](https://github.com/Masterleeaus/Scheduled/issues/15), [#49](https://github.com/Masterleeaus/Scheduled/issues/49) and [#53](https://github.com/Masterleeaus/Scheduled/issues/53) track conversion to PostgreSQL, installer changes and MySQL-specific booking SQL. Never treat the legacy MySQL installer steps as the final Central-integrated production procedure.
+
+## Repository map
+
+| Path | Contents |
 | --- | --- |
-| `core/` | Laravel application, routes, configuration, migrations, views, and bundled dependencies |
-| `assets/` | Website, administrator, and shared static assets |
-| `private/cleanto/` | Preserved Cleanto source and booking dependencies |
-| `installer/` | Installer assets and base SQL schema |
-| `integration/` | Integration contracts, database tooling, deployment notes, and acceptance harnesses |
-| `tests/` | Standalone regression and source-contract checks |
-| `scripts/`, `tools/` | Preflight and developer utilities |
-| `docs/`, `development/` | Technical notes and development history |
-| `index.php`, `.htaccess` | Public entry point and Apache routing/access rules |
+| `core/` | Laravel 9 application, controllers, routes, migrations, views and runtime |
+| `private/cleanto/` | Preserved Cleanto source for controlled in-process integration; not a second booking authority |
+| `assets/` | Site/editor and admin static assets |
+| `installer/` | Imported base installation/SQL and install workflow; subject to security and PostgreSQL migration review |
+| `integration/` | Contract fixtures, database/install/staging harnesses and integration guidance |
+| `tests/` | Standalone PHP security, installation and booking regression scripts |
+| `scripts/`, `tools/` | Preflight and source/deployment tools |
+| `docs/`, `development/` | Architecture evidence and historical development records |
 
-## Runtime requirements
+A large number of README files under `core/vendor/` and `private/cleanto/` belong to upstream dependencies. Preserve their copyright, licence and provenance instead of rewriting them as Scheduled product specifications.
 
-- PHP 8.1 or later, compatible with the bundled Laravel 9 dependencies.
-- MySQL or MariaDB.
-- PHP extensions checked by `scripts/preflight.php`: mysqli, PDO, pdo_mysql, OpenSSL, mbstring, tokenizer, JSON, cURL, fileinfo, EXIF, and GMP.
-- Apache with rewrite support, or equivalent Nginx routing and access restrictions.
-- Composer when installing or rebuilding PHP dependencies.
+## Development and verification
 
-Use `core/composer.lock` when installing dependencies; do not upgrade the dependency set as part of deployment.
-
-## Installation
-
-1. Clone the repository and configure the web server for the root `index.php` layout.
-2. Keep `core/`, `private/`, `integration/`, SQL files, environment files, and developer tooling inaccessible over HTTP. Apache rules are supplied in `.htaccess`; Nginx requires equivalent explicit rules.
-3. Ensure the application can write to `core/storage/`, `core/bootstrap/cache/`, and the required media directories.
-4. Open `/install` and complete the requirements, environment/database, licence, administrator, and finalization steps using authorised installation credentials.
-5. Confirm that `core/.env` contains the correct application URL, database settings, and application key. Use `APP_ENV=production` and `APP_DEBUG=false` for a production deployment.
-6. Configure booking tenant connections, internal authentication, and any payment or messaging providers required by the deployment. Verify them with disposable test data before enabling live operations.
-
-The installer coordinates the base database import and feature migrations. Avoid importing the SQL separately into an existing installation without reviewing its state.
-
-## Verification
-
-Run the read-only preflight from the repository root:
+**Legacy runtime currently reflected in source:** PHP 8.1 (Composer's platform target) and Laravel 9; Apache rewrite support or equivalent Nginx protections; imported installer code expects MySQL/MariaDB and PHP MySQL extensions. These requirements describe the **existing source environment**, not the final PostgreSQL integrated deployment.
 
 ```bash
 php scripts/preflight.php --json
+# From core/ when a locally configured Laravel install exists:
+php artisan --version
 ```
 
-The preflight intentionally reports unresolved manual checks for HTTP access restrictions, database/booking acceptance, and external providers. A successful source import is not a substitute for those checks.
+Review [integration/install/pass47/README.md](integration/install/pass47/README.md) for disposable installation verification and [integration/README.md](integration/README.md) for contract tooling. Use isolated databases and authorised test providers. Keep `core/`, `private/`, `integration/`, `installer/`, secret files and SQL dumps outside public web access. Do not run legacy installer imports against a populated production database. Preserve booking data and immutable applied migration history.
 
-For disposable Docker-based installation testing, see [the installation harness](integration/install/pass47/README.md). It requires explicit disposable-environment acknowledgement and separate database credentials.
+**Acceptance gates:** fresh install and upgrade; PostgreSQL migration and two-company RLS; DST/timezone; simultaneous last-slot booking; retries/replay; payment webhook verification; Front Desk outage recovery; editor-to-published-page parity; browser/device accessibility; service provider sandbox tests; required CI; staging operational go/no-go.
 
-Regression checks live in `tests/` and `integration/tests/`. Follow each check's documented runtime and fixture requirements; some require database or provider configuration.
+## Open delivery priorities
 
-## Development
+1. **P0 booking and architecture:** [#46](https://github.com/Masterleeaus/Scheduled/issues/46), [#47](https://github.com/Masterleeaus/Scheduled/issues/47), [#49](https://github.com/Masterleeaus/Scheduled/issues/49), [#56](https://github.com/Masterleeaus/Scheduled/issues/56).
+2. **P0 credentials and database safety:** [#54](https://github.com/Masterleeaus/Scheduled/issues/54) for an imported PayUmoney gateway salt (never reproduce its value); [#15](https://github.com/Masterleeaus/Scheduled/issues/15) and [#53](https://github.com/Masterleeaus/Scheduled/issues/53) for schema/SQL conversion.
+3. **P1 website and commercial flows:** [#48](https://github.com/Masterleeaus/Scheduled/issues/48), [#62](https://github.com/Masterleeaus/Scheduled/issues/62), [#64](https://github.com/Masterleeaus/Scheduled/issues/64), [#65](https://github.com/Masterleeaus/Scheduled/issues/65).
+4. **Outstanding route runtime acceptance:** [#76](https://github.com/Masterleeaus/Scheduled/issues/76) (source-level public `/backup` removal is not the same as tested HTTP authorization).
 
-- Run Laravel commands from `core/`.
-- Preserve tenant ownership, authentication, booking concurrency, and idempotency controls when changing integration code.
-- Keep credentials, client data, and deployment-specific configuration out of commits.
-- Treat older pass documents under `docs/`, `development/`, and `integration/` as historical context; confirm current behaviour against the implementation.
-- Keep development reports and manifests out of the repository root.
+**Tracking:** [all open Scheduled issues](https://github.com/Masterleeaus/Scheduled/issues?q=is%3Aissue+is%3Aopen). Mark Markdown checklist tasks `[x]` only with actual source and test evidence; close only when every required task is checked. An approved architecture is not a shipped integration.
+
+## Licensing and deployment safety
+
+Retain imported upstream notices and verify the origin/redistribution rights of every donor. Keep gateway credentials, site records and customer data out of Git. Never deploy directly from a historical pass ZIP or overwrite a live database. See the seven-repository [architecture and backlog audits](https://github.com/Masterleeaus/Central/tree/main/docs/audits).
