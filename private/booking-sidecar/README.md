@@ -1,4 +1,6 @@
-# Private Cleanto booking runtime — Pass 02
+# Private Cleanto booking runtime — Pass 02 (historical reference)
+
+> **Architecture status — 18 November 2026:** This is an inherited experimental sidecar, **not an approved production deployment design**. Scheduled's [root architecture README](../../README.md) and [Central ADR-009](https://github.com/Masterleeaus/Central/blob/main/TITAN_ARCHITECTURE_DECISIONS.md) require one integrated Laravel booking authority, Central OIDC and the shared PostgreSQL target. The deployment steps below document how this historical prototype was intended to operate; **do not deploy it as a second booking writer or as the final Scheduled topology**. Preserve it for source parity and controlled migration testing. PostgreSQL migration, booking lifecycle and integration acceptance remain unverified.
 
 The original Cleanto 8.5 PHP source stays unchanged in `../cleanto/`. This **separate, private** sidecar adds an authenticated read-only service-catalogue operation directly against the original `ct_services` schema. No public Cleanto PHP scripts are exposed. The `services` and `health` operations are allowlisted; create, slots, cancel and payment deliberately fail closed pending live scheduling tests and a configured database. There is no runnable booking lifecycle yet.
 
