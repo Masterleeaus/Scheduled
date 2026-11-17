@@ -1,5 +1,8 @@
 # Scheduled
 
+> **Titan Zero suite:** ScheduledAt.Work is the bookings, websites and landing pages app upgrade. It is available with every Titan Zero plugin, alongside the AI Assistant and AI Agent Team upgrades and the other three app upgrades (SuperchargedAt.Work, SkilledAt.Work and SortedAt.Work). The description below is the repository's existing text and is pending review against that role.
+
+
 Scheduled combines the PlusAgency website platform with the Cleanto booking system in one Laravel codebase.
 
 The complete cumulative application source is committed to `main`. The archive import was verified against all 22,919 supplied files before the uploaded ZIP was removed. Historical pass reports and manifests have been removed from the repository root; earlier revisions remain available in Git history.
