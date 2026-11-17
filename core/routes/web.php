@@ -24,7 +24,7 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth:a
     Route::post('summernote/upload', 'Admin\SummernoteController@uploadFileManager')->name('lfm.summernote.upload');
 });
 
-Route::get('/backup', 'Front\FrontendController@backup');
+// Removed obsolete public /backup endpoint: only the authenticated admin backup routes are supported.
 
 /*=======================================================
 ************** Central sign-in (flag-gated) ************

@@ -7,6 +7,9 @@ final class InternalBookingClient {
  /** Contract write names. BookingOwnerGateway has no route for them, so this client refuses them outright. */
  private const CONTRACT=['booking_create','booking_cancel','booking_reschedule'];
  public function call(array $tenant,string $operation,array $payload):array {
+  // One-app mode never contacts the private legacy Cleanto HTTP sidecar.
+  // Fail before touching tenant credentials, transport, or external services.
+  if(config('booking_internal.unified_mode',false)===true)throw new \RuntimeException('Legacy booking sidecar is prohibited in unified mode');
   if(in_array($operation,self::CONTRACT,true))throw new \RuntimeException('Booking contract writes must go through BookingOwnerGateway');
   if(!$this->permitted($operation))throw new \RuntimeException('Unsupported booking operation');
   $base=rtrim((string)config('booking_internal.endpoint',''),'/');$secret=(string)config('booking_internal.secret','');

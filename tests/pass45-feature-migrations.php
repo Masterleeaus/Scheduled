@@ -4,7 +4,7 @@ require __DIR__.'/../core/app/Support/Install/InitialFeatureMigrations.php';
 use App\Support\Install\InitialFeatureMigrations;
 $dir=__DIR__.'/../core/database/migrations';
 $files=InitialFeatureMigrations::files($dir);
-if (count($files)!==20) { fwrite(STDERR, "Expected 20 current feature migrations, got ".count($files)."\n"); exit(1); }
+if (count($files)!==22) { fwrite(STDERR, "Expected 22 current feature migrations, got ".count($files)."\n"); exit(1); }
 foreach ($files as $basename=>$path) {
     if (!str_starts_with($basename,'2026_') || !is_file($path)) exit(2);
 }
@@ -14,4 +14,4 @@ $tmp=sys_get_temp_dir().'/pass45-'.bin2hex(random_bytes(4));
 mkdir($tmp);
 try {try { InitialFeatureMigrations::files($tmp); exit(4); } catch(RuntimeException $e) {} }
 finally {rmdir($tmp);}
-echo "PASS: 20 feature migrations identified; invalid path rejected\n";
+echo "PASS: 22 feature migrations identified; invalid path rejected\n";

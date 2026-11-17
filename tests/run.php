@@ -145,7 +145,7 @@ check(reasonOf(fn () => (new OidcDiscovery(new FakeHttp([['status' => 200, 'json
 
 // --- ID token claims --------------------------------------------------------
 $now = 1_800_000_000;
-$good = ['iss' => 'https://central.example/oidc', 'aud' => 'scheduled-client', 'exp' => $now + 300, 'iat' => $now - 5, 'nonce' => 'n1', 'sub' => 'user-1'];
+$good = ['iss' => 'https://central.example/oidc', 'aud' => 'scheduled-client', 'exp' => $now + 300, 'iat' => $now - 5, 'nonce' => 'n1', 'sub' => 'user-1', 'titan_organisation_id' => '0f8fad5b-d9cb-469f-a165-70867728950e'];
 $idCheck = fn (array $c, string $nonce = 'n1') => IdTokenClaims::assertValid($c, 'https://central.example/oidc', 'scheduled-client', $nonce, $now);
 $idCheck($good);
 check(true, 'id token: valid claims accepted');
@@ -338,7 +338,7 @@ $kp = sodium_crypto_sign_keypair();
 $sk = sodium_crypto_sign_secretkey($kp);
 $pk = sodium_crypto_sign_publickey($kp);
 $otherPk = sodium_crypto_sign_publickey(sodium_crypto_sign_keypair());
-$claimsBase = ['iss' => 'https://central.example/oidc', 'aud' => 'scheduled-client', 'exp' => $sNow + 300, 'iat' => $sNow - 5, 'nonce' => 'n1', 'sub' => 'user-1'];
+$claimsBase = ['iss' => 'https://central.example/oidc', 'aud' => 'scheduled-client', 'exp' => $sNow + 300, 'iat' => $sNow - 5, 'nonce' => 'n1', 'sub' => 'user-1', 'titan_organisation_id' => '0f8fad5b-d9cb-469f-a165-70867728950e'];
 $header = ['alg' => 'EdDSA', 'kid' => 'k1', 'typ' => 'JWT'];
 $goodIdToken = signJws($header, $claimsBase, $sk);
 $pending = ['state' => 'st1', 'nonce' => 'n1', 'code_verifier' => str_repeat('v', 43)];
@@ -369,7 +369,7 @@ check(reasonOf(fn () => IdTokenVerifier::verify(str_repeat('a', 9000), jwksFor($
 // Full back-channel sign-in.
 [$svc, $http] = signInFor([$discResp, $tokenOk($goodIdToken), $jwksOk], $sNow);
 $verified = $svc->complete($pending, 'st1', 'auth-code-value');
-check($verified === ['iss' => 'https://central.example/oidc', 'sub' => 'user-1'], 'signin: verified issuer and subject returned');
+check($verified === ['iss' => 'https://central.example/oidc', 'sub' => 'user-1', 'organisationId' => '0f8fad5b-d9cb-469f-a165-70867728950e'], 'signin: verified issuer, subject and company returned');
 check($http->calls[1][0] === 'POST' && $http->calls[1][1] === 'https://central.example/oidc/token', 'signin: code exchanged at token endpoint over POST');
 check(str_starts_with($http->calls[1][2][0] ?? '', 'Authorization: Basic '), 'signin: client authenticated with basic auth');
 
@@ -402,8 +402,21 @@ check(reasonOf(fn () => $svc->complete($pending, 'st1', 'code')) === 'wrong_audi
 [$svc] = signInFor([$discResp, $tokenOk($goodIdToken), ['status' => 503, 'json' => null]], $sNow);
 check(reasonOf(fn () => $svc->complete($pending, 'st1', 'code')) === 'jwks_failed', 'signin: unreadable JWKS refused');
 
+// Signed ID tokens with a missing, malformed or non-UUID company must not authorize a login.
+foreach ([null, '', 'company-name', '00000000-0000-0000-0000-000000000000-extra'] as $invalidOrganisation) {
+    $claims = $claimsBase;
+    if ($invalidOrganisation === null) {
+        unset($claims['titan_organisation_id']);
+    } else {
+        $claims['titan_organisation_id'] = $invalidOrganisation;
+    }
+    [$svc] = signInFor([$discResp, $tokenOk(signJws($header, $claims, $sk)), $jwksOk], $sNow);
+    check(reasonOf(fn () => $svc->complete($pending, 'st1', 'code')) === 'missing_organisation',
+        'signin: missing or untrusted company denied');
+}
+
 // Link resolution: no existing link means no local user.
-check((new NoExistingLinkResolver())->localUserId('https://central.example/oidc', 'user-1') === null, 'link: no existing link maps to no local user');
+check((new NoExistingLinkResolver())->localUserId('https://central.example/oidc', 'user-1', '0f8fad5b-d9cb-469f-a165-70867728950e') === null, 'link: no existing link maps to no local user');
 
 // Wiring: routes, controller and gating (source contract, no Laravel boot needed).
 $webRoutes = (string) file_get_contents(dirname(__DIR__).'/core/routes/web.php');

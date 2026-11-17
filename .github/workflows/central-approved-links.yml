@@ -1,0 +1,38 @@
+name: Scheduled Central approved account links
+
+on:
+  pull_request:
+    paths:
+      - 'core/app/Central/Link/**'
+      - 'core/app/Http/Controllers/Central/CentralSignInController.php'
+      - 'core/database/migrations/*central_user_links*'
+      - 'core/tests/Unit/DatabaseCentralUserLinkResolverTest.php'
+      - 'tests/central-approved-link-resolver.php'
+      - '.github/workflows/central-approved-links.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'core/app/Central/Link/**'
+      - 'core/app/Http/Controllers/Central/CentralSignInController.php'
+      - 'core/database/migrations/*central_user_links*'
+      - 'core/tests/Unit/DatabaseCentralUserLinkResolverTest.php'
+      - 'tests/central-approved-link-resolver.php'
+      - '.github/workflows/central-approved-links.yml'
+
+jobs:
+  approved-link-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Syntax check changed PHP runtime and migration
+        run: |
+          php -l core/app/Central/Link/CentralUserLinkResolver.php
+          php -l core/app/Central/Link/DatabaseCentralUserLinkResolver.php
+          php -l core/app/Http/Controllers/Central/CentralSignInController.php
+          php -l core/database/migrations/2026_11_15_000003_create_central_user_links.php
+          php -l core/database/migrations/2026_11_15_000004_scope_central_user_links_to_organisation.php
+          php -l core/app/Central/Oidc/CentralSignIn.php
+          php -l core/tests/Unit/DatabaseCentralUserLinkResolverTest.php
+          php -l tests/central-approved-link-resolver.php
+      - name: Strict approved identity lookup regression
+        run: php tests/central-approved-link-resolver.php

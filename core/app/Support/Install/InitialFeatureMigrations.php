@@ -34,6 +34,8 @@ final class InitialFeatureMigrations
         '2026_11_11_270001_create_titan_site_booking_service_maps',
         '2026_11_15_000001_create_central_processed_events',
         '2026_11_15_000002_create_booking_event_outbox_tables',
+        '2026_11_15_000003_create_central_user_links',
+        '2026_11_15_000004_scope_central_user_links_to_organisation',
     ];
 
     /** Tables created by the required migrations; verify every one after import. */
@@ -45,6 +47,7 @@ final class InitialFeatureMigrations
         'booking_service_links',
         'booking_tenant_instances',
         'builder_revisions',
+        'central_user_links',
         'titan_agent_audit_events',
         'titan_brand_proposals',
         'titan_business_memberships',
@@ -63,6 +66,7 @@ final class InitialFeatureMigrations
     private const REQUIRED_COLUMNS = [
         'titan_site_leads' => ['preferred_date', 'preferred_time', 'request_kind', 'booking_details', 'utm_source'],
         'titan_landing_campaigns' => ['design_json', 'published_slug', 'published_snapshot'],
+        'central_user_links' => ['central_organisation_id'],
     ];
 
     /** @return array<string,string> basename => absolute path */

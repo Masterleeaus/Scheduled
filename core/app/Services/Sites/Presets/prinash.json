@@ -12,11 +12,11 @@
   "services": [
     {
       "name": "Driveways",
-      "description": "Refresh suitable concrete and paved entrances."
+      "description": "Surface-appropriate cleaning for driveways and entrances, with materials and drainage checked before work begins."
     },
     {
       "name": "Outdoor paving",
-      "description": "Targeted washing for paths and courtyard areas."
+      "description": "Careful cleaning of paths, paving and courtyard surfaces with attention to joints and surrounding areas."
     },
     {
       "name": "Walls and exteriors",
@@ -24,7 +24,7 @@
     },
     {
       "name": "Commercial exteriors",
-      "description": "Maintenance visits for suitable outdoor surfaces."
+      "description": "Scheduled exterior maintenance for suitable worksite surfaces, based on access and the property requirements."
     }
   ],
   "faqs": [
