@@ -8,6 +8,8 @@ Laravel booking and calendar authority plus website and landing-page building; i
 
 ## Key references
 
+- [Booking and website-builder guide](BOOKING_AND_BUILDER_GUIDE.md): booking lifecycle, template/publishing scope, inherited source and acceptance gates.
+
 - [Repository README](../README.md): scope, implemented versus planned capabilities, current blockers and developer entry point.
 - [Platform map](https://github.com/Masterleeaus/Central/blob/main/docs/PLATFORM_MAP.md): ownership, cross-product handoffs, data and identity authority.
 - [Open issues](https://github.com/Masterleeaus/Scheduled/issues?q=is%3Aissue+is%3Aopen): active work and evidence-backed checklists.
