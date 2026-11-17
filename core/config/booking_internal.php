@@ -1,5 +1,8 @@
 <?php
 return [
+    // Unified production mode rejects all Cleanto HTTP sidecar traffic and MySQL-native checkout.
+    // Keep disabled for legacy environments until the new PostgreSQL booking writer is complete.
+    'unified_mode' => env('TITAN_UNIFIED_MODE', false),
  'endpoint'=>env('BOOKING_INTERNAL_ENDPOINT',''),
  'secret'=>env('BOOKING_INTERNAL_SECRET',''),
  // Booking writes are tenant-sidecar settings; this Laravel layer cannot enable them.

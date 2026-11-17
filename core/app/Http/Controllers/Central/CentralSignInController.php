@@ -6,7 +6,7 @@ use App\Central\CentralException;
 use App\Central\Config\CentralConfig;
 use App\Central\Http\CurlHttpTransport;
 use App\Central\Link\CentralUserLinkResolver;
-use App\Central\Link\NoExistingLinkResolver;
+use App\Central\Link\DatabaseCentralUserLinkResolver;
 use App\Central\Oidc\CentralSignIn;
 use App\Central\Oidc\OidcDiscovery;
 use App\Http\Controllers\Controller;
@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 /**
  * Central sign-in for the web user guard. login and callback return 404 unless CENTRAL_SIGNIN_ENABLED is on.
  * logout always ends the local session, whatever the flag says, so a Central session can never be stuck.
- * Only an existing local user reached through an existing link can sign in. This controller never creates
+ * Only an existing local user reached through an approved non-revoked database link can sign in. This controller never creates
  * users and never touches the admin guard. Local, Google and Facebook login are separate and unchanged.
  */
 class CentralSignInController extends Controller
@@ -61,8 +61,13 @@ class CentralSignInController extends Controller
             return $this->failed($request);
         }
 
-        $localUserId = $links->localUserId($verified['iss'], $verified['sub']);
-        $user = $localUserId === null ? null : User::find($localUserId);
+        try {
+            $localUserId = $links->localUserId($verified['iss'], $verified['sub'], $verified['organisationId']);
+            $user = $localUserId === null ? null : User::find($localUserId);
+        } catch (\Throwable $e) {
+            // Missing migrations or unavailable database must never bypass verified link lookup.
+            return $this->failed($request);
+        }
         if ($user === null || (string) $user->status === '0') {
             return $this->failed($request);
         }
@@ -123,6 +128,6 @@ class CentralSignInController extends Controller
             $config->oidcAudience(),
         );
 
-        return $withLinks ? [$config, $signIn, new NoExistingLinkResolver()] : [$config, $signIn];
+        return $withLinks ? [$config, $signIn, new DatabaseCentralUserLinkResolver()] : [$config, $signIn];
     }
 }
