@@ -1,5 +1,8 @@
 # Cleanto / PlusAgency Integration — Pass 1
 
+> **Current architecture notice (2026-11-18):** This directory's Pass 1 notes document inherited Cleanto/PlusAgency integration history, not the accepted final architecture. [Scheduled's root README](../README.md) and [Central ADR-009](https://github.com/Masterleeaus/Central/blob/main/TITAN_ARCHITECTURE_DECISIONS.md) require a **single Laravel booking authority**, central OIDC and a shared physical PostgreSQL target. Retain disposable MySQL harnesses only to reproduce existing-source behaviour until PostgreSQL parity and one-app migration are verified (Scheduled #15/#46/#49/#53). Do not deploy a Cleanto sidecar or duplicate booking writer.
+
+
 ## Directory topology
 
 - `core/`, `assets/`, `installer/`: original PlusAgency layout, except reconciled web routes and stripped `.env`.
