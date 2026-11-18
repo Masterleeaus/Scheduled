@@ -71,3 +71,35 @@ jobs:
             exit 1
           fi
           php -r '$j=json_decode(file_get_contents($argv[1]),true); if(!is_array($j)||$j["total"]<1){fwrite(STDERR,"preflight JSON invalid\n");exit(1);} $ready=($j["passed"]===$j["total"]); if(($ready?0:1)!==(int)$argv[2]){fwrite(STDERR,"preflight exit code does not match readiness\n");exit(1);}' "$RUNNER_TEMP/preflight.json" "$rc"
+
+  # Booking claim ledger on a real PostgreSQL server (#53). Throwaway credentials, CI only.
+  ledger-postgres:
+    runs-on: ubuntu-24.04
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: ci-only-throwaway
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 12
+    steps:
+      - uses: actions/checkout@v4 # major-version pin only
+
+      # Fails loudly if the runner's PHP lacks PDO for PostgreSQL. Nothing is skipped.
+      - name: Check pdo_pgsql is available
+        run: php -m | grep -qi '^pdo_pgsql$' || { echo "pdo_pgsql missing"; exit 1; }
+
+      - name: Create disposable database
+        env:
+          PGPASSWORD: ci-only-throwaway
+        run: psql -h 127.0.0.1 -U postgres -c 'CREATE DATABASE titan_booking_test_ci'
+
+      - name: Booking claim ledger live test (PostgreSQL)
+        env:
+          TEST_PGSQL_DSN: pgsql:host=127.0.0.1;port=5432;dbname=titan_booking_test_ci
+          TEST_PGSQL_USER: postgres
+          TEST_PGSQL_PASSWORD: ci-only-throwaway
+        run: php integration/postgres/ledger_live_test.php
