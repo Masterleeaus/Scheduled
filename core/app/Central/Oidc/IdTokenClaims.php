@@ -8,8 +8,9 @@ use App\Central\CentralException;
 /**
  * Claim checks for an ID token: issuer, audience, expiry, nonce and subject.
  *
- * Callers MUST verify the token signature against the discovery jwks_uri before calling this. That step is
- * not implemented yet (see the PR). This class only checks claims of an already-verified token.
+ * Callers MUST verify the token signature first with IdTokenVerifier::verify against the jwks_uri from
+ * discovery. CentralSignIn::complete does this before it calls assertValid. This class only checks claims
+ * of an already-verified token.
  */
 final class IdTokenClaims
 {

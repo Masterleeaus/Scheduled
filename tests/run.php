@@ -121,6 +121,10 @@ check(reasonOf(fn () => envFrom(['CENTRAL_EVENTS_HMAC_SECRET' => 'short'])->even
 check(envFrom(['CENTRAL_EVENTS_HMAC_SECRET' => str_repeat('k', 32)])->eventsSecret() === str_repeat('k', 32), 'config: 32-char secret accepted');
 check(envFrom([])->serviceAudience() === 'urn:titan-central:product:scheduled', 'config: service audience from product id');
 check(reasonOf(fn () => envFrom(['CENTRAL_OIDC_CLIENT_SECRET' => '   '])->oidcClientSecret()) === 'config_missing', 'config: blank value treated as unset');
+// The sign-in audience is set by the Central operator and has no default: unset or blank must fail closed.
+check(reasonOf(fn () => envFrom([])->oidcAudience()) === 'config_missing', 'config: oidc audience has no default when unset');
+check(reasonOf(fn () => envFrom(['CENTRAL_OIDC_AUDIENCE' => '  '])->oidcAudience()) === 'config_missing', 'config: oidc audience blank treated as unset');
+check(reasonOf(fn () => envFrom(['CENTRAL_OIDC_AUDIENCE' => 'scheduled-client'])->oidcAudience()) === null && envFrom(['CENTRAL_OIDC_AUDIENCE' => 'scheduled-client'])->oidcAudience() === 'scheduled-client', 'config: oidc audience read verbatim from operator value');
 
 // --- PKCE and authorization request ----------------------------------------
 check(Pkce::challenge('dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk') === 'E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM', 'pkce: RFC 7636 S256 vector');
