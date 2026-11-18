@@ -1,4 +1,5 @@
 <?php
 declare(strict_types=1);
 namespace App\Booking\Public\Redemption;
-final class RedeemSchema { public static function ddl():string {return "CREATE TABLE IF NOT EXISTS titan_booking_intent_claims (claim_key CHAR(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL PRIMARY KEY, owner_id BIGINT UNSIGNED NOT NULL, fingerprint CHAR(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL, state VARCHAR(16) NOT NULL, booking_id BIGINT UNSIGNED NULL, created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, INDEX idx_owner_state(owner_id,state)) ENGINE=InnoDB";} }
+/** PostgreSQL DDL for the booking redemption claim ledger (Scheduled #15). Runs as one simple-query batch via PDO::exec. */
+final class RedeemSchema { public static function ddl():string {return "CREATE TABLE IF NOT EXISTS titan_booking_intent_claims (claim_key CHAR(64) NOT NULL PRIMARY KEY, owner_id BIGINT NOT NULL CHECK (owner_id >= 0), fingerprint CHAR(64) NOT NULL, state VARCHAR(16) NOT NULL CHECK (state IN ('claimed','committed')), booking_id BIGINT NULL CHECK (booking_id IS NULL OR booking_id >= 0), created_at TIMESTAMPTZ NOT NULL DEFAULT now(), updated_at TIMESTAMPTZ NOT NULL DEFAULT now()); CREATE INDEX IF NOT EXISTS idx_titan_booking_intent_claims_owner_state ON titan_booking_intent_claims (owner_id, state);";} }
