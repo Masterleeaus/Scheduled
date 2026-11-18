@@ -3060,16 +3060,16 @@ CREATE TABLE `payment_gateways` (
 --
 
 INSERT INTO `payment_gateways` (`id`, `subtitle`, `title`, `details`, `name`, `type`, `information`, `keyword`, `status`) VALUES
-(6, NULL, NULL, NULL, 'Flutterwave', 'automatic', '{\"public_key\":\"FLWPUBK_TEST-93972d50b7b24582a2050de2803799c0-X\",\"secret_key\":\"FLWSECK_TEST-3c9d39d4b16e9011bc4b9893f882f71e-X\",\"text\":\"Pay via your Flutterwave account.\"}', 'flutterwave', 1),
-(9, NULL, NULL, NULL, 'Razorpay', 'automatic', '{\"key\":\"rzp_test_fV9dM9URYbqjm7\",\"secret\":\"nickxZ1du2ojPYVVRTDif2Xr\",\"text\":\"Pay via your Razorpay account.\"}', 'razorpay', 1),
-(11, NULL, NULL, NULL, 'Paytm', 'automatic', '{\"merchant\":\"tkogux49985047638244\",\"secret\":\"LhNGUUKE9xCQ9xY8\",\"website\":\"WEBSTAGING\",\"industry\":\"Retail\",\"text\":\"Pay via your paytm account.\"}', 'paytm', 1),
-(12, NULL, NULL, NULL, 'Paystack', 'automatic', '{\"key\":\"pk_test_3a92490cb518c1b0d4c5f5273ea5cd67d5b4ea61\",\"secret_key\":\"sk_test_4ac9f2c43514e3cc08ab68f922201549ebda1bfd\",\"email\":\"test@test.com\",\"text\":\"Pay via your Paystack account.\"}', 'paystack', 1),
-(13, NULL, NULL, NULL, 'Instamojo', 'automatic', '{\"key\":\"test_172371aa837ae5cad6047dc3052\",\"token\":\"test_4ac5a785e25fc596b67dbc5c267\",\"sandbox_check\":\"1\",\"text\":\"Pay via your Instamojo account.\"}', 'instamojo', 1),
-(14, NULL, NULL, NULL, 'Stripe', 'automatic', '{\"key\":\"pk_test_UnU1Coi1p5qFGwtpjZMRMgJM\",\"secret\":\"sk_test_QQcg3vGsKRPlW6T3dXcNJsor\",\"text\":\"Pay via your Credit Card.\"}', 'stripe', 1),
-(15, NULL, NULL, NULL, 'Paypal', 'automatic', '{\"client_id\":\"Aal5j466_JNRtBI3Yc-ADcseTX4Cnt25cTeIvvr0aWVvbSBAoFfBe2FnxetYxgId7WGKXyRRM2QHyAKM\",\"client_secret\":\"EO96wJdrs8HfT_cKeXtLmvJNGcau3GkuWr_Pv7RfDYQtjlH0F9Zei5T4_Ehbhl7i14TQPRV8ZzN6U7Wb\",\"sandbox_check\":\"1\",\"text\":\"Pay via your PayPal account.\"}', 'paypal', 1),
-(17, NULL, NULL, NULL, 'Mollie Payment', 'automatic', '{\"key\":\"test_5HcWVs9qc5pzy36H9Tu9mwAyats33J\",\"text\":\"Pay via your Mollie Payment account.\"}', 'mollie', 1),
-(18, NULL, NULL, NULL, 'PayUmoney', 'automatic', '{\"key\":\"gtKFFx\",\"salt\":\"<PAYUMONEY_SALT>\",\"text\":\"Pay via your PayUmoney account.\",\"sandbox_check\":\"1\"}', 'payumoney', 0),
-(19, NULL, NULL, NULL, 'Mercado Pago', 'automatic', '{\"token\":\"TEST-705032440135962-041006-ad2e021853f22338fe1a4db9f64d1491-421886156\",\"sandbox_check\":\"1\",\"text\":\"Pay via your Mercado Pago account.\"}', 'mercadopago', 1);
+(6, NULL, NULL, NULL, 'Flutterwave', 'automatic', '{\"public_key\":\"\",\"secret_key\":\"\",\"text\":\"Pay via your Flutterwave account.\"}', 'flutterwave', 1),
+(9, NULL, NULL, NULL, 'Razorpay', 'automatic', '{\"key\":\"\",\"secret\":\"\",\"text\":\"Pay via your Razorpay account.\"}', 'razorpay', 1),
+(11, NULL, NULL, NULL, 'Paytm', 'automatic', '{\"merchant\":\"\",\"secret\":\"\",\"website\":\"WEBSTAGING\",\"industry\":\"Retail\",\"text\":\"Pay via your paytm account.\"}', 'paytm', 1),
+(12, NULL, NULL, NULL, 'Paystack', 'automatic', '{\"key\":\"\",\"secret_key\":\"\",\"email\":\"test@test.com\",\"text\":\"Pay via your Paystack account.\"}', 'paystack', 1),
+(13, NULL, NULL, NULL, 'Instamojo', 'automatic', '{\"key\":\"\",\"token\":\"\",\"sandbox_check\":\"1\",\"text\":\"Pay via your Instamojo account.\"}', 'instamojo', 1),
+(14, NULL, NULL, NULL, 'Stripe', 'automatic', '{\"key\":\"\",\"secret\":\"\",\"text\":\"Pay via your Credit Card.\"}', 'stripe', 1),
+(15, NULL, NULL, NULL, 'Paypal', 'automatic', '{\"client_id\":\"\",\"client_secret\":\"\",\"sandbox_check\":\"1\",\"text\":\"Pay via your PayPal account.\"}', 'paypal', 1),
+(17, NULL, NULL, NULL, 'Mollie Payment', 'automatic', '{\"key\":\"\",\"text\":\"Pay via your Mollie Payment account.\"}', 'mollie', 1),
+(18, NULL, NULL, NULL, 'PayUmoney', 'automatic', '{\"key\":\"\",\"salt\":\"<PAYUMONEY_SALT>\",\"text\":\"Pay via your PayUmoney account.\",\"sandbox_check\":\"1\"}', 'payumoney', 0),
+(19, NULL, NULL, NULL, 'Mercado Pago', 'automatic', '{\"token\":\"\",\"sandbox_check\":\"1\",\"text\":\"Pay via your Mercado Pago account.\"}', 'mercadopago', 1);
 
 -- --------------------------------------------------------
 
