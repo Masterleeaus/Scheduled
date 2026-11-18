@@ -260,6 +260,10 @@
 - [`private/cleanto/assets/xero/vendor/xeroapi/xero-php-oauth2/doc/payrolluk/README.md`](../private/cleanto/assets/xero/vendor/xeroapi/xero-php-oauth2/doc/payrolluk/README.md)
 - [`private/cleanto/assets/xero/vendor/xeroapi/xero-php-oauth2/doc/project/README.md`](../private/cleanto/assets/xero/vendor/xeroapi/xero-php-oauth2/doc/project/README.md)
 
+## This directory
+
+- [`docs/README_DIRECTORY.md`](README_DIRECTORY.md) — this complete linked inventory.
+
 ## Root README
 
 - [`README.md`](../README.md)
