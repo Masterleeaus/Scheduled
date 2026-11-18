@@ -69,3 +69,9 @@ Review [integration/install/pass47/README.md](integration/install/pass47/README.
 ## Licensing and deployment safety
 
 Retain imported upstream notices and verify the origin/redistribution rights of every donor. Keep gateway credentials, site records and customer data out of Git. Never deploy directly from a historical pass ZIP or overwrite a live database. See the seven-repository [architecture and backlog audits](https://github.com/Masterleeaus/Central/tree/main/docs/audits).
+
+## Find every README and developer guide
+
+- **[Complete README directory](docs/README_DIRECTORY.md)** — direct links to every README-style file in this repository, including component, test, vendor and historical documentation.
+- **[Documentation index](docs/README.md)** — curated entry point to the main technical guides and developer workflows.
+- **[Seven-repository platform map](https://github.com/Masterleeaus/Central/blob/main/docs/PLATFORM_MAP.md)** — cross-product architecture, ownership and integration boundaries.
