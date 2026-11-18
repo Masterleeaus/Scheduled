@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 namespace Titan\BookingSidecar;
-/** Explicit prerequisites for exercising transactions against a real MySQL deployment. */
+/** Explicit prerequisites for exercising transactions against a real PostgreSQL deployment. */
 final class BookingEngineRequirements {
  public static function check(array $environment):array {
-  $checks=['pdo_mysql'=>($environment['pdo_mysql']??false)===true,
-   'mysql_8_or_mariadb_supported'=>($environment['server_supported']??false)===true,
+  $checks=['pdo_pgsql'=>($environment['pdo_pgsql']??false)===true,
+   'postgresql_16_or_later_supported'=>($environment['server_supported']??false)===true,
    'transactional_engine'=>($environment['innodb']??false)===true,
    'isolated_test_database'=>($environment['isolated']??false)===true,
    'schema_compatible'=>($environment['schema']??false)===true,

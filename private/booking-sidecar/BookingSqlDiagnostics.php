@@ -7,7 +7,7 @@ final class BookingSqlDiagnostics {
   return ['schema_ok'=>($schema['ok']??false)===true,
    'missing_columns'=>$schema['missing']??[],
    'database_ref'=>$capability['database_ref']??null,
-   'transactional_bookings'=>($capability['booking_table_innodb']??false)===true,
+   'transactional_bookings'=>($capability['transactional_engine']??false)===true,
    'integration_ready'=>($requirements['ready']??false)===true,
    'missing_requirements'=>$requirements['missing']??[]];
  }
