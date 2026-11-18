@@ -8,7 +8,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "check": "node --check src/config.js && node --check src/link-assertion.js && node --check src/nonce-store.js && node --check src/tenant.js && node --check src/kid-guard.js && node --check scripts/export-public-jwk.js",
+    "check": "node --check src/config.js && node --check src/link-assertion.js && node --check src/nonce-store.js && node --check src/tenant.js && node --check src/kid-guard.js && node --check scripts/export-public-jwk.js && node --check scripts/generate-staging-link-key.js",
     "test": "node --test \"test/**/*.test.js\""
   }
 }
