@@ -7,7 +7,7 @@ final class BookingSchemaColumnsReader {
  public function columns(string $table):array {
   $allowed=array_keys(BookingSchemaInspector::expected());$allowed[]=BookingLedgerSchemaContract::TABLE;
   if(!in_array($table,$allowed,true))throw new \InvalidArgumentException('Unsupported schema table');
-  $q=$this->db->prepare('SELECT COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME=? ORDER BY ORDINAL_POSITION');
+  $q=$this->db->prepare('SELECT column_name FROM information_schema.columns WHERE table_catalog=current_database() AND table_schema=current_schema() AND table_name=? ORDER BY ordinal_position');
   $qRows=null;if($q===false||$q->execute([$table])!==true)throw new \RuntimeException('Schema column lookup failed');$qRows=$q->fetchAll(\PDO::FETCH_COLUMN);if(!is_array($qRows))throw new \RuntimeException('Schema lookup unavailable');return array_map('strval',$qRows);
  }
 }
