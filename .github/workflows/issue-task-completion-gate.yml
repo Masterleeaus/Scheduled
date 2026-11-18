@@ -25,6 +25,9 @@ jobs:
             const number = context.issue.number;
             const { data: issue } = await github.rest.issues.get({ owner, repo, issue_number: number });
             if (issue.pull_request || issue.state !== 'closed') return;
+            // Checklist meaning: a ticked [x] item means done, duplicated elsewhere,
+            // superseded by another item or issue, or no longer relevant. Only an
+            // unticked [ ] item keeps a closed issue open.
             const tasks = [];
             let fence = null;
             const tick = String.fromCharCode(96).repeat(3);
@@ -47,7 +50,7 @@ jobs:
                 owner, repo, issue_number: number,
                 body: tasks.length === 0
                   ? 'Issue reopened automatically: add a Markdown task checklist, verify every task, and tick every checkbox before closing.'
-                  : 'Issue reopened automatically: ' + remaining + ' of ' + tasks.length + ' tasks remain unchecked. Verify and complete every task before closing.'
+                  : 'Issue reopened automatically: ' + remaining + ' of ' + tasks.length + ' tasks remain unchecked. Tick each task once it is done, duplicated elsewhere, superseded, or no longer relevant.'
               });
               core.setFailed('Issue must have at least one checklist task and all tasks must be checked to stay closed.');
             }
